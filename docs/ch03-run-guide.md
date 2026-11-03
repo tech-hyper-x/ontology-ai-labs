@@ -2,7 +2,7 @@
 
 처음 설치한다면 [Docker → Neo4j → Langfuse 상세 가이드](setup/README.md)를 먼저 진행합니다. 강사의 화면 시연 순서는 [체크리스트](setup/RECORDING.md)에 있습니다.
 
-강의 기준: 제조 프로젝트 `실습코드/mfg-bom-agent`의 현재 코드. 20분은 설명과 준비된 환경의 시연 배분이며 최초 다운로드·설치 대기 시간은 별도입니다.
+강의 기준: 제조 프로젝트 `labs/mfg-bom-agent`의 현재 코드. 20분은 설명과 준비된 환경의 시연 배분이며 최초 다운로드·설치 대기 시간은 별도입니다.
 
 ## 1. 운영체제와 실행 방식
 
@@ -35,7 +35,7 @@ uv sync --all-extras
 
 실제 키를 화면에 공개하거나 자료에 저장하지 않습니다. 설정을 바꾼 뒤에는 실행 중인 앱·MCP 서버를 재시작합니다. Langfuse를 생략할 경우 README 안내에 따라 Neo4j만 실행하고 `LANGFUSE_PUBLIC_KEY`와 `LANGFUSE_SECRET_KEY`를 비웁니다.
 
-현재 OS 설치 문서의 “임베딩은 비워 두기”, “초기화는 제약 생성만 수행”이라는 설명은 최신 코드와 차이가 있습니다. Ch3에서 검색을 확인하려면 임베딩 설정과 실제 `init_data.py` 출력을 기준으로 준비합니다.
+Part 1 Ch3의 검색 비교에는 임베딩 설정과 데이터·색인 적재가 필요합니다. OS별 도구 설치 후 공통 설치 가이드의 설정·초기화 순서로 진행합니다.
 
 ## 3. 기반 서비스와 데이터 초기화 — 터미널 1
 
@@ -152,8 +152,9 @@ uv run python ../../examples/ch03_call.py search_docs --mode vector
 ```
 
 - 사용처 도구: `sku / revision / lines / paths`와 오류·힌트를 확인합니다.
-- 검색 도구: 동일 검색어 `corner wheels will not turn servo gear`와 k=3을 유지하고 BM25와 Vector를 각각 실행합니다. `mode / effective_mode / hits`를 확인하고 상위 문서의 본문·연결된 부품·출처를 나란히 읽습니다. 같은 문서가 반환돼도 정상이며, 방식별 점수의 절댓값으로 우열을 판단하지 않습니다.
+- 검색 도구: 동일 검색어 `corner wheels will not turn servo gear`와 k=3을 유지하고 BM25와 Vector를 각각 실행합니다. `mode / effective_mode / index_provider / query_provider / warnings / error / hits`를 확인하고 상위 문서의 본문·연결된 부품·출처를 나란히 읽습니다. 같은 문서가 반환돼도 정상이며, 방식별 점수의 절댓값으로 우열을 판단하지 않습니다.
 - 검색 질문은 “코너 바퀴가 돌지 않을 때 참고할 정비 문서는 무엇인가요?”입니다. 직접 호출은 현재 도구 설명에서 권장하는 영어 검색어를 사용합니다.
+- 의미 기반 검색 비교는 문서 색인과 질문의 `index_provider`·`query_provider`가 배포된 동일 의미 임베딩 모델인지 확인한 뒤 진행합니다. `hash:local`은 연결 점검용 대체 방식이며 의미 검색 성능의 근거로 쓰지 않습니다. 초기화 로그의 공급자와 대체 사유도 확인합니다. 대체 색인이라면 키·모델 설정을 바로잡고 전용 실습 환경에서 `uv run python scripts/build_index.py`로 검색 색인만 다시 구성합니다.
 - `effective_mode`가 `bm25`라면 벡터·결합 검색 성공으로 설명하지 않습니다. 빈 결과와 실행 오류도 구분합니다.
 - 도구가 반환한 실제 값만 사용하며 성공 건수·경로·원가를 미리 만들어 두지 않습니다.
 
@@ -173,7 +174,7 @@ uv run python ../../examples/ch03_call.py search_docs --mode vector
 
 `fixed_llm`은 임베딩 API를 대체하지 않습니다. 그래프·검색·모델 연결은 각각 확인합니다.
 
-방금 실행한 질문의 Langfuse Tracing 기록을 열어 도구 입력·출력과 오류 여부를 확인합니다. 기록이 없다면 수집 설정과 반영 지연부터 점검합니다.
+Part 1 Ch3에서는 Langfuse 로그인과 제조 프로젝트 접속까지만 확인합니다. 도구 호출 기록을 해석하는 상세 시연은 Part 2의 에이전트·평가 구간에서 진행합니다.
 
 ## 8. 완료 기준
 

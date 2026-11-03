@@ -184,11 +184,12 @@ cp .env.example .env
 
 `nano` 는 수정 후 `Ctrl + O` → `Enter` 로 저장하고 `Ctrl + X` 로 나간다.
 
-**반드시 바꿀 값 3개**:
+**반드시 바꿀 값 4개**:
 
 | 변수 | 넣을 값 | 설명 |
 |---|---|---|
 | `ANTHROPIC_API_KEY` | `sk-ant-...` 로 시작하는 본인 키 | https://console.anthropic.com → API Keys 에서 발급 |
+| `EMBEDDING_API_KEY` | 본인 임베딩 API 키 | Part 1 Ch3의 의미 기반 벡터 검색 비교에 필요. LLM 키와 별도 |
 | `NEO4J_PASSWORD` | 8자 이상 아무 문자열 | Neo4j 가 처음 뜰 때 이 값으로 비밀번호가 정해진다 |
 | `LANGFUSE_INIT_USER_PASSWORD` | 아무 문자열 | Langfuse 화면 로그인 비밀번호 |
 
@@ -200,7 +201,7 @@ cp .env.example .env
 | `HOST_*_PORT` | 다른 프로그램과 포트가 겹칠 때만 바꾼다 ([문제 해결](#문제-해결) 참고) |
 | `LLM_MODEL` | 기본 `claude-haiku-5-5` |
 | `LANGFUSE_*_PASSWORD`, `SALT`, `ENCRYPTION_KEY` 등 | Langfuse 내부용. 로컬 실습은 기본값으로 충분하다 |
-| `EMBEDDING_*` | 임베딩 단계에서 안내한다. 지금은 비워 둔다 |
+| `EMBEDDING_PROVIDER` / `EMBEDDING_MODEL` / `EMBEDDING_DIMENSION` | 배포값 유지. 문서 색인과 질문이 같은 공급자·모델·차원을 사용해야 함 |
 
 > ⚠ `.env` 에는 API 키가 들어 있다. 다른 사람에게 폴더를 압축해 보낼 때는 `.env` 를 빼고 보낸다. Git 에는 `.gitignore` 로 제외되어 있다.
 
@@ -257,25 +258,13 @@ mfg-redis             redis:7                      Up (healthy)
 
 ## 6. 그래프 초기화와 환경 점검
 
-Neo4j 에 제조 온톨로지의 유일성 제약을 만든다. 여러 번 실행해도 안전하다.
+전용 실습 DB에 제공 데이터를 다시 적재하고, 제약·온톨로지 검사·문서 연결·검색 색인을 준비한다. 기존 실습 데이터는 교체되므로 다른 업무 데이터가 있는 DB에서는 실행하지 않는다. 이후 챕터에서 매번 반복하는 명령은 아니다.
 
 ```bash
 uv run python scripts/init_data.py
 ```
 
-✅ 성공:
-
-```text
-constraint ok  :Product(product_id)
-constraint ok  :Assembly(assembly_id)
-constraint ok  :BOMLine(bomline_id)
-constraint ok  :Part(part_id)
-constraint ok  :Supplier(supplier_id)
-constraint ok  :Revision(revision_id)
-constraint ok  :ECN(ecn_id)
-constraint ok  :DocumentChunk(chunk_id)
-LabMeta ok     dataset_version=mfg-0.1
-```
+확인할 출력은 `적재`, `온톨로지 검증`, `문서-부품 연결`, `검색 색인`, `완료`다. 건수는 실제 출력을 읽는다. 검색 색인의 공급자와 대체 사유를 확인하고, `hash:local`이면 연결 점검 상태로만 기록한다. 의미 검색 비교 전에 임베딩 설정을 확인하고 검색 색인을 다시 구성한다.
 
 환경 전체를 점검한다.
 
@@ -330,7 +319,7 @@ cd ~/work/mfg-bom-agent && uv run streamlit run src/mfg_bom_agent/ui.py
 | 주소 | 로그인 | 확인할 것 |
 |---|---|---|
 | http://localhost:8501 | 없음 | 환경 점검 화면. **Neo4j · Anthropic API · MCP 서버 · Langfuse 네 줄이 모두 초록색** |
-| http://localhost:7474 | 사용자 `neo4j` / `.env` 의 `NEO4J_PASSWORD` | Neo4j Browser. 위쪽 입력창에 `SHOW CONSTRAINTS` 를 실행하면 제약 8개가 보인다 |
+| http://localhost:7474 | 사용자 `neo4j` / `.env` 의 `NEO4J_PASSWORD` | Neo4j Browser. 위쪽 입력창에서 `SHOW CONSTRAINTS`로 제약을 확인하고, 데이터 적재 완료 출력도 함께 확인한다 |
 | http://localhost:3000 | `.env` 의 `LANGFUSE_INIT_USER_EMAIL` / `LANGFUSE_INIT_USER_PASSWORD` | Langfuse. 로그인 후 프로젝트 **제조 BOM 변경 영향 에이전트** 가 자동으로 만들어져 있다 |
 
 세 화면이 모두 확인되면 실습 환경 준비가 끝났다. 🎉
