@@ -1,0 +1,5 @@
+source_file,target_label,merge_key,parent_relationship,child_relationship,revision_relationship,checked
+plm_item_master.csv,Part,part_id,,,,
+plm_assembly.csv,Assembly,assembly_id,,,,
+plm_revision.csv,Revision,revision_id,,,,
+plm_ebom_line.csv,BOMLine,bomline_id,HAS_BOM_LINE,REFERS_TO,IN_REVISION,
