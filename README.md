@@ -114,3 +114,7 @@ uv run python ../../examples/ch03_call.py search_docs --mode hybrid
 - [NASA JPL Open Source Rover 라이선스](labs/mfg-bom-agent/third_party/nasa-jpl-open-source-rover/LICENSE.txt)
 
 개인 `.env`, API 키, 개발 저장소의 Git 이력, 실행 로그, 내부 캡처는 포함하지 않습니다. 설정값 예시는 `.env.example`에서 확인합니다.
+
+## Part 2 · Ch1 — 부품 변경 질문과 데이터 이해
+
+[강의별 Hands-on 안내](docs/part02/ch01/README.md): 업무 질문·CQ 작성 → Neo4j 관찰 조회 → 원본과 가공 데이터 대조 → 출처·가정·시점 기록. 조회문 3개와 작성용 CSV 표를 제공합니다.

@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/nasa-jpl/open-source-rover",
+  "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+  "files": [
+    {
+      "path": "parts_list/parts_list.csv",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "325e00b30f1f3bd914cc07de9a2b89eb81ccdeee3b32535cb7b7ae524a5f915e"
+    },
+    {
+      "path": "parts_list/extra_parts.md",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "869d298c7d62ac20db5b83a0d42507a73e52e11b497122653133507f70d61092"
+    },
+    {
+      "path": "mechanical/servo_gear_replacement/README.md",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "b858ec93cc4118fb874ce825f8f393130031f4decc0927b6f7361c109ed3a3cd"
+    },
+    {
+      "path": "LICENSE.txt",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "74227c34e68957a55d4d16091aeca5bcd240ec15883e5dee71f4b25139064413"
+    }
+  ],
+  "purpose": "Ch1 원본 관찰용. 원래 폴더 구조와 파일 내용을 유지."
+}

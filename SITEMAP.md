@@ -67,3 +67,7 @@ OS별 도구 설치를 마치면 [공통 상세 설치 가이드](docs/setup/REA
 - [배포본의 원본 코드 커밋](DISTRIBUTION.json)
 
 바이오 실습 프로젝트와 전체 커리큘럼의 단계별 GitLab 안내는 현재 공개 GitHub 배포본에 포함돼 있지 않습니다.
+
+## Part 2 · Ch1 — 부품 변경 질문과 데이터 이해
+
+[강의별 Hands-on 안내](docs/part02/ch01/README.md): 업무 질문·CQ 작성 → Neo4j 관찰 조회 → 원본과 가공 데이터 대조 → 출처·가정·시점 기록. 조회문 3개와 작성용 CSV 표를 제공합니다.

@@ -147,11 +147,12 @@ if __name__ == "__main__":
 
 ```bash
 uv run python ../../examples/ch03_call.py where_used --revision "확인한_ID"
-uv run python ../../examples/ch03_call.py search_docs --mode hybrid
+uv run python ../../examples/ch03_call.py search_docs --mode bm25
+uv run python ../../examples/ch03_call.py search_docs --mode vector
 ```
 
 - 사용처 도구: `sku / revision / lines / paths`와 오류·힌트를 확인합니다.
-- 검색 도구: `mode / effective_mode / hits`를 확인하고 문서 본문·연결된 부품·출처를 읽습니다.
+- 검색 도구: 동일 검색어 `corner wheels will not turn servo gear`와 k=3을 유지하고 BM25와 Vector를 각각 실행합니다. `mode / effective_mode / hits`를 확인하고 상위 문서의 본문·연결된 부품·출처를 나란히 읽습니다. 같은 문서가 반환돼도 정상이며, 방식별 점수의 절댓값으로 우열을 판단하지 않습니다.
 - 검색 질문은 “코너 바퀴가 돌지 않을 때 참고할 정비 문서는 무엇인가요?”입니다. 직접 호출은 현재 도구 설명에서 권장하는 영어 검색어를 사용합니다.
 - `effective_mode`가 `bm25`라면 벡터·결합 검색 성공으로 설명하지 않습니다. 빈 결과와 실행 오류도 구분합니다.
 - 도구가 반환한 실제 값만 사용하며 성공 건수·경로·원가를 미리 만들어 두지 않습니다.
