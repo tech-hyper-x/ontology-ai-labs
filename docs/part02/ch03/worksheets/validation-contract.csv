@@ -1,0 +1,6 @@
+rule,violation_condition,implementation,expected,actual,scope
+필수 값 누락,null인 필수 속성,ontology.py required 검사,,,빈 문자열은 별도
+연결 개수,,,,,
+중복,,,,,
+판 일치,,06-revision-consistency.cypher,,,기존 31검사와 별도
+작은 오류 입력,,07-error-cases.cypher,3행,,실제 DB 수정 아님

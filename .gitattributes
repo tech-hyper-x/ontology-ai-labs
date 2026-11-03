@@ -5,3 +5,4 @@
 
 # Preserve the upstream reference bytes recorded in SOURCE.json.
 docs/part02/ch01/reference/** -text
+docs/part02/ch03/reference/** -text

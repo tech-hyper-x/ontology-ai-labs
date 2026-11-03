@@ -1,0 +1,2 @@
+before_revision,after_revision,assembly,old_part,new_part,before_qty,after_qty,multiplier,valid_from,valid_to_exclusive,source,origin
+d6d1fbc,d092d83,drive wheel,,,,,,,,reference/change.diff,derived

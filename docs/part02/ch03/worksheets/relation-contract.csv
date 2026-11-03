@@ -1,0 +1,4 @@
+relation,definition,domain,range,cardinality,required_fields,cq
+HAS_BOM_LINE,상위 품목의 구성 내역,Product/Assembly,BOMLine,1:N,,CQ-01
+REFERS_TO,,,,,,
+IN_REVISION,,,,,,

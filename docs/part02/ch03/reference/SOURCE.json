@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/nasa-jpl/open-source-rover",
+  "path": "parts_list/parts_list.csv",
+  "before": "d6d1fbcfcc4ca546981f9e3f797d4e991bd9fe78",
+  "after": "d092d83f064c61b13fc12ecb0f11a1fb6be38111",
+  "license": "Apache-2.0",
+  "processing": "Two original CSV files unchanged; diff generated from these commits. ECN interpretation is derived educational data."
+}
