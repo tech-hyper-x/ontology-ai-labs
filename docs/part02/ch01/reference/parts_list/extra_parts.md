@@ -7,13 +7,13 @@ These parts you may either already have, depend on where you're located for a go
 ### The PCBs
 
 The electronics of the rover consist of two boards: the brain board and the motor board. To order these boards we suggest that you order from [JLCPCB](https://jlcpcb.com/), this PCB fabrication company is quite inexpensive for this board size and has good turnaround time. You'll either have to order the required minimum of 10 pieces or you can ask on the Slack group whether someone wants to put in a group order or already has some extras.
-Upload the [.zip files](../electrical/pcb/control_board/gerbers/gerber_files/) individually — one for the brain board and one for the motor board — and make sure the following settings are set:
+Upload the [.zip files](https://github.com/nasa-jpl/open-source-rover/tree/a78f9eb33e8163204e81c86140f751ce04e6538b/electrical/pcb/control_board/gerbers/gerber_files/) individually — one for the brain board and one for the motor board — and make sure the following settings are set:
 
 ![jlcpcb settings](../electrical/pcb/control_board/gerbers/jlcpcb_ordering.png)
 
 ### The body plates
 
-The body plates that attach to all sides of the body are designed to be made from laser cut acrylic, MDF, hardwood, or similar. The 2D cutout files are the `.dxf` files in the [laser cut parts folder](../mechanical/body/laser_cut_parts/README.md). They were designed to be around 3mm thick (1/8"). You can choose a material and cut them at your local makerspace's laser cutter or order them from an online service like [Sculpteo](https://www.sculpteo.com) or [SendCutSend](https://sendcutsend.com/). Check the README in that folder for more details.
+The body plates that attach to all sides of the body are designed to be made from laser cut acrylic, MDF, hardwood, or similar. The 2D cutout files are the `.dxf` files in the [laser cut parts folder](https://github.com/nasa-jpl/open-source-rover/blob/a78f9eb33e8163204e81c86140f751ce04e6538b/mechanical/body/laser_cut_parts/README.md). They were designed to be around 3mm thick (1/8"). You can choose a material and cut them at your local makerspace's laser cutter or order them from an online service like [Sculpteo](https://www.sculpteo.com) or [SendCutSend](https://sendcutsend.com/). Check the README in that folder for more details.
 
 ### A gamepad or remote controller
 
@@ -34,7 +34,7 @@ You can also use [grommets](https://www.gobilda.com/plastic-grommet-14-1-12-pack
 
 Heat shrink is a must have for keeping cables nice and snug.
 
-Take a look at the [wiring overview](../electrical/wiring/README.md#overview) to get an idea of what you will be building. You'll need crimps and connectors for DuPont, Bullet, XT30, JST, and Molex styles. Crimping doesn't have a 100% success rate, so we recommend getting extras or buying a kit if you're planning on using them for other projects as well. Here are some options for each set you need:
+Take a look at the [wiring overview](https://github.com/nasa-jpl/open-source-rover/blob/a78f9eb33e8163204e81c86140f751ce04e6538b/electrical/wiring/README.md#overview) to get an idea of what you will be building. You'll need crimps and connectors for DuPont, Bullet, XT30, JST, and Molex styles. Crimping doesn't have a 100% success rate, so we recommend getting extras or buying a kit if you're planning on using them for other projects as well. Here are some options for each set you need:
 
 * A Raspberry Pi ribbon cable, e.g. from [Adafruit](https://www.adafruit.com/product/1988) but available in many places. While you could use header pins for this connection, the cable is the cleanest solution
 * A USB-C power breakout cable if you're using a Raspberry Pi 5, e.g. from [Amazon](https://www.amazon.com/dp/B0D2C74PLY)

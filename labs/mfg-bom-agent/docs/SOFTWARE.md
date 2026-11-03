@@ -55,7 +55,7 @@ Docker 컨테이너 (docker compose 로 실행)
 | `mfg-neo4j` | `neo4j:5.26-community` | 5.26.32 | 지식 그래프 · 벡터 인덱스 · 전문 인덱스 | 7474 (Browser), 7687 (Bolt) | 약 1.5GB | GPLv3 (Community) |
 | `mfg-mcp` | 이 저장소에서 빌드 (`docker/mcp.Dockerfile`) | Python 3.12.15, uv 0.13.5 | 업무 도구 MCP 서버 (Streamable HTTP) | 8000 | 약 170MB | 실습 코드 |
 | `mfg-app` | 이 저장소에서 빌드 (`docker/app.Dockerfile`) | Python 3.12.15, uv 0.13.5 | Streamlit 화면 + LangGraph | 8501 | 약 80MB (대기 시) | 실습 코드 |
-| `mfg-init` | `mfg-mcp` 와 같은 이미지 | — | 제약·인덱스 생성 (실행 후 종료) | 없음 | — | 실습 코드 |
+| `mfg-init` | `mfg-mcp` 와 같은 이미지 | — | 실습 데이터 적재·검증·문서 연결·검색 색인 (실행 후 종료) | 없음 | — | 실습 코드 |
 
 실습 이미지의 베이스는 `python:3.12-slim` 이고, uv 는 `ghcr.io/astral-sh/uv:0.13.5` 이미지에서 복사한다. 이미지 크기는 약 1.3GB 다 (pyarrow · scipy · pandas 가 절반 이상 — streamlit 과 neo4j-graphrag 가 의존).
 

@@ -10,7 +10,9 @@
     {
       "path": "parts_list/extra_parts.md",
       "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
-      "sha256": "869d298c7d62ac20db5b83a0d42507a73e52e11b497122653133507f70d61092"
+      "sha256": "af8f6b2729aeb68d59fe158b230f034b32fa3e056eab0c3cdd07ec8b386f5b8b",
+      "source_sha256": "869d298c7d62ac20db5b83a0d42507a73e52e11b497122653133507f70d61092",
+      "modifications": "배포하지 않는 Gerber·판재·배선 문서의 상대 링크 3개를 같은 원본 커밋의 GitHub 링크로 변경. 본문과 이미지 경로는 유지."
     },
     {
       "path": "mechanical/servo_gear_replacement/README.md",
@@ -21,7 +23,117 @@
       "path": "LICENSE.txt",
       "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
       "sha256": "74227c34e68957a55d4d16091aeca5bcd240ec15883e5dee71f4b25139064413"
+    },
+    {
+      "path": "electrical/pcb/control_board/gerbers/jlcpcb_ordering.png",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "8af6b3762d6cd5217ada2c659ccabfeb9691b5e3e6c25f7a31e7c3243a624592"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/bearing_removal.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "af9f63e5a4adf38c894b602cc1bc3ce5679596fab6155e8b2c2091cc343ff2c8"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/body_disassembly.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "451693c4220b064461fc0a09742f9c269b77b1ecc6bb5c8bf503db4e48b49a38"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/bottom_middle_gear.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "05034aef4e2d90cae8fd86bae34883c93283d67feeabca84bf57263d50314fa9"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/broken_output_gear.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "626752a48412df71963ca4cbc9d2532a5d83519c396728c026e102bc787feb17"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/damaged_output_gear.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "9a351dfd6e0e60a5e05f11bd5511a56e6beb5f0f3e1db338727ffd57cde7a856"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/deformed_output_gear.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "88dce1de8c23f02caa87b735da88f4b9e69105c6897b9e82f3c909a29789d9b4"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/finishing_up.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "4d601b5b9a466525aadfc42a52c9c700cf984bb2f583204b52462b3d4bebaba6"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/grease_1.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "e6fc26424a57f8a0c8d3c8c741ec23d4bdfd6bdbac71abc06ddee9fece40a00c"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/grease_2.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "0146d5c464aa178901eb9efaa5c6b906d4c60b3208675b0722855c3c2f206aea"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/hub_shaft_disconnect.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "34166a7f93a290b5db03fe7618b6ab3287139fe19e95d610a43a75c39bbd9510"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/output_gear_removal.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "3ed7fb917844130327a44e148cbc80a8a1f80c69cd801ca57a9037abfb4c570e"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/placed_bearing.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "fc704112334d5b607b38d0146a33f32a7acf16910bd278650a0266b43bda64a4"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/placed_gears.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "1cc418f61c0cd1513328ab94862283635e00ebd28aa551cac57fd2a367f9d295"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/placed_middle_gear.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "83f7869f9bc6e24e513a8ddb78b10434f65422ffc3be173e40624d26859d85e7"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/placed_output_gear.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "7504b249261e69aefdb1c9bc823c36389c4f9eddf1b36520b185c687ffa14691"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/reference_gearset.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "fb217c93600342e28d43d8832ce6d65d712993e442dcc36a5966da7683b36794"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/removing_shaft.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "458d781e084b07697c6cca5b8449848dfab2a87b0ac58ff1417dfc2626e734ef"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/servo_screws.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "bd1c40859537af87bb70a3c37ab00775084ec6c12ac73ab42b1e34d31bd071e8"
+    },
+    {
+      "path": "mechanical/images/servo_gearset_replacement/solo_bearing.jpg",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "e451feedf89e0cb9eb598ddf934c64506ce20c3e04d36da1eee42249f443ef29"
+    },
+    {
+      "path": "parts_list/bigger_wasteland.png",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "dabd1e4f42b5067e8b82379da313c75b1f27878bc5f8bb4944e89014cfbf18f1"
+    },
+    {
+      "path": "parts_list/smaller_wasteland.png",
+      "commit": "a78f9eb33e8163204e81c86140f751ce04e6538b",
+      "sha256": "77abcf8be677858fea1b9b3da1e55a2cd46bd2f07d664f33e24f626b9b4dc761"
     }
   ],
-  "purpose": "Ch1 원본 관찰용. 원래 폴더 구조와 파일 내용을 유지."
+  "purpose": "Ch1 원본 관찰용. 원본 이미지와 폴더 구조를 유지. extra_parts.md는 배포하지 않는 파일의 링크 3개만 고정 커밋의 원본 URL로 보정. sha256은 배포 파일, source_sha256은 변경 전 원본 해시."
 }

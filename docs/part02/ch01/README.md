@@ -57,10 +57,10 @@ CQ 표의 `답변 주체`에는 그래프 조회·계산 도구·담당자 판�
 
 ### 원본 파일 직접 열기
 
-고정 커밋의 원본 세 파일을 **내용 변경 없이** 아래에 포함했습니다. [출처·해시](reference/SOURCE.json), [Apache-2.0 라이선스](reference/LICENSE.txt)를 함께 보관합니다. `data/raw/nasa-osr` 전체 저장소가 필요하지 않습니다.
+고정 커밋의 원본 세 파일과 참조 이미지를 아래에 포함했습니다. `extra_parts.md`의 미포함 파일 링크 3개는 같은 커밋의 원본 URL로 보정했으며, 본문과 이미지 경로는 유지했습니다. [출처·해시](reference/SOURCE.json), [Apache-2.0 라이선스](reference/LICENSE.txt)를 함께 보관합니다. `data/raw/nasa-osr` 전체 저장소가 필요하지 않습니다.
 
 - [부품 구성표 parts_list.csv](reference/parts_list/parts_list.csv): 휠 행의 `part #`, `cost pp `, `# req in assy`, `assembly multiplier`.
-- [대체·옵션 부품 extra_parts.md](reference/parts_list/extra_parts.md): `Different wheels` 절. 대체품과 장착 조건이 문서에 있습니다. 상대 이미지 링크는 원천 저장소를 기준으로 하며 이 발췌 폴더에는 이미지·CAD가 포함되지 않습니다.
+- [대체·옵션 부품 extra_parts.md](reference/parts_list/extra_parts.md): `Different wheels` 절. 대체품과 장착 조건이 문서에 있습니다. 문서가 참조하는 이미지도 원본 경로에 포함했습니다. CAD 등 그 밖의 원천 파일은 원본 저장소에서 확인합니다.
 - [서보 기어 정비 README](reference/mechanical/servo_gear_replacement/README.md): 증상과 정비 근거. 검색·문서 연결 구현은 Ch5에서 진행합니다.
 
 다운로드한 저장소의 `docs/part02/ch01/reference/`에서 같은 파일을 편집기로 열 수 있습니다. 원본 전체를 받아 재구성하는 `build_dataset.py`는 이번 강의의 필수 실행 명령이 아닙니다.

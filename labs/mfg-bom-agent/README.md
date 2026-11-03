@@ -154,8 +154,8 @@ compose.yaml           neo4j · mcp · app · init
 compose.langfuse.yaml  Langfuse 설치형 6개 서비스 (compose.yaml 이 include)
 INSTALL.md             운영체제 선택 → docs/install/{windows,macos,linux}.md
 docs/SOFTWARE.md       소프트웨어 구성·버전·라이선스
-docs/NEO4J_BROWSER.md  Neo4j Browser 사용 가이드 (캡처: docs/images/neo4j-browser/)
-docs/LANGFUSE.md       Langfuse 사용 가이드 (캡처: docs/images/langfuse/)
+docs/NEO4J_BROWSER.md  Neo4j Browser 사용 가이드
+docs/LANGFUSE.md       Langfuse 사용 가이드
 docs/VOYAGE.md         Voyage AI 임베딩 사용 가이드 (키 · 한도 · 재색인)
 docs/DOCKER.md         Docker 사용 가이드 (구성 · 명령 · 초기화 · 문제 해결)
 docs/UI_DESIGN.md      Streamlit 실습 화면 설계 (화면 구성 · UI–에이전트 계약 · 세션 상태 · 데모 모드)

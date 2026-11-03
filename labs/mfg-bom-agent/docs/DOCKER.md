@@ -58,7 +58,7 @@
 │        │                    │                                      │
 │        └── postgres · clickhouse · redis · minio (Langfuse 저장소)  │
 │                                                                   │
-│  mfg-init (일회성) ──► mfg-neo4j   제약 · 인덱스 생성 후 종료        │
+│  mfg-init (일회성) ──► mfg-neo4j   적재 · 검증 · 문서 연결 · 색인 후 종료        │
 └───────────────────────────────────────────────────────────────────┘
 ```
 
@@ -67,7 +67,7 @@
 | `mfg-neo4j` | 지식 그래프 · 벡터 · 전문 검색 | `neo4j:5.26-community` | 7474 (Browser), 7687 (Bolt) | `compose.yaml` |
 | `mfg-mcp` | 업무 도구를 MCP 로 노출 | 이 저장소에서 빌드 (`docker/mcp.Dockerfile`) | 8000 | `compose.yaml` |
 | `mfg-app` | Streamlit 화면 + LangGraph | 이 저장소에서 빌드 (`docker/app.Dockerfile`) | 8501 | `compose.yaml` |
-| `mfg-init` | 제약 · 인덱스 생성, 데이터 적재 (실행 후 종료) | `mfg-mcp` 와 같은 이미지 | 없음 | `compose.yaml` (profile `init`) |
+| `mfg-init` | 적재 · 검증 · 문서 연결 · 검색 색인 (실행 후 종료) | `mfg-mcp` 와 같은 이미지 | 없음 | `compose.yaml` (profile `init`) |
 | `mfg-langfuse-web` | Langfuse 화면 + 트레이스 수집 API | `langfuse:4` | 3000 | `compose.langfuse.yaml` |
 | `mfg-langfuse-worker` | 트레이스를 ClickHouse 에 저장 | `langfuse-worker:4` | 없음 | `compose.langfuse.yaml` |
 | `mfg-postgres` | Langfuse 사용자 · 프로젝트 · 설정 | `postgres:17` | 없음 | `compose.langfuse.yaml` |

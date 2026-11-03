@@ -69,10 +69,10 @@ Neo4j 가 아직 떠 있지 않다면 [INSTALL.md](../INSTALL.md) 의 5단계(Ne
 | 영역 | 내용 |
 |---|---|
 | **Nodes** | 그래프에 있는 노드 라벨 목록. 괄호 안 숫자는 전체 노드 수 |
-| **Relationships** | 관계 타입 목록. 지금은 관계가 없어 `*` 만 보인다 |
+| **Relationships** | 관계 타입 목록. 적재 후에는 BOM·부품·문서 연결 관계가 보인다 |
 | **Property keys** | 노드와 관계에 쓰인 속성 이름 목록. 온톨로지의 속성 설계가 그대로 보인다 |
 
-> **지금 화면이 비어 보이는 이유** — 라벨 9개는 `scripts/init_data.py` 가 만든 유일성 제약에서 나온 이름이다. 실제 노드는 데이터 버전을 기록한 `LabMeta` 1개뿐이고 관계는 0개다. 실습 데이터를 적재하면 채워진다.
+> `scripts/init_data.py`는 제약 생성뿐 아니라 실습 데이터 적재·검증·문서 연결·검색 색인까지 실행한다. 초기화 완료 후 업무 노드와 관계가 보여야 한다. `LabMeta` 1개만 보이거나 관계가 없다면 적재 로그와 접속한 DB를 확인한다.
 
 ---
 
@@ -97,7 +97,7 @@ SHOW CONSTRAINTS YIELD name, type, labelsOrTypes, properties
 
 （화면 캡처는 강의 자료에서 확인합니다.）
 
-노드가 아닌 결과는 표(Table)로 나온다. 제약 8개가 보이면 정상이다.
+노드가 아닌 결과는 표(Table)로 나온다. 제약 이름과 대상 라벨·속성을 `ontology/schema.yaml`의 정의와 대조한다. 적재 여부는 노드와 관계도 함께 확인한다.
 
 | 조작 | 동작 |
 |---|---|
@@ -193,7 +193,7 @@ RETURN rover, wheel, corner, motor, servo, bearing, gobilda,
 |---|---|
 | `MATCH (n) RETURN n LIMIT 25` | 노드를 25개까지만 본다. 처음 볼 때는 항상 `LIMIT` 을 붙인다 |
 | `MATCH (n) RETURN labels(n) AS label, count(*) AS cnt` | 라벨별 노드 수. 데이터가 제대로 들어갔는지 확인 |
-| `SHOW CONSTRAINTS` | 유일성 제약 목록. `init_data.py` 가 만든 8개가 보이면 정상 |
+| `SHOW CONSTRAINTS` | 유일성 제약 목록. `ontology/schema.yaml`의 라벨·속성과 대조 |
 | `CALL db.schema.visualization()` | 라벨과 관계 타입의 구조(스키마)를 그래프로 본다 |
 | `MATCH (a)-[:USES_PART]->(p:Part {part_id:'5203'}) RETURN a, p` | 특정 부품을 쓰는 조립품 찾기 — 실습 데이터 적재 후 |
 | `:clear` | 결과 프레임을 모두 지운다 (Browser 명령, Cypher 아님) |

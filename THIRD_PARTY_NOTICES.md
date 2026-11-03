@@ -8,6 +8,6 @@
 - 라이선스 사본: [LICENSE.txt](labs/mfg-bom-agent/third_party/nasa-jpl-open-source-rover/LICENSE.txt)
 - 원천 파일과 재수집 방법: [SOURCES.md](labs/mfg-bom-agent/data/raw/SOURCES.md)
 
-`labs/mfg-bom-agent/data/processed`는 원천 부품·문서 자료를 강의의 그래프 구조에 맞게 변환한 테이블입니다. 원천 ID·문서 위치를 보존하고, 실습용 공급사·가격 이력·변경 사례를 추가했습니다. 원천 저장소 전체나 CAD·이미지 파일은 배포하지 않습니다.
+`labs/mfg-bom-agent/data/processed`는 원천 부품·문서 자료를 강의의 그래프 구조에 맞게 변환한 테이블입니다. 원천 ID·문서 위치를 보존하고, 실습용 공급사·가격 이력·변경 사례를 추가했습니다. 원천 저장소 전체나 CAD 파일은 배포하지 않습니다. Ch1·Ch5의 원문 열람에 필요한 이미지 22종은 같은 원천 스냅샷에서 가져와 포함했습니다. 원천 경로와 SHA-256은 [Ch1 출처·해시](docs/part02/ch01/reference/SOURCE.json), Ch5 이미지 위치는 [Ch5 출처](docs/part02/ch05/source/SOURCES.md)를 참고합니다.
 
 프로젝트의 Python 라이브러리와 컨테이너 이미지에 관한 정보는 [SOFTWARE.md](labs/mfg-bom-agent/docs/SOFTWARE.md)를 참고합니다. 위 Apache-2.0 표기는 외부 원천 자료에 대한 것으로, 이 저장소 전체에 새 라이선스를 지정하는 문서는 아닙니다.

@@ -14,7 +14,7 @@
 | [3](#3-env-설정) | `.env` 설정 (API 키 등) | ✅ | 3분 |
 | [4](#4-python-패키지-설치) | Python 패키지 설치 | ✅ | 1~2분 |
 | [5](#5-neo4j-와-langfuse-띄우기) | Neo4j · Langfuse 컨테이너 띄우기 | | 첫 실행 3~5분, 이후 30초 |
-| [6](#6-그래프-초기화와-환경-점검) | 그래프 초기화 · 환경 점검 | | 10초 |
+| [6](#6-그래프-초기화와-환경-점검) | 그래프 초기화 · 환경 점검 | | 최초 임베딩 생성 시간에 따라 달라짐 |
 | [7](#7-mcp-서버와-화면-실행) | MCP 서버 · Streamlit 화면 실행 | | 10초 |
 | [8](#8-브라우저에서-확인) | 브라우저에서 확인 | | 2분 |
 | [9](#9-끝내기와-다시-시작하기) | 끝내기 · 다시 시작하기 | | |
@@ -25,7 +25,7 @@
 |---|---|
 | 메모리 | 16GB 이상 권장. Docker 에 8GB 이상 (Neo4j 약 3GB + Langfuse 묶음 약 2~3GB) |
 | 디스크 | 여유 20GB 이상 (Docker 이미지 + 데이터) |
-| 계정 | Anthropic API 키 (https://console.anthropic.com → API Keys) |
+| 계정 | Anthropic API 키와 의미 검색용 임베딩 API 키 (`.env.example` 참고) |
 | 네트워크 | 첫 실행 때 이미지·패키지 다운로드 (약 3GB) |
 
 설치하는 도구는 세 가지다.
@@ -171,24 +171,24 @@ mkdir -p ~/work && cd ~/work
 
 실습 코드를 받는 방법은 둘 중 하나다.
 
-**Git 저장소로 받는 경우** — 강의에서 안내한 주소를 넣는다.
+**Git 저장소로 받는 경우** — 공개 강의 저장소를 내려받는다.
 
 ```bash
-git clone <강의에서 안내한 저장소 주소> mfg-bom-agent
+git clone https://github.com/tech-hyper-x/ontology-ai-labs.git
 ```
 
 **압축 파일(zip)로 받은 경우** — 다운로드 폴더의 zip 을 작업 폴더에 푼다.
 
 ```bash
-unzip /mnt/c/Users/<Windows사용자이름>/Downloads/mfg-bom-agent.zip -d ~/work
+unzip /mnt/c/Users/<Windows사용자이름>/Downloads/ontology-ai-labs-main.zip -d ~/work
 ```
 
 `<Windows사용자이름>` 은 Windows 탐색기에서 `C:\Users` 아래 보이는 본인 폴더 이름이다.
 
-이후 모든 명령은 프로젝트 폴더 안에서 실행한다.
+ZIP으로 받았다면 `~/work/ontology-ai-labs-main`을 `~/work/ontology-ai-labs`로 이름을 바꾼다. 이후 모든 명령은 저장소 안의 제조 프로젝트 폴더에서 실행한다.
 
 ```bash
-cd ~/work/mfg-bom-agent
+cd ~/work/ontology-ai-labs/labs/mfg-bom-agent
 ```
 
 ✅ 성공 확인: `ls` 를 실행했을 때 `compose.yaml`, `pyproject.toml`, `src` 가 보인다.
@@ -222,6 +222,14 @@ cp .env.example .env
 | `EMBEDDING_API_KEY` | 본인 임베딩 API 키 | Part 1 Ch3의 의미 기반 벡터 검색 비교에 필요. LLM 키와 별도 |
 | `NEO4J_PASSWORD` | 8자 이상 아무 문자열 | Neo4j 가 처음 뜰 때 이 값으로 비밀번호가 정해진다 |
 | `LANGFUSE_INIT_USER_PASSWORD` | 아무 문자열 | Langfuse 화면 로그인 비밀번호 |
+
+별도 MCP 서버를 실행하는 이 안내에서는 `.env`에 다음 값을 추가한다. 기본 `inprocess` 설정으로 두면 앱이 별도 서버에 연결하지 않는다.
+
+```dotenv
+MCP_TRANSPORT=http
+MCP_URL=http://localhost:8000/mcp
+DEMO_MODE=none
+```
 
 **그대로 두어도 되는 값**:
 
@@ -302,10 +310,10 @@ uv run python scripts/init_data.py
 uv run python scripts/check_env.py
 ```
 
-✅ 성공 (Neo4j 패치 버전 숫자는 다를 수 있다):
+출력 형식 예시다. 버전·모델·노드 수는 실제 환경에 따라 달라진다. `nodes=<실제 노드 수>`는 적재 후 출력된 숫자를 뜻한다:
 
 ```text
-OK   Neo4j      5.26.32 community nodes=1
+OK   Neo4j      5.26.32 community nodes=<실제 노드 수>
 OK   Anthropic  claude-haiku-5-5 (Claude Haiku 5.5)
 FAIL  MCP        ConnectError: ... (서버 미기동이면 정상)
 OK   Langfuse   http://localhost:3000
@@ -322,7 +330,7 @@ MCP 서버와 Streamlit 화면은 계속 켜져 있어야 하는 프로그램이
 **터미널 2 — MCP 서버**
 
 ```bash
-cd ~/work/mfg-bom-agent && uv run python -m mfg_bom_agent.mcp_server
+cd ~/work/ontology-ai-labs/labs/mfg-bom-agent && uv run python -m mfg_bom_agent.mcp_server
 ```
 
 ✅ 성공: 아래처럼 출력되고 프롬프트로 돌아오지 않은 채 대기한다.
@@ -335,7 +343,7 @@ INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 **터미널 3 — Streamlit 화면**
 
 ```bash
-cd ~/work/mfg-bom-agent && uv run streamlit run src/mfg_bom_agent/ui.py
+cd ~/work/ontology-ai-labs/labs/mfg-bom-agent && uv run streamlit run src/mfg_bom_agent/ui.py
 ```
 
 ✅ 성공: `Local URL: http://localhost:8501` 이 출력된다. (처음 실행하면 이메일을 물어볼 수 있는데 `Enter` 로 넘어가면 된다.)
@@ -354,7 +362,7 @@ cd ~/work/mfg-bom-agent && uv run streamlit run src/mfg_bom_agent/ui.py
 
 세 화면이 모두 확인되면 실습 환경 준비가 끝났다. 🎉
 
-Neo4j Browser 화면 구성과 쿼리 실행 방법은 [Neo4j Browser 사용 가이드](../NEO4J_BROWSER.md) 에 캡처와 함께 정리되어 있다.
+Neo4j Browser 화면 구성과 쿼리 실행 방법은 [Neo4j Browser 사용 가이드](../NEO4J_BROWSER.md) 에 정리되어 있다. 공개 배포본에는 화면 캡처가 없으므로 실제 실행 화면과 대조한다.
 
 Langfuse 화면 읽는 법과 데모 트레이스 만들기(`scripts/langfuse_demo.py`)는 [Langfuse 사용 가이드](../LANGFUSE.md) 에 정리되어 있다.
 
@@ -376,7 +384,7 @@ docker compose down
 1~4단계는 다시 할 필요가 없다. 프로젝트 폴더에서 5단계부터 하면 된다.
 
 ```bash
-cd ~/work/mfg-bom-agent && docker compose up -d neo4j langfuse-web
+cd ~/work/ontology-ai-labs/labs/mfg-bom-agent && docker compose up -d neo4j langfuse-web
 ```
 
 그다음 7단계처럼 MCP 서버와 Streamlit 을 각각의 터미널에서 띄운다.
