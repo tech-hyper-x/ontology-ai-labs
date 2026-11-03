@@ -1,0 +1,2 @@
+// Ch2 관찰용 · 읽기 전용
+MATCH (v:Revision {is_latest:true}) MATCH (a:Assembly)-[:HAS_BOM_LINE]->(l:BOMLine)-[:REFERS_TO]->(p:Part) WHERE l.revision_id=v.revision_id AND p.sku IN ['3616-0014-0144','1522-0010-0060'] RETURN p.sku AS sku,a.name AS assembly,l.revision_id AS revision,l.raw_qty_text AS raw_qty,l.pack_size AS pack_size,l.qty_each_text AS qty_each,l.multiplier AS multiplier,l.qty_each*l.multiplier AS each_per_product,l.unit AS source_unit,l.pack_basis AS pack_basis,l.source_ref AS source_ref ORDER BY sku;

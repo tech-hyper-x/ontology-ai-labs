@@ -1,0 +1,6 @@
+field,source_meaning,stored_meaning,rule,basis,check,open_issue
+raw_qty,원천 상품/팩 수,원천 값,Decimal로 보존,원본 CSV,0.5 보존,
+qty_each,조립품당 낱개 수,,,,,
+multiplier,조립품 배수,,,,,
+unit_price,상품/팩당 가격,,,,,
+pack_basis,포장 수량의 근거,,,,,

@@ -1,0 +1,2 @@
+// Ch2 관찰용 · 읽기 전용
+MATCH (v:Revision {is_latest:true}) MATCH (l:BOMLine {revision_id:v.revision_id}) RETURN count(l) AS latest_lines,sum(CASE WHEN l.raw_qty IS NULL OR l.pack_size IS NULL OR l.qty_each IS NULL THEN 1 ELSE 0 END) AS missing_quantity_fields,sum(CASE WHEN abs(l.qty_each-l.raw_qty*l.pack_size)>0.000001 THEN 1 ELSE 0 END) AS normalization_mismatch,sum(CASE WHEN l.pack_basis='none' THEN 1 ELSE 0 END) AS assumed_pack_one;

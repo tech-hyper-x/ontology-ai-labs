@@ -1,0 +1,5 @@
+source_file,source_field,target_table,target_field,transform,unit,missing_rule,origin,check
+parts_list.csv,part #,plm_item_master,sku,원천 값 보존,,원천 품번과 내부 ID 대응,source,같은 휠 SKU 확인
+parts_list.csv,cost pp ,erp_supplier_item,unit_price,달러·쉼표 제거 후 Decimal,USD/팩,빈 가격은 미상,source,팩 크기·가격 단위 확인
+parts_list.csv,# req in assy,,,,,,,
+parts_list.csv,assembly multiplier,,,,,,,

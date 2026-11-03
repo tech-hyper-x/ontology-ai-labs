@@ -71,3 +71,7 @@ OS별 도구 설치를 마치면 [공통 상세 설치 가이드](docs/setup/REA
 ## Part 2 · Ch1 — 부품 변경 질문과 데이터 이해
 
 [강의별 Hands-on 안내](docs/part02/ch01/README.md): 업무 질문·CQ 작성 → Neo4j 관찰 조회 → 원본과 가공 데이터 대조 → 출처·가정·시점 기록. 조회문 3개와 작성용 CSV 표를 제공합니다.
+
+## Part 2 · Ch2 — 부품 데이터 연결과 정리
+
+[매핑·정규화 Hands-on 안내](docs/part02/ch02/README.md): 한 행 실행 예제, 매핑표·단위 규칙 표, 오류 수정 과제, 읽기 전용 Neo4j 조회문.
