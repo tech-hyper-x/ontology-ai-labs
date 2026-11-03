@@ -2,3 +2,6 @@
 *.csv text eol=lf
 *.py text eol=lf
 *.md text eol=lf
+
+# Preserve the upstream reference bytes recorded in SOURCE.json.
+docs/part02/ch01/reference/** -text
