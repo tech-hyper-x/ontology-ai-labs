@@ -1,0 +1,233 @@
+{
+ "question": "모터 가격이 15% 오르면, 로봇 차량 100대를 만들 때 모터 부품비는 얼마나 늘어나나요?",
+ "response": {
+  "run_id": "canned-Q6",
+  "status": "completed",
+  "mode": "kg_tools",
+  "intent": "price_change",
+  "headline": "모터 가격이 15% 오르면, 로봇 차량 100대를 만드는 데 필요한 모터 부품비는 $3,869.10 늘어납니다.",
+  "summary": "모터 부품비 $3,869.10 증가",
+  "highlights": [
+   "모터 부품비"
+  ],
+  "subject": "모터 · 5203-2402-0027",
+  "basis": "로봇 차량 100대 (필요 모터 600개)",
+  "findings": [
+   "로봇 차량 1대에 모터 6개가 필요합니다.",
+   "기존 단가 $42.99에 15% 인상을 적용했습니다.",
+   "변경 전 모터 부품비는 $25,794.00, 변경 후는 $29,663.10입니다."
+  ],
+  "follow_ups": [
+   "공급사에 인상 단가와 적용 시점을 확인해야 실제 증가액을 확정할 수 있습니다."
+  ],
+  "notes": [
+   "15% 단가 인상은 시나리오 가정이며, 실습 자료의 단가 $42.99 기준으로 계산한 금액입니다(자료 확인일 2026-10-22). 실제 가격 적용일은 원본에 없어 미상입니다.",
+   "이 금액은 모터 부품비만 계산한 값으로, 다른 부품비·공정비·공임은 포함하지 않습니다."
+  ],
+  "key_facts": [],
+  "doc_notes": [],
+  "cited_labels": [
+   "추가 모터 부품비 (100대)",
+   "변경 전 모터 부품비 (100대)",
+   "변경 후 모터 부품비 (100대)",
+   "필요 모터 수량 (100대)"
+  ],
+  "conclusion": "모터 가격이 15% 오르면, 로봇 차량 100대를 만드는 데 필요한 모터 부품비는 $3,869.10 늘어납니다.\n\n모터 부품비 $3,869.10 증가\n\n확인된 내용\n- 로봇 차량 1대에 모터 6개가 필요합니다.\n- 기존 단가 $42.99에 15% 인상을 적용했습니다.\n- 변경 전 모터 부품비는 $25,794.00, 변경 후는 $29,663.10입니다.\n\n추가로 확인할 사항\n- 공급사에 인상 단가와 적용 시점을 확인해야 실제 증가액을 확정할 수 있습니다.\n\n15% 단가 인상은 시나리오 가정이며, 실습 자료의 단가 $42.99 기준으로 계산한 금액입니다(자료 확인일 2026-10-22). 실제 가격 적용일은 원본에 없어 미상입니다.\n이 금액은 모터 부품비만 계산한 값으로, 다른 부품비·공정비·공임은 포함하지 않습니다.",
+  "calculations": [
+   {
+    "label": "변경 전 모터 부품비 (100대)",
+    "kind": "requirement",
+    "value": "25794.00",
+    "unit": "USD",
+    "tool": "change_impact",
+    "formula": "600개 × 현재 단가",
+    "inputs": {
+     "units": 100,
+     "part": "5203-2402-0027",
+     "percent": "15"
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "parts_list.csv",
+    "note": null
+   },
+   {
+    "label": "변경 후 모터 부품비 (100대)",
+    "kind": "requirement",
+    "value": "29663.10",
+    "unit": "USD",
+    "tool": "change_impact",
+    "formula": "600개 × 단가 15% 변경",
+    "inputs": {
+     "units": 100,
+     "part": "5203-2402-0027",
+     "percent": "15"
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "parts_list.csv",
+    "note": null
+   },
+   {
+    "label": "필요 모터 수량 (100대)",
+    "kind": "quantity",
+    "value": "600",
+    "unit": "ea",
+    "tool": "change_impact",
+    "formula": "1대당 수량 × 100대",
+    "inputs": {
+     "units": 100,
+     "part": "5203-2402-0027",
+     "percent": "15"
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "parts_list.csv",
+    "note": null
+   },
+   {
+    "label": "추가 모터 부품비 (100대)",
+    "kind": "diff",
+    "value": "3869.10",
+    "unit": "USD",
+    "tool": "change_impact",
+    "formula": "($42.99 × 15%) × 600개 = 부품비 차이",
+    "inputs": {
+     "units": 100,
+     "part": "5203-2402-0027",
+     "percent": "15"
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "parts_list.csv",
+    "note": null
+   }
+  ],
+  "graph_paths": [
+   {
+    "text": "Rover → drive wheel (배수 ×6) → BOMLine (qty 1 ea) → 5203-2402-0027 · 로봇 차량 1대당 6 ea",
+    "tool": "where_used",
+    "revision": "6b2c5a9",
+    "detail": {
+     "source_ref": "parts_list/parts_list.csv@6b2c5a9#row3",
+     "assembly": "drive wheel",
+     "multiplier": 6,
+     "raw_qty": "1",
+     "pack_size": 1,
+     "each_per_product": "6",
+     "sku": "5203-2402-0027",
+     "name": "5203 Series Yellow Jacket Planetary Gear Motor (26.9:1 Ratio, 24mm Length 8mm REX™ Shaft, 223 RPM, 3.3 - 5V Encoder)"
+    }
+   }
+  ],
+  "documents": [],
+  "sources": {
+   "snapshot": "a78f9eb",
+   "revision": "6b2c5a9",
+   "as_of": "2026-10-22",
+   "price_date_known": false,
+   "assumptions": [
+    "단가 15% 변경은 시나리오 가정"
+   ],
+   "exclusions": [],
+   "data_used": [
+    "Neo4j 그래프 (BOM · 판 · ECN · 공급)",
+    "정비 문서 · 이슈 검색"
+   ],
+   "tools_available": [
+    "find_part",
+    "where_used",
+    "bom_explode",
+    "purchase_quantity",
+    "cost_rollup",
+    "revision_diff",
+    "change_impact",
+    "supply_risk",
+    "search_docs"
+   ]
+  },
+  "verification": {
+   "status": "passed",
+   "checks": [
+    {
+     "target": "추가 모터 부품비 (100대)",
+     "cited_value": "3869.10",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "변경 전 모터 부품비 (100대)",
+     "cited_value": "25794.00",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "변경 후 모터 부품비 (100대)",
+     "cited_value": "29663.10",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "필요 모터 수량 (100대)",
+     "cited_value": "600",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    }
+   ],
+   "unverified_numbers": [],
+   "reason": ""
+  },
+  "trace": {
+   "trace_id": "b5eccced9b2e6803c013b69ff8444dc3",
+   "url": "http://localhost:3000/project/mfg-bom-agent/traces/b5eccced9b2e6803c013b69ff8444dc3",
+   "session_id": "canned-Q6"
+  },
+  "context": {
+   "role": "설계변경 엔지니어",
+   "revision": null,
+   "as_of": "2026-10-22",
+   "price_date_known": false,
+   "dataset_version": "mfg-0.1",
+   "snapshot": "a78f9eb",
+   "llm_model": "claude-haiku-5-5",
+   "demo_mode": "none"
+  },
+  "pending_question": null,
+  "error": null,
+  "tool_calls": 3
+ },
+ "events": [
+  {
+   "step": "질문 계획",
+   "detail": "price_change · change-and-supply-risk"
+  },
+  {
+   "step": "find_part",
+   "detail": "확정 5203-2402-0027"
+  },
+  {
+   "step": "where_used",
+   "detail": "경로 1개"
+  },
+  {
+   "step": "change_impact",
+   "detail": "후보 2곳 · 3869.10 USD"
+  },
+  {
+   "step": "답변 작성",
+   "detail": "change-and-supply-risk"
+  },
+  {
+   "step": "출력 검사",
+   "detail": "passed"
+  }
+ ]
+}

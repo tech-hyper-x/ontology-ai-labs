@@ -1,0 +1,47 @@
+# 수강생 오류 수정 과제 입력 (Part 2). 원천 · 적재된 그래프는 건드리지 않고 이 작은 입력으로만 실패를 만든다.
+# 실행: uv run python scripts/exercise.py <과제 ID>   · 안내: HANDS_ON.md "직접 고쳐 보기"
+ch2_2_pack:
+  clip: P2 Ch2-2 단위와 식별자 정규화
+  # 품명에 포장 단위가 "Pack of 4" 로 적힌 행. 현재 정규식은 "4 Pack" · "4-pack" 만 잡아 낱개 판매(1개)로 읽는다
+  rows:
+    - long_name: "8mm ID Spacer, 6mm Length (Pack of 4)"
+      short_name: "8mm Spacer"
+      raw_qty: "0.5"
+      multiplier: 2
+      expected_pack_size: 4
+      expected_each_per_product: "4"
+    - long_name: "M4 x 6mm Button Head Screw 25-pack"   # 이미 되는 표기 — 고친 뒤에도 그대로 맞아야 한다
+      short_name: "M4 Screw"
+      raw_qty: "4"
+      multiplier: 1
+      expected_pack_size: 25
+      expected_each_per_product: "100"
+ch5_1_link:
+  clip: P2 Ch5-1 청크 출처와 개체 연결
+  # 바퀴 배선 문서가 "servo" 를 두 번 언급해 서보 부품에 자동 연결됐다. 서보 교체 절차가 아니므로 빼야 한다
+  doc_id: "exercise/wheel_wiring.md#1"
+  auto_links:
+    - {doc_id: "exercise/wheel_wiring.md#1", part_id: "P-2000-0025-0002", method: word, confidence: 0.7, mention: servo}
+    - {doc_id: "exercise/wheel_wiring.md#1", part_id: "P-3616-0014-0144", method: sku, confidence: 1.0, mention: 3616-0014-0144}
+  must_remove: ["P-2000-0025-0002"]
+  must_keep: ["P-3616-0014-0144"]
+ch7_2_answer:
+  clip: P2 Ch7-2 답변 근거 검증
+  # 도구 사실: 서보 로버 1대당 4개 (0.5팩 × 4개입 × 배수 2), 모터 단가 변경 차이 -13.98 USD (감소)
+  cases:
+    - name: 인용 없이 수량을 틀리게 쓴 답 (검토 보고서 F1)
+      headline: "서보는 로버 1대당 2개입니다."
+      cited: []
+      expected: failed
+    - name: 인용 값 · 문장 모두 맞는 답
+      headline: "서보는 로봇 차량 1대당 4개가 필요합니다."
+      cited: [{label: "필요 서보 수량 (1대)", value: "4", unit: ea}]
+      expected: passed
+    - name: 감소를 증가로 쓴 답
+      headline: "모터 부품비가 $13.98 증가합니다."
+      cited: [{label: "추가 모터 부품비 (1대)", value: "13.98", unit: USD}]
+      expected: failed
+    - name: 낱개 4개를 4팩으로 쓴 답
+      headline: "서보 4팩이 필요합니다."
+      cited: [{label: "필요 서보 수량 (1대)", value: "4", unit: pack}]
+      expected: failed

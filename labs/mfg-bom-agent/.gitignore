@@ -1,0 +1,33 @@
+# 비밀정보 — .env 로 시작하는 파일은 모두 제외한다 (".env copy" · ".env.bak" 같은 사본 포함). 예시 파일만 올린다.
+.env*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 실행 산출물 (outputs/.gitkeep 만 유지)
+outputs/*
+!outputs/.gitkeep
+
+# 대용량 데이터 (원천 스냅샷은 별도 배포)
+# 내려받은 원천 저장소 · API 덤프는 커밋하지 않는다. 받는 방법과 출처는 data/raw/SOURCES.md
+data/raw/nasa-osr/
+data/raw/nasa-osr-github/
+data/raw/**/*.csv
+data/raw/**/*.json
+data/raw/**/*.parquet
+data/embeddings/**/*.parquet
+data/embeddings/**/*.npy
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/

@@ -1,0 +1,3 @@
+fm_id,part_id,severity,name,symptom,doc_path,doc_line,origin
+FM-SERVO-GEARSET,P-2000-0025-0002,high,서보 기어 세트 파손 (중앙 축 전단 · 출력 기어 이 빠짐),코너 휠이 돌지 않음 (조향 불가),mechanical/servo_gear_replacement/README.md,3,derived
+FM-SERVO-CONNECTION,P-2000-0025-0002,medium,서보 전기 연결 불량 (느슨한 커넥터),코너 휠이 돌지 않음 (조향 불가),mechanical/servo_gear_replacement/README.md,18,derived

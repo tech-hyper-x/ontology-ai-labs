@@ -1,0 +1,348 @@
+{
+ "question": "휠(3616-0014-0144)이 단종된다면, 로봇 차량 50대 생산에 몇 개가 필요하고 비용은 얼마이며 대신 쓸 부품이 있나요?",
+ "response": {
+  "run_id": "canned-Q4",
+  "status": "completed",
+  "mode": "kg_tools",
+  "intent": "discontinue",
+  "headline": "로봇 차량 50대 생산에는 휠 300개($7,497.00)가 필요하고, 대신 쓸 수 있는 휠은 2종입니다.",
+  "summary": "휠 300개 · $7,497.00",
+  "highlights": [
+   "휠",
+   "대신 쓸 수 있는 휠"
+  ],
+  "subject": "휠 · 3616-0014-0144",
+  "basis": "로봇 차량 50대",
+  "findings": [
+   "로봇 차량 1대에 휠 6개가 필요합니다.",
+   "현재 데이터에 등록된 대체 휠은 3616-0014-0192(Wasteland Wheel)와 5374X(Traxxas) 2종입니다.",
+   "3616-0014-0192로 바꾸면 50대 기준 휠 부품비가 $4,500.00 늘어납니다(기존 $7,497.00 → $11,997.00).",
+   "5374X로 바꾸면 50대 기준 휠 부품비가 $2,254.50 줄어듭니다(기존 $7,497.00 → $5,242.50). 다만 모터 허브에 맞추려면 드릴 가공이 필요합니다."
+  ],
+  "follow_ups": [
+   "5374X는 드릴 가공이 필요하므로, 가공 공수와 비용을 생산 담당자에게 확인해야 가격 차이의 실제 의미를 판단할 수 있습니다.",
+   "3616-0014-0192는 가공 없이 장착되지만 소프트웨어 휠 크기 설정을 바꿔야 하므로, 제어 담당자에게 설정 변경 공수를 확인해야 합니다."
+  ],
+  "notes": [
+   "휠 단가는 실습 자료의 값(개당 $24.99, 자료 확인일 2026-10-22)으로 계산했고, 실제 가격 적용일은 확인되지 않았습니다(가격 적용일 미상).",
+   "단종은 교육용 가정이며, 소요 금액은 단종 손실이 아니라 휠 소요 금액입니다. 단종 추가 비용(재작업 · 설정 변경 · 재설계 공수)은 미확인입니다.",
+   "대체 휠 가격은 원천 문서에 적힌 값이며 재작업 · 설정 변경 공수는 빠져 있습니다. 3616-0014-0192 가격은 2026-10-25 확인 값입니다.",
+   "등록 공급사는 gobilda.com(원천 부품표 구매처)과 maker-depot(교육용 가상 공급사)입니다. 실습 데이터의 한계로 공급사 정보가 제한적입니다."
+  ],
+  "key_facts": [
+   {
+    "label": "추가 비용",
+    "value": "미확인"
+   }
+  ],
+  "doc_notes": [
+   {
+    "doc_path": "parts_list/extra_parts.md",
+    "line": null,
+    "summary_ko": "휠 대체 후보 2종(3616-0014-0192, 5374X)의 호환성과 가격을 정리한 문서입니다.",
+    "quote": ""
+   }
+  ],
+  "cited_labels": [
+   "필요 휠 수량 (50대)",
+   "휠 소요 금액 (50대)",
+   "대체 휠 3616-0014-0192 비용 차이 (50대)",
+   "대체 휠 3616-0014-0192 부품비 (50대)",
+   "대체 휠 5374X 비용 차이 (50대)",
+   "대체 휠 5374X 부품비 (50대)"
+  ],
+  "conclusion": "로봇 차량 50대 생산에는 휠 300개($7,497.00)가 필요하고, 대신 쓸 수 있는 휠은 2종입니다.\n\n휠 300개 · $7,497.00\n\n확인된 내용\n- 로봇 차량 1대에 휠 6개가 필요합니다.\n- 현재 데이터에 등록된 대체 휠은 3616-0014-0192(Wasteland Wheel)와 5374X(Traxxas) 2종입니다.\n- 3616-0014-0192로 바꾸면 50대 기준 휠 부품비가 $4,500.00 늘어납니다(기존 $7,497.00 → $11,997.00).\n- 5374X로 바꾸면 50대 기준 휠 부품비가 $2,254.50 줄어듭니다(기존 $7,497.00 → $5,242.50). 다만 모터 허브에 맞추려면 드릴 가공이 필요합니다.\n\n추가로 확인할 사항\n- 5374X는 드릴 가공이 필요하므로, 가공 공수와 비용을 생산 담당자에게 확인해야 가격 차이의 실제 의미를 판단할 수 있습니다.\n- 3616-0014-0192는 가공 없이 장착되지만 소프트웨어 휠 크기 설정을 바꿔야 하므로, 제어 담당자에게 설정 변경 공수를 확인해야 합니다.\n\n휠 단가는 실습 자료의 값(개당 $24.99, 자료 확인일 2026-10-22)으로 계산했고, 실제 가격 적용일은 확인되지 않았습니다(가격 적용일 미상).\n단종은 교육용 가정이며, 소요 금액은 단종 손실이 아니라 휠 소요 금액입니다. 단종 추가 비용(재작업 · 설정 변경 · 재설계 공수)은 미확인입니다.\n대체 휠 가격은 원천 문서에 적힌 값이며 재작업 · 설정 변경 공수는 빠져 있습니다. 3616-0014-0192 가격은 2026-10-25 확인 값입니다.\n등록 공급사는 gobilda.com(원천 부품표 구매처)과 maker-depot(교육용 가상 공급사)입니다. 실습 데이터의 한계로 공급사 정보가 제한적입니다.\n\n추가 비용: 미확인",
+  "calculations": [
+   {
+    "label": "필요 휠 수량 (50대)",
+    "kind": "quantity",
+    "value": "300",
+    "unit": "ea",
+    "tool": "bom_explode",
+    "formula": "어셈블리당 1개 × 어셈블리 6개 × 50대",
+    "inputs": {
+     "units": 50,
+     "part": "3616-0014-0144"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "parts_list.csv",
+    "note": null
+   },
+   {
+    "label": "휠 소요 금액 (50대)",
+    "kind": "requirement",
+    "value": "7497.00",
+    "unit": "USD",
+    "tool": "cost_rollup",
+    "formula": "300개 × $24.99",
+    "inputs": {
+     "units": 50,
+     "part": "3616-0014-0144"
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "parts_list.csv",
+    "note": null
+   },
+   {
+    "label": "휠 구매 금액 (팩 · MOQ)",
+    "kind": "purchase",
+    "value": null,
+    "unit": "USD",
+    "tool": null,
+    "formula": "",
+    "inputs": {},
+    "revision": null,
+    "as_of": null,
+    "source": "",
+    "note": "구매 질문이 아니므로 산정하지 않음 (purchase_quantity 로 계산 가능)"
+   },
+   {
+    "label": "휠 단종 추가 비용",
+    "kind": "extra_cost",
+    "value": null,
+    "unit": "USD",
+    "tool": null,
+    "formula": "",
+    "inputs": {},
+    "revision": null,
+    "as_of": null,
+    "source": "",
+    "note": "재작업 · 설정 변경 · 재설계 공수 조건이 없어 미확인 (대체 부품 가격 차이는 따로 계산)"
+   },
+   {
+    "label": "대체 휠 3616-0014-0192 부품비 (50대)",
+    "kind": "requirement",
+    "value": "11997.00",
+    "unit": "USD",
+    "tool": "supply_risk",
+    "formula": "300개 × $39.99",
+    "inputs": {
+     "units": 50,
+     "part": "3616-0014-0144",
+     "alternate": "3616-0014-0192"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "parts_list/extra_parts.md",
+    "note": "문서의 '1대당 $90 추가'와 goBILDA 상품 페이지 가격 $39.99 (2026-10-25 확인)"
+   },
+   {
+    "label": "대체 휠 3616-0014-0192 비용 차이 (50대)",
+    "kind": "diff",
+    "value": "4500.00",
+    "unit": "USD",
+    "tool": "supply_risk",
+    "formula": "300개 × $39.99 − 300개 × $24.99 = 부품비 차이",
+    "inputs": {
+     "units": 50,
+     "part": "3616-0014-0144",
+     "alternate": "3616-0014-0192"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "parts_list/extra_parts.md",
+    "note": "문서의 '1대당 $90 추가'와 goBILDA 상품 페이지 가격 $39.99 (2026-10-25 확인)"
+   },
+   {
+    "label": "대체 휠 5374X 부품비 (50대)",
+    "kind": "requirement",
+    "value": "5242.50",
+    "unit": "USD",
+    "tool": "supply_risk",
+    "formula": "150팩(2개/팩) × $34.95",
+    "inputs": {
+     "units": 50,
+     "part": "3616-0014-0144",
+     "alternate": "5374X"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "parts_list/extra_parts.md",
+    "note": "문서에 적힌 2개 1쌍 가격 (DollarHobbyz). 문서의 '약 $135 절감'은 휠 단가로 계산한 차이와 달라 휠 가격만 비교"
+   },
+   {
+    "label": "대체 휠 5374X 비용 차이 (50대)",
+    "kind": "diff",
+    "value": "-2254.50",
+    "unit": "USD",
+    "tool": "supply_risk",
+    "formula": "150팩(2개/팩) × $34.95 − 300개 × $24.99 = 부품비 차이",
+    "inputs": {
+     "units": 50,
+     "part": "3616-0014-0144",
+     "alternate": "5374X"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "parts_list/extra_parts.md",
+    "note": "문서에 적힌 2개 1쌍 가격 (DollarHobbyz). 문서의 '약 $135 절감'은 휠 단가로 계산한 차이와 달라 휠 가격만 비교"
+   }
+  ],
+  "graph_paths": [
+   {
+    "text": "Rover → drive wheel (배수 ×6) → BOMLine (qty 1 ea) → 3616-0014-0144 · 로봇 차량 1대당 6 ea",
+    "tool": "where_used",
+    "revision": "6b2c5a9",
+    "detail": {
+     "source_ref": "parts_list/parts_list.csv@6b2c5a9#row1",
+     "assembly": "drive wheel",
+     "multiplier": 6,
+     "raw_qty": "1",
+     "pack_size": 1,
+     "each_per_product": "6",
+     "sku": "3616-0014-0144",
+     "name": "Wasteland Wheel (144mm Diameter, 52mm Width)"
+    }
+   },
+   {
+    "text": "등록된 대체 부품: 3616-0014-0192, 5374X · 등록 공급사: maker-depot, gobilda.com",
+    "tool": "supply_risk",
+    "revision": "6b2c5a9",
+    "detail": {}
+   }
+  ],
+  "documents": [],
+  "sources": {
+   "snapshot": "a78f9eb",
+   "revision": "6b2c5a9",
+   "as_of": "2026-10-22",
+   "price_date_known": false,
+   "assumptions": [
+    "품명에 포장 표기가 없어 낱개(1개) 상품으로 봄",
+    "단종은 교육용 가정",
+    "maker-depot 은(는) 교육용 가상 공급사 (원천 데이터에 없음). gobilda.com 은(는) 원천 부품표의 구매처"
+   ],
+   "exclusions": [
+    "재고 · 공임 · 운송비 제외"
+   ],
+   "data_used": [
+    "Neo4j 그래프 (BOM · 판 · ECN · 공급)",
+    "정비 문서 · 이슈 검색"
+   ],
+   "tools_available": [
+    "find_part",
+    "where_used",
+    "bom_explode",
+    "purchase_quantity",
+    "cost_rollup",
+    "revision_diff",
+    "change_impact",
+    "supply_risk",
+    "search_docs"
+   ]
+  },
+  "verification": {
+   "status": "passed",
+   "checks": [
+    {
+     "target": "필요 휠 수량 (50대)",
+     "cited_value": "300",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "휠 소요 금액 (50대)",
+     "cited_value": "7497.00",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "대체 휠 3616-0014-0192 비용 차이 (50대)",
+     "cited_value": "4500.00",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "대체 휠 3616-0014-0192 부품비 (50대)",
+     "cited_value": "11997.00",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "대체 휠 5374X 비용 차이 (50대)",
+     "cited_value": "-2254.50",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "대체 휠 5374X 부품비 (50대)",
+     "cited_value": "5242.50",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    }
+   ],
+   "unverified_numbers": [],
+   "reason": ""
+  },
+  "trace": {
+   "trace_id": "3fd04b445101952e1e2843b963b37802",
+   "url": "http://localhost:3000/project/mfg-bom-agent/traces/3fd04b445101952e1e2843b963b37802",
+   "session_id": "canned-Q4"
+  },
+  "context": {
+   "role": "설계변경 엔지니어",
+   "revision": null,
+   "as_of": "2026-10-22",
+   "price_date_known": false,
+   "dataset_version": "mfg-0.1",
+   "snapshot": "a78f9eb",
+   "llm_model": "claude-haiku-5-5",
+   "demo_mode": "none"
+  },
+  "pending_question": null,
+  "error": null,
+  "tool_calls": 6
+ },
+ "events": [
+  {
+   "step": "질문 계획",
+   "detail": "discontinue · change-and-supply-risk"
+  },
+  {
+   "step": "find_part",
+   "detail": "확정 3616-0014-0144"
+  },
+  {
+   "step": "where_used",
+   "detail": "경로 1개"
+  },
+  {
+   "step": "bom_explode",
+   "detail": "300 ea"
+  },
+  {
+   "step": "supply_risk",
+   "detail": "부품 1개 · 대체품 2개"
+  },
+  {
+   "step": "cost_rollup",
+   "detail": "7497.00 USD"
+  },
+  {
+   "step": "search_docs",
+   "detail": "문서 5개"
+  },
+  {
+   "step": "답변 작성",
+   "detail": "change-and-supply-risk"
+  },
+  {
+   "step": "출력 검사",
+   "detail": "passed"
+  }
+ ]
+}

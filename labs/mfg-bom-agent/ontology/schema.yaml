@@ -1,0 +1,162 @@
+# 제조 BOM 변경 영향 분석 온톨로지 (Part 2 Ch3-2 제조 온톨로지와 검증 규칙)
+#
+# 이 파일이 "의미의 원본"이다. Neo4j 는 이 정의대로 데이터를 담는 저장소이고,
+# 제약 조건 · 검증 쿼리 · 에이전트에게 주는 스키마 설명은 모두 이 파일에서 만든다 (설계 덱 30장).
+# 클래스 · 관계마다 근거 CQ(cq)를 적는다. 어떤 CQ 에도 쓰이지 않는 요소는 만들지 않는다.
+#
+# 형식: classes(개념) · relations(관계) · rules(추론 규칙) · competency_questions(CQ)
+
+version: "1.0"
+snapshot: a78f9eb
+reuse:
+  # 재사용 검토 결과 (설계 덱 20장). 정의 차용 = 속성 이름과 의미를 따른다, 정렬 = 대응표만 둔다.
+  - {standard: PROV-O, level: 정의 차용, mapping: "모든 노드 · 관계의 origin · source_ref · snapshot"}
+  - {standard: IOF Core, level: 정렬, mapping: "Product ≈ iof:Product, Part ≈ iof:MaterialArtifact"}
+  - {standard: schema.org, level: 정렬, mapping: "Supplier ≈ schema:Organization"}
+
+classes:
+  Product:
+    definition: 판매 · 생산 단위의 완제품
+    id: product_id
+    required: [product_id, name]
+    cq: [CQ-01, CQ-13]
+  Assembly:
+    definition: 제품을 이루는 조립 단위 (drive wheel · rocker bogie · body · general · corner · electronics)
+    id: assembly_id
+    required: [assembly_id, name, domain]
+    cq: [CQ-01, CQ-03]
+  BOMLine:
+    definition: 특정 판에서 상위 품목이 하위 품목을 몇 개 쓰는지 기록한 항목
+    id: bomline_id
+    required: [bomline_id, revision_id, raw_qty, pack_size, qty_each, multiplier, unit]
+    notes: >-
+      raw_qty 는 원천 수량(팩 단위), qty_each 는 낱개 환산 수량(raw_qty × pack_size).
+      multiplier 는 부품 라인에만 의미가 있고, 제품 → 어셈블리 라인은 1 이다 (배수 1회 적용).
+    cq: [CQ-02, CQ-07]
+  Part:
+    definition: 구매 · 조립되는 개별 부품
+    id: part_id
+    required: [part_id, sku, name, domain, pack_size]
+    notes: part_id 는 내부 ID(P-<SKU>, E-<MPN>), sku 는 원천 품번. aliases 는 부품명 · 약칭 (개체 연결에 사용)
+    cq: [CQ-01, CQ-04, CQ-05, CQ-08, CQ-10, CQ-12]
+  Supplier:
+    definition: 부품을 판매하는 회사 (원천 링크 도메인 또는 교육용 가상 공급사)
+    id: supplier_id
+    required: [supplier_id, name, origin]
+    cq: [CQ-05, CQ-06]
+  Revision:
+    definition: 특정 시점의 BOM 판 (parts_list.csv 릴리스 커밋)
+    id: revision_id
+    required: [revision_id, valid_from, is_latest]
+    notes: 적용 구간은 [valid_from, valid_to) — 저장소 반영일 기준이며 실제 생산 적용일이 아니다
+    cq: [CQ-07, CQ-14]
+  ECN:
+    definition: 연속한 두 판의 차이를 정리한 실습용 변경 통지 (커밋 메시지 기반)
+    id: ecn_id
+    required: [ecn_id, revision_from, revision_to, ecn_date, title]
+    cq: [CQ-07, CQ-08]
+  FailureMode:
+    definition: 부품의 고장 양상 (정비 문서 문장에서 파생)
+    id: fm_id
+    required: [fm_id, name, symptom, severity]
+    cq: [CQ-11]
+  Document:
+    definition: 정비 · 조립 문서의 한 절 또는 GitHub 이슈 하나 (검색 단위)
+    id: doc_id
+    required: [doc_id, source, path, title, text]
+    cq: [CQ-11]
+
+relations:
+  HAS_BOM_LINE:
+    definition: 상위 품목이 구성 라인을 가진다
+    domain: [Product, Assembly]
+    range: [BOMLine]
+    cardinality: "1:N"
+    cq: [CQ-01, CQ-02]
+  REFERS_TO:
+    definition: 구성 라인이 가리키는 하위 품목
+    domain: [BOMLine]
+    range: [Assembly, Part]
+    cardinality: "N:1 (라인마다 정확히 1)"
+    cq: [CQ-01, CQ-03]
+  IN_REVISION:
+    definition: 라인이 속한 BOM 판
+    domain: [BOMLine]
+    range: [Revision]
+    cardinality: "N:1 (라인마다 정확히 1)"
+    cq: [CQ-14]
+  SUPPLIED_BY:
+    definition: 공급사가 부품을 판매한다 (구매 조건은 관계 속성)
+    domain: [Part]
+    range: [Supplier]
+    cardinality: "N:M"
+    required: [unit_price, currency, pack_size, moq_packs, observed_at, origin]
+    notes: unit_price 는 팩당 가격. observed_at 은 관측일(스냅샷)이고 실제 가격 기준일(price_date)은 원천에 없어 비워 둔다
+    cq: [CQ-05, CQ-06]
+  CHANGED_BY:
+    definition: 라인이 ECN 으로 추가 · 삭제 · 수량 변경되었다
+    domain: [BOMLine]
+    range: [ECN]
+    required: [change_type]
+    cq: [CQ-07]
+  SUPERSEDES:
+    definition: 새 부품이 이전 부품을 대체했다 (교체 이력)
+    domain: [Part]
+    range: [Part]
+    required: [ecn_id, effective_date]
+    constraints: [자기 자신 금지, 순환 금지]
+    cq: [CQ-08]
+  ALTERNATE_OF:
+    definition: 조건부로 대신 쓸 수 있는 부품 (방향 있음, 역방향은 따로 검증)
+    domain: [Part]
+    range: [Part]
+    required: [compatibility, source_doc]
+    optional: [pack_price, pack_size, price_note]  # 문서에 적힌 대체 부품 가격 (BOM 밖 부품)
+    cq: [CQ-10]
+  HAS_FAILURE_MODE:
+    definition: 부품의 고장 양상
+    domain: [Part]
+    range: [FailureMode]
+    required: [severity]
+    cq: [CQ-11]
+  DESCRIBED_IN:
+    definition: 부품 · 고장 모드가 문서에 기술되어 있다 (개체 연결 결과)
+    domain: [Part, FailureMode]
+    range: [Document]
+    required: [method, confidence]
+    cq: [CQ-11]
+
+rules:
+  R1:
+    name: RegisteredSingleSupplier
+    definition: 선택 시점에 등록된 서로 다른 공급사가 1곳뿐인 부품
+    output: "single_registered_supplier = true (추론됨)"
+    cq: [CQ-06]
+  R2:
+    name: ChangeImpactCandidate
+    definition: 선택한 판에서 부품의 상위 어셈블리 · 제품을 경로로 찾아 영향 검토 후보로 표시
+    output: "impact_candidate (후보 — 실제 영향은 담당자가 판단)"
+    cq: [CQ-09]
+  R3:
+    name: FunctionRiskCandidate
+    definition: 고장 모드가 있는 부품을 쓰는 상위 어셈블리를 기능 위험 후보로 표시
+    output: "function_risk_candidate"
+    cq: [CQ-11]
+
+# CQ 카탈로그 (설계 덱 18 · 19장). query 는 queries/ 아래 Cypher 파일, 기대 결과는 data/golden/ 에 둔다.
+competency_questions:
+  - {id: CQ-01, type: 관계 탐색, priority: P1, question: "부품 X가 쓰이는 어셈블리 · 제품은?", query: cq_01_where_used.cypher}
+  - {id: CQ-02, type: 관계 탐색, priority: P1, question: "부품 X는 제품 1대에 어떤 수량 · 배수로 들어가나?", query: cq_02_usage_per_product.cypher}
+  - {id: CQ-03, type: 사실 조회, priority: P1, question: "어셈블리 A의 구성 부품은?", query: cq_03_assembly_parts.cypher}
+  - {id: CQ-04, type: 관계 탐색, priority: P2, question: "여러 어셈블리에 쓰이는 공용 부품은?", query: cq_04_shared_parts.cypher}
+  - {id: CQ-05, type: 사실 조회, priority: P1, question: "부품 X의 공급사 · 단가 · 팩 · MOQ · 관측일은?", query: cq_05_purchase_terms.cypher}
+  - {id: CQ-06, type: 규칙 추론, priority: P1, question: "등록 데이터 기준 단일 공급사 부품은?", query: cq_06_single_supplier.cypher}
+  - {id: CQ-07, type: 관계 탐색, priority: P1, question: "ECN E로 바뀐 BOM 라인은?", query: cq_07_ecn_lines.cypher}
+  - {id: CQ-08, type: 사실 조회, priority: P1, question: "부품 X가 교체한 이전 부품은?", query: cq_08_supersedes.cypher}
+  - {id: CQ-09, type: 규칙 추론, priority: P1, question: "부품 X 변경 시 영향 후보 범위는?", query: cq_09_impact_candidates.cypher}
+  - {id: CQ-10, type: 사실 조회, priority: P1, question: "부품 X의 대체 가능 부품과 조건은?", query: cq_10_alternates.cypher}
+  - {id: CQ-11, type: 관계 탐색 + 검색, priority: P1, question: "증상 S의 원인 후보 부품과 근거 문서는?", query: cq_11_failure_evidence.cypher}
+  - {id: CQ-12, type: 사실 조회, priority: P1, question: "이름 · 약칭 N이 가리키는 부품은?", query: cq_12_resolve_name.cypher}
+  - {id: CQ-13, type: 관계 탐색, priority: P2, question: "기계 · 전장 BOM은 어떤 제품에 연결되는가?", query: cq_13_domains_per_product.cypher}
+  - {id: CQ-14, type: 사실 조회, priority: P2, question: "BOM 판 R의 저장소상 적용 구간은?", query: cq_14_revision_interval.cypher}
+  - {id: CQ-15, type: 하이브리드 검색, priority: P1, question: "증상 · 키워드 S로 찾은 근거 문서와 연결 부품은?", query: cq_15_hybrid_docs.cypher}

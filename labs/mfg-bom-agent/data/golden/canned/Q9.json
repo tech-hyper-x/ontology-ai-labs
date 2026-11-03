@@ -1,0 +1,223 @@
+{
+ "question": "goBILDA 스페이서(1514-0010-0060) 단종을 다룬 이슈는 무엇인가요?",
+ "response": {
+  "run_id": "canned-Q9",
+  "status": "completed",
+  "mode": "kg_tools",
+  "intent": "symptom",
+  "headline": "goBILDA 스페이서(1514-0010-0060) 단종을 다룬 이슈는 open-source-rover 이슈 #469이며, 로커 보기 조립의 부품 목록에 필요한 부품으로 적혀 있습니다.",
+  "summary": "스페이서 단종 이슈 #469 (문서 확인)",
+  "highlights": [
+   "단종",
+   "로커 보기"
+  ],
+  "subject": "goBILDA 스페이서 · 1514-0010-0060",
+  "basis": "문서 검색 결과 (부품비 계산 없음)",
+  "findings": [
+   "이슈 #469는 goBILDA 1514 시리즈 8mm ID 스페이서(10mm OD, 6mm 길이, 1514-0010-0060)가 단종되었다고 보고합니다.",
+   "같은 이슈에 따르면 이 스페이서는 로커 보기 조립 부품 목록과 로커-보기 조인트 생성 절차에서 쓰입니다.",
+   "현재 데이터에 이 스페이서의 대체 부품 등록은 확인되지 않았습니다."
+  ],
+  "follow_ups": [
+   "goBILDA 공급처에서 1514-0010-0060의 단종 여부와 후속 품번을 확인해야 합니다.",
+   "로커 보기 조립에 쓰는 스페이서 재고 수량을 확인해야 생산 중단 여부를 판단할 수 있습니다."
+  ],
+  "notes": [
+   "단종 여부는 외부 이슈 문서(GitHub 이슈 #469) 기준이며, 현재 판의 공급 상태를 확인한 자료는 아닙니다.",
+   "교체 부품비는 선택한 판의 부품표에 단가가 없어 계산하지 않았습니다(미계산)."
+  ],
+  "key_facts": [
+   {
+    "label": "대체 부품",
+    "value": "등록 없음"
+   },
+   {
+    "label": "교체 부품비",
+    "value": "미계산"
+   }
+  ],
+  "doc_notes": [
+   {
+    "doc_path": "https://github.com/nasa-jpl/open-source-rover/issues/469",
+    "line": 1,
+    "summary_ko": "goBILDA 1514-0010-0060 스페이서가 단종되었다는 이슈이며, 로커 보기 조립 부품 목록과 조인트 절차에서 쓰인다고 적혀 있습니다.",
+    "quote": "The 1514 Series 8mm ID Spacer (10mm OD, 6mm Length) (`1514-0010-0060`) from goBilda required in the Parts for rocker bogie assembly section is discontinued."
+   }
+  ],
+  "cited_labels": [],
+  "conclusion": "goBILDA 스페이서(1514-0010-0060) 단종을 다룬 이슈는 open-source-rover 이슈 #469이며, 로커 보기 조립의 부품 목록에 필요한 부품으로 적혀 있습니다.\n\n스페이서 단종 이슈 #469 (문서 확인)\n\n확인된 내용\n- 이슈 #469는 goBILDA 1514 시리즈 8mm ID 스페이서(10mm OD, 6mm 길이, 1514-0010-0060)가 단종되었다고 보고합니다.\n- 같은 이슈에 따르면 이 스페이서는 로커 보기 조립 부품 목록과 로커-보기 조인트 생성 절차에서 쓰입니다.\n- 현재 데이터에 이 스페이서의 대체 부품 등록은 확인되지 않았습니다.\n\n추가로 확인할 사항\n- goBILDA 공급처에서 1514-0010-0060의 단종 여부와 후속 품번을 확인해야 합니다.\n- 로커 보기 조립에 쓰는 스페이서 재고 수량을 확인해야 생산 중단 여부를 판단할 수 있습니다.\n\n단종 여부는 외부 이슈 문서(GitHub 이슈 #469) 기준이며, 현재 판의 공급 상태를 확인한 자료는 아닙니다.\n교체 부품비는 선택한 판의 부품표에 단가가 없어 계산하지 않았습니다(미계산).\n\n대체 부품: 등록 없음\n\n교체 부품비: 미계산",
+  "calculations": [
+   {
+    "label": "교체 부품비 (1개)",
+    "kind": "requirement",
+    "value": null,
+    "unit": "USD",
+    "tool": "cost_rollup",
+    "formula": "",
+    "inputs": {
+     "part": "1514-0010-0060",
+     "qty_each": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "parts_list.csv",
+    "note": "가격 자료 없음 — 선택한 판의 부품표에 단가가 없어 계산하지 않음"
+   }
+  ],
+  "graph_paths": [],
+  "documents": [
+   {
+    "doc_path": "https://github.com/nasa-jpl/open-source-rover/issues/469",
+    "doc_id": "issue#469",
+    "title": "goBilda 1514-0010-0060 spacer discontinued",
+    "line": 1,
+    "excerpt": "goBilda 1514-0010-0060 spacer discontinued The 1514 Series 8mm ID Spacer (10mm OD, 6mm Length) (`1514-0010-0060`) from goBilda required in the Parts for rocker bogie assembly section is discontinued.  1514-0010-0060 is used in the Creating the rocker-bogie joint section of the in",
+    "linked_parts": [
+     "1514-0010-0060"
+    ],
+    "confidence": 1.0,
+    "method": "hybrid(RRF)",
+    "rank": 1,
+    "ranks": {
+     "bm25": 1,
+     "vector": 1
+    }
+   },
+   {
+    "doc_path": "https://github.com/nasa-jpl/open-source-rover/issues/195",
+    "doc_id": "issue#195",
+    "title": "Discontinued part: PVC clamping hub",
+    "line": 1,
+    "excerpt": "Discontinued part: PVC clamping hub https://www.servocity.com/1-315-pvc-clamp-hub-b is discontinued and should be replaced with another component",
+    "linked_parts": [],
+    "confidence": null,
+    "method": "hybrid(RRF)",
+    "rank": 2,
+    "ranks": {
+     "bm25": 4,
+     "vector": 2
+    }
+   },
+   {
+    "doc_path": "https://github.com/nasa-jpl/open-source-rover/issues/36",
+    "doc_id": "issue#36",
+    "title": "Rocker-Bogie Assembly spacing issue",
+    "line": 1,
+    "excerpt": "Rocker-Bogie Assembly spacing issue In Section 2, Step 2 of the Rocker-Bogie Assembly, when using the T1 (1/4\") spacer it creates to much of a gap it seems, also need to use B4 (5/8\") screws to connect it. I would think that the size of the spacer is incorrect and should be a sma",
+    "linked_parts": [],
+    "confidence": null,
+    "method": "hybrid(RRF)",
+    "rank": 3,
+    "ranks": {
+     "bm25": 3,
+     "vector": 3
+    }
+   },
+   {
+    "doc_path": "https://github.com/nasa-jpl/open-source-rover/issues/48",
+    "doc_id": "issue#48",
+    "title": "T2 spacer/standoff - should it be 3/16 instead of 3/8?",
+    "line": 1,
+    "excerpt": "el. The 3D pdf suggests the space is tighter. **Was a 3/16\" spacer intended instead?** And/or was a longer screw than 1/2\" intended (5/8 or 3/4\")?  Issue discovered by **Derrick & Alfredo**, Rocker-Bogie build team, Mars Rover project, **Houston Robotics**  Yet another nit-pick f",
+    "linked_parts": [],
+    "confidence": null,
+    "method": "hybrid(RRF)",
+    "rank": 4,
+    "ranks": {
+     "bm25": 5,
+     "vector": 7
+    }
+   },
+   {
+    "doc_path": "https://github.com/nasa-jpl/open-source-rover/issues/250",
+    "doc_id": "issue#250",
+    "title": "9 x 12 top and bottom ServoCity plates discontinued",
+    "line": 1,
+    "excerpt": "9 x 12 top and bottom ServoCity plates discontinued @dcschooley found out they are discountinued.  * One idea is to replace with two 9 x 6 plates and connectors. * Better: use a laser cutter",
+    "linked_parts": [],
+    "confidence": null,
+    "method": "hybrid(RRF)",
+    "rank": 5,
+    "ranks": {
+     "bm25": 10,
+     "vector": 4
+    }
+   }
+  ],
+  "sources": {
+   "snapshot": "a78f9eb",
+   "revision": "6b2c5a9",
+   "as_of": "2026-10-22",
+   "price_date_known": false,
+   "assumptions": [],
+   "exclusions": [
+    "재고 · 공임 · 운송비 제외"
+   ],
+   "data_used": [
+    "Neo4j 그래프 (BOM · 판 · ECN · 공급)",
+    "정비 문서 · 이슈 검색"
+   ],
+   "tools_available": [
+    "find_part",
+    "where_used",
+    "bom_explode",
+    "purchase_quantity",
+    "cost_rollup",
+    "revision_diff",
+    "change_impact",
+    "supply_risk",
+    "search_docs"
+   ]
+  },
+  "verification": {
+   "status": "passed",
+   "checks": [],
+   "unverified_numbers": [],
+   "reason": ""
+  },
+  "trace": {
+   "trace_id": "5021e3435166494907defa0d4c7286b7",
+   "url": "http://localhost:3000/project/mfg-bom-agent/traces/5021e3435166494907defa0d4c7286b7",
+   "session_id": "canned-Q9"
+  },
+  "context": {
+   "role": "설계변경 엔지니어",
+   "revision": null,
+   "as_of": "2026-10-22",
+   "price_date_known": false,
+   "dataset_version": "mfg-0.1",
+   "snapshot": "a78f9eb",
+   "llm_model": "claude-haiku-5-5",
+   "demo_mode": "none"
+  },
+  "pending_question": null,
+  "error": null,
+  "tool_calls": 3
+ },
+ "events": [
+  {
+   "step": "질문 계획",
+   "detail": "symptom · maintenance-evidence"
+  },
+  {
+   "step": "search_docs",
+   "detail": "문서 5개"
+  },
+  {
+   "step": "where_used",
+   "detail": "경로 0개"
+  },
+  {
+   "step": "cost_rollup",
+   "detail": "0.00 USD"
+  },
+  {
+   "step": "답변 작성",
+   "detail": "maintenance-evidence"
+  },
+  {
+   "step": "출력 검사",
+   "detail": "passed"
+  }
+ ]
+}

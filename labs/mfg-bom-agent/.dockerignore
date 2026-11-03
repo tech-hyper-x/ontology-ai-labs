@@ -1,0 +1,15 @@
+.env
+.env.*
+.venv
+.git
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+notebooks
+outputs
+# 원천 저장소 · 임베딩 캐시는 이미지에 넣지 않는다. data/processed · data/golden 은 넣는다 (적재 · 평가에 필요).
+data/raw
+data/embeddings
+tests
+docs

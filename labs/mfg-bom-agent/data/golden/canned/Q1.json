@@ -1,0 +1,865 @@
+{
+ "question": "로봇 차량 20대 생산에 필요한 부품 중, 2개씩 묶어 판매하는 부품은 종류별로 몇 팩을 구매해야 하나요?",
+ "response": {
+  "run_id": "canned-Q1",
+  "status": "completed",
+  "mode": "kg_tools",
+  "intent": "purchase_quantity",
+  "headline": "로봇 차량 20대 생산에는 2개씩 묶어 파는 부품 12종을 구매해야 하며, 종류별 구매 팩 수는 20팩에서 80팩까지입니다.",
+  "summary": "2개입 부품 12종 · 20~80팩",
+  "highlights": [
+   "2개씩 묶어 판매하는 부품",
+   "구매 팩 수"
+  ],
+  "subject": "팩 단위 판매 부품 (12종)",
+  "basis": "로봇 차량 20대, 팩 크기 2개 기준",
+  "findings": [
+   "1506-0032-0006(ID Spacer)이 60팩으로 가장 많고, 1102-0003-0024(Flat Beam 3 Hole)가 80팩입니다.",
+   "2808-0004-0050(Threaded Rod)과 1137-0001-0001(Grid Bracket)은 각 20팩입니다.",
+   "팩 올림 후 최소 구매 수량(MOQ) 1팩 기준은 모든 부품에서 적용되지 않았습니다."
+  ],
+  "follow_ups": [
+   "공급사에 팩 단위 구매 가능 여부와 팩당 단가 적용일을 확인해야 합니다.",
+   "재고가 있다면 보유 수량을 차감한 뒤 실제 구매 팩 수를 확정해야 합니다."
+  ],
+  "notes": [
+   "실습 자료의 단가로 계산한 금액입니다(자료 확인일 2026-10-22). 실제 가격 적용일은 확인되지 않았습니다.",
+   "MOQ 1팩은 교육용 가정값이며, 계산에서 다른 부품비와 공정비는 빠져 있습니다."
+  ],
+  "key_facts": [],
+  "doc_notes": [],
+  "cited_labels": [
+   "1506-0032-0006 구매 팩 수 (20대)",
+   "1102-0007-0056 구매 팩 수 (20대)",
+   "1205-0001-0004 구매 팩 수 (20대)",
+   "2808-0004-0050 구매 팩 수 (20대)",
+   "2913-0004-0241 구매 팩 수 (20대)",
+   "2902-0003-0001 구매 팩 수 (20대)",
+   "1102-0002-0016 구매 팩 수 (20대)",
+   "1611-0514-0008 구매 팩 수 (20대)",
+   "1102-0003-0024 구매 팩 수 (20대)",
+   "1126-0001-0001 구매 팩 수 (20대)",
+   "1137-0001-0001 구매 팩 수 (20대)",
+   "2805-0004-0038 구매 팩 수 (20대)"
+  ],
+  "conclusion": "로봇 차량 20대 생산에는 2개씩 묶어 파는 부품 12종을 구매해야 하며, 종류별 구매 팩 수는 20팩에서 80팩까지입니다.\n\n2개입 부품 12종 · 20~80팩\n\n확인된 내용\n- 1506-0032-0006(ID Spacer)이 60팩으로 가장 많고, 1102-0003-0024(Flat Beam 3 Hole)가 80팩입니다.\n- 2808-0004-0050(Threaded Rod)과 1137-0001-0001(Grid Bracket)은 각 20팩입니다.\n- 팩 올림 후 최소 구매 수량(MOQ) 1팩 기준은 모든 부품에서 적용되지 않았습니다.\n\n추가로 확인할 사항\n- 공급사에 팩 단위 구매 가능 여부와 팩당 단가 적용일을 확인해야 합니다.\n- 재고가 있다면 보유 수량을 차감한 뒤 실제 구매 팩 수를 확정해야 합니다.\n\n실습 자료의 단가로 계산한 금액입니다(자료 확인일 2026-10-22). 실제 가격 적용일은 확인되지 않았습니다.\nMOQ 1팩은 교육용 가정값이며, 계산에서 다른 부품비와 공정비는 빠져 있습니다.",
+  "calculations": [
+   {
+    "label": "1506-0032-0006 소요 낱개 (20대)",
+    "kind": "quantity",
+    "value": "120",
+    "unit": "ea",
+    "tool": "bom_explode",
+    "formula": "원천 수량 × 팩 크기 × 배수 × 20대",
+    "inputs": {
+     "units": 20,
+     "part": "1506-0032-0006"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "1506 Series 32mm ID Spacer (36mm OD, 6",
+    "note": null
+   },
+   {
+    "label": "1506-0032-0006 구매 팩 수 (20대)",
+    "kind": "purchase",
+    "value": "60",
+    "unit": "pack",
+    "tool": "purchase_quantity",
+    "formula": "max(올림(120 ÷ 2), MOQ 1) = 60팩 × $3.49/팩",
+    "inputs": {
+     "units": 20,
+     "part": "1506-0032-0006",
+     "pack_size": 2,
+     "moq_packs": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "1506 Series 32mm ID Spacer (36mm OD, 6",
+    "note": null
+   },
+   {
+    "label": "1506-0032-0006 구매 금액 (20대)",
+    "kind": "purchase",
+    "value": "209.40",
+    "unit": "USD",
+    "tool": "purchase_quantity",
+    "formula": "60팩 × $3.49/팩",
+    "inputs": {
+     "units": 20,
+     "part": "1506-0032-0006"
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "1506 Series 32mm ID Spacer (36mm OD, 6",
+    "note": null
+   },
+   {
+    "label": "1102-0007-0056 소요 낱개 (20대)",
+    "kind": "quantity",
+    "value": "80",
+    "unit": "ea",
+    "tool": "bom_explode",
+    "formula": "원천 수량 × 팩 크기 × 배수 × 20대",
+    "inputs": {
+     "units": 20,
+     "part": "1102-0007-0056"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "1102 Series Flat Beam (7 Hole, 56mm Le",
+    "note": null
+   },
+   {
+    "label": "1102-0007-0056 구매 팩 수 (20대)",
+    "kind": "purchase",
+    "value": "40",
+    "unit": "pack",
+    "tool": "purchase_quantity",
+    "formula": "max(올림(80 ÷ 2), MOQ 1) = 40팩 × $2.49/팩",
+    "inputs": {
+     "units": 20,
+     "part": "1102-0007-0056",
+     "pack_size": 2,
+     "moq_packs": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "1102 Series Flat Beam (7 Hole, 56mm Le",
+    "note": null
+   },
+   {
+    "label": "1102-0007-0056 구매 금액 (20대)",
+    "kind": "purchase",
+    "value": "99.60",
+    "unit": "USD",
+    "tool": "purchase_quantity",
+    "formula": "40팩 × $2.49/팩",
+    "inputs": {
+     "units": 20,
+     "part": "1102-0007-0056"
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "1102 Series Flat Beam (7 Hole, 56mm Le",
+    "note": null
+   },
+   {
+    "label": "1205-0001-0004 소요 낱개 (20대)",
+    "kind": "quantity",
+    "value": "80",
+    "unit": "ea",
+    "tool": "bom_explode",
+    "formula": "원천 수량 × 팩 크기 × 배수 × 20대",
+    "inputs": {
+     "units": 20,
+     "part": "1205-0001-0004"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "1205 Series Dual Block Mount (1-4) - 2",
+    "note": null
+   },
+   {
+    "label": "1205-0001-0004 구매 팩 수 (20대)",
+    "kind": "purchase",
+    "value": "40",
+    "unit": "pack",
+    "tool": "purchase_quantity",
+    "formula": "max(올림(80 ÷ 2), MOQ 1) = 40팩 × $5.99/팩",
+    "inputs": {
+     "units": 20,
+     "part": "1205-0001-0004",
+     "pack_size": 2,
+     "moq_packs": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "1205 Series Dual Block Mount (1-4) - 2",
+    "note": null
+   },
+   {
+    "label": "1205-0001-0004 구매 금액 (20대)",
+    "kind": "purchase",
+    "value": "239.60",
+    "unit": "USD",
+    "tool": "purchase_quantity",
+    "formula": "40팩 × $5.99/팩",
+    "inputs": {
+     "units": 20,
+     "part": "1205-0001-0004"
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "1205 Series Dual Block Mount (1-4) - 2",
+    "note": null
+   },
+   {
+    "label": "2808-0004-0050 소요 낱개 (20대)",
+    "kind": "quantity",
+    "value": "40",
+    "unit": "ea",
+    "tool": "bom_explode",
+    "formula": "원천 수량 × 팩 크기 × 배수 × 20대",
+    "inputs": {
+     "units": 20,
+     "part": "2808-0004-0050"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "2808 Series Stainless Steel Threaded R",
+    "note": null
+   },
+   {
+    "label": "2808-0004-0050 구매 팩 수 (20대)",
+    "kind": "purchase",
+    "value": "20",
+    "unit": "pack",
+    "tool": "purchase_quantity",
+    "formula": "max(올림(40 ÷ 2), MOQ 1) = 20팩 × $1.49/팩",
+    "inputs": {
+     "units": 20,
+     "part": "2808-0004-0050",
+     "pack_size": 2,
+     "moq_packs": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "2808 Series Stainless Steel Threaded R",
+    "note": null
+   },
+   {
+    "label": "2808-0004-0050 구매 금액 (20대)",
+    "kind": "purchase",
+    "value": "29.80",
+    "unit": "USD",
+    "tool": "purchase_quantity",
+    "formula": "20팩 × $1.49/팩",
+    "inputs": {
+     "units": 20,
+     "part": "2808-0004-0050"
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "2808 Series Stainless Steel Threaded R",
+    "note": null
+   },
+   {
+    "label": "2913-0004-0241 소요 낱개 (20대)",
+    "kind": "quantity",
+    "value": "80",
+    "unit": "ea",
+    "tool": "bom_explode",
+    "formula": "원천 수량 × 팩 크기 × 배수 × 20대",
+    "inputs": {
+     "units": 20,
+     "part": "2913-0004-0241"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "2913 Series Steel Ball Linkage (Female",
+    "note": null
+   },
+   {
+    "label": "2913-0004-0241 구매 팩 수 (20대)",
+    "kind": "purchase",
+    "value": "40",
+    "unit": "pack",
+    "tool": "purchase_quantity",
+    "formula": "max(올림(80 ÷ 2), MOQ 1) = 40팩 × $4.99/팩",
+    "inputs": {
+     "units": 20,
+     "part": "2913-0004-0241",
+     "pack_size": 2,
+     "moq_packs": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "2913 Series Steel Ball Linkage (Female",
+    "note": null
+   },
+   {
+    "label": "2913-0004-0241 구매 금액 (20대)",
+    "kind": "purchase",
+    "value": "199.60",
+    "unit": "USD",
+    "tool": "purchase_quantity",
+    "formula": "40팩 × $4.99/팩",
+    "inputs": {
+     "units": 20,
+     "part": "2913-0004-0241"
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "2913 Series Steel Ball Linkage (Female",
+    "note": null
+   },
+   {
+    "label": "2902-0003-0001 소요 낱개 (20대)",
+    "kind": "quantity",
+    "value": "80",
+    "unit": "ea",
+    "tool": "bom_explode",
+    "formula": "원천 수량 × 팩 크기 × 배수 × 20대",
+    "inputs": {
+     "units": 20,
+     "part": "2902-0003-0001"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "Plastic Hinge - 2 Pack - goBILDA",
+    "note": null
+   },
+   {
+    "label": "2902-0003-0001 구매 팩 수 (20대)",
+    "kind": "purchase",
+    "value": "40",
+    "unit": "pack",
+    "tool": "purchase_quantity",
+    "formula": "max(올림(80 ÷ 2), MOQ 1) = 40팩 × $4.99/팩",
+    "inputs": {
+     "units": 20,
+     "part": "2902-0003-0001",
+     "pack_size": 2,
+     "moq_packs": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "Plastic Hinge - 2 Pack - goBILDA",
+    "note": null
+   },
+   {
+    "label": "2902-0003-0001 구매 금액 (20대)",
+    "kind": "purchase",
+    "value": "199.60",
+    "unit": "USD",
+    "tool": "purchase_quantity",
+    "formula": "40팩 × $4.99/팩",
+    "inputs": {
+     "units": 20,
+     "part": "2902-0003-0001"
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "Plastic Hinge - 2 Pack - goBILDA",
+    "note": null
+   },
+   {
+    "label": "1102-0002-0016 소요 낱개 (20대)",
+    "kind": "quantity",
+    "value": "80",
+    "unit": "ea",
+    "tool": "bom_explode",
+    "formula": "원천 수량 × 팩 크기 × 배수 × 20대",
+    "inputs": {
+     "units": 20,
+     "part": "1102-0002-0016"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "1102 Series Flat Beam (2 Hole, 16mm Le",
+    "note": null
+   },
+   {
+    "label": "1102-0002-0016 구매 팩 수 (20대)",
+    "kind": "purchase",
+    "value": "40",
+    "unit": "pack",
+    "tool": "purchase_quantity",
+    "formula": "max(올림(80 ÷ 2), MOQ 1) = 40팩 × $1.79/팩",
+    "inputs": {
+     "units": 20,
+     "part": "1102-0002-0016",
+     "pack_size": 2,
+     "moq_packs": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "1102 Series Flat Beam (2 Hole, 16mm Le",
+    "note": null
+   },
+   {
+    "label": "1102-0002-0016 구매 금액 (20대)",
+    "kind": "purchase",
+    "value": "71.60",
+    "unit": "USD",
+    "tool": "purchase_quantity",
+    "formula": "40팩 × $1.79/팩",
+    "inputs": {
+     "units": 20,
+     "part": "1102-0002-0016"
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "1102 Series Flat Beam (2 Hole, 16mm Le",
+    "note": null
+   },
+   {
+    "label": "1611-0514-0008 소요 낱개 (20대)",
+    "kind": "quantity",
+    "value": "80",
+    "unit": "ea",
+    "tool": "bom_explode",
+    "formula": "원천 수량 × 팩 크기 × 배수 × 20대",
+    "inputs": {
+     "units": 20,
+     "part": "1611-0514-0008"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "1611 Series Flanged Ball Bearing (8mm ",
+    "note": null
+   },
+   {
+    "label": "1611-0514-0008 구매 팩 수 (20대)",
+    "kind": "purchase",
+    "value": "40",
+    "unit": "pack",
+    "tool": "purchase_quantity",
+    "formula": "max(올림(80 ÷ 2), MOQ 1) = 40팩 × $3.99/팩",
+    "inputs": {
+     "units": 20,
+     "part": "1611-0514-0008",
+     "pack_size": 2,
+     "moq_packs": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "1611 Series Flanged Ball Bearing (8mm ",
+    "note": null
+   },
+   {
+    "label": "1611-0514-0008 구매 금액 (20대)",
+    "kind": "purchase",
+    "value": "159.60",
+    "unit": "USD",
+    "tool": "purchase_quantity",
+    "formula": "40팩 × $3.99/팩",
+    "inputs": {
+     "units": 20,
+     "part": "1611-0514-0008"
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "1611 Series Flanged Ball Bearing (8mm ",
+    "note": null
+   },
+   {
+    "label": "1102-0003-0024 소요 낱개 (20대)",
+    "kind": "quantity",
+    "value": "160",
+    "unit": "ea",
+    "tool": "bom_explode",
+    "formula": "원천 수량 × 팩 크기 × 배수 × 20대",
+    "inputs": {
+     "units": 20,
+     "part": "1102-0003-0024"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "1102 Series Flat Beam (3 Hole, 24mm Le",
+    "note": null
+   },
+   {
+    "label": "1102-0003-0024 구매 팩 수 (20대)",
+    "kind": "purchase",
+    "value": "80",
+    "unit": "pack",
+    "tool": "purchase_quantity",
+    "formula": "max(올림(160 ÷ 2), MOQ 1) = 80팩 × $1.89/팩",
+    "inputs": {
+     "units": 20,
+     "part": "1102-0003-0024",
+     "pack_size": 2,
+     "moq_packs": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "1102 Series Flat Beam (3 Hole, 24mm Le",
+    "note": null
+   },
+   {
+    "label": "1102-0003-0024 구매 금액 (20대)",
+    "kind": "purchase",
+    "value": "151.20",
+    "unit": "USD",
+    "tool": "purchase_quantity",
+    "formula": "80팩 × $1.89/팩",
+    "inputs": {
+     "units": 20,
+     "part": "1102-0003-0024"
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "1102 Series Flat Beam (3 Hole, 24mm Le",
+    "note": null
+   },
+   {
+    "label": "1126-0001-0001 소요 낱개 (20대)",
+    "kind": "quantity",
+    "value": "80",
+    "unit": "ea",
+    "tool": "bom_explode",
+    "formula": "원천 수량 × 팩 크기 × 배수 × 20대",
+    "inputs": {
+     "units": 20,
+     "part": "1126-0001-0001"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "1126 Series Steel Flat Bracket (1-1) -",
+    "note": null
+   },
+   {
+    "label": "1126-0001-0001 구매 팩 수 (20대)",
+    "kind": "purchase",
+    "value": "40",
+    "unit": "pack",
+    "tool": "purchase_quantity",
+    "formula": "max(올림(80 ÷ 2), MOQ 1) = 40팩 × $2.49/팩",
+    "inputs": {
+     "units": 20,
+     "part": "1126-0001-0001",
+     "pack_size": 2,
+     "moq_packs": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "1126 Series Steel Flat Bracket (1-1) -",
+    "note": null
+   },
+   {
+    "label": "1126-0001-0001 구매 금액 (20대)",
+    "kind": "purchase",
+    "value": "99.60",
+    "unit": "USD",
+    "tool": "purchase_quantity",
+    "formula": "40팩 × $2.49/팩",
+    "inputs": {
+     "units": 20,
+     "part": "1126-0001-0001"
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "1126 Series Steel Flat Bracket (1-1) -",
+    "note": null
+   },
+   {
+    "label": "1137-0001-0001 소요 낱개 (20대)",
+    "kind": "quantity",
+    "value": "40",
+    "unit": "ea",
+    "tool": "bom_explode",
+    "formula": "원천 수량 × 팩 크기 × 배수 × 20대",
+    "inputs": {
+     "units": 20,
+     "part": "1137-0001-0001"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "1137 Series Steel Flat Grid Bracket (1",
+    "note": null
+   },
+   {
+    "label": "1137-0001-0001 구매 팩 수 (20대)",
+    "kind": "purchase",
+    "value": "20",
+    "unit": "pack",
+    "tool": "purchase_quantity",
+    "formula": "max(올림(40 ÷ 2), MOQ 1) = 20팩 × $3.49/팩",
+    "inputs": {
+     "units": 20,
+     "part": "1137-0001-0001",
+     "pack_size": 2,
+     "moq_packs": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "1137 Series Steel Flat Grid Bracket (1",
+    "note": null
+   },
+   {
+    "label": "1137-0001-0001 구매 금액 (20대)",
+    "kind": "purchase",
+    "value": "69.80",
+    "unit": "USD",
+    "tool": "purchase_quantity",
+    "formula": "20팩 × $3.49/팩",
+    "inputs": {
+     "units": 20,
+     "part": "1137-0001-0001"
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "1137 Series Steel Flat Grid Bracket (1",
+    "note": null
+   },
+   {
+    "label": "2805-0004-0038 소요 낱개 (20대)",
+    "kind": "quantity",
+    "value": "80",
+    "unit": "ea",
+    "tool": "bom_explode",
+    "formula": "원천 수량 × 팩 크기 × 배수 × 20대",
+    "inputs": {
+     "units": 20,
+     "part": "2805-0004-0038"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "goRAIL® Nut (5 Hole) - 2 Pack - goBILD",
+    "note": null
+   },
+   {
+    "label": "2805-0004-0038 구매 팩 수 (20대)",
+    "kind": "purchase",
+    "value": "40",
+    "unit": "pack",
+    "tool": "purchase_quantity",
+    "formula": "max(올림(80 ÷ 2), MOQ 1) = 40팩 × $5.99/팩",
+    "inputs": {
+     "units": 20,
+     "part": "2805-0004-0038",
+     "pack_size": 2,
+     "moq_packs": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "goRAIL® Nut (5 Hole) - 2 Pack - goBILD",
+    "note": null
+   },
+   {
+    "label": "2805-0004-0038 구매 금액 (20대)",
+    "kind": "purchase",
+    "value": "239.60",
+    "unit": "USD",
+    "tool": "purchase_quantity",
+    "formula": "40팩 × $5.99/팩",
+    "inputs": {
+     "units": 20,
+     "part": "2805-0004-0038"
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "goRAIL® Nut (5 Hole) - 2 Pack - goBILD",
+    "note": null
+   }
+  ],
+  "graph_paths": [],
+  "documents": [],
+  "sources": {
+   "snapshot": "a78f9eb",
+   "revision": "6b2c5a9",
+   "as_of": "2026-10-22",
+   "price_date_known": false,
+   "assumptions": [
+    "MOQ · 리드타임은 교육용 가정값 (assumption)"
+   ],
+   "exclusions": [
+    "재고 · 공임 · 운송비 제외"
+   ],
+   "data_used": [
+    "Neo4j 그래프 (BOM · 판 · ECN · 공급)",
+    "정비 문서 · 이슈 검색"
+   ],
+   "tools_available": [
+    "find_part",
+    "where_used",
+    "bom_explode",
+    "purchase_quantity",
+    "cost_rollup",
+    "revision_diff",
+    "change_impact",
+    "supply_risk",
+    "search_docs"
+   ]
+  },
+  "verification": {
+   "status": "passed",
+   "checks": [
+    {
+     "target": "1506-0032-0006 구매 팩 수 (20대)",
+     "cited_value": "60",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "1102-0007-0056 구매 팩 수 (20대)",
+     "cited_value": "40",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "1205-0001-0004 구매 팩 수 (20대)",
+     "cited_value": "40",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "2808-0004-0050 구매 팩 수 (20대)",
+     "cited_value": "20",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "2913-0004-0241 구매 팩 수 (20대)",
+     "cited_value": "40",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "2902-0003-0001 구매 팩 수 (20대)",
+     "cited_value": "40",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "1102-0002-0016 구매 팩 수 (20대)",
+     "cited_value": "40",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "1611-0514-0008 구매 팩 수 (20대)",
+     "cited_value": "40",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "1102-0003-0024 구매 팩 수 (20대)",
+     "cited_value": "80",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "1126-0001-0001 구매 팩 수 (20대)",
+     "cited_value": "40",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "1137-0001-0001 구매 팩 수 (20대)",
+     "cited_value": "20",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "2805-0004-0038 구매 팩 수 (20대)",
+     "cited_value": "40",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    }
+   ],
+   "unverified_numbers": [],
+   "reason": ""
+  },
+  "trace": {
+   "trace_id": "ec9ade55792c62cb3d7fe98e80bbe414",
+   "url": "http://localhost:3000/project/mfg-bom-agent/traces/ec9ade55792c62cb3d7fe98e80bbe414",
+   "session_id": "canned-Q1"
+  },
+  "context": {
+   "role": "설계변경 엔지니어",
+   "revision": null,
+   "as_of": "2026-10-22",
+   "price_date_known": false,
+   "dataset_version": "mfg-0.1",
+   "snapshot": "a78f9eb",
+   "llm_model": "claude-haiku-5-5",
+   "demo_mode": "none"
+  },
+  "pending_question": null,
+  "error": null,
+  "tool_calls": 13
+ },
+ "events": [
+  {
+   "step": "질문 계획",
+   "detail": "purchase_quantity · bom-calculation"
+  },
+  {
+   "step": "bom_explode",
+   "detail": "94개 품목"
+  },
+  {
+   "step": "purchase_quantity",
+   "detail": "60팩 · 209.40 USD"
+  },
+  {
+   "step": "purchase_quantity",
+   "detail": "40팩 · 99.60 USD"
+  },
+  {
+   "step": "purchase_quantity",
+   "detail": "40팩 · 239.60 USD"
+  },
+  {
+   "step": "purchase_quantity",
+   "detail": "20팩 · 29.80 USD"
+  },
+  {
+   "step": "purchase_quantity",
+   "detail": "40팩 · 199.60 USD"
+  },
+  {
+   "step": "purchase_quantity",
+   "detail": "40팩 · 199.60 USD"
+  },
+  {
+   "step": "purchase_quantity",
+   "detail": "40팩 · 71.60 USD"
+  },
+  {
+   "step": "purchase_quantity",
+   "detail": "40팩 · 159.60 USD"
+  },
+  {
+   "step": "purchase_quantity",
+   "detail": "80팩 · 151.20 USD"
+  },
+  {
+   "step": "purchase_quantity",
+   "detail": "40팩 · 99.60 USD"
+  },
+  {
+   "step": "purchase_quantity",
+   "detail": "20팩 · 69.80 USD"
+  },
+  {
+   "step": "purchase_quantity",
+   "detail": "40팩 · 239.60 USD"
+  },
+  {
+   "step": "답변 작성",
+   "detail": "bom-calculation"
+  },
+  {
+   "step": "출력 검사",
+   "detail": "passed"
+  }
+ ]
+}

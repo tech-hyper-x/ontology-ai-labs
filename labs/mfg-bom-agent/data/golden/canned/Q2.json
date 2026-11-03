@@ -1,0 +1,250 @@
+{
+ "question": "로봇 차량 1대를 만드는 데 드는 기계 부품 원가는 얼마이고, 조립 단위(어셈블리)별로는 얼마인가요?",
+ "response": {
+  "run_id": "canned-Q2",
+  "status": "completed",
+  "mode": "kg_tools",
+  "intent": "cost",
+  "headline": "로봇 차량 1대를 만드는 데 필요한 기계 부품 소요 원가는 $1,330.38이며, 가장 큰 어셈블리는 drive wheel($527.70)입니다.",
+  "summary": "로봇 차량 1대 기계 부품 소요 원가 $1,330.38",
+  "highlights": [
+   "기계 부품 소요 원가",
+   "drive wheel"
+  ],
+  "subject": "로봇 차량 전체 (기계 BOM)",
+  "basis": "로봇 차량 1대, 기계 BOM 60라인 기준",
+  "findings": [
+   "어셈블리별 소요 원가는 drive wheel $527.70, rocker bogie $423.83, body $253.67, general $79.26, corner $45.92입니다.",
+   "drive wheel과 rocker bogie 두 어셈블리가 전체 소요 원가의 대부분을 차지합니다.",
+   "이 금액은 소요 원가이며 팩 올림과 최소 주문 수량(MOQ)을 반영하지 않은 값이므로 실제 구매 금액과 다를 수 있습니다."
+  ],
+  "follow_ups": [
+   "실제 구매 금액은 구매 수량 계산(팩 올림 · MOQ 반영)으로 따로 확인해야 합니다."
+  ],
+  "notes": [
+   "실습 자료의 단가로 계산한 금액입니다(자료 확인일 2026-10-22). 실제 가격 적용일은 확인되지 않았습니다(가격 기준일 미상).",
+   "전자부품 · 공정비 · 공임은 계산에서 제외했습니다."
+  ],
+  "key_facts": [],
+  "doc_notes": [],
+  "cited_labels": [
+   "로봇 차량 기계 부품 원가 (1대)",
+   "drive wheel 어셈블리 원가 (1대)",
+   "rocker bogie 어셈블리 원가 (1대)",
+   "body 어셈블리 원가 (1대)",
+   "general 어셈블리 원가 (1대)",
+   "corner 어셈블리 원가 (1대)"
+  ],
+  "conclusion": "로봇 차량 1대를 만드는 데 필요한 기계 부품 소요 원가는 $1,330.38이며, 가장 큰 어셈블리는 drive wheel($527.70)입니다.\n\n로봇 차량 1대 기계 부품 소요 원가 $1,330.38\n\n확인된 내용\n- 어셈블리별 소요 원가는 drive wheel $527.70, rocker bogie $423.83, body $253.67, general $79.26, corner $45.92입니다.\n- drive wheel과 rocker bogie 두 어셈블리가 전체 소요 원가의 대부분을 차지합니다.\n- 이 금액은 소요 원가이며 팩 올림과 최소 주문 수량(MOQ)을 반영하지 않은 값이므로 실제 구매 금액과 다를 수 있습니다.\n\n추가로 확인할 사항\n- 실제 구매 금액은 구매 수량 계산(팩 올림 · MOQ 반영)으로 따로 확인해야 합니다.\n\n실습 자료의 단가로 계산한 금액입니다(자료 확인일 2026-10-22). 실제 가격 적용일은 확인되지 않았습니다(가격 기준일 미상).\n전자부품 · 공정비 · 공임은 계산에서 제외했습니다.",
+  "calculations": [
+   {
+    "label": "로봇 차량 기계 부품 원가 (1대)",
+    "kind": "requirement",
+    "value": "1330.38",
+    "unit": "USD",
+    "tool": "cost_rollup",
+    "formula": "Σ 원천 수량 × 배수 × 1대 × 팩당 단가 (60라인)",
+    "inputs": {
+     "units": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "parts_list.csv",
+    "note": null
+   },
+   {
+    "label": "drive wheel 어셈블리 원가 (1대)",
+    "kind": "requirement",
+    "value": "527.70",
+    "unit": "USD",
+    "tool": "cost_rollup",
+    "formula": "Σ 원천 수량 × 배수 × 대수 × 팩당 단가",
+    "inputs": {
+     "units": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "parts_list.csv",
+    "note": null
+   },
+   {
+    "label": "rocker bogie 어셈블리 원가 (1대)",
+    "kind": "requirement",
+    "value": "423.83",
+    "unit": "USD",
+    "tool": "cost_rollup",
+    "formula": "Σ 원천 수량 × 배수 × 대수 × 팩당 단가",
+    "inputs": {
+     "units": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "parts_list.csv",
+    "note": null
+   },
+   {
+    "label": "body 어셈블리 원가 (1대)",
+    "kind": "requirement",
+    "value": "253.67",
+    "unit": "USD",
+    "tool": "cost_rollup",
+    "formula": "Σ 원천 수량 × 배수 × 대수 × 팩당 단가",
+    "inputs": {
+     "units": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "parts_list.csv",
+    "note": null
+   },
+   {
+    "label": "general 어셈블리 원가 (1대)",
+    "kind": "requirement",
+    "value": "79.26",
+    "unit": "USD",
+    "tool": "cost_rollup",
+    "formula": "Σ 원천 수량 × 배수 × 대수 × 팩당 단가",
+    "inputs": {
+     "units": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "parts_list.csv",
+    "note": null
+   },
+   {
+    "label": "corner 어셈블리 원가 (1대)",
+    "kind": "requirement",
+    "value": "45.92",
+    "unit": "USD",
+    "tool": "cost_rollup",
+    "formula": "Σ 원천 수량 × 배수 × 대수 × 팩당 단가",
+    "inputs": {
+     "units": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "parts_list.csv",
+    "note": null
+   }
+  ],
+  "graph_paths": [],
+  "documents": [],
+  "sources": {
+   "snapshot": "a78f9eb",
+   "revision": "6b2c5a9",
+   "as_of": "2026-10-22",
+   "price_date_known": false,
+   "assumptions": [
+    "단가 기준: 판 6b2c5a9 의 parts_list 단가 (관측일 2026-10-22)"
+   ],
+   "exclusions": [],
+   "data_used": [
+    "Neo4j 그래프 (BOM · 판 · ECN · 공급)",
+    "정비 문서 · 이슈 검색"
+   ],
+   "tools_available": [
+    "find_part",
+    "where_used",
+    "bom_explode",
+    "purchase_quantity",
+    "cost_rollup",
+    "revision_diff",
+    "change_impact",
+    "supply_risk",
+    "search_docs"
+   ]
+  },
+  "verification": {
+   "status": "passed",
+   "checks": [
+    {
+     "target": "로봇 차량 기계 부품 원가 (1대)",
+     "cited_value": "1330.38",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "drive wheel 어셈블리 원가 (1대)",
+     "cited_value": "527.70",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "rocker bogie 어셈블리 원가 (1대)",
+     "cited_value": "423.83",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "body 어셈블리 원가 (1대)",
+     "cited_value": "253.67",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "general 어셈블리 원가 (1대)",
+     "cited_value": "79.26",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "corner 어셈블리 원가 (1대)",
+     "cited_value": "45.92",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    }
+   ],
+   "unverified_numbers": [],
+   "reason": ""
+  },
+  "trace": {
+   "trace_id": "0f0d85d180c7ae19b199d7345691055b",
+   "url": "http://localhost:3000/project/mfg-bom-agent/traces/0f0d85d180c7ae19b199d7345691055b",
+   "session_id": "canned-Q2"
+  },
+  "context": {
+   "role": "설계변경 엔지니어",
+   "revision": null,
+   "as_of": "2026-10-22",
+   "price_date_known": false,
+   "dataset_version": "mfg-0.1",
+   "snapshot": "a78f9eb",
+   "llm_model": "claude-haiku-5-5",
+   "demo_mode": "none"
+  },
+  "pending_question": null,
+  "error": null,
+  "tool_calls": 1
+ },
+ "events": [
+  {
+   "step": "질문 계획",
+   "detail": "cost · bom-calculation"
+  },
+  {
+   "step": "cost_rollup",
+   "detail": "1330.38 USD"
+  },
+  {
+   "step": "답변 작성",
+   "detail": "bom-calculation"
+  },
+  {
+   "step": "출력 검사",
+   "detail": "passed"
+  }
+ ]
+}

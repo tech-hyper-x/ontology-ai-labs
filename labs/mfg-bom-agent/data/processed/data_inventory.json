@@ -1,0 +1,22 @@
+{
+  "snapshot": {
+    "commit": "a78f9eb",
+    "date": "2026-10-22"
+  },
+  "latest_revision": "6b2c5a9",
+  "revisions": 21,
+  "ecns": 16,
+  "parts_total": 103,
+  "mechanical_lines_latest": 60,
+  "documents": {
+    "readme_chunks": 240,
+    "issues": 288
+  },
+  "suppliers": {
+    "gobilda.com": "source",
+    "digikey.com": "source",
+    "dollarhobbyz.com": "source",
+    "alt-robotics": "virtual",
+    "maker-depot": "virtual"
+  }
+}

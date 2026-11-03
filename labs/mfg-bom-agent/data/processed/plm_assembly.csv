@@ -1,0 +1,7 @@
+assembly_id,product_id,name,domain,origin
+OSR/drive wheel,OSR,drive wheel,mechanical,source
+OSR/corner,OSR,corner,mechanical,source
+OSR/rocker bogie,OSR,rocker bogie,mechanical,source
+OSR/body,OSR,body,mechanical,source
+OSR/general,OSR,general,mechanical,source
+OSR/electronics,OSR,electronics,electrical,source

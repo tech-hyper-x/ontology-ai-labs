@@ -1,0 +1,22 @@
+revision_id,committed_at,valid_from,valid_to,is_latest,message,origin
+580d05e,2023-05-06,2023-05-06,2023-05-12,False,Generate parts list readme from csv files,source
+ca5d47b,2023-05-12,2023-05-12,2023-06-25,False,Add two more 32mm id spacer packs,source
+07a4405,2023-06-25,2023-06-25,2023-06-25,False,Add body plate parts and files,source
+5aeb799,2023-06-25,2023-06-25,2023-06-25,False,Fix commas in parts list,source
+fbb5afc,2023-06-25,2023-06-25,2023-07-06,False,Update parts_list.csv,source
+e44fc00,2023-07-06,2023-07-06,2023-07-06,False,"Add 2-beam, remove endcap",source
+4804e08,2023-07-06,2023-07-06,2023-07-06,False,"Remove endcap, actually",source
+8d72eae,2023-07-06,2023-07-06,2023-07-14,False,fix csv,source
+dd6c2ba,2023-07-14,2023-07-14,2023-07-17,False,"Add screws, nuts, washers",source
+d6d1fbc,2023-07-17,2023-07-17,2023-07-18,False,"Round total cost, nb wheel pairs -> 3",source
+d092d83,2023-07-18,2023-07-18,2023-07-26,False,"Switch to hex motors, various readme updates",source
+886bb13,2023-07-26,2023-07-26,2023-10-04,False,Use hyper hub iso sonic hub for wheels,source
+b6b321f,2023-10-04,2023-10-04,2023-10-06,False,Only need 4x 41-hole beams iso 6x,source
+2d9912e,2023-10-06,2023-10-06,2023-11-18,False,20mm standoffs -> 22mm,source
+2de6b1d,2023-11-18,2023-11-18,2024-01-12,False,"Merge pull request #438 from nasa-jpl/Achllle/rb-joint-part-swap — Use stainless steel shaft of same dims iso Al hollow shaft; Use 4 and 6mm spacers iso 1 8mm spacer, Adjust instructions",source
+42bbca4,2024-01-12,2024-01-12,2024-04-11,False,Merge pull request #446 from UTNAK/patch-1 — Update parts_list.csv,source
+778fe3d,2024-04-11,2024-04-11,2024-06-18,False,Merge pull request #471 from Achllle/iss469 — Replace outdated spacer with replacement,source
+72edc6e,2024-06-18,2024-06-18,2024-11-20,False,"Merge pull request #470 from Achllle/wasteland_wheels — Switch out default wheels to GoBilda's wasteland wheels, suggest two alternatives; switch out to smaller wasteland wheels",source
+5160b26,2024-11-20,2024-11-20,2025-12-01,False,Merge pull request #491 from Achllle/7iso5-29holebeams — 7 iso 5 29 hole beams for body,source
+2b5b018,2025-12-01,2025-12-01,2026-08-05,False,improve body build documentation & images - increase nut count (#527),source
+6b2c5a9,2026-08-05,2026-08-05,,True,feat: replace hurricane nuts in control arm attachment with goRail nut (#548),source

@@ -1,0 +1,43 @@
+ecn_id,change_type,assembly_id,part_id,short_name,before_raw_qty,after_raw_qty,before_multiplier,after_multiplier
+ECN-2023-05-12-ca5d47b,qty_changed,OSR/body,P-1506-0032-0006,32mm 6mm spacer 2 pack,1,3,1,1
+ECN-2023-06-25-5aeb799,added,OSR/body,P-1116-0024-0040,3x5 grid plate,,4,,1
+ECN-2023-06-25-5aeb799,added,OSR/body,P-1500-0010-0006,plastic spacer,,1,,1
+ECN-2023-06-25-5aeb799,added,OSR/body,P-1501-0006-0080,8mm standoffs,,2,,1
+ECN-2023-06-25-5aeb799,added,OSR/body,P-1501-0006-0200,20mm standoffs,,2,,1
+ECN-2023-07-06-4804e08,removed,OSR/body,P-1519-0014-0400,goTube endcap,1,,1,
+ECN-2023-07-06-8d72eae,added,OSR/body,P-1102-0002-0016,2 hole flat beam,,2,,1
+ECN-2023-07-14-dd6c2ba,added,OSR/general,P-2800-0004-0008,M4x6 socket screws,,2,,1
+ECN-2023-07-14-dd6c2ba,added,OSR/general,P-2800-0004-0010,M4x8 socket screws,,3,,1
+ECN-2023-07-14-dd6c2ba,added,OSR/general,P-2800-0004-0012,M4x10 socket screws,,1,,1
+ECN-2023-07-14-dd6c2ba,added,OSR/general,P-2800-0004-0016,M4x12 socket screws,,2,,1
+ECN-2023-07-14-dd6c2ba,added,OSR/general,P-2800-0004-0020,M4x20 socket screws,,1,,1
+ECN-2023-07-14-dd6c2ba,added,OSR/general,P-2801-0004-0008,M4 washers,,1,,1
+ECN-2023-07-14-dd6c2ba,added,OSR/general,P-2802-0004-0006,M4x6 button screws,,2,,1
+ECN-2023-07-14-dd6c2ba,added,OSR/general,P-2802-0004-0010,M4x6 button screws,,3,,1
+ECN-2023-07-14-dd6c2ba,added,OSR/general,P-2802-0004-0016,M4x6 button screws,,2,,1
+ECN-2023-07-14-dd6c2ba,added,OSR/general,P-2811-0004-0007,M4 nuts,,1,,1
+ECN-2023-07-14-dd6c2ba,added,OSR/general,P-2812-0004-0007,M4 locknuts,,1,,1
+ECN-2023-07-17-d6d1fbc,qty_changed,OSR/drive wheel,P-5374X,wheel,1,1,6,3
+ECN-2023-07-18-d092d83,added,OSR/drive wheel,P-1309-0016-4008,REX bore hub,,1,,6
+ECN-2023-07-18-d092d83,removed,OSR/drive wheel,P-1401-0043-0032,clamping mount,1,,6,
+ECN-2023-07-18-d092d83,added,OSR/drive wheel,P-1401-0043-0036,clamping mount,,1,,6
+ECN-2023-07-18-d092d83,removed,OSR/drive wheel,P-5202-2402-0027,motor,1,,6,
+ECN-2023-07-18-d092d83,added,OSR/drive wheel,P-5203-2402-0027,motor,,1,,6
+ECN-2023-07-18-d092d83,removed,OSR/drive wheel,P-545618,D-Hub clamp,1,,6,
+ECN-2023-07-26-886bb13,removed,OSR/drive wheel,P-1309-0016-4008,REX bore hub,1,,6,
+ECN-2023-07-26-886bb13,added,OSR/drive wheel,P-1310-0016-4008,REX bore hub,,1,,6
+ECN-2023-10-04-b6b321f,qty_changed,OSR/body,P-1106-0041-0328,41 hole beam,6,4,1,1
+ECN-2023-10-06-2d9912e,removed,OSR/body,P-1501-0006-0200,20mm standoffs,2,,1,
+ECN-2023-10-06-2d9912e,added,OSR/body,P-1501-0006-0220,22mm standoffs,,2,,1
+ECN-2023-11-18-2de6b1d,added,OSR/rocker bogie,P-1514-0010-0060,"8mm ID Spacer (10mm OD, 6mm Length)",,0.5,,2
+ECN-2023-11-18-2de6b1d,removed,OSR/rocker bogie,P-1514-0010-0080,"8mm ID Spacer (10mm OD, 8mm Length)",1,,2,
+ECN-2023-11-18-2de6b1d,added,OSR/rocker bogie,P-1522-0010-0040,"8mm ID Spacer (10mm OD, 4mm Length)",,0.5,,2
+ECN-2023-11-18-2de6b1d,added,OSR/rocker bogie,P-2100-0008-0050,joint 8mm shaft,,1,,2
+ECN-2023-11-18-2de6b1d,removed,OSR/rocker bogie,P-4100-0608-0050,joint 8mm tube,1,,2,
+ECN-2024-04-11-778fe3d,removed,OSR/rocker bogie,P-1514-0010-0060,"8mm ID Spacer (10mm OD, 6mm Length)",0.5,,2,
+ECN-2024-04-11-778fe3d,added,OSR/rocker bogie,P-1522-0010-0060,"8mm ID Spacer (10mm OD, 6mm Length)",,0.5,,2
+ECN-2024-06-18-72edc6e,added,OSR/drive wheel,P-3616-0014-0144,wheel,,1,,6
+ECN-2024-06-18-72edc6e,removed,OSR/drive wheel,P-5374X,wheel,1,,3,
+ECN-2024-11-20-5160b26,qty_changed,OSR/body,P-1106-0029-0232,29 hole beam,5,7,1,1
+ECN-2025-12-01-2b5b018,qty_changed,OSR/general,P-2811-0004-0007,M4 nuts,1,2,1,2
+ECN-2026-08-05-6b2c5a9,added,OSR/rocker bogie,P-2805-0004-0038,goRAIL® Nut (5 Hole) - 2 Pack,,1,,2

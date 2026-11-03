@@ -1,0 +1,118 @@
+# 제조 실습(mfg-bom-agent) 실행환경 정의 (개발환경_정의서 4절)
+#
+# 서비스 4개:
+#   neo4j  지식 그래프 + 벡터 인덱스 + 전문 인덱스. 별도 벡터 DB 없이 이 하나로 검색을 끝낸다.
+#   mcp    업무 함수를 MCP 도구로 노출하는 서버. 앱은 이 서버를 통해서만 데이터에 접근한다.
+#   app    Streamlit 화면 + LangGraph 워크플로.
+#   init   데이터 적재·인덱스 생성. 한 번만 실행하는 작업이라 profile 로 분리했다.
+#
+# 개발 모드 (인프라만 컨테이너, 앱·MCP는 로컬 uv):
+#   docker compose up -d neo4j langfuse-web
+# 컨테이너 모드 (전부 컨테이너):
+#   docker compose up -d neo4j langfuse-web && docker compose --profile init run --rm init && docker compose up -d mcp app
+#
+# 컨테이너끼리는 서비스 이름(neo4j, mcp, langfuse-web)으로 통신한다. 컨테이너 안에서 localhost는 자기 자신이다.
+#
+# 호스트 포트는 .env 의 HOST_*_PORT 로 바꿀 수 있다. 바이오 실습(bio-target-agent)과 동시에 띄워도
+# 충돌하지 않도록 두 프로젝트의 기본 포트를 다르게 잡아 두었다 (정의서 4절 포트 표).
+#
+# Langfuse 는 설치형(self-host)이 기본이다 (정의서 11.1). 정의는 compose.langfuse.yaml 에 따로 두고 include 로 합친다.
+# 노트북 메모리가 부족하면 아래 include 를 주석 처리하고 .env 의 LANGFUSE_PUBLIC_KEY / SECRET_KEY 를 비운다.
+
+name: mfg-bom-agent
+
+include:
+  - compose.langfuse.yaml
+
+services:
+  neo4j:
+    # 5.26 은 LTS. 실습마다 Neo4j 를 따로 띄우므로 DB 가 하나뿐인 Community 에디션으로 충분하다 (정의서 12절).
+    image: neo4j:5.26-community
+    container_name: mfg-neo4j
+    ports:
+      - "${HOST_NEO4J_HTTP_PORT:-7474}:7474"   # Neo4j Browser
+      - "${HOST_NEO4J_BOLT_PORT:-7687}:7687"   # Bolt — 드라이버가 접속하는 포트
+    environment:
+      # 비밀번호가 .env 에 없으면 compose 가 바로 멈추게 한다 (:? 문법).
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:?NEO4J_PASSWORD를 .env에 설정하세요}
+      NEO4J_PLUGINS: '["apoc"]'
+      # 16GB 노트북 기준. 힙 2G + 페이지캐시 1G 면 실습 데이터(부품 수백 종)에 충분하다.
+      NEO4J_server_memory_heap_initial__size: 1G
+      NEO4J_server_memory_heap_max__size: 2G
+      NEO4J_server_memory_pagecache_size: 1G
+    volumes:
+      # named volume 이라 `docker compose down` 으로는 데이터가 남고, `down -v` 로만 지워진다 (정의서 4절).
+      # compose 프로젝트 이름(mfg-bom-agent)이 볼륨 이름 앞에 붙어 바이오 실습의 데이터와 섞이지 않는다.
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+    healthcheck:
+      # 포트가 열려도 DB가 아직 쿼리를 못 받을 수 있어서 실제 Cypher 를 던져 확인한다.
+      # 컨테이너 안에는 NEO4J_AUTH(neo4j/<비밀번호>)만 있으므로 앞의 "neo4j/" 를 떼어 비밀번호로 쓴다.
+      # $$ 는 compose 변수 치환을 피하고 컨테이너 안의 환경변수를 쓰겠다는 뜻이다.
+      test: ["CMD-SHELL", "cypher-shell -u neo4j -p \"$${NEO4J_AUTH#neo4j/}\" 'RETURN 1' > /dev/null 2>&1 || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+      start_period: 30s
+
+  mcp:
+    build:
+      context: .
+      dockerfile: docker/mcp.Dockerfile
+    container_name: mfg-mcp
+    env_file: .env
+    environment:
+      # .env 의 localhost 값을 컨테이너 네트워크 주소로 덮어쓴다. 컨테이너 안에서는 항상 8000 을 쓴다.
+      # 컨테이너 안의 localhost 는 자기 자신이라, Neo4j · Langfuse 는 서비스 이름으로 찾아야 한다.
+      NEO4J_URI: bolt://neo4j:7687
+      LANGFUSE_HOST: http://langfuse-web:3000
+      LANGFUSE_PUBLIC_URL: http://localhost:${HOST_LANGFUSE_PORT:-3000}  # 브라우저에서 여는 트레이스 링크 주소
+      MCP_HOST: 0.0.0.0
+      MCP_PORT: "8000"
+    ports:
+      # 개발 중 확인용. 수강생 배포판에서는 app 만 접근하면 되므로 이 줄을 지운다 (정의서 4절).
+      - "${HOST_MCP_PORT:-8000}:8000"
+    depends_on:
+      neo4j:
+        condition: service_healthy
+
+  app:
+    build:
+      context: .
+      dockerfile: docker/app.Dockerfile
+    container_name: mfg-app
+    env_file: .env
+    environment:
+      NEO4J_URI: bolt://neo4j:7687
+      MCP_URL: http://mcp:8000/mcp
+      # 컨테이너에서는 에이전트가 MCP 서버 컨테이너에 HTTP 로 접속해 도구를 부른다 (로컬 기본값은 inprocess).
+      MCP_TRANSPORT: http
+      # 앱 컨테이너는 Langfuse 를 서비스 이름으로 찾는다. 로컬 실행 시에는 .env 의 LANGFUSE_HOST 가 쓰인다.
+      LANGFUSE_HOST: http://langfuse-web:3000
+      LANGFUSE_PUBLIC_URL: http://localhost:${HOST_LANGFUSE_PORT:-3000}  # 브라우저에서 여는 트레이스 링크 주소
+    ports:
+      - "${HOST_APP_PORT:-8501}:8501"   # Streamlit
+    depends_on:
+      neo4j:
+        condition: service_healthy
+      mcp:
+        condition: service_started
+
+  init:
+    # mcp 와 같은 이미지를 쓴다. 적재 스크립트가 같은 패키지·드라이버를 필요로 하기 때문이다.
+    build:
+      context: .
+      dockerfile: docker/mcp.Dockerfile
+    container_name: mfg-init
+    profiles: ["init"]
+    env_file: .env
+    environment:
+      NEO4J_URI: bolt://neo4j:7687
+    command: ["uv", "run", "python", "scripts/init_data.py"]
+    depends_on:
+      neo4j:
+        condition: service_healthy
+
+volumes:
+  neo4j_data:
+  neo4j_logs:

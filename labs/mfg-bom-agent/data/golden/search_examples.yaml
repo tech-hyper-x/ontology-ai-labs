@@ -1,0 +1,30 @@
+# 하이브리드 검색(CQ-15) 실습 예시 질문. build_index.py 가 질문마다 검색어(Lucene)와 질문 임베딩을 만들어
+# 그래프에 (:SearchExample) 노드로 저장한다. Neo4j Browser 에서는 질문을 임베딩할 수 없으므로
+# `:params {example: "CQ-11", ...}` 처럼 이 노드의 벡터를 불러 CQ-15 를 그대로 실행한다.
+# query_en: 에이전트가 검색에 쓰는 영어 검색어 (계획 단계의 search_query_en 과 같은 역할)
+# expected: 찾아야 할 근거 문서 경로(일부 일치). golden: 같은 질문의 Golden Set 항목
+examples:
+  - id: CQ-11
+    question: 코너 바퀴가 돌지 않을 때 참고할 정비 문서는?
+    query_en: corner wheels will not turn
+    expected: mechanical/servo_gear_replacement/README.md
+    golden: G40
+    shows: 증상 표현 — 키워드와 벡터 어느 쪽도 1위가 아니지만 RRF 결합으로 1위
+  - id: G42
+    question: 서보 기어가 부서졌을 때 교체 절차가 있는 문서는?
+    query_en: servo gear broken replacement procedure
+    expected: mechanical/servo_gear_replacement/README.md
+    golden: G42
+    shows: 부품명 · 고장 표현 — 키워드와 벡터가 같은 문서를 위로 올린다
+  - id: G44
+    question: goBILDA 스페이서 1514-0010-0060 단종을 다룬 이슈는?
+    query_en: goBILDA spacer 1514-0010-0060 discontinued
+    expected: issues/469
+    golden: G44
+    shows: 품번 · 제조사 키워드 — BM25 가 품번을 정확히 잡는다
+  - id: G45
+    question: 구동 모터 기어가 부서지는 문제를 다룬 이슈는?
+    query_en: drive motor gear breaking
+    expected: issues/178
+    golden: G45
+    shows: 표현이 다른 이슈 제목 — 두 검색이 모두 1위

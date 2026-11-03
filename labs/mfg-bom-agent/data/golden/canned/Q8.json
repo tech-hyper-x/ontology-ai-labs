@@ -1,0 +1,259 @@
+{
+ "question": "코너 바퀴가 돌지 않을 때 참고할 정비 문서는 무엇인가요?",
+ "response": {
+  "run_id": "canned-Q8",
+  "status": "completed",
+  "mode": "kg_tools",
+  "intent": "symptom",
+  "headline": "코너 바퀴가 돌지 않을 때는 서보 기어 교체 정비 문서(mechanical/servo_gear_replacement/README.md)를 참고하면 됩니다.",
+  "summary": "코너 서보 · 교체 부품비 $31.99",
+  "highlights": [
+   "서보 기어 교체",
+   "코너 바퀴"
+  ],
+  "subject": "코너 서보 · 2000-0025-0002",
+  "basis": "정비 문서 검색 결과 기준, 교체 부품 1개",
+  "findings": [
+   "정비 문서 진단 항목에 따르면 코너 바퀴가 돌지 않는 첫 신호는 서보 모터이며, 원인은 느슨한 전기 연결이거나 기어셋 문제일 수 있습니다.",
+   "문서에 연결된 부품 중 고장 모드로 연결된 2000-0025-0002(코너 서보)를 점검 후보로 골랐습니다.",
+   "로봇 차량 1대에 이 서보가 4개 들어가며, 로커 보기 어셈블리 경로로 연결됩니다(BOM 사용처 참고)."
+  ],
+  "follow_ups": [
+   "먼저 로봇 차량 전원을 끄고 서보가 자유롭게 회전하는지, 커넥터가 느슨하지 않은지 점검해야 합니다. 원인이 전기인지 기어인지는 점검 후에 판단할 수 있습니다.",
+   "기어 교체가 필요하면 재고와 교체용 서보 확보 가능성을 구매 담당자에게 확인해야 합니다."
+  ],
+  "notes": [
+   "교체 부품비 $31.99는 부품 1개 기준이며 공임과 운송비는 제외했습니다.",
+   "가격은 실습 자료의 단가이며 자료 확인일은 2026-10-22, 가격 적용일은 확인되지 않았습니다."
+  ],
+  "key_facts": [
+   {
+    "label": "점검 부품",
+    "value": "코너 서보"
+   }
+  ],
+  "doc_notes": [
+   {
+    "doc_path": "mechanical/servo_gear_replacement/README.md",
+    "line": 16,
+    "summary_ko": "코너 바퀴가 돌지 않을 때 전기 연결과 기어셋을 점검하는 진단 절차를 설명한 문서입니다.",
+    "quote": "The first sign of an issue with the servo motors is when your corner wheels will not turn. This could be caused by either a loose electrical connection, or an issue in the gearset."
+   },
+   {
+    "doc_path": "mechanical/servo_gear_replacement/README.md",
+    "line": 1,
+    "summary_ko": "충격으로 코너 서보의 중심축이 손상되어 기어가 제대로 맞물리지 않을 때의 교체 방법을 다룬 문서입니다.",
+    "quote": "a central shaft holding two of the gears in place has been known to shear."
+   }
+  ],
+  "cited_labels": [
+   "교체 부품비 (1개)"
+  ],
+  "conclusion": "코너 바퀴가 돌지 않을 때는 서보 기어 교체 정비 문서(mechanical/servo_gear_replacement/README.md)를 참고하면 됩니다.\n\n코너 서보 · 교체 부품비 $31.99\n\n확인된 내용\n- 정비 문서 진단 항목에 따르면 코너 바퀴가 돌지 않는 첫 신호는 서보 모터이며, 원인은 느슨한 전기 연결이거나 기어셋 문제일 수 있습니다.\n- 문서에 연결된 부품 중 고장 모드로 연결된 2000-0025-0002(코너 서보)를 점검 후보로 골랐습니다.\n- 로봇 차량 1대에 이 서보가 4개 들어가며, 로커 보기 어셈블리 경로로 연결됩니다(BOM 사용처 참고).\n\n추가로 확인할 사항\n- 먼저 로봇 차량 전원을 끄고 서보가 자유롭게 회전하는지, 커넥터가 느슨하지 않은지 점검해야 합니다. 원인이 전기인지 기어인지는 점검 후에 판단할 수 있습니다.\n- 기어 교체가 필요하면 재고와 교체용 서보 확보 가능성을 구매 담당자에게 확인해야 합니다.\n\n교체 부품비 $31.99는 부품 1개 기준이며 공임과 운송비는 제외했습니다.\n가격은 실습 자료의 단가이며 자료 확인일은 2026-10-22, 가격 적용일은 확인되지 않았습니다.\n\n점검 부품: 코너 서보",
+  "calculations": [
+   {
+    "label": "교체 부품비 (1개)",
+    "kind": "requirement",
+    "value": "31.99",
+    "unit": "USD",
+    "tool": "cost_rollup",
+    "formula": "1개 × $31.99",
+    "inputs": {
+     "part": "2000-0025-0002",
+     "qty_each": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "parts_list.csv",
+    "note": "부품비만 — 공임 · 운송비 제외"
+   }
+  ],
+  "graph_paths": [
+   {
+    "text": "Rover → rocker bogie (배수 ×2) → BOMLine (qty 2 ea) → 2000-0025-0002 · 로봇 차량 1대당 4 ea",
+    "tool": "where_used",
+    "revision": "6b2c5a9",
+    "detail": {
+     "source_ref": "parts_list/parts_list.csv@6b2c5a9#row10",
+     "assembly": "rocker bogie",
+     "multiplier": 2,
+     "raw_qty": "2",
+     "pack_size": 1,
+     "each_per_product": "4",
+     "sku": "2000-0025-0002",
+     "name": "2000 Series Dual Mode Servo (25-2, Torque) - goBILDA"
+    }
+   }
+  ],
+  "documents": [
+   {
+    "doc_path": "mechanical/servo_gear_replacement/README.md",
+    "doc_id": "mechanical/servo_gear_replacement/README.md#1",
+    "title": "Servo Motor Gear Replacement",
+    "line": 1,
+    "excerpt": "sudden, sharp impact (like a crash into a hard object), the corner servo motors can fail. More specifically, a central shaft holding two of the gears in place has been known to shear. When this happens, the gears will not mesh as smoothly, and, when forced, this can cause gear te",
+    "linked_parts": [
+     "2000-0025-0002"
+    ],
+    "confidence": 1.0,
+    "method": "hybrid(RRF)",
+    "rank": 1,
+    "ranks": {
+     "bm25": 2,
+     "vector": 2
+    }
+   },
+   {
+    "doc_path": "mechanical/README.md",
+    "doc_id": "mechanical/README.md#7",
+    "title": "Attaching the corner assemblies",
+    "line": 53,
+    "excerpt": "connectors and DuPont connectors from the rocker bogie and corner assemblies should meet here.  > **tip**: Now is a good time to do another connectivity check. Using your multimeter, confirm that each wire connects all the way through.  > **Maintenance note**: The corner servo g",
+    "linked_parts": [
+     "2000-0025-0002"
+    ],
+    "confidence": 0.7,
+    "method": "hybrid(RRF)",
+    "rank": 2,
+    "ranks": {
+     "bm25": 1,
+     "vector": 4
+    }
+   },
+   {
+    "doc_path": "mechanical/servo_gear_replacement/README.md",
+    "doc_id": "mechanical/servo_gear_replacement/README.md#2",
+    "title": "Diagnosing an issue",
+    "line": 16,
+    "excerpt": "The first sign of an issue with the servo motors is when your corner wheels will not turn. This could be caused by either a loose electrical connection, or an issue in the gearset.   In either case, power down the rover to allow the servos to free spin. Verify that the electrical",
+    "linked_parts": [
+     "2000-0025-0002"
+    ],
+    "confidence": 1.0,
+    "method": "hybrid(RRF)",
+    "rank": 3,
+    "ranks": {
+     "bm25": 10,
+     "vector": 1
+    }
+   },
+   {
+    "doc_path": "mechanical/rocker_bogie/README.md",
+    "doc_id": "mechanical/rocker_bogie/README.md#10",
+    "title": "Attach the front servo and servo block",
+    "line": 85,
+    "excerpt": "ee or four M4 screws.  Then assemble the servo block to the servo motor. Insert the set screw that came with the servo inside the hollow shaft that fits onto the spline profile on the servo output, but don't tighten it yet as we'll have to readjust later when calibrating the corn",
+    "linked_parts": [
+     "1111-0003-0001",
+     "2000-0025-0002"
+    ],
+    "confidence": 1.0,
+    "method": "hybrid(RRF)",
+    "rank": 4,
+    "ranks": {
+     "bm25": 4,
+     "vector": 11
+    }
+   },
+   {
+    "doc_path": "https://github.com/nasa-jpl/open-source-rover/issues/176",
+    "doc_id": "issue#176",
+    "title": "Wheel Velocity Calculation Left/Right Reversed",
+    "line": 1,
+    "excerpt": "Wheel Velocity Calculation Left/Right Reversed RE: Steering angle calculation in file ```Software\\rover-code\\ROS\\osr\\scripts\\robot.py``` method ```calculateVelocity(self,v,r)```  When turning, the commanded wheel velocities are reversed from what they should be: inside wheels are",
+    "linked_parts": [],
+    "confidence": null,
+    "method": "hybrid(RRF)",
+    "rank": 5,
+    "ranks": {
+     "bm25": 7,
+     "vector": 9
+    }
+   }
+  ],
+  "sources": {
+   "snapshot": "a78f9eb",
+   "revision": "6b2c5a9",
+   "as_of": "2026-10-22",
+   "price_date_known": false,
+   "assumptions": [],
+   "exclusions": [
+    "재고 · 공임 · 운송비 제외"
+   ],
+   "data_used": [
+    "Neo4j 그래프 (BOM · 판 · ECN · 공급)",
+    "정비 문서 · 이슈 검색"
+   ],
+   "tools_available": [
+    "find_part",
+    "where_used",
+    "bom_explode",
+    "purchase_quantity",
+    "cost_rollup",
+    "revision_diff",
+    "change_impact",
+    "supply_risk",
+    "search_docs"
+   ]
+  },
+  "verification": {
+   "status": "passed",
+   "checks": [
+    {
+     "target": "교체 부품비 (1개)",
+     "cited_value": "31.99",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    }
+   ],
+   "unverified_numbers": [],
+   "reason": ""
+  },
+  "trace": {
+   "trace_id": "11b1aff6474743a47a50f9c7e23b7c94",
+   "url": "http://localhost:3000/project/mfg-bom-agent/traces/11b1aff6474743a47a50f9c7e23b7c94",
+   "session_id": "canned-Q8"
+  },
+  "context": {
+   "role": "설계변경 엔지니어",
+   "revision": null,
+   "as_of": "2026-10-22",
+   "price_date_known": false,
+   "dataset_version": "mfg-0.1",
+   "snapshot": "a78f9eb",
+   "llm_model": "claude-haiku-5-5",
+   "demo_mode": "none"
+  },
+  "pending_question": null,
+  "error": null,
+  "tool_calls": 3
+ },
+ "events": [
+  {
+   "step": "질문 계획",
+   "detail": "symptom · maintenance-evidence"
+  },
+  {
+   "step": "search_docs",
+   "detail": "문서 5개"
+  },
+  {
+   "step": "where_used",
+   "detail": "경로 1개"
+  },
+  {
+   "step": "cost_rollup",
+   "detail": "31.99 USD"
+  },
+  {
+   "step": "답변 작성",
+   "detail": "maintenance-evidence"
+  },
+  {
+   "step": "출력 검사",
+   "detail": "passed"
+  }
+ ]
+}

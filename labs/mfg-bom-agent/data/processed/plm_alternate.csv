@@ -1,0 +1,3 @@
+part_id,alternate_part_id,compatibility,requires_rework,source_doc,source_section,source_date,origin,pack_price,pack_size,price_note
+P-3616-0014-0144,P-5374X,모터 허브에 맞추려면 드릴 가공 필요,True,parts_list/extra_parts.md,Different wheels,2026-10-22,source,34.95,2,문서에 적힌 2개 1쌍 가격 (DollarHobbyz). 문서의 '약 $135 절감'은 휠 단가로 계산한 차이와 달라 휠 가격만 비교
+P-3616-0014-0144,P-3616-0014-0192,"가공 없이 장착, 직경이 커서 소프트웨어 휠 크기 설정 변경",False,parts_list/extra_parts.md,Different wheels,2026-10-22,source,39.99,1,문서의 '1대당 $90 추가'와 goBILDA 상품 페이지 가격 $39.99 (2026-10-25 확인)

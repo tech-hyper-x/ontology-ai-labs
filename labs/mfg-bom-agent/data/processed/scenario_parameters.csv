@@ -1,0 +1,4 @@
+scenario_id,parameter,value,description,origin
+S4-servo-discontinued,discontinued_part_id,P-2000-0025-0002,서보 2000-0025-0002 단종 가정,assumption
+S5-gobilda-disruption,disrupted_supplier_id,gobilda.com,goBILDA 공급 중단 가정,assumption
+S6-motor-price-up,price_change_percent,15,모터 5203-2402-0027 단가 15% 인상 가정,assumption

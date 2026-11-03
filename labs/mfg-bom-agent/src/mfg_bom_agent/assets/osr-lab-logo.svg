@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="40" viewBox="0 0 260 40">
+  <!-- 실습 화면 왼쪽 위 이름 표기 (글자만) -->
+  <text x="0" y="28" font-family="Inter, 'IBM Plex Sans KR', sans-serif" font-size="22" font-weight="800" letter-spacing="0.5" fill="#111827">NASA OSR <tspan fill="#2d5bff">BOM LAB</tspan></text>
+</svg>

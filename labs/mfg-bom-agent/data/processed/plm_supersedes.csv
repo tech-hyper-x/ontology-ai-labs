@@ -1,0 +1,6 @@
+new_part_id,old_part_id,ecn_id,assembly_id,effective_date,origin
+P-1401-0043-0036,P-1401-0043-0032,ECN-2023-07-18-d092d83,OSR/drive wheel,2023-07-18,derived
+P-5203-2402-0027,P-5202-2402-0027,ECN-2023-07-18-d092d83,OSR/drive wheel,2023-07-18,derived
+P-1310-0016-4008,P-1309-0016-4008,ECN-2023-07-26-886bb13,OSR/drive wheel,2023-07-26,derived
+P-1522-0010-0060,P-1514-0010-0060,ECN-2024-04-11-778fe3d,OSR/rocker bogie,2024-04-11,derived
+P-3616-0014-0144,P-5374X,ECN-2024-06-18-72edc6e,OSR/drive wheel,2024-06-18,derived

@@ -1,0 +1,29 @@
+# Personal settings; keep only the distribution example.
+.env*
+!.env.example
+**/.env*
+!**/.env.example
+
+# Python / editor / OS files
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.DS_Store
+._*
+.vscode/
+.idea/
+node_modules/
+
+# Local execution artifacts and raw downloads
+**/outputs/*
+!**/outputs/.gitkeep
+**/logs/
+*.log
+**/data/raw/nasa-osr/
+**/data/raw/nasa-osr-github/
+**/data/embeddings/**/*.parquet
+**/data/embeddings/**/*.npy

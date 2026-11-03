@@ -1,0 +1,17 @@
+ecn_id,revision_from,revision_to,ecn_date,title,line_count,reason,origin
+ECN-2023-05-12-ca5d47b,580d05e,ca5d47b,2023-05-12,Add two more 32mm id spacer packs,1,커밋 메시지 기반 교육용 ECN (실제 승인 문서 아님),derived
+ECN-2023-06-25-5aeb799,07a4405,5aeb799,2023-06-25,Fix commas in parts list,4,커밋 메시지 기반 교육용 ECN (실제 승인 문서 아님),derived
+ECN-2023-07-06-4804e08,e44fc00,4804e08,2023-07-06,"Remove endcap, actually",1,커밋 메시지 기반 교육용 ECN (실제 승인 문서 아님),derived
+ECN-2023-07-06-8d72eae,4804e08,8d72eae,2023-07-06,fix csv,1,커밋 메시지 기반 교육용 ECN (실제 승인 문서 아님),derived
+ECN-2023-07-14-dd6c2ba,8d72eae,dd6c2ba,2023-07-14,"Add screws, nuts, washers",11,커밋 메시지 기반 교육용 ECN (실제 승인 문서 아님),derived
+ECN-2023-07-17-d6d1fbc,dd6c2ba,d6d1fbc,2023-07-17,"Round total cost, nb wheel pairs -> 3",1,커밋 메시지 기반 교육용 ECN (실제 승인 문서 아님),derived
+ECN-2023-07-18-d092d83,d6d1fbc,d092d83,2023-07-18,"Switch to hex motors, various readme updates",6,커밋 메시지 기반 교육용 ECN (실제 승인 문서 아님),derived
+ECN-2023-07-26-886bb13,d092d83,886bb13,2023-07-26,Use hyper hub iso sonic hub for wheels,2,커밋 메시지 기반 교육용 ECN (실제 승인 문서 아님),derived
+ECN-2023-10-04-b6b321f,886bb13,b6b321f,2023-10-04,Only need 4x 41-hole beams iso 6x,1,커밋 메시지 기반 교육용 ECN (실제 승인 문서 아님),derived
+ECN-2023-10-06-2d9912e,b6b321f,2d9912e,2023-10-06,20mm standoffs -> 22mm,2,커밋 메시지 기반 교육용 ECN (실제 승인 문서 아님),derived
+ECN-2023-11-18-2de6b1d,2d9912e,2de6b1d,2023-11-18,"Merge pull request #438 from nasa-jpl/Achllle/rb-joint-part-swap — Use stainless steel shaft of same dims iso Al hollow shaft; Use 4 and 6mm spacers iso 1 8mm spacer, Adjust instructions",5,커밋 메시지 기반 교육용 ECN (실제 승인 문서 아님),derived
+ECN-2024-04-11-778fe3d,42bbca4,778fe3d,2024-04-11,Merge pull request #471 from Achllle/iss469 — Replace outdated spacer with replacement,2,커밋 메시지 기반 교육용 ECN (실제 승인 문서 아님),derived
+ECN-2024-06-18-72edc6e,778fe3d,72edc6e,2024-06-18,"Merge pull request #470 from Achllle/wasteland_wheels — Switch out default wheels to GoBilda's wasteland wheels, suggest two alternatives; switch out to smaller wasteland wheels",2,커밋 메시지 기반 교육용 ECN (실제 승인 문서 아님),derived
+ECN-2024-11-20-5160b26,72edc6e,5160b26,2024-11-20,Merge pull request #491 from Achllle/7iso5-29holebeams — 7 iso 5 29 hole beams for body,1,커밋 메시지 기반 교육용 ECN (실제 승인 문서 아님),derived
+ECN-2025-12-01-2b5b018,5160b26,2b5b018,2025-12-01,improve body build documentation & images - increase nut count (#527),1,커밋 메시지 기반 교육용 ECN (실제 승인 문서 아님),derived
+ECN-2026-08-05-6b2c5a9,2b5b018,6b2c5a9,2026-08-05,feat: replace hurricane nuts in control arm attachment with goRail nut (#548),1,커밋 메시지 기반 교육용 ECN (실제 승인 문서 아님),derived

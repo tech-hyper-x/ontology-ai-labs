@@ -1,0 +1,144 @@
+{
+ "question": "goBILDA에서 부품을 더 이상 공급받지 못하면, 어떤 부품과 조립 단위를 다시 검토해야 하나요?",
+ "response": {
+  "run_id": "canned-Q5",
+  "status": "completed",
+  "mode": "kg_tools",
+  "intent": "supply_disruption",
+  "headline": "goBILDA에만 등록된 부품은 53종이며, 이 부품들이 body·corner·drive wheel·general·rocker bogie 어셈블리의 검토 후보입니다.",
+  "summary": "goBILDA 단독 공급 53종 · 어셈블리 5개",
+  "highlights": [
+   "goBILDA",
+   "53종"
+  ],
+  "subject": "goBILDA 단독 공급 부품 · 로봇 차량 전체 (기계 BOM)",
+  "basis": "선택 판 BOM 부품 중 등록 공급사가 goBILDA(gobilda.com) 한 곳뿐인 부품",
+  "findings": [
+   "현재 데이터에 등록된 공급사가 goBILDA 한 곳뿐인 부품을 기준으로 집계했습니다.",
+   "영향 후보 어셈블리는 body, corner, drive wheel, general, rocker bogie입니다.",
+   "영향 범위는 검토 후보이며, 포함 관계만으로 실제 생산 영향이 확정되지는 않습니다."
+  ],
+  "follow_ups": [
+   "goBILDA 공급 중단 시 53종 각각의 재고 수량과 대체 부품 확보 가능성을 구매 담당자에게 확인해야 생산 중단 여부를 판단할 수 있습니다.",
+   "53종 중 장착 조건이 바뀌는 부품이 있는지 설계 담당자에게 확인해야 대체 부품 채택 여부를 정할 수 있습니다."
+  ],
+  "notes": [
+   "gobilda.com 공급 중단은 교육용 가정입니다.",
+   "등록 공급사는 실습 데이터 기준입니다. 원천 부품표의 구매 링크와 교육용 가상 공급사만 등록돼 있어, '다른 공급처 없음'은 실습 가정이며 실제 시장의 공급처 수가 아닙니다."
+  ],
+  "key_facts": [
+   {
+    "label": "대체 부품",
+    "value": "등록 없음"
+   }
+  ],
+  "doc_notes": [],
+  "cited_labels": [
+   "gobilda.com 단독 공급 부품 수"
+  ],
+  "conclusion": "goBILDA에만 등록된 부품은 53종이며, 이 부품들이 body·corner·drive wheel·general·rocker bogie 어셈블리의 검토 후보입니다.\n\ngoBILDA 단독 공급 53종 · 어셈블리 5개\n\n확인된 내용\n- 현재 데이터에 등록된 공급사가 goBILDA 한 곳뿐인 부품을 기준으로 집계했습니다.\n- 영향 후보 어셈블리는 body, corner, drive wheel, general, rocker bogie입니다.\n- 영향 범위는 검토 후보이며, 포함 관계만으로 실제 생산 영향이 확정되지는 않습니다.\n\n추가로 확인할 사항\n- goBILDA 공급 중단 시 53종 각각의 재고 수량과 대체 부품 확보 가능성을 구매 담당자에게 확인해야 생산 중단 여부를 판단할 수 있습니다.\n- 53종 중 장착 조건이 바뀌는 부품이 있는지 설계 담당자에게 확인해야 대체 부품 채택 여부를 정할 수 있습니다.\n\ngobilda.com 공급 중단은 교육용 가정입니다.\n등록 공급사는 실습 데이터 기준입니다. 원천 부품표의 구매 링크와 교육용 가상 공급사만 등록돼 있어, '다른 공급처 없음'은 실습 가정이며 실제 시장의 공급처 수가 아닙니다.\n\n대체 부품: 등록 없음",
+  "calculations": [
+   {
+    "label": "gobilda.com 단독 공급 부품 수",
+    "kind": "quantity",
+    "value": "53",
+    "unit": "parts",
+    "tool": "supply_risk",
+    "formula": "선택 판 BOM 부품 중 등록 공급사가 이 회사뿐인 부품 (R1)",
+    "inputs": {
+     "supplier": "gobilda.com"
+    },
+    "revision": "6b2c5a9",
+    "as_of": null,
+    "source": "erp_supplier_item",
+    "note": null
+   }
+  ],
+  "graph_paths": [
+   {
+    "text": "영향 어셈블리: body, corner, drive wheel, general, rocker bogie → Rover",
+    "tool": "supply_risk",
+    "revision": "6b2c5a9",
+    "detail": {}
+   }
+  ],
+  "documents": [],
+  "sources": {
+   "snapshot": "a78f9eb",
+   "revision": "6b2c5a9",
+   "as_of": "2026-10-22",
+   "price_date_known": false,
+   "assumptions": [
+    "gobilda.com 공급 중단은 교육용 가정",
+    "등록 공급사는 실습 데이터 기준이다. 원천 부품표의 구매 링크와 교육용 가상 공급사만 등록돼 있어, '다른 공급처 없음'은 실습 가정이며 실제 시장의 공급처 수가 아니다"
+   ],
+   "exclusions": [],
+   "data_used": [
+    "Neo4j 그래프 (BOM · 판 · ECN · 공급)",
+    "정비 문서 · 이슈 검색"
+   ],
+   "tools_available": [
+    "find_part",
+    "where_used",
+    "bom_explode",
+    "purchase_quantity",
+    "cost_rollup",
+    "revision_diff",
+    "change_impact",
+    "supply_risk",
+    "search_docs"
+   ]
+  },
+  "verification": {
+   "status": "passed",
+   "checks": [
+    {
+     "target": "gobilda.com 단독 공급 부품 수",
+     "cited_value": "53",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    }
+   ],
+   "unverified_numbers": [],
+   "reason": ""
+  },
+  "trace": {
+   "trace_id": "168f0b32fb300ac4df15afcf4d8db21d",
+   "url": "http://localhost:3000/project/mfg-bom-agent/traces/168f0b32fb300ac4df15afcf4d8db21d",
+   "session_id": "canned-Q5"
+  },
+  "context": {
+   "role": "설계변경 엔지니어",
+   "revision": null,
+   "as_of": "2026-10-22",
+   "price_date_known": false,
+   "dataset_version": "mfg-0.1",
+   "snapshot": "a78f9eb",
+   "llm_model": "claude-haiku-5-5",
+   "demo_mode": "none"
+  },
+  "pending_question": null,
+  "error": null,
+  "tool_calls": 1
+ },
+ "events": [
+  {
+   "step": "질문 계획",
+   "detail": "supply_disruption · change-and-supply-risk"
+  },
+  {
+   "step": "supply_risk",
+   "detail": "부품 53개 · 대체품 0개"
+  },
+  {
+   "step": "답변 작성",
+   "detail": "change-and-supply-risk"
+  },
+  {
+   "step": "출력 검사",
+   "detail": "passed"
+  }
+ ]
+}

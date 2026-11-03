@@ -1,0 +1,7 @@
+revision_id,row_no,short_name,issue,action
+07a4405,42,8mm standoffs,열 개수 불일치 (남는 칸 ['1']),행 제외
+07a4405,43,20mm standoffs,열 개수 불일치 (남는 칸 ['1']),행 제외
+07a4405,44,plastic spacer,열 개수 불일치 (남는 칸 ['1']),행 제외
+07a4405,45,3x5 grid plate,열 개수 불일치 (남는 칸 ['1']),행 제외
+e44fc00,46,2 hole flat beam,열 개수 불일치 (모자란 칸),행 제외
+4804e08,45,2 hole flat beam,열 개수 불일치 (모자란 칸),행 제외

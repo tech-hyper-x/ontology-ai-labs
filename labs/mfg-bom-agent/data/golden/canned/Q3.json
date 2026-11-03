@@ -1,0 +1,214 @@
+{
+ "question": "2024년 6월 휠 교체(교육용 변경 기록) 전후로 바뀐 부품은 무엇이고, 로봇 차량 1대 원가는 얼마나 달라졌나요?",
+ "response": {
+  "run_id": "canned-Q3",
+  "status": "completed",
+  "mode": "kg_tools",
+  "intent": "revision_change",
+  "headline": "휠 교체(ECN-2024-06-18-72edc6e) 전후로 drive wheel 2종이 바뀌었고, 로봇 차량 1대 원가는 $45.09 증가($1,255.66 → $1,300.75)했습니다.",
+  "summary": "로봇 차량 1대 원가 $45.09 증가",
+  "highlights": [
+   "drive wheel",
+   "로봇 차량 1대 원가"
+  ],
+  "subject": "로봇 차량 전체 (기계 BOM → 72edc6e)",
+  "basis": "로봇 차량 1대",
+  "findings": [
+   "추가된 부품은 drive wheel Wasteland Wheel(3616-0014-0144)이고, 1대당 6개가 들어갑니다.",
+   "빠진 부품은 drive wheel Traxxas 5374X 타이어·휠(5374X)이고, 기존 1대당 3개가 들어갔습니다.",
+   "각 판의 원가는 그 판 parts_list에 적힌 단가로 계산했습니다."
+  ],
+  "follow_ups": [
+   "새 휠 3616-0014-0144를 기존 차량에 장착할 수 있는지 설계 담당자에게 확인해야 합니다.",
+   "변경 적용 구간(2024-06-18 ~ 2024-11-20) 이후 실제 생산 반영 시점을 생산 관리 담당자에게 확인해야 합니다."
+  ],
+  "notes": [
+   "실습 자료의 단가로 계산한 금액입니다(자료 확인일 2024-06-18). 실제 가격 적용일은 확인되지 않았습니다(가격 적용일 미상).",
+   "재작업·설정 변경 공수와 다른 부품비·공정비는 계산에서 뺐습니다."
+  ],
+  "key_facts": [
+   {
+    "label": "변경 ECN",
+    "value": "ECN-2024-06-18-72edc6e"
+   }
+  ],
+  "doc_notes": [],
+  "cited_labels": [
+   "변경 전 로봇 차량 원가 (1대)",
+   "변경 후 로봇 차량 원가 (1대)",
+   "로봇 차량 원가 차이 (1대)"
+  ],
+  "conclusion": "휠 교체(ECN-2024-06-18-72edc6e) 전후로 drive wheel 2종이 바뀌었고, 로봇 차량 1대 원가는 $45.09 증가($1,255.66 → $1,300.75)했습니다.\n\n로봇 차량 1대 원가 $45.09 증가\n\n확인된 내용\n- 추가된 부품은 drive wheel Wasteland Wheel(3616-0014-0144)이고, 1대당 6개가 들어갑니다.\n- 빠진 부품은 drive wheel Traxxas 5374X 타이어·휠(5374X)이고, 기존 1대당 3개가 들어갔습니다.\n- 각 판의 원가는 그 판 parts_list에 적힌 단가로 계산했습니다.\n\n추가로 확인할 사항\n- 새 휠 3616-0014-0144를 기존 차량에 장착할 수 있는지 설계 담당자에게 확인해야 합니다.\n- 변경 적용 구간(2024-06-18 ~ 2024-11-20) 이후 실제 생산 반영 시점을 생산 관리 담당자에게 확인해야 합니다.\n\n실습 자료의 단가로 계산한 금액입니다(자료 확인일 2024-06-18). 실제 가격 적용일은 확인되지 않았습니다(가격 적용일 미상).\n재작업·설정 변경 공수와 다른 부품비·공정비는 계산에서 뺐습니다.\n\n변경 ECN: ECN-2024-06-18-72edc6e",
+  "calculations": [
+   {
+    "label": "변경 전 로봇 차량 원가 (1대)",
+    "kind": "requirement",
+    "value": "1255.66",
+    "unit": "USD",
+    "tool": "change_impact",
+    "formula": "변경 전 판 Σ 원천 수량 × 배수 × 단가",
+    "inputs": {
+     "units": 1,
+     "ecn": "ECN-2024-06-18-72edc6e"
+    },
+    "revision": "72edc6e",
+    "as_of": "2024-06-18",
+    "source": "parts_list.csv (각 판)",
+    "note": null
+   },
+   {
+    "label": "변경 후 로봇 차량 원가 (1대)",
+    "kind": "requirement",
+    "value": "1300.75",
+    "unit": "USD",
+    "tool": "change_impact",
+    "formula": "변경 후 판 Σ 원천 수량 × 배수 × 단가",
+    "inputs": {
+     "units": 1,
+     "ecn": "ECN-2024-06-18-72edc6e"
+    },
+    "revision": "72edc6e",
+    "as_of": "2024-06-18",
+    "source": "parts_list.csv (각 판)",
+    "note": null
+   },
+   {
+    "label": "로봇 차량 원가 차이 (1대)",
+    "kind": "diff",
+    "value": "45.09",
+    "unit": "USD",
+    "tool": "change_impact",
+    "formula": "판 72edc6e 원가 − 판 778fe3d 원가 (1대, 각 판의 parts_list 단가)",
+    "inputs": {
+     "units": 1,
+     "ecn": "ECN-2024-06-18-72edc6e"
+    },
+    "revision": "72edc6e",
+    "as_of": "2024-06-18",
+    "source": "parts_list.csv (각 판)",
+    "note": null
+   }
+  ],
+  "graph_paths": [
+   {
+    "text": "added: drive wheel · 3616-0014-0144 (- → 1×6)",
+    "tool": "revision_diff",
+    "revision": "72edc6e",
+    "detail": {
+     "name": "Wasteland Wheel (144mm Diameter, 52mm Width)"
+    }
+   },
+   {
+    "text": "removed: drive wheel · 5374X (1×3 → -)",
+    "tool": "revision_diff",
+    "revision": "72edc6e",
+    "detail": {
+     "name": "Traxxas 5374X Talon Tires, Gemini Wheels, Black Chrome – Dollar Hobbyz"
+    }
+   },
+   {
+    "text": "판 778fe3d → 판 72edc6e · 판 72edc6e 저장소상 적용 구간 2024-06-18 ~ 2024-11-20",
+    "tool": "revision_diff",
+    "revision": "72edc6e",
+    "detail": {}
+   }
+  ],
+  "documents": [],
+  "sources": {
+   "snapshot": "a78f9eb",
+   "revision": "72edc6e",
+   "as_of": "2024-06-18",
+   "price_date_known": false,
+   "assumptions": [
+    "각 판의 원가는 그 판 parts_list 에 적힌 단가로 계산"
+   ],
+   "exclusions": [],
+   "data_used": [
+    "Neo4j 그래프 (BOM · 판 · ECN · 공급)",
+    "정비 문서 · 이슈 검색"
+   ],
+   "tools_available": [
+    "find_part",
+    "where_used",
+    "bom_explode",
+    "purchase_quantity",
+    "cost_rollup",
+    "revision_diff",
+    "change_impact",
+    "supply_risk",
+    "search_docs"
+   ]
+  },
+  "verification": {
+   "status": "passed",
+   "checks": [
+    {
+     "target": "변경 전 로봇 차량 원가 (1대)",
+     "cited_value": "1255.66",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "변경 후 로봇 차량 원가 (1대)",
+     "cited_value": "1300.75",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    },
+    {
+     "target": "로봇 차량 원가 차이 (1대)",
+     "cited_value": "45.09",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    }
+   ],
+   "unverified_numbers": [],
+   "reason": ""
+  },
+  "trace": {
+   "trace_id": "31a660e6424e69fdbba2f67fccdfc104",
+   "url": "http://localhost:3000/project/mfg-bom-agent/traces/31a660e6424e69fdbba2f67fccdfc104",
+   "session_id": "canned-Q3"
+  },
+  "context": {
+   "role": "설계변경 엔지니어",
+   "revision": null,
+   "as_of": "2026-10-22",
+   "price_date_known": false,
+   "dataset_version": "mfg-0.1",
+   "snapshot": "a78f9eb",
+   "llm_model": "claude-haiku-5-5",
+   "demo_mode": "none"
+  },
+  "pending_question": null,
+  "error": null,
+  "tool_calls": 2
+ },
+ "events": [
+  {
+   "step": "질문 계획",
+   "detail": "revision_change · change-and-supply-risk"
+  },
+  {
+   "step": "change_impact",
+   "detail": "후보 1곳 · 45.09 USD"
+  },
+  {
+   "step": "revision_diff",
+   "detail": "변경 라인 2개"
+  },
+  {
+   "step": "답변 작성",
+   "detail": "change-and-supply-risk"
+  },
+  {
+   "step": "출력 검사",
+   "detail": "passed"
+  }
+ ]
+}

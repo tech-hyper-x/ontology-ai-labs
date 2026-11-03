@@ -1,0 +1,431 @@
+version: '1.1'
+snapshot: a78f9eb
+items:
+- id: G01
+  category: 수량
+  question: 로버 50대를 만들 때 서보 2000-0025-0002 은(는) 낱개로 몇 개 필요한가?
+  expected:
+    type: number
+    value: '200'
+    unit: ea
+    tol: '0'
+    units: 50
+  note: 낱개 = 원천 수량 × 팩 크기 × 배수 × 대수
+- id: G02
+  category: 수량
+  question: 로버 20대를 만들 때 모터 5203-2402-0027 은(는) 낱개로 몇 개 필요한가?
+  expected:
+    type: number
+    value: '120'
+    unit: ea
+    tol: '0'
+    units: 20
+  note: 낱개 = 원천 수량 × 팩 크기 × 배수 × 대수
+- id: G03
+  category: 수량
+  question: 로버 10대를 만들 때 휠 3616-0014-0144 은(는) 낱개로 몇 개 필요한가?
+  expected:
+    type: number
+    value: '60'
+    unit: ea
+    tol: '0'
+    units: 10
+  note: 낱개 = 원천 수량 × 팩 크기 × 배수 × 대수
+- id: G04
+  category: 수량
+  question: 로버 20대를 만들 때 8mm ID 스페이서(6mm) 1522-0010-0060 은(는) 낱개로 몇 개 필요한가?
+  expected:
+    type: number
+    value: '80.0'
+    unit: ea
+    tol: '0'
+    units: 20
+  note: 낱개 = 원천 수량 × 팩 크기 × 배수 × 대수
+- id: G05
+  category: 수량
+  question: 로버 30대를 만들 때 90도 스틸 브래킷 1137-0001-0001 은(는) 낱개로 몇 개 필요한가?
+  expected:
+    type: number
+    value: '60.0'
+    unit: ea
+    tol: '0'
+    units: 30
+  note: 낱개 = 원천 수량 × 팩 크기 × 배수 × 대수
+- id: G06
+  category: 수량
+  question: 로버 15대를 만들 때 플랜지 베어링 1611-0514-0008 은(는) 낱개로 몇 개 필요한가?
+  expected:
+    type: number
+    value: '60'
+    unit: ea
+    tol: '0'
+    units: 15
+  note: 낱개 = 원천 수량 × 팩 크기 × 배수 × 대수
+- id: G07
+  category: 수량
+  question: 로버 20대 생산 시 8mm ID 스페이서(6mm, 4개입) 1522-0010-0060 은(는) 몇 팩을 구매해야 하나?
+  expected:
+    type: number
+    value: '20'
+    unit: pack
+    tol: '0'
+    units: 20
+  note: 구매 팩 수 = max(올림(소요 낱개 ÷ 팩 크기), MOQ)
+- id: G08
+  category: 수량
+  question: 로버 20대 생산 시 90도 스틸 브래킷(2개입) 1137-0001-0001 은(는) 몇 팩을 구매해야 하나?
+  expected:
+    type: number
+    value: '20'
+    unit: pack
+    tol: '0'
+    units: 20
+  note: 구매 팩 수 = max(올림(소요 낱개 ÷ 팩 크기), MOQ)
+- id: G09
+  category: 수량
+  question: 로버 7대 생산 시 플랜지 베어링(2개입) 1611-0514-0008 은(는) 몇 팩을 구매해야 하나?
+  expected:
+    type: number
+    value: '14'
+    unit: pack
+    tol: '0'
+    units: 7
+  note: 구매 팩 수 = max(올림(소요 낱개 ÷ 팩 크기), MOQ)
+- id: G10
+  category: 수량
+  question: 로버 12대 생산 시 서보 2000-0025-0002 은(는) 몇 팩을 구매해야 하나?
+  expected:
+    type: number
+    value: '48'
+    unit: pack
+    tol: '0'
+    units: 12
+  note: 구매 팩 수 = max(올림(소요 낱개 ÷ 팩 크기), MOQ)
+- id: G11
+  category: 원가
+  question: 로버 1대의 기계 BOM 원가는?
+  expected:
+    type: number
+    value: '1330.38'
+    unit: USD
+    tol: '0.01'
+    units: 1
+  note: ''
+- id: G12
+  category: 원가
+  question: 로버 10대의 기계 BOM 소요 원가는?
+  expected:
+    type: number
+    value: '13303.80'
+    unit: USD
+    tol: '0.01'
+    units: 10
+  note: ''
+- id: G13
+  category: 원가
+  question: 로버 1대 기준 drive wheel 어셈블리 원가는?
+  expected:
+    type: number
+    value: '527.70'
+    unit: USD
+    tol: '0.01'
+    units: 1
+  note: ''
+- id: G14
+  category: 원가
+  question: 로버 1대 기준 rocker bogie 어셈블리 원가는?
+  expected:
+    type: number
+    value: '423.83'
+    unit: USD
+    tol: '0.01'
+    units: 1
+  note: ''
+- id: G15
+  category: 원가
+  question: 로버 1대 기준 body 어셈블리 원가는?
+  expected:
+    type: number
+    value: '253.67'
+    unit: USD
+    tol: '0.01'
+    units: 1
+  note: ''
+- id: G16
+  category: 원가
+  question: 모터 5203-2402-0027 단가가 15% 오르면 로버 100대 원가는 얼마나 늘어나나?
+  expected:
+    type: number
+    value: '3869.10'
+    unit: USD
+    tol: '0.01'
+    metric: diff
+    direction: increase
+    units: 100
+  note: ''
+- id: G17
+  category: 원가
+  question: 모터 단가 15% 인상 시 로버 1대 원가 증가액은?
+  expected:
+    type: number
+    value: '38.69'
+    unit: USD
+    tol: '0.01'
+    metric: diff
+    direction: increase
+    units: 1
+  note: ''
+- id: G18
+  category: 원가
+  question: 서보 2000-0025-0002 단가가 10% 오르면 50대 원가 차이는?
+  expected:
+    type: number
+    value: '639.80'
+    unit: USD
+    tol: '0.01'
+    metric: diff
+    direction: increase
+    units: 50
+  note: ''
+- id: G19
+  category: 원가
+  question: 휠 3616-0014-0144 단가가 5% 내리면 로버 20대 원가는 얼마나 줄어드나?
+  expected:
+    type: number
+    value: '149.94'
+    unit: USD
+    tol: '0.01'
+    metric: diff
+    direction: decrease
+    units: 20
+  note: 감소 방향 · 감소액 크기로 채점
+- id: G20
+  category: 원가
+  question: 서보 2000-0025-0002 단종 가정 시 50대 생산에 필요한 서보의 소요 금액은?
+  expected:
+    type: number
+    value: '6398.00'
+    unit: USD
+    tol: '0.01'
+    units: 50
+  note: ''
+- id: G21
+  category: 관계 탐색
+  question: 서보 2000-0025-0002 는 어느 어셈블리에 쓰이나?
+  expected:
+    type: set
+    values:
+    - rocker bogie
+  note: ''
+- id: G22
+  category: 관계 탐색
+  question: 부품 1120-0002-0072 가 쓰이는 어셈블리를 모두 알려줘
+  expected:
+    type: set
+    values:
+    - body
+    - drive wheel
+  note: ''
+- id: G23
+  category: 관계 탐색
+  question: 현재 BOM 에서 두 개 이상의 어셈블리에 함께 쓰이는 공용 부품은?
+  expected:
+    type: set
+    values:
+    - 1116-0024-0040
+    - 1120-0002-0072
+  note: ''
+- id: G24
+  category: 관계 탐색
+  question: corner 어셈블리의 구성 부품 품번은?
+  expected:
+    type: set
+    values:
+    - 1109-0024-0144
+    - 1121-0004-0120
+  note: ''
+- id: G25
+  category: 관계 탐색
+  question: 모터 5203-2402-0027 를 공급하는 등록 공급사는?
+  expected:
+    type: set
+    values:
+    - alt-robotics
+    - gobilda.com
+  note: ''
+- id: G26
+  category: 관계 탐색
+  question: goBILDA 공급 중단 가정 시 다른 공급처가 없는 부품은 몇 개인가?
+  expected:
+    type: number
+    value: '53'
+    unit: parts
+    tol: '0'
+  note: ''
+- id: G27
+  category: 관계 탐색
+  question: goBILDA 공급 중단 가정 시 영향받는 어셈블리는?
+  expected:
+    type: set
+    values:
+    - body
+    - corner
+    - drive wheel
+    - general
+    - rocker bogie
+  note: ''
+- id: G28
+  category: 관계 탐색
+  question: 휠 3616-0014-0144 대신 쓸 수 있는 대체 부품은?
+  expected:
+    type: set
+    values:
+    - 3616-0014-0192
+    - 5374X
+  note: ''
+- id: G29
+  category: 관계 탐색
+  question: 서보 2000-0025-0002 의 등록 대체 부품이 있나? 등록 공급사는?
+  expected:
+    type: set
+    values:
+    - gobilda.com
+  note: 대체 부품 없음 · 공급사 goBILDA 하나
+- id: G30
+  category: 관계 탐색
+  question: 모터 5203-2402-0027 가 바뀌면 영향 검토가 필요한 어셈블리는?
+  expected:
+    type: set
+    values:
+    - drive wheel
+  note: ''
+- id: G31
+  category: Revision · ECN
+  question: 2024-06 교육용 ECN 으로 바뀐 BOM 라인의 부품은?
+  expected:
+    type: set
+    values:
+    - 3616-0014-0144
+    - 5374X
+  note: ''
+- id: G32
+  category: Revision · ECN
+  question: 2024-06 ECN 전후 로버 1대 원가 차이는?
+  expected:
+    type: number
+    value: '45.09'
+    unit: USD
+    tol: '0.01'
+    metric: diff
+    direction: increase
+    units: 1
+  note: ''
+- id: G33
+  category: Revision · ECN
+  question: 모터 5203-2402-0027 이 교체한 이전 부품은?
+  expected:
+    type: set
+    values:
+    - 5202-2402-0027
+  note: ''
+- id: G34
+  category: Revision · ECN
+  question: 스페이서 1522-0010-0060 은 어떤 부품을 대체했나?
+  expected:
+    type: set
+    values:
+    - 1514-0010-0060
+  note: ''
+- id: G35
+  category: Revision · ECN
+  question: 2023-10-04 ECN 에서 수량이 바뀐 부품은?
+  expected:
+    type: set
+    values:
+    - 1106-0041-0328
+  note: ''
+- id: G36
+  category: Revision · ECN
+  question: 2023-10-04 ECN 전후 로버 1대 원가 차이는?
+  expected:
+    type: number
+    value: '13.98'
+    unit: USD
+    tol: '0.01'
+    metric: diff
+    direction: decrease
+    units: 1
+  note: 41-hole beam 6개 → 4개로 감소 (음수)
+- id: G37
+  category: Revision · ECN
+  question: 2024-11 ECN 전후 로버 1대 원가 차이는?
+  expected:
+    type: number
+    value: '10.18'
+    unit: USD
+    tol: '0.01'
+    metric: diff
+    direction: increase
+    units: 1
+  note: ''
+- id: G38
+  category: Revision · ECN
+  question: BOM 판 72edc6e 의 저장소상 적용 구간은?
+  expected:
+    type: set
+    values:
+    - '2024-06-18'
+    - '2024-11-20'
+  note: ''
+- id: G39
+  category: 문서 근거
+  question: 코너 휠이 돌지 않을 때 점검할 부품은?
+  expected:
+    type: set
+    values:
+    - 2000-0025-0002
+  note: ''
+- id: G40
+  category: 문서 근거
+  question: 코너 휠이 돌지 않을 때 근거가 되는 정비 문서는?
+  expected:
+    type: doc
+    path: mechanical/servo_gear_replacement/README.md
+  note: ''
+- id: G41
+  category: 문서 근거
+  question: 코너 휠이 돌지 않을 때 교체 부품비(서보 1개, 공임 제외)는?
+  expected:
+    type: number
+    value: '31.99'
+    unit: USD
+    tol: '0.01'
+  note: ''
+- id: G42
+  category: 문서 근거
+  question: 서보 기어가 부서졌을 때 교체 절차가 있는 문서는?
+  expected:
+    type: doc
+    path: mechanical/servo_gear_replacement/README.md
+  note: ''
+- id: G43
+  category: 문서 근거
+  question: 휠 대체 부품의 가공 조건이 적힌 문서는?
+  expected:
+    type: doc
+    path: parts_list/extra_parts.md
+  note: ''
+- id: G44
+  category: 문서 근거
+  question: goBILDA 스페이서 1514-0010-0060 단종을 다룬 이슈는?
+  expected:
+    type: doc
+    path: issues/469
+  note: ''
+- id: G45
+  category: 문서 근거
+  question: 구동 모터 기어가 부서지는 문제를 다룬 이슈는?
+  expected:
+    type: doc
+    path: issues/178
+  note: ''

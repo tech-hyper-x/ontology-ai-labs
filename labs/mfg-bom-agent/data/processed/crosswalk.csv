@@ -1,0 +1,104 @@
+part_id,sku,mpn,aliases,supplier_skus
+P-5374X,5374X,,wheel,
+P-1401-0043-0032,1401-0043-0032,,clamping mount,
+P-5202-2402-0027,5202-2402-0027,,motor,
+P-545618,545618,,d-hub clamp,
+P-1120-0002-0072,1120-0002-0072,,2 hole u channel|2hole uchannel,gobilda.com:1120-0002-0072
+P-1109-0024-0144,1109-0024-0144,,144mm gorail,gobilda.com:1109-0024-0144
+P-1121-0004-0120,1121-0004-0120,,4 hole u channel,gobilda.com:1121-0004-0120
+P-1120-0001-0048,1120-0001-0048,,1hole uchannel,gobilda.com:1120-0001-0048
+P-3202-0001-2501,3202-0001-2501,,servoblock,gobilda.com:3202-0001-2501
+P-2000-0025-0002,2000-0025-0002,,servo,gobilda.com:2000-0025-0002
+P-1309-0016-0008,1309-0016-0008,,8mm sonic hub,gobilda.com:1309-0016-0008
+P-1611-0514-0008,1611-0514-0008,,flanged bearing 2pack,gobilda.com:1611-0514-0008|maker-depot:MD-BRG-8-14
+P-1504-0032-0020,1504-0032-0020,,joint pattern spacer,gobilda.com:1504-0032-0020
+P-4100-0608-0050,4100-0608-0050,,joint 8mm tube,
+P-1102-0003-0024,1102-0003-0024,,joint 3hole flat beam 2pack,gobilda.com:1102-0003-0024
+P-1221-0032-0002,1221-0032-0002,,joint pattern mount,gobilda.com:1221-0032-0002
+P-1126-0001-0001,1126-0001-0001,,steel flat bracket,gobilda.com:1126-0001-0001
+P-1116-0024-0040,1116-0024-0040,,3x5 grid plate,gobilda.com:1116-0024-0040
+P-1111-0003-0001,1111-0003-0001,,angle bracket,gobilda.com:1111-0003-0001
+P-1118-0024-0096,1118-0024-0096,,96mm open gorail,gobilda.com:1118-0024-0096
+P-1118-0024-0288,1118-0024-0288,,288mm open gorail,gobilda.com:1118-0024-0288
+P-1111-0001-0001,1111-0001-0001,,45deg bracket,gobilda.com:1111-0001-0001
+P-1137-0001-0001,1137-0001-0001,,90deg steel bracket 2pack,gobilda.com:1137-0001-0001
+P-1916-0014-0072,1916-0014-0072,,control arm,gobilda.com:1916-0014-0072
+P-1514-0010-0080,1514-0010-0080,,"8mm id spacer (10mm od, 8mm length)",
+P-1118-0024-0120,1118-0024-0120,,120mm open gorail,gobilda.com:1118-0024-0120
+P-1604-0043-0032,1604-0043-0032,,32mm bearing,alt-robotics:AR-PB-32|gobilda.com:1604-0043-0032
+P-1506-0032-0006,1506-0032-0006,,32mm 6mm spacer 2 pack,gobilda.com:1506-0032-0006
+P-1519-0014-0400,1519-0014-0400,,gotube endcap,
+P-1106-0029-0232,1106-0029-0232,,29 hole beam,gobilda.com:1106-0029-0232
+P-1106-0041-0328,1106-0041-0328,,41 hole beam,gobilda.com:1106-0041-0328
+P-1106-0012-0096,1106-0012-0096,,12 hole beam,gobilda.com:1106-0012-0096
+P-1101-0041-0328,1101-0041-0328,,41 hole u-beam beam,gobilda.com:1101-0041-0328
+P-1102-0007-0056,1102-0007-0056,,7 hole flat beam 2pack,gobilda.com:1102-0007-0056
+P-1205-0001-0004,1205-0001-0004,,dual block mount,gobilda.com:1205-0001-0004
+P-1203-0001-0001,1203-0001-0001,,90deg threaded gusset 4pack,gobilda.com:1203-0001-0001
+P-2808-0004-0050,2808-0004-0050,,50mm threaded rod,gobilda.com:2808-0004-0050
+P-2913-0004-0241,2913-0004-0241,,ball linkage 2pack,gobilda.com:2913-0004-0241
+P-1608-0001-0001,1608-0001-0001,,idler bearing hub,gobilda.com:1608-0001-0001
+P-2902-0003-0001,2902-0003-0001,,plastic hinges,gobilda.com:2902-0003-0001
+P-2805-0004-0108,2805-0004-0108,,hurricane nuts,gobilda.com:2805-0004-0108
+P-2911-0014-0001,2911-0014-0001,,wire grommets,gobilda.com:2911-0014-0001
+P-1501-0006-0080,1501-0006-0080,,8mm standoffs,gobilda.com:1501-0006-0080
+P-1501-0006-0200,1501-0006-0200,,20mm standoffs,
+P-1500-0010-0006,1500-0010-0006,,plastic spacer,gobilda.com:1500-0010-0006
+P-1102-0002-0016,1102-0002-0016,,2 hole flat beam,gobilda.com:1102-0002-0016
+P-2801-0004-0008,2801-0004-0008,,m4 washers,gobilda.com:2801-0004-0008
+P-2811-0004-0007,2811-0004-0007,,m4 nuts,gobilda.com:2811-0004-0007
+P-2812-0004-0007,2812-0004-0007,,m4 locknuts,gobilda.com:2812-0004-0007
+P-2802-0004-0006,2802-0004-0006,,m4x6 button screws,gobilda.com:2802-0004-0006
+P-2802-0004-0010,2802-0004-0010,,m4x10 button screws|m4x6 button screws,gobilda.com:2802-0004-0010|maker-depot:MD-M4X10-BTN-25
+P-2802-0004-0016,2802-0004-0016,,m4x16 button screws|m4x6 button screws,gobilda.com:2802-0004-0016
+P-2800-0004-0008,2800-0004-0008,,m4x6 socket screws|m4x8 socket screws,gobilda.com:2800-0004-0008
+P-2800-0004-0010,2800-0004-0010,,m4x10 socket screws|m4x8 socket screws,gobilda.com:2800-0004-0010
+P-2800-0004-0012,2800-0004-0012,,m4x10 socket screws|m4x1２ socket screws,gobilda.com:2800-0004-0012
+P-2800-0004-0016,2800-0004-0016,,m4x12 socket screws|m4x16 socket screws,gobilda.com:2800-0004-0016
+P-2800-0004-0020,2800-0004-0020,,m4x20 socket screws,gobilda.com:2800-0004-0020
+P-1401-0043-0036,1401-0043-0036,,clamping mount,gobilda.com:1401-0043-0036
+P-5203-2402-0027,5203-2402-0027,,motor,alt-robotics:AR-YJ-5203-27|gobilda.com:5203-2402-0027
+P-1309-0016-4008,1309-0016-4008,,rex bore hub,
+P-1310-0016-4008,1310-0016-4008,,rex bore hub,gobilda.com:1310-0016-4008
+P-1501-0006-0220,1501-0006-0220,,22mm standoffs,gobilda.com:1501-0006-0220
+P-2100-0008-0050,2100-0008-0050,,joint 8mm shaft,gobilda.com:2100-0008-0050
+P-1514-0010-0060,1514-0010-0060,,"8mm id spacer (10mm od, 6mm length)",
+P-1522-0010-0040,1522-0010-0040,,"8mm id spacer (10mm od, 4mm length)",gobilda.com:1522-0010-0040
+P-1522-0010-0060,1522-0010-0060,,"8mm id spacer (10mm od, 6mm length)",gobilda.com:1522-0010-0060
+P-3616-0014-0144,3616-0014-0144,,wheel,gobilda.com:3616-0014-0144|maker-depot:MD-WW144
+P-2805-0004-0038,2805-0004-0038,,gorail® nut (5 hole) - 2 pack,gobilda.com:2805-0004-0038
+E-C317C103K5R5TA7301,C317C103K5R5TA7301,C317C103K5R5TA7301,cap cer 10000pf 50v x7r radial,digikey.com:399-9865-1-ND
+E-ESK107M050AG3EA,ESK107M050AG3EA,ESK107M050AG3EA,cap alum 100uf 20% 50v radial,digikey.com:399-18272-1-ND
+E-C322C104K5R5TA7317,C322C104K5R5TA7317,C322C104K5R5TA7317,cap cer 0.1uf 50v x7r radial,digikey.com:399-14065-1-ND
+E-ESK106M050AC3DA,ESK106M050AC3DA,ESK106M050AC3DA,cap alum 10uf 20% 50v radial,digikey.com:399-ESK106M050AC3DACT-ND
+E-STPS10L25D,STPS10L25D,STPS10L25D,diode schottky 25v 10a to220ac,digikey.com:497-2738-5-ND
+E-1N4148,1N4148,1N4148,diode gen purp 75v 300ma do35,digikey.com:1655-1N4148CT-ND
+E-696108003002,696108003002,696108003002,fuseholder blocks - pcb - clip c,digikey.com:732-11376-ND
+E-TSW-104-07-F-T,TSW-104-07-F-T,TSW-104-07-F-T,conn header vert 12pos 2.54mm,digikey.com:TSW-104-07-F-T-ND
+E-PEC08SAAN,PEC08SAAN,PEC08SAAN,conn header vert 8pos 2.54mm,digikey.com:S1012E-08-ND
+E-PPTC102LFBN-RC,PPTC102LFBN-RC,PPTC102LFBN-RC,conn hdr 20pos 0.1 tin pcb,digikey.com:S7078-ND
+E-SBH11-PBPC-D20-ST-BK,SBH11-PBPC-D20-ST-BK,SBH11-PBPC-D20-ST-BK,conn header vert 40pos 2.54mm,digikey.com:S9175-ND
+E-B6B-PH-K-S(LF)(SN),B6B-PH-K-S(LF)(SN),B6B-PH-K-S(LF)(SN),conn header vert 6pos 2mm,digikey.com:455-1708-ND
+E-0702462001,0702462001,0702462001,conn header vert 20pos 2.54mm,digikey.com:WM6548-ND
+E-PPTC021LFBN-RC,PPTC021LFBN-RC,PPTC021LFBN-RC,conn hdr 2pos 0.1 tin pcb,digikey.com:S7000-ND
+E-OSTTA024163,OSTTA024163,OSTTA024163,term blk 2p side ent 5.08mm pcb,digikey.com:ED2580-ND
+E-1726750613,1726750613,1726750613,conn header vert 6pos 4.2mm,digikey.com:1726750613-ND
+E-2N3906TA,2N3906TA,2N3906TA,trans pnp 40v 0.2a to92-3,digikey.com:2N3906TAFSCT-ND
+E-CF14JT100R,CF14JT100R,CF14JT100R,res 100 ohm 5% 1/4w axial,digikey.com:CF14JT100RCT-ND
+E-CF14JT10K0,CF14JT10K0,CF14JT10K0,res 10k ohm 5% 1/4w axial,digikey.com:CF14JT10K0CT-ND
+E-CF14JT4K70,CF14JT4K70,CF14JT4K70,res 4.7k ohm 5% 1/4w axial,digikey.com:CF14JT4K70CT-ND
+E-CD14ZT0R00,CD14ZT0R00,CD14ZT0R00,res 0 ohm jumper 1/4w axial,digikey.com:CD14ZT0R00CT-ND
+E-CF18JT68R0,CF18JT68R0,CF18JT68R0,res 68 ohm 5% 1/8w axial,digikey.com:CF18JT68R0CT-ND
+E-CF14JT82R0,CF14JT82R0,CF14JT82R0,res 82 ohm 5% 1/4w axial,digikey.com:CF14JT82R0CT-ND
+E-CF14JT1K00,CF14JT1K00,CF14JT1K00,res 1k ohm 5% 1/4w axial,digikey.com:CF14JT1K00CT-ND
+E-CF14JT680R,CF14JT680R,CF14JT680R,res 680 ohm 5% 1/4w axial,digikey.com:CF14JT680RCT-ND
+E-CF14JT220R,CF14JT220R,CF14JT220R,res 220 ohm 5% 1/4w axial,digikey.com:CF14JT220RCT-ND
+E-206-124,206-124,206-124,switch slide dip spdt 50ma 24v,digikey.com:CT206124-ND
+E-DC10CGKWA,DC10CGKWA,DC10CGKWA,led bar graph 10seg 570nm grn,digikey.com:754-2186-ND
+E-MIC2937A-3.3WT,MIC2937A-3.3WT,MIC2937A-3.3WT,ic reg linear 3.3v 750ma to220-3,digikey.com:576-2235-ND
+E-0233010.MXP,0233010.MXP,0233010.MXP,fuse glass 10a 125vac 5x20mm,digikey.com:F3631-ND
+E-C3920BAAAA,C3920BAAAA,C3920BAAAA,switch toggle on-off-on,digikey.com:708-3060-ND
+E-EDSTL130/24,EDSTL130/24,EDSTL130/24,term block hdr 24pos vert 5mm,digikey.com:ED1682-24-ND
+E-0395016006,0395016006,0395016006,term block hdr 6pos vert 3.5mm,digikey.com:WM25701-ND
+E-0395005006,0395005006,0395005006,term block plug 6pos str 3.5mm,digikey.com:WM13033-ND
+P-3616-0014-0192,3616-0014-0192,,192mm wheel|bigger wasteland wheel,

@@ -1,0 +1,271 @@
+{
+ "question": "코너 바퀴가 돌지 않을 때 어떤 부품을 점검해야 하고, 교체하려면 부품비가 얼마나 드나요?",
+ "response": {
+  "run_id": "canned-Q7",
+  "status": "completed",
+  "mode": "kg_tools",
+  "intent": "symptom",
+  "headline": "코너 바퀴가 돌지 않을 때는 코너 서보 2000-0025-0002를 먼저 점검해야 하며, 교체 부품비는 1개당 $31.99입니다.",
+  "summary": "코너 서보 교체 부품비 1개 $31.99",
+  "highlights": [
+   "코너 서보",
+   "1개당 $31.99"
+  ],
+  "subject": "코너 서보 · 2000-0025-0002",
+  "basis": "교체 부품 1개 기준 (부품비만, 공임 · 운송비 제외)",
+  "findings": [
+   "정비 문서는 코너 바퀴가 돌지 않는 것이 서보 이상의 첫 신호라고 설명합니다. 원인은 느슨한 전기 연결이거나 기어셋 문제일 수 있습니다.",
+   "문서에 따르면 급격한 충격 후 서보 중심축이 전단되어 기어가 부드럽게 맞물리지 않을 수 있습니다.",
+   "로봇 차량 1대에는 로커 보기(rocker bogie) 경로로 이 서보가 4개 들어갑니다.",
+   "현재 데이터에 등록된 대체 부품은 없습니다."
+  ],
+  "follow_ups": [
+   "전원을 끈 뒤 서보가 자유롭게 회전하는지, 전기 커넥터가 느슨하지 않은지 먼저 확인해야 합니다.",
+   "서보 기어셋 손상 여부를 확인하려면 정비 담당자가 서보를 분해해 중심축과 기어 상태를 점검해야 합니다."
+  ],
+  "notes": [
+   "부품비는 실습 자료의 단가로 계산했으며 공임 · 운송비는 포함하지 않았습니다. 자료 확인일은 2026-10-22이고, 실제 가격 적용일은 확인되지 않았습니다(원본에 없음)."
+  ],
+  "key_facts": [
+   {
+    "label": "대체 부품",
+    "value": "등록 없음"
+   },
+   {
+    "label": "로봇 차량 1대당",
+    "value": "4개"
+   }
+  ],
+  "doc_notes": [
+   {
+    "doc_path": "mechanical/servo_gear_replacement/README.md",
+    "line": 16,
+    "summary_ko": "서보 기어 교체 정비 문서로, 코너 바퀴가 돌지 않을 때의 진단과 서보 분해 절차를 설명합니다.",
+    "quote": "The first sign of an issue with the servo motors is when your corner wheels will not turn. This could be caused by either a loose electrical connection, or an issue in the gearset."
+   },
+   {
+    "doc_path": "mechanical/servo_gear_replacement/README.md",
+    "line": 1,
+    "summary_ko": "급격한 충격으로 서보 중심축이 전단될 수 있어 기어 맞물림이 나빠질 수 있다고 설명합니다.",
+    "quote": "sudden, sharp impact (like a crash into a hard object), the corner servo motors can fail. More specifically, a central shaft holding two of the gears in place has been known to shear."
+   },
+   {
+    "doc_path": "mechanical/rocker_bogie/README.md",
+    "line": 85,
+    "summary_ko": "로커 보기에 전면 서보와 서보 블록을 조립하는 절차로, 이 서보가 로커 보기 조립에 쓰임을 보여 줍니다.",
+    "quote": "Then assemble the servo block to the servo motor."
+   }
+  ],
+  "cited_labels": [
+   "교체 부품비 (1개)"
+  ],
+  "conclusion": "코너 바퀴가 돌지 않을 때는 코너 서보 2000-0025-0002를 먼저 점검해야 하며, 교체 부품비는 1개당 $31.99입니다.\n\n코너 서보 교체 부품비 1개 $31.99\n\n확인된 내용\n- 정비 문서는 코너 바퀴가 돌지 않는 것이 서보 이상의 첫 신호라고 설명합니다. 원인은 느슨한 전기 연결이거나 기어셋 문제일 수 있습니다.\n- 문서에 따르면 급격한 충격 후 서보 중심축이 전단되어 기어가 부드럽게 맞물리지 않을 수 있습니다.\n- 로봇 차량 1대에는 로커 보기(rocker bogie) 경로로 이 서보가 4개 들어갑니다.\n- 현재 데이터에 등록된 대체 부품은 없습니다.\n\n추가로 확인할 사항\n- 전원을 끈 뒤 서보가 자유롭게 회전하는지, 전기 커넥터가 느슨하지 않은지 먼저 확인해야 합니다.\n- 서보 기어셋 손상 여부를 확인하려면 정비 담당자가 서보를 분해해 중심축과 기어 상태를 점검해야 합니다.\n\n부품비는 실습 자료의 단가로 계산했으며 공임 · 운송비는 포함하지 않았습니다. 자료 확인일은 2026-10-22이고, 실제 가격 적용일은 확인되지 않았습니다(원본에 없음).\n\n대체 부품: 등록 없음\n\n로봇 차량 1대당: 4개",
+  "calculations": [
+   {
+    "label": "교체 부품비 (1개)",
+    "kind": "requirement",
+    "value": "31.99",
+    "unit": "USD",
+    "tool": "cost_rollup",
+    "formula": "1개 × $31.99",
+    "inputs": {
+     "part": "2000-0025-0002",
+     "qty_each": 1
+    },
+    "revision": "6b2c5a9",
+    "as_of": "2026-10-22",
+    "source": "parts_list.csv",
+    "note": "부품비만 — 공임 · 운송비 제외"
+   }
+  ],
+  "graph_paths": [
+   {
+    "text": "Rover → rocker bogie (배수 ×2) → BOMLine (qty 2 ea) → 2000-0025-0002 · 로봇 차량 1대당 4 ea",
+    "tool": "where_used",
+    "revision": "6b2c5a9",
+    "detail": {
+     "source_ref": "parts_list/parts_list.csv@6b2c5a9#row10",
+     "assembly": "rocker bogie",
+     "multiplier": 2,
+     "raw_qty": "2",
+     "pack_size": 1,
+     "each_per_product": "4",
+     "sku": "2000-0025-0002",
+     "name": "2000 Series Dual Mode Servo (25-2, Torque) - goBILDA"
+    }
+   }
+  ],
+  "documents": [
+   {
+    "doc_path": "mechanical/servo_gear_replacement/README.md",
+    "doc_id": "mechanical/servo_gear_replacement/README.md#1",
+    "title": "Servo Motor Gear Replacement",
+    "line": 1,
+    "excerpt": "sudden, sharp impact (like a crash into a hard object), the corner servo motors can fail. More specifically, a central shaft holding two of the gears in place has been known to shear. When this happens, the gears will not mesh as smoothly, and, when forced, this can cause gear te",
+    "linked_parts": [
+     "2000-0025-0002"
+    ],
+    "confidence": 1.0,
+    "method": "hybrid(RRF)",
+    "rank": 1,
+    "ranks": {
+     "bm25": 1,
+     "vector": 2
+    }
+   },
+   {
+    "doc_path": "mechanical/servo_gear_replacement/README.md",
+    "doc_id": "mechanical/servo_gear_replacement/README.md#2",
+    "title": "Diagnosing an issue",
+    "line": 16,
+    "excerpt": "The first sign of an issue with the servo motors is when your corner wheels will not turn. This could be caused by either a loose electrical connection, or an issue in the gearset.   In either case, power down the rover to allow the servos to free spin. Verify that the electrical",
+    "linked_parts": [
+     "2000-0025-0002"
+    ],
+    "confidence": 1.0,
+    "method": "hybrid(RRF)",
+    "rank": 2,
+    "ranks": {
+     "bm25": 4,
+     "vector": 1
+    }
+   },
+   {
+    "doc_path": "mechanical/README.md",
+    "doc_id": "mechanical/README.md#7",
+    "title": "Attaching the corner assemblies",
+    "line": 53,
+    "excerpt": "Using 3 socket M4 screws, attach each corner assembly to the output shaft bracket of the servo. Making sure you connect the right corner assembly to the right side. Flip the rover over again and route the corner cabling through a hole in the bracket holding the servo. The bullet",
+    "linked_parts": [
+     "2000-0025-0002"
+    ],
+    "confidence": 0.7,
+    "method": "hybrid(RRF)",
+    "rank": 3,
+    "ranks": {
+     "bm25": 2,
+     "vector": 3
+    }
+   },
+   {
+    "doc_path": "mechanical/rocker_bogie/README.md",
+    "doc_id": "mechanical/rocker_bogie/README.md#10",
+    "title": "Attach the front servo and servo block",
+    "line": 85,
+    "excerpt": "ee or four M4 screws.  Then assemble the servo block to the servo motor. Insert the set screw that came with the servo inside the hollow shaft that fits onto the spline profile on the servo output, but don't tighten it yet as we'll have to readjust later when calibrating the corn",
+    "linked_parts": [
+     "1111-0003-0001",
+     "2000-0025-0002"
+    ],
+    "confidence": 1.0,
+    "method": "hybrid(RRF)",
+    "rank": 4,
+    "ranks": {
+     "bm25": 3,
+     "vector": 8
+    }
+   },
+   {
+    "doc_path": "mechanical/servo_gear_replacement/README.md",
+    "doc_id": "mechanical/servo_gear_replacement/README.md#3",
+    "title": "Disassembling the Motor",
+    "line": 26,
+    "excerpt": "1) You have a choice to either remove the motor from the corner assembly, or to disassemble the motor in-situ. In either case, first remove the screw connecting the servo hub-shaft to the servo output.  2) Remove the corner screws from the servo motor body.  3) Being careful not",
+    "linked_parts": [
+     "2000-0025-0002"
+    ],
+    "confidence": 0.7,
+    "method": "hybrid(RRF)",
+    "rank": 5,
+    "ranks": {
+     "bm25": 14,
+     "vector": 5
+    }
+   }
+  ],
+  "sources": {
+   "snapshot": "a78f9eb",
+   "revision": "6b2c5a9",
+   "as_of": "2026-10-22",
+   "price_date_known": false,
+   "assumptions": [],
+   "exclusions": [
+    "재고 · 공임 · 운송비 제외"
+   ],
+   "data_used": [
+    "Neo4j 그래프 (BOM · 판 · ECN · 공급)",
+    "정비 문서 · 이슈 검색"
+   ],
+   "tools_available": [
+    "find_part",
+    "where_used",
+    "bom_explode",
+    "purchase_quantity",
+    "cost_rollup",
+    "revision_diff",
+    "change_impact",
+    "supply_risk",
+    "search_docs"
+   ]
+  },
+  "verification": {
+   "status": "passed",
+   "checks": [
+    {
+     "target": "교체 부품비 (1개)",
+     "cited_value": "31.99",
+     "item_ok": true,
+     "value_ok": true,
+     "unit_ok": true,
+     "condition_ok": true
+    }
+   ],
+   "unverified_numbers": [],
+   "reason": ""
+  },
+  "trace": {
+   "trace_id": "49c4a852b896c6c3a7cb030d65b571bd",
+   "url": "http://localhost:3000/project/mfg-bom-agent/traces/49c4a852b896c6c3a7cb030d65b571bd",
+   "session_id": "canned-Q7"
+  },
+  "context": {
+   "role": "설계변경 엔지니어",
+   "revision": null,
+   "as_of": "2026-10-22",
+   "price_date_known": false,
+   "dataset_version": "mfg-0.1",
+   "snapshot": "a78f9eb",
+   "llm_model": "claude-haiku-5-5",
+   "demo_mode": "none"
+  },
+  "pending_question": null,
+  "error": null,
+  "tool_calls": 3
+ },
+ "events": [
+  {
+   "step": "질문 계획",
+   "detail": "symptom · maintenance-evidence"
+  },
+  {
+   "step": "search_docs",
+   "detail": "문서 5개"
+  },
+  {
+   "step": "where_used",
+   "detail": "경로 1개"
+  },
+  {
+   "step": "cost_rollup",
+   "detail": "31.99 USD"
+  },
+  {
+   "step": "답변 작성",
+   "detail": "maintenance-evidence"
+  },
+  {
+   "step": "출력 검사",
+   "detail": "passed"
+  }
+ ]
+}

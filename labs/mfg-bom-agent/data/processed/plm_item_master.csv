@@ -1,0 +1,104 @@
+part_id,sku,name,aliases,domain,mpn,pack_size,pack_basis,first_seen,last_seen,in_latest,origin
+P-5374X,5374X,"Traxxas 5374X Talon Tires, Gemini Wheels, Black Chrome – Dollar Hobbyz",wheel,mechanical,,1,none,580d05e,778fe3d,False,source
+P-1401-0043-0032,1401-0043-0032,"1401 Series 2-Side, 2-Post Clamping Mount (43mm Width, 32mm Bore) - goBILDA",clamping mount,mechanical,,1,none,580d05e,d6d1fbc,False,source
+P-5202-2402-0027,5202-2402-0027,"5202 Series Yellow Jacket Planetary Gear Motor (26.9:1 Ratio, 24mm Length 6mm D-Shaft, 223 RPM, ⌀36mm Gearbox, 3.3 - 5V Encoder) - goBILDA",motor,mechanical,,1,none,580d05e,d6d1fbc,False,source
+P-545618,545618,"6mm Bore Clamping D-Hub (Tapped), 0.770"" Pattern - ServoCity",d-hub clamp,mechanical,,1,none,580d05e,d6d1fbc,False,source
+P-1120-0002-0072,1120-0002-0072,"1120 Series U-Channel (2 Hole, 72mm Length) - goBILDA",2 hole u channel|2hole uchannel,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1109-0024-0144,1109-0024-0144,1109 Series goRAIL (144mm Length) - goBILDA,144mm gorail,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1121-0004-0120,1121-0004-0120,"1121 Series Low-Side U-Channel (4 Hole, 120mm Length) - goBILDA",4 hole u channel,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1120-0001-0048,1120-0001-0048,"1120 Series U-Channel (1 Hole, 48mm Length) - goBILDA",1hole uchannel,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-3202-0001-2501,3202-0001-2501,"ServoBlock™ (Standard Size, 25 Tooth Spline, Hub Shaft) - goBILDA",servoblock,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-2000-0025-0002,2000-0025-0002,"2000 Series Dual Mode Servo (25-2, Torque) - goBILDA",servo,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1309-0016-0008,1309-0016-0008,1309 Series Sonic Hub (8mm Bore) - goBILDA,8mm sonic hub,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1611-0514-0008,1611-0514-0008,"1611 Series Flanged Ball Bearing (8mm ID x 14mm OD, 5mm Thickness) - 2 Pack - goBILDA",flanged bearing 2pack,mechanical,,2,name,580d05e,6b2c5a9,True,source
+P-1504-0032-0020,1504-0032-0020,1504 Series 32mm OD Pattern Spacer (2mm Length) - goBILDA,joint pattern spacer,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-4100-0608-0050,4100-0608-0050,"4100 Series Aluminum Tube (6mm ID x 8mm OD, 50mm Length) - goBILDA",joint 8mm tube,mechanical,,1,none,580d05e,2d9912e,False,source
+P-1102-0003-0024,1102-0003-0024,"1102 Series Flat Beam (3 Hole, 24mm Length) - 2 Pack - goBILDA",joint 3hole flat beam 2pack,mechanical,,2,name,580d05e,6b2c5a9,True,source
+P-1221-0032-0002,1221-0032-0002,"1221 Series 2-Side, 2-Post Pattern Mount (32-2) - goBILDA",joint pattern mount,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1126-0001-0001,1126-0001-0001,1126 Series Steel Flat Bracket (1-1) - 2 Pack - goBILDA,steel flat bracket,mechanical,,2,name,580d05e,6b2c5a9,True,source
+P-1116-0024-0040,1116-0024-0040,"1116 Series Grid Plate (3 x 5 Hole, 24 x 40mm)",3x5 grid plate,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1111-0003-0001,1111-0003-0001,1111 Series Angle Pattern Bracket (3-1) - goBILDA,angle bracket,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1118-0024-0096,1118-0024-0096,1118 Series Open goRAIL (96mm Length) - goBILDA,96mm open gorail,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1118-0024-0288,1118-0024-0288,1118 Series Open goRAIL (288mm Length) - goBILDA,288mm open gorail,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1111-0001-0001,1111-0001-0001,1111 Series Angle Pattern Bracket (1-1) - goBILDA,45deg bracket,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1137-0001-0001,1137-0001-0001,1137 Series Steel Flat Grid Bracket (1-1) - 2 Pack - goBILDA,90deg steel bracket 2pack,mechanical,,2,name,580d05e,6b2c5a9,True,source
+P-1916-0014-0072,1916-0014-0072,Plastic Hub-Mount Control Arm (72mm Length) - goBILDA,control arm,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1514-0010-0080,1514-0010-0080,"1514 Series 8mm ID Spacer (10mm OD, 8mm Length) - 4 Pack - goBILDA","8mm id spacer (10mm od, 8mm length)",mechanical,,4,name,580d05e,2d9912e,False,source
+P-1118-0024-0120,1118-0024-0120,1118 Series Open goRAIL (120mm Length) - goBILDA,120mm open gorail,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1604-0043-0032,1604-0043-0032,"1604 Series 2-Side, 2-Post Pillow Block (32mm Bore) - goBILDA",32mm bearing,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1506-0032-0006,1506-0032-0006,"1506 Series 32mm ID Spacer (36mm OD, 6mm Length) - 2 Pack - goBILDA",32mm 6mm spacer 2 pack,mechanical,,2,name,580d05e,6b2c5a9,True,source
+P-1519-0014-0400,1519-0014-0400,"goTUBE Endcap (14mm Bore, 36mm OD, 4mm Thick) - 4 Pack - goBILDA",gotube endcap,mechanical,,4,name,580d05e,e44fc00,False,source
+P-1106-0029-0232,1106-0029-0232,"1106 Series Square Beam (29 Hole, 232mm Length) - goBILDA",29 hole beam,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1106-0041-0328,1106-0041-0328,"1106 Series Square Beam (41 Hole, 328mm Length) - goBILDA",41 hole beam,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1106-0012-0096,1106-0012-0096,"1106 Series Square Beam (12 Hole, 96mm Length) - goBILDA",12 hole beam,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1101-0041-0328,1101-0041-0328,"1101 Series U-Beam (41 Hole, 328mm Length) - goBILDA",41 hole u-beam beam,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-1102-0007-0056,1102-0007-0056,"1102 Series Flat Beam (7 Hole, 56mm Length) - 2 Pack - goBILDA",7 hole flat beam 2pack,mechanical,,2,name,580d05e,6b2c5a9,True,source
+P-1205-0001-0004,1205-0001-0004,1205 Series Dual Block Mount (1-4) - 2 Pack - goBILDA,dual block mount,mechanical,,2,name,580d05e,6b2c5a9,True,source
+P-1203-0001-0001,1203-0001-0001,1203 Series Block Mount (1-1) - 4 Pack - goBILDA,90deg threaded gusset 4pack,mechanical,,4,name,580d05e,6b2c5a9,True,source
+P-2808-0004-0050,2808-0004-0050,"2808 Series Stainless Steel Threaded Rod (M4 x 0.7mm, 50mm Length) - 2 Pack - goBILDA",50mm threaded rod,mechanical,,2,name,580d05e,6b2c5a9,True,source
+P-2913-0004-0241,2913-0004-0241,"2913 Series Steel Ball Linkage (Female M4 x 0.7mm, 24.1mm Length) - 2 Pack - goBILDA",ball linkage 2pack,mechanical,,2,name,580d05e,6b2c5a9,True,source
+P-1608-0001-0001,1608-0001-0001,"Idler Bearing-Hub (32mm OD, 16mm Height) - goBILDA",idler bearing hub,mechanical,,1,none,580d05e,6b2c5a9,True,source
+P-2902-0003-0001,2902-0003-0001,Plastic Hinge - 2 Pack - goBILDA,plastic hinges,mechanical,,2,name,580d05e,6b2c5a9,True,source
+P-2805-0004-0108,2805-0004-0108,Hurricane Nut for goRAIL - 25 Pack - goBILDA,hurricane nuts,mechanical,,25,name,580d05e,6b2c5a9,True,source
+P-2911-0014-0001,2911-0014-0001,Plastic Grommet (14-1) - 12 Pack - goBILDA,wire grommets,mechanical,,12,name,580d05e,6b2c5a9,True,source
+P-1501-0006-0080,1501-0006-0080,"1501 Series M4 x 0.7mm Standoff (6mm OD, 8mm Length) - 4 Pack",8mm standoffs,mechanical,,4,name,5aeb799,6b2c5a9,True,source
+P-1501-0006-0200,1501-0006-0200,"1501 Series M4 x 0.7mm Standoff (6mm OD, 20mm Length) - 4 Pack",20mm standoffs,mechanical,,4,name,5aeb799,b6b321f,False,source
+P-1500-0010-0006,1500-0010-0006,"1500 Series Plastic Spacer (6mm ID x 8mm OD, 1mm Thickness) - 12 Pack",plastic spacer,mechanical,,12,name,5aeb799,6b2c5a9,True,source
+P-1102-0002-0016,1102-0002-0016,"1102 Series Flat Beam (2 Hole, 16mm Length) - 2 Pack",2 hole flat beam,mechanical,,2,name,8d72eae,6b2c5a9,True,source
+P-2801-0004-0008,2801-0004-0008,Zinc Plates Steel Washer (M4 x 8mm OD) - 25 Pack - goBILDA,m4 washers,mechanical,,25,name,dd6c2ba,6b2c5a9,True,source
+P-2811-0004-0007,2811-0004-0007,Zinc Plates Steel Hex Nut (M4 x 7) - 25 Pack - goBILDA,m4 nuts,mechanical,,25,name,dd6c2ba,6b2c5a9,True,source
+P-2812-0004-0007,2812-0004-0007,Zinc Plates Steel Locknut (M4 x 7) - 25 Pack - goBILDA,m4 locknuts,mechanical,,25,name,dd6c2ba,6b2c5a9,True,source
+P-2802-0004-0006,2802-0004-0006,M4x6 Button Screw 25-pack,m4x6 button screws,mechanical,,25,name,dd6c2ba,6b2c5a9,True,source
+P-2802-0004-0010,2802-0004-0010,M4x10 Button Screw 25-pack,m4x10 button screws|m4x6 button screws,mechanical,,25,name,dd6c2ba,6b2c5a9,True,source
+P-2802-0004-0016,2802-0004-0016,M4x16 Button Screw 25-pack,m4x16 button screws|m4x6 button screws,mechanical,,25,name,dd6c2ba,6b2c5a9,True,source
+P-2800-0004-0008,2800-0004-0008,M4x8 Socket Screw 25-pack,m4x6 socket screws|m4x8 socket screws,mechanical,,25,name,dd6c2ba,6b2c5a9,True,source
+P-2800-0004-0010,2800-0004-0010,M4x10 Socket Screw 25-pack,m4x10 socket screws|m4x8 socket screws,mechanical,,25,name,dd6c2ba,6b2c5a9,True,source
+P-2800-0004-0012,2800-0004-0012,M4x12 Socket Screw 25-pack,m4x10 socket screws|m4x1２ socket screws,mechanical,,25,name,dd6c2ba,6b2c5a9,True,source
+P-2800-0004-0016,2800-0004-0016,M4x16 Socket Screw 25-pack,m4x12 socket screws|m4x16 socket screws,mechanical,,25,name,dd6c2ba,6b2c5a9,True,source
+P-2800-0004-0020,2800-0004-0020,M4x20 Socket Screw 25-pack,m4x20 socket screws,mechanical,,25,name,dd6c2ba,6b2c5a9,True,source
+P-1401-0043-0036,1401-0043-0036,"1401 Series 2-Side, 2-Post Clamping Mount (43mm Width, 36mm Bore) - goBILDA",clamping mount,mechanical,,1,none,d092d83,6b2c5a9,True,source
+P-5203-2402-0027,5203-2402-0027,"5203 Series Yellow Jacket Planetary Gear Motor (26.9:1 Ratio, 24mm Length 8mm REX™ Shaft, 223 RPM, 3.3 - 5V Encoder)",motor,mechanical,,1,none,d092d83,6b2c5a9,True,source
+P-1309-0016-4008,1309-0016-4008,1309 Series Sonic Hub (8mm REX™ Bore),rex bore hub,mechanical,,1,none,d092d83,d092d83,False,source
+P-1310-0016-4008,1310-0016-4008,1310 Series Hyper Hub (8mm REX™ Bore),rex bore hub,mechanical,,1,none,886bb13,6b2c5a9,True,source
+P-1501-0006-0220,1501-0006-0220,"1501 Series M4 x 0.7mm Standoff (6mm OD, 22mm Length) - 4 Pack",22mm standoffs,mechanical,,4,name,2d9912e,6b2c5a9,True,source
+P-2100-0008-0050,2100-0008-0050,"2100 Series Stainless Steel Round Shaft (8mm Diameter, 50mm Length)",joint 8mm shaft,mechanical,,1,none,2de6b1d,6b2c5a9,True,source
+P-1514-0010-0060,1514-0010-0060,"1514 Series 8mm ID Spacer (10mm OD, 6mm Length) - 4 Pack - goBILDA","8mm id spacer (10mm od, 6mm length)",mechanical,,4,name,2de6b1d,42bbca4,False,source
+P-1522-0010-0040,1522-0010-0040,"1522 Series 8mm ID Spacer (10mm OD, 4mm Length) - 4 Pack - goBILDA","8mm id spacer (10mm od, 4mm length)",mechanical,,4,name,2de6b1d,6b2c5a9,True,source
+P-1522-0010-0060,1522-0010-0060,"1522 Series 8mm ID Spacer (10mm OD, 6mm Length) - 4 Pack - goBILDA","8mm id spacer (10mm od, 6mm length)",mechanical,,4,name,778fe3d,6b2c5a9,True,source
+P-3616-0014-0144,3616-0014-0144,"Wasteland Wheel (144mm Diameter, 52mm Width)",wheel,mechanical,,1,none,72edc6e,6b2c5a9,True,source
+P-2805-0004-0038,2805-0004-0038,goRAIL® Nut (5 Hole) - 2 Pack - goBILDA,gorail® nut (5 hole) - 2 pack,mechanical,,2,name,6b2c5a9,6b2c5a9,True,source
+E-C317C103K5R5TA7301,C317C103K5R5TA7301,CAP CER 10000PF 50V X7R RADIAL,cap cer 10000pf 50v x7r radial,electrical,C317C103K5R5TA7301,1,none,6b2c5a9,6b2c5a9,True,source
+E-ESK107M050AG3EA,ESK107M050AG3EA,CAP ALUM 100UF 20% 50V RADIAL,cap alum 100uf 20% 50v radial,electrical,ESK107M050AG3EA,1,none,6b2c5a9,6b2c5a9,True,source
+E-C322C104K5R5TA7317,C322C104K5R5TA7317,CAP CER 0.1UF 50V X7R RADIAL,cap cer 0.1uf 50v x7r radial,electrical,C322C104K5R5TA7317,1,none,6b2c5a9,6b2c5a9,True,source
+E-ESK106M050AC3DA,ESK106M050AC3DA,CAP ALUM 10UF 20% 50V RADIAL,cap alum 10uf 20% 50v radial,electrical,ESK106M050AC3DA,1,none,6b2c5a9,6b2c5a9,True,source
+E-STPS10L25D,STPS10L25D,DIODE SCHOTTKY 25V 10A TO220AC,diode schottky 25v 10a to220ac,electrical,STPS10L25D,1,none,6b2c5a9,6b2c5a9,True,source
+E-1N4148,1N4148,DIODE GEN PURP 75V 300MA DO35,diode gen purp 75v 300ma do35,electrical,1N4148,1,none,6b2c5a9,6b2c5a9,True,source
+E-696108003002,696108003002,FUSEHOLDER BLOCKS - PCB - CLIP C,fuseholder blocks - pcb - clip c,electrical,696108003002,1,none,6b2c5a9,6b2c5a9,True,source
+E-TSW-104-07-F-T,TSW-104-07-F-T,CONN HEADER VERT 12POS 2.54MM,conn header vert 12pos 2.54mm,electrical,TSW-104-07-F-T,1,none,6b2c5a9,6b2c5a9,True,source
+E-PEC08SAAN,PEC08SAAN,CONN HEADER VERT 8POS 2.54MM,conn header vert 8pos 2.54mm,electrical,PEC08SAAN,1,none,6b2c5a9,6b2c5a9,True,source
+E-PPTC102LFBN-RC,PPTC102LFBN-RC,CONN HDR 20POS 0.1 TIN PCB,conn hdr 20pos 0.1 tin pcb,electrical,PPTC102LFBN-RC,1,none,6b2c5a9,6b2c5a9,True,source
+E-SBH11-PBPC-D20-ST-BK,SBH11-PBPC-D20-ST-BK,CONN HEADER VERT 40POS 2.54MM,conn header vert 40pos 2.54mm,electrical,SBH11-PBPC-D20-ST-BK,1,none,6b2c5a9,6b2c5a9,True,source
+E-B6B-PH-K-S(LF)(SN),B6B-PH-K-S(LF)(SN),CONN HEADER VERT 6POS 2MM,conn header vert 6pos 2mm,electrical,B6B-PH-K-S(LF)(SN),1,none,6b2c5a9,6b2c5a9,True,source
+E-0702462001,0702462001,CONN HEADER VERT 20POS 2.54MM,conn header vert 20pos 2.54mm,electrical,0702462001,1,none,6b2c5a9,6b2c5a9,True,source
+E-PPTC021LFBN-RC,PPTC021LFBN-RC,CONN HDR 2POS 0.1 TIN PCB,conn hdr 2pos 0.1 tin pcb,electrical,PPTC021LFBN-RC,1,none,6b2c5a9,6b2c5a9,True,source
+E-OSTTA024163,OSTTA024163,TERM BLK 2P SIDE ENT 5.08MM PCB,term blk 2p side ent 5.08mm pcb,electrical,OSTTA024163,1,none,6b2c5a9,6b2c5a9,True,source
+E-1726750613,1726750613,CONN HEADER VERT 6POS 4.2MM,conn header vert 6pos 4.2mm,electrical,1726750613,1,none,6b2c5a9,6b2c5a9,True,source
+E-2N3906TA,2N3906TA,TRANS PNP 40V 0.2A TO92-3,trans pnp 40v 0.2a to92-3,electrical,2N3906TA,1,none,6b2c5a9,6b2c5a9,True,source
+E-CF14JT100R,CF14JT100R,RES 100 OHM 5% 1/4W AXIAL,res 100 ohm 5% 1/4w axial,electrical,CF14JT100R,1,none,6b2c5a9,6b2c5a9,True,source
+E-CF14JT10K0,CF14JT10K0,RES 10K OHM 5% 1/4W AXIAL,res 10k ohm 5% 1/4w axial,electrical,CF14JT10K0,1,none,6b2c5a9,6b2c5a9,True,source
+E-CF14JT4K70,CF14JT4K70,RES 4.7K OHM 5% 1/4W AXIAL,res 4.7k ohm 5% 1/4w axial,electrical,CF14JT4K70,1,none,6b2c5a9,6b2c5a9,True,source
+E-CD14ZT0R00,CD14ZT0R00,RES 0 OHM JUMPER 1/4W AXIAL,res 0 ohm jumper 1/4w axial,electrical,CD14ZT0R00,1,none,6b2c5a9,6b2c5a9,True,source
+E-CF18JT68R0,CF18JT68R0,RES 68 OHM 5% 1/8W AXIAL,res 68 ohm 5% 1/8w axial,electrical,CF18JT68R0,1,none,6b2c5a9,6b2c5a9,True,source
+E-CF14JT82R0,CF14JT82R0,RES 82 OHM 5% 1/4W AXIAL,res 82 ohm 5% 1/4w axial,electrical,CF14JT82R0,1,none,6b2c5a9,6b2c5a9,True,source
+E-CF14JT1K00,CF14JT1K00,RES 1K OHM 5% 1/4W AXIAL,res 1k ohm 5% 1/4w axial,electrical,CF14JT1K00,1,none,6b2c5a9,6b2c5a9,True,source
+E-CF14JT680R,CF14JT680R,RES 680 OHM 5% 1/4W AXIAL,res 680 ohm 5% 1/4w axial,electrical,CF14JT680R,1,none,6b2c5a9,6b2c5a9,True,source
+E-CF14JT220R,CF14JT220R,RES 220 OHM 5% 1/4W AXIAL,res 220 ohm 5% 1/4w axial,electrical,CF14JT220R,1,none,6b2c5a9,6b2c5a9,True,source
+E-206-124,206-124,SWITCH SLIDE DIP SPDT 50MA 24V,switch slide dip spdt 50ma 24v,electrical,206-124,1,none,6b2c5a9,6b2c5a9,True,source
+E-DC10CGKWA,DC10CGKWA,LED BAR GRAPH 10SEG 570NM GRN,led bar graph 10seg 570nm grn,electrical,DC10CGKWA,1,none,6b2c5a9,6b2c5a9,True,source
+E-MIC2937A-3.3WT,MIC2937A-3.3WT,IC REG LINEAR 3.3V 750MA TO220-3,ic reg linear 3.3v 750ma to220-3,electrical,MIC2937A-3.3WT,1,none,6b2c5a9,6b2c5a9,True,source
+E-0233010.MXP,0233010.MXP,FUSE GLASS 10A 125VAC 5X20MM,fuse glass 10a 125vac 5x20mm,electrical,0233010.MXP,1,none,6b2c5a9,6b2c5a9,True,source
+E-C3920BAAAA,C3920BAAAA,SWITCH TOGGLE ON-OFF-ON,switch toggle on-off-on,electrical,C3920BAAAA,1,none,6b2c5a9,6b2c5a9,True,source
+E-EDSTL130/24,EDSTL130/24,TERM BLOCK HDR 24POS VERT 5MM,term block hdr 24pos vert 5mm,electrical,EDSTL130/24,1,none,6b2c5a9,6b2c5a9,True,source
+E-0395016006,0395016006,TERM BLOCK HDR 6POS VERT 3.5MM,term block hdr 6pos vert 3.5mm,electrical,0395016006,1,none,6b2c5a9,6b2c5a9,True,source
+E-0395005006,0395005006,TERM BLOCK PLUG 6POS STR 3.5MM,term block plug 6pos str 3.5mm,electrical,0395005006,1,none,6b2c5a9,6b2c5a9,True,source
+P-3616-0014-0192,3616-0014-0192,"Wasteland Wheel (192mm Diameter, 72mm Width)",192mm wheel|bigger wasteland wheel,mechanical,,1,none,,,False,source:extra_parts.md
