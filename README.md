@@ -6,6 +6,8 @@
 
 ## 시작하기
 
+**Docker 설치부터 Neo4j·Langfuse 첫 접속까지:** [상세 설치 가이드](docs/setup/README.md) · [설치 시연 체크리스트](docs/setup/RECORDING.md)
+
 ```bash
 git clone https://github.com/tech-hyper-x/ontology-ai-labs.git
 cd ontology-ai-labs/labs/mfg-bom-agent
