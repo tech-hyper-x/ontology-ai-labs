@@ -6,6 +6,8 @@
 
 from decimal import Decimal
 
+import pytest
+
 from mfg_bom_agent.contracts.answer import CalcResult, GraphPath
 from mfg_bom_agent.workflows.answer import AnswerDraft, Cited, verify, withheld_answer
 
@@ -205,6 +207,29 @@ def test_mv11b_pack_size_and_raw_pack_quantity_are_known():
     assert run(wrong, [c], 1).status == "failed"
 
 
+@pytest.mark.parametrize("packing", ["2개씩 묶어 판매", "2개씩 포장", "2개씩 판매", "2개/팩", "팩당 2개", "한 팩에 2개", "2개입"])
+def test_pack_description_is_not_the_production_total(packing):
+    c = qty(20, "120").model_copy(update={"inputs": {"units": 20, "pack_size": 2}})
+    d = AnswerDraft(
+        headline=f"20대 생산에 필요한 {packing} 부품을 확인했습니다.",
+        cited=[Cited(label=c.label, value="120", unit="ea")],
+    )
+    assert run(d, [c], 20, paths=()).status == "passed"
+
+
+@pytest.mark.parametrize("text", [
+    "20대 생산에 필요한 부품은 4개씩 묶어 판매합니다.",
+    "20대 생산에 필요한 부품은 팩당 4개입니다.",
+    "20대에 부품 2개가 필요합니다.",
+    "20대에 부품 2개씩 필요합니다.",
+    "부품은 1대당 2개가 필요합니다.",
+])
+def test_packing_recognition_does_not_accept_wrong_pack_or_required_quantity(text):
+    c = qty(20, "120").model_copy(update={"inputs": {"units": 20, "pack_size": 2}})
+    d = AnswerDraft(headline=text, cited=[Cited(label=c.label, value="120", unit="ea")])
+    assert run(d, [c], 20, paths=()).status == "failed"
+
+
 def test_mv13_withheld_answer_uses_only_verified_values():
     """두 번 모두 실패하면 LLM 문장을 내리고, 계산 결과로 만든 문장만 남긴다."""
     c = qty(50, "200")
@@ -232,3 +257,14 @@ def test_usd_suffix_amounts_are_checked_too():
         cited=[Cited(label=c.label, value="-13.98", unit="USD")],
     )
     assert run(unknown, [c], 1, paths=()).unverified_numbers == ["1500.00"]
+
+
+@pytest.mark.parametrize("amount", ["$2,000", "2000 USD", "2000달러", "$2000.0"])
+def test_unverified_money_without_two_decimal_places_is_also_blocked(amount):
+    c = qty(20, "120")
+    d = AnswerDraft(
+        headline=f"구매 금액은 약 {amount} 수준입니다.",
+        cited=[Cited(label=c.label, value="120", unit="ea")],
+    )
+    v = run(d, [c], 20, paths=())
+    assert v.status == "failed" and v.unverified_numbers

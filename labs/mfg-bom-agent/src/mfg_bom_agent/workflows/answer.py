@@ -250,7 +250,9 @@ def keep_real_quotes(draft: AnswerDraft, docs: list) -> AnswerDraft:
 
 
 # ─── [Hands-on P2-Ch7-2 답변 근거 검증] 시작 ───
-_MONEY = re.compile(r"\$\s?([\d,]+\.\d{2})|(?<![\w.$-])-?([\d,]+\.\d{2})\s*(?:USD|달러)")
+_MONEY = re.compile(
+    r"\$\s?([\d,]+(?:\.\d+)?)|(?<![\w.$-])-?([\d,]+(?:\.\d+)?)\s*(?:USD|달러)"
+)
 # 문장 속 수량 표현. 품번(2000-0025-0002) · 판 ID · 날짜의 숫자는 앞뒤가 하이픈 · 영숫자라 잡히지 않는다
 _QTY = re.compile(
     r"(?<![A-Za-z0-9.\-/_#$])(\d[\d,]*(?:\.\d+)?)\s*(개입(?!니)|개들이|개 ?팩|개|ea|팩|pack|종|대|%)(?![A-Za-z])"
@@ -258,6 +260,10 @@ _QTY = re.compile(
 # "60개 라인" · "2곳" 처럼 행 · 문서 · 장소를 센 말은 부품 수량이 아니다
 _COUNT_NOUN = re.compile(r"\s*(라인|행|줄|건|곳|문서|어셈블리|공급사|단계|판|항목)")
 _PER_PRODUCT = re.compile(r"(?<!\d)1\s*대\s*(당|에|기준)|한\s*대(당|에)")
+# "2개씩 묶어 판매"는 생산 총량이 아니라 포장 단위다.
+# "2개씩 필요"까지 포장으로 취급하면 잘못된 소요 수량을 놓치므로 포장 문맥만 허용한다.
+_PACK_AFTER = re.compile(r"\s*(?:/\s*팩|씩\s*(?:묶|포장|판매))")
+_PACK_BEFORE = re.compile(r"(?:팩당|(?:한|1)\s*팩에)\s*$")
 _UP = re.compile(r"증가|늘어|늘며|늘고|늘었|오르|올라|상승|비싸")
 _DOWN = re.compile(r"감소|줄어|줄며|줄고|줄었|낮아|내려|하락|절감|저렴|싸집|싸져")
 
@@ -381,7 +387,10 @@ class _Known:
                     issues.append(
                         Issue(code="wrong_value", target=target, detail="요청 · 도구에 없는 비율")
                     )
-            elif unit in ("개입", "개들이", "개팩"):
+            elif unit in ("개입", "개들이", "개팩") or (
+                unit in ("개", "ea")
+                and (_PACK_AFTER.match(sentence, m.end()) or _PACK_BEFORE.search(before))
+            ):
                 if value not in self.pack_size:
                     issues.append(Issue(code="wrong_value", target=target, detail="팩 크기와 다름"))
             elif unit in ("팩", "pack"):
