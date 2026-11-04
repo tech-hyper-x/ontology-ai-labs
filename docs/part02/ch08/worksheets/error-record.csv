@@ -1,0 +1,4 @@
+case_or_id,question_condition,expected,actual,tool_evidence,auto_reason,root_layer,evidence_for_cause,proposed_fix,regression_ids,manual_review
+G24,,,,,,,,,,
+G30,,,,,,,,,,
+G43,,,,,,,,,,
