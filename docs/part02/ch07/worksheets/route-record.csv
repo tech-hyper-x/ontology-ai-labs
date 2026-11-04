@@ -1,0 +1,4 @@
+question,intent,part,units,percent,revision,expected_tools,actual_tools,missing_input,result
+모터15%인상100대,price_change,5203-2402-0027,100,15,6b2c5a9,find_part→where_used→change_impact,,,
+로봇차량1대원가,cost,,1,,6b2c5a9,cost_rollup,,,
+서보단종시대체후보,discontinue,2000-0025-0002,,,6b2c5a9,find_part→되묻기,,units,

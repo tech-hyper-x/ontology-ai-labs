@@ -1,0 +1,8 @@
+case,expected,actual,issue,calculation_label,value,unit,units,revision,meaning_review
+correct,passed,,,,,,,,
+wrong_value,failed,,,,,,,,
+wrong_unit,failed,,,,,,,,
+wrong_condition,failed,,,,,,,,
+wrong_direction,failed,,,,,,,,
+unknown_to_zero,failed,,,,,,,,
+missing_reference,failed,,,,,,,,
