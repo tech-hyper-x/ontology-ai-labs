@@ -1,0 +1,56 @@
+[
+  {
+    "id": "correct",
+    "headline": "로봇 차량 50대에 서보 200개가 필요합니다 (1대당 4개).",
+    "label": "서보 소요량 (50대)",
+    "value": "200",
+    "unit": "ea",
+    "expected": "passed"
+  },
+  {
+    "id": "wrong_value",
+    "headline": "서보는 로봇 차량 1대당 2개가 필요합니다.",
+    "label": "서보 소요량 (50대)",
+    "value": "200",
+    "unit": "ea",
+    "expected": "failed"
+  },
+  {
+    "id": "wrong_unit",
+    "headline": "로봇 차량 50대에 서보 200팩이 필요합니다.",
+    "label": "서보 소요량 (50대)",
+    "value": "200",
+    "unit": "pack",
+    "expected": "failed"
+  },
+  {
+    "id": "wrong_condition",
+    "headline": "로봇 차량 100대에 서보 200개가 필요합니다.",
+    "label": "서보 소요량 (50대)",
+    "value": "200",
+    "unit": "ea",
+    "requested_units": 100,
+    "expected": "failed"
+  },
+  {
+    "id": "wrong_direction",
+    "headline": "모터 부품비가 $13.98 증가합니다.",
+    "label": "검사용 모터 부품비 차이",
+    "value": "13.98",
+    "unit": "USD",
+    "expected": "failed"
+  },
+  {
+    "id": "unknown_to_zero",
+    "headline": "서보 200개가 필요하며 추가 비용은 $0.00 입니다.",
+    "label": "서보 소요량 (50대)",
+    "value": "200",
+    "unit": "ea",
+    "expected": "failed"
+  },
+  {
+    "id": "missing_reference",
+    "headline": "서보는 로봇 차량 1대당 4개가 필요합니다.",
+    "expected": "failed"
+  }
+]
