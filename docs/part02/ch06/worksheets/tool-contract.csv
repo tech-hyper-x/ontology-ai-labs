@@ -1,0 +1,8 @@
+question,graph_cq,tool,inputs,result_fields,acceptance,status
+서보는 어디에 몇 개 쓰이나,CQ-01+CQ-02,where_used,part+revision,lines+paths+source_ref,사용처와 1대당 수량 대조,
+서보 50대 생산 소요량,CQ-02,bom_explode,part+units+revision,required_each+formula,200 ea,
+스페이서 7개 구매,CQ-05,purchase_quantity,part+required_each+revision,packs_to_buy+purchase_amount,2팩 USD6.98,
+모터 단가 15퍼센트 인상,CQ-02+CQ-09,change_impact,change_type+part+value+units+revision,cost_before+cost_after+cost_diff,100대 USD3869.10 증가,
+없는 품번,CQ-01,where_used,part,error+hint,정상 0건과 구분,
+판에 없는 구형 부품,CQ-01+CQ-02,where_used,part+revision,lines+warnings,없는 ID와 구분,
+구성 부품과 공용 부품,CQ-03+CQ-04,현재 전용 도구 없음,,,Ch8 개선 과제로 남김,

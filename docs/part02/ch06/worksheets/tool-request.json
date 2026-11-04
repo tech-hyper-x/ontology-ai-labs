@@ -1,0 +1,10 @@
+{
+  "tool": "change_impact",
+  "arguments": {
+    "change_type": "price_percent",
+    "part": "5203-2402-0027",
+    "value": "15",
+    "units": 100,
+    "revision": "6b2c5a9"
+  }
+}
