@@ -1,0 +1,221 @@
+{
+  "schema": 1,
+  "provenance": "교육용으로 구성한 응답. 과거 LLM 실행 원본이나 실제 성능 측정 자료가 아님.",
+  "records": [
+    {
+      "case": "quantity_correct",
+      "id": "G01",
+      "source": "constructed_teaching_fixture_not_live_run",
+      "expected_auto": {
+        "answer_correct": true,
+        "reason": ""
+      },
+      "manual_review_required": false,
+      "response": {
+        "run_id": "teaching-fixture",
+        "status": "completed",
+        "mode": "kg_tools",
+        "conclusion": "로버 50대에 서보 200개가 필요합니다.",
+        "context": {
+          "snapshot": "a78f9eb",
+          "revision": "6b2c5a9"
+        },
+        "calculations": [
+          {
+            "label": "서보 총소요량 (50대)",
+            "value": "200",
+            "unit": "ea",
+            "kind": "quantity"
+          }
+        ]
+      }
+    },
+    {
+      "case": "quantity_wrong_unit",
+      "id": "G01",
+      "source": "constructed_teaching_fixture_not_live_run",
+      "expected_auto": {
+        "answer_correct": false,
+        "reason": "wrong_unit"
+      },
+      "manual_review_required": false,
+      "response": {
+        "run_id": "teaching-fixture",
+        "status": "completed",
+        "mode": "kg_tools",
+        "conclusion": "로버 50대에 서보 200팩이 필요합니다.",
+        "context": {
+          "snapshot": "a78f9eb",
+          "revision": "6b2c5a9"
+        },
+        "calculations": [
+          {
+            "label": "서보 총소요량 (50대)",
+            "value": "200",
+            "unit": "ea",
+            "kind": "quantity"
+          }
+        ]
+      }
+    },
+    {
+      "case": "motor_wrong_value",
+      "id": "G16",
+      "source": "constructed_teaching_fixture_not_live_run",
+      "expected_auto": {
+        "answer_correct": false,
+        "reason": "wrong_value"
+      },
+      "manual_review_required": false,
+      "response": {
+        "run_id": "teaching-fixture",
+        "status": "completed",
+        "mode": "kg_tools",
+        "conclusion": "로버 100대 모터 부품비가 $3,000.00 증가합니다.",
+        "context": {
+          "snapshot": "a78f9eb",
+          "revision": "6b2c5a9"
+        },
+        "calculations": [
+          {
+            "label": "모터 부품비 차이",
+            "value": "3869.10",
+            "unit": "USD",
+            "kind": "diff"
+          }
+        ]
+      }
+    },
+    {
+      "case": "direction_wrong",
+      "id": "G36",
+      "source": "constructed_teaching_fixture_not_live_run",
+      "expected_auto": {
+        "answer_correct": false,
+        "reason": "wrong_direction"
+      },
+      "manual_review_required": false,
+      "response": {
+        "run_id": "teaching-fixture",
+        "status": "completed",
+        "mode": "kg_tools",
+        "conclusion": "원가가 $13.98 증가합니다.",
+        "context": {
+          "snapshot": "a78f9eb",
+          "revision": "6b2c5a9"
+        },
+        "calculations": [
+          {
+            "label": "ECN 원가 차이 (1대)",
+            "value": "-13.98",
+            "unit": "USD",
+            "kind": "diff"
+          }
+        ]
+      }
+    },
+    {
+      "case": "path_omitted",
+      "id": "G30",
+      "source": "constructed_teaching_fixture_not_live_run",
+      "expected_auto": {
+        "answer_correct": false,
+        "reason": "missing_item"
+      },
+      "manual_review_required": false,
+      "response": {
+        "run_id": "teaching-fixture",
+        "status": "completed",
+        "mode": "kg_tools",
+        "conclusion": "모터 변경 영향 어셈블리를 확인해야 합니다.",
+        "context": {
+          "snapshot": "a78f9eb",
+          "revision": "6b2c5a9"
+        },
+        "graph_paths": [
+          {
+            "text": "Rover → drive wheel → motor",
+            "tool": "where_used",
+            "revision": "6b2c5a9"
+          }
+        ]
+      }
+    },
+    {
+      "case": "doc_not_cited",
+      "id": "G43",
+      "source": "constructed_teaching_fixture_not_live_run",
+      "expected_auto": {
+        "answer_correct": false,
+        "reason": "wrong_value"
+      },
+      "manual_review_required": false,
+      "response": {
+        "run_id": "teaching-fixture",
+        "status": "completed",
+        "mode": "kg_tools",
+        "conclusion": "가공 조건은 관련 문서를 확인하세요.",
+        "context": {
+          "snapshot": "a78f9eb",
+          "revision": "6b2c5a9"
+        },
+        "documents": [
+          {
+            "doc_path": "parts_list/extra_parts.md",
+            "doc_id": "teaching-doc",
+            "title": "검사용 문서 식별자",
+            "excerpt": ""
+          }
+        ]
+      }
+    },
+    {
+      "case": "quantity_condition_gap",
+      "id": "G01",
+      "source": "constructed_teaching_fixture_not_live_run",
+      "expected_auto": {
+        "answer_correct": true,
+        "reason": ""
+      },
+      "manual_review_required": true,
+      "response": {
+        "run_id": "teaching-fixture",
+        "status": "completed",
+        "mode": "kg_tools",
+        "conclusion": "로버 100대에 서보 200개가 필요합니다.",
+        "context": {
+          "snapshot": "a78f9eb",
+          "revision": "6b2c5a9"
+        },
+        "calculations": [
+          {
+            "label": "서보 총소요량 (50대)",
+            "value": "200",
+            "unit": "ea",
+            "kind": "quantity"
+          }
+        ]
+      }
+    },
+    {
+      "case": "doc_path_only_gap",
+      "id": "G43",
+      "source": "constructed_teaching_fixture_not_live_run",
+      "expected_auto": {
+        "answer_correct": true,
+        "reason": ""
+      },
+      "manual_review_required": true,
+      "response": {
+        "run_id": "teaching-fixture",
+        "status": "completed",
+        "mode": "kg_tools",
+        "conclusion": "parts_list/extra_parts.md",
+        "context": {
+          "snapshot": "a78f9eb",
+          "revision": "6b2c5a9"
+        }
+      }
+    }
+  ]
+}
