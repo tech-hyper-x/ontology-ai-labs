@@ -1,0 +1,5 @@
+case,part,revision,units,raw_qty,pack_size,multiplier,required_each,requirement_cost,packs_to_buy,purchase_amount,leftover_each,price_observed_at,price_date,assumptions,source_ref
+servo_50,2000-0025-0002,6b2c5a9,50,,,,,,,,,,,,
+spacer_7,1522-0010-0060,6b2c5a9,,,,,7,,,,,,,,
+motor_15pct,5203-2402-0027,6b2c5a9,100,,,,,,,,,,,,
+wheel_ecn,,778fe3d->72edc6e,1,,,,,,,,,,,,
