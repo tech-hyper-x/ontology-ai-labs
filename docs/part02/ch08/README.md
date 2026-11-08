@@ -73,21 +73,34 @@ uv run python ../../examples/ch08_score.py --cases /tmp/ch08-work.json
 
 G30의 `tool_correct=true`, `answer_correct=true`, `recall=1`을 확인합니다. 작업본에는 수정 전의 `expected_auto`가 남아 있으므로 이 명령에는 `--check`를 붙이지 않습니다. 수정 전후 응답과 이유를 저장합니다. 이 연습은 한 응답을 고친 것이며 에이전트 코드가 개선됐다는 증거는 아닙니다. 실제 코드를 고쳤다면 새 실행과 관련 문항 회귀 확인이 추가로 필요합니다.
 
-## 5. 실제 실행과 저장 응답 재채점 — 선택 실습
+## 5. 대표 세 문항 실제 실행과 재채점 — 본 실습
 
-DB·MCP·모델 설정이 준비된 환경에서 소수 문항부터 실행합니다.
+준비된 Neo4j·MCP 환경에서 수량 G01, 원가 G16, 관계 G30을 실제 실행합니다. 기본 연습은 `fixed_llm`으로 모델 응답을 고정하고 실제 도구를 호출합니다. 현재 터미널에서만 환경변수를 지정하세요.
 
 ```bash
-uv run python scripts/run_eval.py --ids G01,G16 --modes kg_tools
+# macOS / Linux / WSL
+DEMO_MODE=fixed_llm uv run python scripts/run_eval.py --ids G01,G16,G30 --modes kg_tools
+
+# Windows PowerShell
+$env:DEMO_MODE="fixed_llm"
+uv run python scripts/run_eval.py --ids G01,G16,G30 --modes kg_tools
 ```
 
 실행 결과는 새 `outputs/eval/<실행ID>/` 아래 `results.csv`, `responses.jsonl`, `report.md`, `meta.json`으로 저장됩니다. 자신의 실제 결과 폴더를 사용해 다음과 같이 재채점할 수 있습니다.
 
 ```bash
-uv run python scripts/run_eval.py --rescore outputs/eval/본인의실행ID --ids G01,G16 --modes kg_tools
+uv run python scripts/run_eval.py --rescore outputs/eval/본인의실행ID --ids G01,G16,G30 --modes kg_tools
 ```
 
 경로는 실제 생성된 폴더명으로 바꿔야 합니다. 재채점은 모델·도구를 다시 부르지 않습니다. 현재 배포본에는 과거 전체 응답 원본이 없습니다. 기존 기록의 폴더명을 복사해 실행하지 마세요. 교육용 사례는 이 실제 실행 폴더와 별도로 관리합니다.
+
+세 문항의 `tool_correct`, `answer_correct`, `verification`을 나누어 기록합니다. G01은 50대 총소요량 200 ea, G16은 3869.10 USD 증가, G30은 `drive wheel`을 기대합니다. 틀린 문항은 `responses.jsonl`의 intent·계산값·경로와 원 질문을 대조하세요.
+
+2026-11-08 검수에서는 고정 모드 실제 도구 실행에서 G01이 `part_info`로 분류되어 1대 사용량 4 ea와 단가를 답하고, 50대 총량 200 ea를 답하지 못했습니다. 출력 검사는 passed였지만 Golden 평가는 wrong_value였습니다. G16·G30은 통과했습니다. **이는 기록된 특정 실행이며 수강생의 현재 결과나 실제 모델 품질을 보장하지 않습니다.** G01의 `rule_plan` → `part_info` 분기와 수량 계산 호출의 부재를 확인하고 같은 문항을 새 실행해 재현 여부를 기록하세요. 코드 수정 없는 재실행은 재현 확인이며 개선 증거가 아닙니다. 코드 수정 후에는 G01과 관련 수량 문항을 같은 조건으로 새로 실행해야 합니다.
+
+고정 모드는 도구·경로 점검입니다. 실제 모델의 질문 해석과 답변 품질은 API 준비 후 `DEMO_MODE=none`으로 별도 실행합니다. PowerShell에서는 `$env:DEMO_MODE="none"`으로 바꿉니다. 모델명 필드가 있어도 고정 모드 결과를 실제 모델 평가로 발표하지 않습니다.
+
+### 전체 평가 — 선택 실습
 
 전체 선택 실행은 `uv run python scripts/run_eval.py`로 45문항 × 3방식을 실행합니다. RAG·LLM 단독은 실제 모델을 호출하며 `fixed_llm`이 전체 세 방식을 오프라인으로 바꾸지는 않습니다. 지식 그래프 고정 모드의 검색도 임베딩 API를 사용할 수 있습니다.
 

@@ -69,6 +69,24 @@ uv run python ../../examples/ch07_run.py --question "서보 2000-0025-0002 단�
 
 현재 정책에서 `cost`·`price_change`·`revision_change`는 생산 대수 기본값 1을 사용합니다. `discontinue`·`purchase_quantity`에서는 생산 대수가 필수입니다. 계획의 유형을 먼저 읽고, 되물은 항목과 기본값으로 사용한 항목을 구분해 기록하세요.
 
+### 5. Langfuse에서 같은 실행 추적하기
+
+Ch3에서 연결한 Langfuse를 실제 실행 기록과 연결합니다. 위 기본 명령의 `fixed_llm`은 실제 도구를 호출하지만 **Langfuse 트레이스는 생성하지 않습니다**. `audit_path`의 로컬 JSONL과 구분하세요.
+
+본인의 모델 API와 [Langfuse 프로젝트 설정](../../setup/README.md)이 준비되면 같은 모터 질문을 실제 모델 모드로 실행합니다. API 사용료가 발생합니다.
+
+```bash
+uv run python ../../examples/ch07_run.py --demo-mode none
+```
+
+1. 최종 응답의 `run_id`와 `trace.url`을 확인하고 URL을 새 창에서 엽니다. 앱에서는 **Langfuse 트레이스 열기 ↗**를 사용할 수 있습니다.
+2. 트레이스 metadata의 `run_id`가 방금 실행과 같은지 확인합니다.
+3. 질문 해석, 도구 호출, 답변 생성의 실제 관측 기록을 펼쳐 입력·출력과 소요시간을 읽습니다. 표시 이름과 순서는 실제 실행에 따라 확인합니다.
+4. `change_impact`의 품번 `5203-2402-0027`, `value=15`, `units=100`, 판 `6b2c5a9`와 반환 `cost_diff`를 대조합니다. 같은 조건의 기대 증가액은 `3869.10 USD`입니다.
+5. 답변이 이 결과를 어떻게 인용했는지 확인하고 실행 번호·트레이스 주소·지연 단계·대조 결과를 경로 기록표에 남깁니다.
+
+`trace=null`이거나 화면에 기록이 없으면 성공으로 처리하지 않습니다. 실제 키는 노출하지 말고 프로젝트 키·주소·수집 상태를 점검하세요. 로컬 `audit_path`에서는 도구 입력과 출력을 확인할 수 있습니다. `scripts/langfuse_demo.py --mock`은 별도의 계측 데모이며 실제 에이전트 실행 트레이스를 대신하지 않습니다.
+
 ## 17강 · 답변에 오류를 넣어 검사하기
 
 ```bash
