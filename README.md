@@ -10,6 +10,8 @@
 
 **Docker 설치부터 Neo4j·Langfuse 첫 접속까지:** [상세 설치 가이드](docs/setup/README.md) · [설치 시연 체크리스트](docs/setup/RECORDING.md)
 
+**Cypher가 처음이라면:** [Neo4j 초보자를 위한 기본 Cypher 문법 가이드](docs/neo4j-cypher-basics.md)에서 예제 데이터로 조회·경로·집계·생성·수정·삭제를 연습합니다.
+
 ```bash
 git clone https://github.com/tech-hyper-x/ontology-ai-labs.git
 cd ontology-ai-labs/labs/mfg-bom-agent
