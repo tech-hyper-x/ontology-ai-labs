@@ -1,0 +1,4 @@
+﻿mode,rank,pmid,bm25_rank,vector_rank,evidence_targets,source_span,interpretation
+bm25,,,,,,,
+vector,,,,,,,
+hybrid,,,,,,,

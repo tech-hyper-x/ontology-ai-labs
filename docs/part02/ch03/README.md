@@ -11,7 +11,7 @@
 5. [변경 기록 표](worksheets/change-record.csv)를 작성하고 아래 예제로 모터 한 쌍을 대조합니다.
 
 ```bash
-uv run python ../../examples/ch03_change.py
+uv run python ../../examples/part02/ch03/ch03_change.py
 ```
 
 예제는 현재 작업본의 기존 함수에 실제 두 원본 행을 전달합니다. DB·파일을 변경하지 않습니다. 전체 diff의 6개 변경 행과 모터 한 쌍의 2개 행은 범위가 다릅니다. 예제의 판 구간 입력은 3개만 발췌했으므로 마지막 판을 실제 최신 판이라고 해석하지 않습니다. 실제 기간은 plm_revision.csv·Neo4j와 대조합니다.
@@ -24,7 +24,7 @@ uv run python ../../examples/ch03_change.py
 4. [ontology.py](../../../labs/mfg-bom-agent/src/mfg_bom_agent/ontology.py)에서 고유성 제약·필수 값·Domain/Range·관계 속성·연결 개수·중복·순환 검사의 구현 위치를 찾습니다. [대표 검사](queries/05-validation-checks.cypher)와 아래 명령은 읽기 전용입니다.
 
 ```bash
-uv run python ../../examples/ch03_validate.py
+uv run python ../../examples/part02/ch03/ch03_validate.py
 ```
 
 검토 시점의 제공 DB는 31개 검사 모두 위반 0건입니다. 실제 반환값을 우선 기록합니다. 이 결과는 구현된 검사 범위만 의미합니다. 현재 필수 값 검사는 null 여부이며, 모든 빈 문자열·기간 오류·업무 타당성까지 검사하지 않습니다. [판 속성과 연결의 일치 검사](queries/06-revision-consistency.cypher)는 별도로 제안하는 추가 검사입니다.

@@ -4,7 +4,7 @@ import importlib.util
 from pathlib import Path
 import yaml
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[3]
 LAB = ROOT / 'labs/mfg-bom-agent'
 
 if __name__ == '__main__':

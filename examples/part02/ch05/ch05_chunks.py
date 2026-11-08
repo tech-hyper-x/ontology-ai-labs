@@ -2,7 +2,7 @@
 from pathlib import Path
 import csv
 from mfg_bom_agent.retrieval.chunking import chunk_markdown
-ROOT=Path(__file__).resolve().parents[1]
+ROOT=Path(__file__).resolve().parents[3]
 name="mechanical/servo_gear_replacement/README.md"
 raw=(ROOT/"docs/part02/ch05/source/servo_gear_replacement.md").read_text(encoding="utf-8")
 chunks=chunk_markdown(name,raw)

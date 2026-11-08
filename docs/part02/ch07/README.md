@@ -9,9 +9,9 @@ Ch6에서 직접 호출한 계산 도구를 질문별 실행으로 연결합니�
 ### 1. 질문을 계산 조건으로 바꾸기
 
 ```bash
-uv run python ../../examples/ch07_plan.py
-uv run python ../../examples/ch07_plan.py --question "서보 2000-0025-0002 단종 시 대체 후보는?"
-uv run python ../../examples/ch07_plan.py --question "2024-06 원가 차이는?"
+uv run python ../../examples/part02/ch07/ch07_plan.py
+uv run python ../../examples/part02/ch07/ch07_plan.py --question "서보 2000-0025-0002 단종 시 대체 후보는?"
+uv run python ../../examples/part02/ch07/ch07_plan.py --question "2024-06 원가 차이는?"
 ```
 
 기본 해석기는 `rule_plan`입니다. 모터 질문에서 `price_change`, 품번 `5203-2402-0027`, 100대, 변경률 15를 추출하는지 확인합니다. 서보 질문의 `units`는 `null`입니다. 날짜만 있는 마지막 질문은 현재 규칙에서 `cost`로 분류됩니다.
@@ -19,7 +19,7 @@ uv run python ../../examples/ch07_plan.py --question "2024-06 원가 차이는?"
 실제 모델의 계획은 다음 선택 명령으로 확인합니다. 본인의 API 설정과 사용료가 필요하며, 규칙 해석 결과와 다를 수 있습니다.
 
 ```bash
-uv run python ../../examples/ch07_plan.py --llm
+uv run python ../../examples/part02/ch07/ch07_plan.py --llm
 ```
 
 유형과 조건은 `QuestionPlan`, 일반 조회 판은 `RunContext.revision`에 있습니다. 계획의 `change_ref`는 ECN·판 변경 비교를 위한 참조입니다.
@@ -40,15 +40,15 @@ LLM은 유형과 조건을 구조화하고, Python 분기는 도구 순서를 �
 ### 3. 호출 분기 두 개 작성하기
 
 ```bash
-uv run python ../../examples/ch07_route.py
+uv run python ../../examples/part02/ch07/ch07_route.py
 ```
 
-[작성 파일](../../../examples/ch07_route.py)의 `execute`는 처음에 `NotImplementedError`를 냅니다. 준비된 계획을 받아 다음 두 분기를 구현하세요.
+[작성 파일](../../../examples/part02/ch07/ch07_route.py)의 `execute`는 처음에 `NotImplementedError`를 냅니다. 준비된 계획을 받아 다음 두 분기를 구현하세요.
 
 - `cost`: `cost_rollup(units, revision)`만 호출합니다.
 - `price_change`: `where_used(part, revision)` 다음에 `change_impact(change_type="price_percent", part, value=percent, units, revision)`를 호출합니다.
 
-AI에게 구현을 요청할 때도 호출 목록과 인자를 명시하세요. 기대 목록과 검사기를 유지하고 함수만 수정합니다. 같은 명령으로 검사한 뒤 [해설](../../../examples/ch07_route_solution.py)과 비교합니다.
+AI에게 구현을 요청할 때도 호출 목록과 인자를 명시하세요. 기대 목록과 검사기를 유지하고 함수만 수정합니다. 같은 명령으로 검사한 뒤 [해설](../../../examples/part02/ch07/ch07_route_solution.py)과 비교합니다.
 
 이 연습의 `FakeGateway`는 호출 순서와 인자만 기록합니다. 품번 식별과 입력 확인이 끝난 계획을 사용하는 작은 연습입니다. 실제 연결은 다음 단계에서 확인합니다.
 
@@ -57,8 +57,8 @@ AI에게 구현을 요청할 때도 호출 목록과 인자를 명시하세요. 
 Neo4j·MCP 설정과 Ch4~6 데이터가 필요합니다. `MCP_TRANSPORT=http`이면 별도 서버를 실행하고, `inprocess`이면 같은 서버 객체를 사용합니다.
 
 ```bash
-uv run python ../../examples/ch07_run.py
-uv run python ../../examples/ch07_run.py --question "서보 2000-0025-0002 단종 시 대체 후보는?" --answer 50
+uv run python ../../examples/part02/ch07/ch07_run.py
+uv run python ../../examples/part02/ch07/ch07_run.py --question "서보 2000-0025-0002 단종 시 대체 후보는?" --answer 50
 ```
 
 첫 명령은 모터 질문의 호출 이벤트와 최종 응답을 출력합니다. 제공 판 `6b2c5a9`·100대·15% 조건의 기대 부품비 증가액은 **$3,869.10**입니다. 실제 출력의 조건·경로·금액을 기록표에 남깁니다.
@@ -76,7 +76,7 @@ Ch3에서 연결한 Langfuse를 실제 실행 기록과 연결합니다. 위 기
 본인의 모델 API와 [Langfuse 프로젝트 설정](../../setup/README.md)이 준비되면 같은 모터 질문을 실제 모델 모드로 실행합니다. API 사용료가 발생합니다.
 
 ```bash
-uv run python ../../examples/ch07_run.py --demo-mode none
+uv run python ../../examples/part02/ch07/ch07_run.py --demo-mode none
 ```
 
 1. 최종 응답의 `run_id`와 `trace.url`을 확인하고 URL을 새 창에서 엽니다. 앱에서는 **Langfuse 트레이스 열기 ↗**를 사용할 수 있습니다.
@@ -92,7 +92,7 @@ uv run python ../../examples/ch07_run.py --demo-mode none
 ## 17강 · 답변에 오류를 넣어 검사하기
 
 ```bash
-uv run python ../../examples/ch07_verify.py
+uv run python ../../examples/part02/ch07/ch07_verify.py
 uv run python scripts/exercise.py ch7_2_answer
 uv run pytest -q tests/test_verify.py tests/test_agent.py -k 'not workflow'
 ```
@@ -114,7 +114,7 @@ uv run pytest -q tests/test_verify.py tests/test_agent.py -k 'not workflow'
 
 ```bash
 cp ../../docs/part02/ch07/worksheets/answer-cases.json /tmp/ch07-my-cases.json
-uv run python ../../examples/ch07_verify.py --cases /tmp/ch07-my-cases.json
+uv run python ../../examples/part02/ch07/ch07_verify.py --cases /tmp/ch07-my-cases.json
 ```
 
 WSL/Linux/macOS 터미널 기준입니다. 기존 기대값과 런타임 검사기는 유지합니다. 잘못된 답변을 `failed`로 탐지하면 과제 검사는 통과한 것입니다. 추가한 문장에서 예상과 다르면 어떤 표현을 검사하지 못했는지 기록하세요.

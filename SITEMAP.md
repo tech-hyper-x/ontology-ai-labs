@@ -6,8 +6,8 @@
 
 1. [Docker → Neo4j → Langfuse 상세 설치](docs/setup/README.md)
 2. [Ch3 전체 실행 순서](docs/ch03-run-guide.md)
-3. [그래프 사용처 조회 예제](examples/ch03_where_used.cypher)
-4. [MCP 직접 호출·문서 검색 예제](examples/ch03_call.py)
+3. [그래프 사용처 조회 예제](examples/part01/ch03/ch03_where_used.cypher)
+4. [MCP 직접 호출·문서 검색 예제](examples/part01/ch03/ch03_call.py)
 
 ## 하고 싶은 일로 찾기
 
@@ -99,3 +99,7 @@ OS별 도구 설치를 마치면 [공통 상세 설치 가이드](docs/setup/REA
 ## Part 2 · Ch8 — 기준 문항 평가와 오류 분석
 
 [실제 오류 수정·12문항 회귀·새 질문 설계](docs/part02/ch08/README.md)
+
+## Part 1~3 실행 예제 찾기
+
+[examples 전체 목차](examples/README.md)에서 Part와 Chapter별 파일·실행 위치를 확인합니다. [Part 1](examples/part01/) · [Part 2](examples/part02/) · [Part 3](examples/part03/)

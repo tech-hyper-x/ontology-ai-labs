@@ -108,7 +108,7 @@ SKU·조립품·반환된 revision을 기록합니다. 이후 MCP 호출에는 �
 
 먼저 `where_used`로 앞의 그래프 조회를 대조한 뒤, 같은 호출 방법으로 `search_docs`를 실행합니다.
 
-호출 예제는 `examples/ch03_call.py`에 포함했습니다. 제조 프로젝트 폴더에서 `uv run python ../../examples/ch03_call.py`로 실행합니다. 아래 코드와 동일합니다.
+호출 예제는 `examples/part01/ch03/ch03_call.py`에 포함했습니다. 제조 프로젝트 폴더에서 `uv run python ../../examples/part01/ch03/ch03_call.py`로 실행합니다. 아래 코드와 동일합니다.
 
 ```python
 import argparse
@@ -146,9 +146,9 @@ if __name__ == "__main__":
 그래프에서 기록한 개정판 ID로 `확인한_ID`를 바꾼 뒤 실행합니다.
 
 ```bash
-uv run python ../../examples/ch03_call.py where_used --revision "확인한_ID"
-uv run python ../../examples/ch03_call.py search_docs --mode bm25
-uv run python ../../examples/ch03_call.py search_docs --mode vector
+uv run python ../../examples/part01/ch03/ch03_call.py where_used --revision "확인한_ID"
+uv run python ../../examples/part01/ch03/ch03_call.py search_docs --mode bm25
+uv run python ../../examples/part01/ch03/ch03_call.py search_docs --mode vector
 ```
 
 - 사용처 도구: `sku / revision / lines / paths`와 오류·힌트를 확인합니다.

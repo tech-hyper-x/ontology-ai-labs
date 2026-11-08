@@ -11,7 +11,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-LAB = Path(__file__).resolve().parents[1] / "labs/mfg-bom-agent"
+LAB = Path(__file__).resolve().parents[3] / "labs/mfg-bom-agent"
 IDS = "G01,G02,G03,G04,G05,G06,G07,G08,G09,G10,G16,G30"
 
 

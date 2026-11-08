@@ -1,5 +1,5 @@
 """Ch4: CSV 입력·DB 건수·온톨로지 규칙·CQ 사용처를 읽기 전용으로 대조합니다.
-실행 위치: labs/mfg-bom-agent / uv run python ../../examples/ch04_audit.py
+실행 위치: labs/mfg-bom-agent / uv run python ../../examples/part02/ch04/ch04_audit.py
 """
 from __future__ import annotations
 import csv

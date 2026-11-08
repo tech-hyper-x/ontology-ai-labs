@@ -17,8 +17,8 @@ cd ontology-ai-labs/labs/mfg-bom-agent
 
 1. [OS별 설치 안내](labs/mfg-bom-agent/INSTALL.md)에서 본인 환경을 선택합니다.
 2. [Ch3 실행 안내](docs/ch03-run-guide.md)에 따라 개인 설정·서비스·데이터·앱을 준비합니다.
-3. [사용처 조회문](examples/ch03_where_used.cypher)을 Neo4j Browser에서 실행합니다.
-4. [MCP 호출 예제](examples/ch03_call.py)로 같은 부품과 개정판을 조회합니다.
+3. [사용처 조회문](examples/part01/ch03/ch03_where_used.cypher)을 Neo4j Browser에서 실행합니다.
+4. [MCP 호출 예제](examples/part01/ch03/ch03_call.py)로 같은 부품과 개정판을 조회합니다.
 5. 실습 앱의 처리 과정과 최종 답변을 도구 반환 결과와 비교합니다.
 
 Windows 명령은 WSL Ubuntu 터미널에서 실행합니다. Mac은 터미널을 사용합니다. 최초 도구 설치와 다운로드 시간은 강의의 설명·시연 배분과 별도입니다.
@@ -27,8 +27,8 @@ Windows 명령은 WSL Ubuntu 터미널에서 실행합니다. Mac은 터미널�
 
 ```text
 docs/ch03-run-guide.md          Ch3 개발 환경 구성·실행 순서
-examples/ch03_call.py           사용처 조회·문서 검색 MCP 예제
-examples/ch03_where_used.cypher 그래프 사용처 조회 예제
+examples/part01/ch03/ch03_call.py           사용처 조회·문서 검색 MCP 예제
+examples/part01/ch03/ch03_where_used.cypher 그래프 사용처 조회 예제
 labs/mfg-bom-agent/             제조 실습 런타임·데이터·테스트
 DISTRIBUTION.json              배포본의 원본 코드 커밋
 ```
@@ -85,8 +85,8 @@ uv run streamlit run src/mfg_bom_agent/ui.py
 그래프에서 확인한 개정판 ID로 `확인한_ID`를 바꿉니다.
 
 ```bash
-uv run python ../../examples/ch03_call.py where_used --revision "확인한_ID"
-uv run python ../../examples/ch03_call.py search_docs --mode hybrid
+uv run python ../../examples/part01/ch03/ch03_call.py where_used --revision "확인한_ID"
+uv run python ../../examples/part01/ch03/ch03_call.py search_docs --mode hybrid
 ```
 
 사용처의 `sku / revision / lines / paths`와 검색의 `mode / effective_mode / hits`를 확인합니다. 언어 모델 API와 임베딩 API는 별도 설정입니다.
@@ -146,3 +146,7 @@ Ch3의 설치·초기화·실행은 [Ch3 실행 안내](docs/ch03-run-guide.md)�
 ## Part 2 · Ch8 — 기준 문항 평가와 오류 분석
 
 [실제 오류 수정·12문항 회귀·새 질문 설계](docs/part02/ch08/README.md)
+
+## Part 1~3 실행 예제 찾기
+
+[examples 전체 목차](examples/README.md)에서 Part와 Chapter별 파일·실행 위치를 확인합니다. [Part 1](examples/part01/) · [Part 2](examples/part02/) · [Part 3](examples/part03/)

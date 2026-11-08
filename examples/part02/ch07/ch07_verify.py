@@ -6,7 +6,7 @@ from pathlib import Path
 from mfg_bom_agent.contracts.answer import CalcResult, GraphPath
 from mfg_bom_agent.workflows.answer import AnswerDraft, Cited, verify
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[3]
 
 
 def main():

@@ -27,7 +27,7 @@ docker compose up -d neo4j
 
 ```bash
 uv run python scripts/load_graph.py
-uv run python ../../examples/ch04_audit.py
+uv run python ../../examples/part02/ch04/ch04_audit.py
 ```
 
 `load_graph.py`는 LabMeta를 제외한 기존 노드를 지우고 재생성합니다. MERGE가 있어도 **증분 적재가 아닙니다**. 여러 배치·쿼리로 진행하며, 전체 적재를 단일 원자적 트랜잭션으로 취급하지 않습니다. 출력 `counts`에는 입력 행 수가 포함되므로 실제 노드·관계 수와 따로 대조합니다.
@@ -49,7 +49,7 @@ Browser는 [Neo4j 사용 안내](../../../labs/mfg-bom-agent/docs/NEO4J_BROWSER.
 4. [05 수량 재료](queries/05-quantity-materials.cypher): 휠의 계수/낱개 6/6, 스페이서 1/4를 확인합니다. 입력 버전이 달라지면 실제 결과를 우선합니다.
 5. [06 작성 템플릿](queries/06-usage-template.cypher)의 관계·판 조건·반환 필드를 직접 완성합니다. AI에게도 품번·판·반환값을 명시합니다.
 6. [07 여러 경로 합산](queries/07-path-sum-example.cypher)은 DB를 수정하지 않는 **가상 예제**입니다. 2×2+1×3=7을 확인합니다. 실제 휠·스페이서는 이 데이터에서 각각 한 경로입니다.
-7. [조회 기록표](worksheets/query-record.csv)에 조건·결과·단위를 남기고 [독립 확인 예제](../../../examples/ch04_audit.py)를 대조합니다.
+7. [조회 기록표](worksheets/query-record.csv)에 조건·결과·단위를 남기고 [독립 확인 예제](../../../examples/part02/ch04/ch04_audit.py)를 대조합니다.
 
 `queries/cq_01_where_used.cypher`는 `WITH v`로 시작하며 런타임이 `_revision.cypher`를 붙여 실행합니다. 이를 Browser에 단독으로 붙이지 말고 이 폴더의 독립 실행 조회문을 사용합니다. 경로 **모든 BOMLine**에 같은 판 조건을 적용합니다. `path_factor`에는 팩 크기가 없고 `qty_each`에는 이미 반영되어 있으므로 중복 계산하지 않습니다.
 

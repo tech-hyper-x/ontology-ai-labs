@@ -3,7 +3,7 @@ from pathlib import Path
 import csv,json
 from mfg_bom_agent.foundation.normalize import map_parts_row,make_part_id,assembly_id
 from mfg_bom_agent.foundation.ecn import diff_revisions,pair_supersedes,revision_intervals
-ROOT=Path(__file__).resolve().parents[1]
+ROOT=Path(__file__).resolve().parents[3]
 REF=ROOT/'docs/part02/ch03/reference'
 def motor_lines(name):
     with (REF/name).open(encoding='utf-8-sig',newline='') as f:

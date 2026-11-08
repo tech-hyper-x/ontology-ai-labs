@@ -1,0 +1,6 @@
+﻿relation,domain,range,required_count,cq,reason
+SUPPORTED_BY,,,,,
+HAS_TYPE,,,,,
+FROM_SOURCE:Source,,,,,
+FROM_SOURCE:Paper,,,,,
+CITES,,,,,

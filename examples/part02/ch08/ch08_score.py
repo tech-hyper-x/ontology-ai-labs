@@ -6,7 +6,7 @@ import yaml
 from mfg_bom_agent.contracts.answer import AnswerResponse
 from mfg_bom_agent.evaluation.scoring import score
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[3]
 
 
 def main():

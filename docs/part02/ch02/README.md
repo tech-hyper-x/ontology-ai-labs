@@ -12,11 +12,11 @@
 |2|[원본 부품표](../ch01/reference/parts_list/parts_list.csv)|휠 3616-0014-0144 행·머리글 읽기|`cost pp `의 뒤쪽 공백까지 확인|
 |3|[normalize.py](../../../labs/mfg-bom-agent/src/mfg_bom_agent/foundation/normalize.py)|PARTS_LIST_COLUMNS·map_parts_row·supplier_from_url 읽기|열 이름 변환과 공급사 식별 역할 설명|
 |4|[부품 마스터](../../../labs/mfg-bom-agent/data/processed/plm_item_master.csv) · [BOM](../../../labs/mfg-bom-agent/data/processed/plm_ebom_line.csv) · [구매 조건](../../../labs/mfg-bom-agent/data/processed/erp_supplier_item.csv)|같은 부품 ID로 대조|부품·투입 내역·구매 조건의 역할 구분|
-|5|[한 행 실행 예제](../../../examples/ch02_mapping.py)|아래 명령 실행 + 매핑표 네 행 작성|원본 값·공통 필드·식별자가 연결됨|
+|5|[한 행 실행 예제](../../../examples/part02/ch02/ch02_mapping.py)|아래 명령 실행 + 매핑표 네 행 작성|원본 값·공통 필드·식별자가 연결됨|
 |6|[Neo4j Browser](http://localhost:7474)|[식별자 조회문](queries/01-identifiers.cypher) 실행|CSV와 part_id·supplier_sku 대조|
 
 ```bash
-uv run python ../../examples/ch02_mapping.py
+uv run python ../../examples/part02/ch02/ch02_mapping.py
 ```
 
 예제는 현재 작업본의 매핑 함수를 호출합니다. 파일·그래프를 변경하지 않습니다. `raw → common → identity → offers`를 읽습니다. 공개 SKU와 내부 ID, 가상 공급사 품번을 같은 문자열로 만들지 말고 대응표로 연결합니다.

@@ -2,7 +2,7 @@
 from pathlib import Path
 import yaml
 from mfg_bom_agent.retrieval.linking import apply_overrides, LINK_OVERRIDES
-root=Path(__file__).resolve().parents[1]
+root=Path(__file__).resolve().parents[3]
 x=yaml.safe_load((root/"labs/mfg-bom-agent/data/exercises/exercises.yaml").read_text(encoding="utf-8"))["ch5_1_link"]
 fix=(x["doc_id"],x["must_remove"][0],"remove")
 for label,rules in [("현재 규칙",LINK_OVERRIDES),("remove 보정 후",LINK_OVERRIDES+[fix])]:

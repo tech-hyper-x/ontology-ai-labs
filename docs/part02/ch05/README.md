@@ -8,7 +8,7 @@ Ch4의 사용처 그래프에 문서 근거를 연결합니다. 12강은 문서 
 2. `labs/mfg-bom-agent`에서 아래 명령을 실행해 제목 기준 청크와 제공 CSV를 대조합니다.
 
 ```bash
-uv run python ../../examples/ch05_chunks.py
+uv run python ../../examples/part02/ch05/ch05_chunks.py
 ```
 
 `data/processed/quality_document.csv`의 청크는 Ch4에서 이미 `Document`로 적재했습니다. `build_index.py`는 원본을 청크로 다시 만드는 스크립트가 아닙니다. 원문·가공·적재·색인을 구분합니다. [문서 조회](queries/01-document-source.cypher)와 [연결 조회](queries/02-document-links.cypher)를 Browser에서 실행하고 [연결 검수표](worksheets/link-review.csv)에 기록합니다.
@@ -27,7 +27,7 @@ uv run python scripts/exercise.py ch5_1_link
 ("exercise/wheel_wiring.md#1", "P-2000-0025-0002", "remove"),
 ```
 
-다시 과제를 실행해 서보 연결 제거·휠 연결 유지가 모두 통과하는지 확인합니다. `uv run python ../../examples/ch05_linking.py`는 파일을 바꾸지 않고 수정 전후 기대 결과를 메모리에서 비교합니다.
+다시 과제를 실행해 서보 연결 제거·휠 연결 유지가 모두 통과하는지 확인합니다. `uv run python ../../examples/part02/ch05/ch05_linking.py`는 파일을 바꾸지 않고 수정 전후 기대 결과를 메모리에서 비교합니다.
 
 이 과제는 작은 fixture만 검사하며 실제 DB의 관계를 바꾸지 않습니다. `exercise/wheel_wiring.md#1`은 제공 DB의 실제 청크가 아닙니다. 실제 청크의 검수 규칙을 수정했다면 연결 작업을 재실행하고 DB에서 확인합니다. 검수 이유는 코드 tuple 자체에 자동 저장되지 않으므로 [검수표](worksheets/link-review.csv)에 따로 남깁니다.
 
@@ -50,8 +50,8 @@ uv run python scripts/build_index.py
 7. [09 작성 과제](queries/09-search-template.cypher)에서 한 번에 한 조건을 바꾸고 원문·부품·사용처를 대조합니다.
 
 ```bash
-uv run python ../../examples/ch05_compare.py --example CQ-11 --k 5
-uv run python ../../examples/ch05_compare.py --example G44 --source issue --k 3
+uv run python ../../examples/part02/ch05/ch05_compare.py --example CQ-11 --k 5
+uv run python ../../examples/part02/ch05/ch05_compare.py --example G44 --source issue --k 3
 uv run pytest -q tests/test_retrieval.py
 ```
 

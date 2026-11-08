@@ -1,0 +1,6 @@
+﻿relation,domain,range,required_count,cq,reason
+SUPPORTED_BY,Association,Evidence,candidate:true인 연관에 1개 이상,CQ-03,비교할 근거 필요
+HAS_TYPE,Evidence,EvidenceType,정확히1개,CQ-02/03,유형 해석
+FROM_SOURCE:Source,Evidence,Source,정확히1개,CQ-03,출처와 릴리스
+FROM_SOURCE:Paper,Evidence,Paper,0개 이상,CQ-04,논문 미보유 허용
+CITES,Claim,Evidence,1개 이상,CQ-14,인용 경로

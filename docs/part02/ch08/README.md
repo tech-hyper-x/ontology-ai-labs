@@ -7,10 +7,10 @@ Ch7에서 남긴 도구 결과와 답변 검사 기록을 기대 답과 대조�
 ## 1. 조건과 기대 답 읽기
 
 ```bash
-uv run python ../../examples/ch08_reference.py
+uv run python ../../examples/part02/ch08/ch08_reference.py
 ```
 
-[참조 확인 예제](../../../examples/ch08_reference.py)는 `build_golden.build()`를 호출해 CSV에서 계산한 문항과 배포 문항을 비교합니다. 파일을 저장하는 `main()`은 호출하지 않습니다.
+[참조 확인 예제](../../../examples/part02/ch08/ch08_reference.py)는 `build_golden.build()`를 호출해 CSV에서 계산한 문항과 배포 문항을 비교합니다. 파일을 저장하는 `main()`은 호출하지 않습니다.
 
 기준은 Golden Set 1.1, snapshot `a78f9eb`, 최신 판 `6b2c5a9`입니다. 문항에 지정된 과거 판·ECN은 그 조건으로 읽습니다. 45문항은 수량 10·원가 10·관계 탐색 10·Revision/ECN 8·문서 근거 7입니다.
 
@@ -25,8 +25,8 @@ uv run python ../../examples/ch08_reference.py
 [교육용 사례](worksheets/score-cases.json)에서 두 사례를 골라 예상 판정과 이유를 적습니다. 이어서 기존 [score 함수](../../../labs/mfg-bom-agent/src/mfg_bom_agent/evaluation/scoring.py)를 호출합니다.
 
 ```bash
-uv run python ../../examples/ch08_score.py
-uv run python ../../examples/ch08_score.py --check
+uv run python ../../examples/part02/ch08/ch08_score.py
+uv run python ../../examples/part02/ch08/ch08_score.py --check
 uv run pytest -q tests/test_evaluation.py
 ```
 
@@ -66,8 +66,8 @@ uv run pytest -q tests/test_evaluation.py
 연습용 명령은 **별도의 실제 런타임 복사본**을 만들고 두 수정 지점을 미완성으로 둡니다. 원본 프로젝트·DB·Golden Set은 변경하지 않으며 `.env`·API 키·가상환경은 복사하지 않습니다. 이미 있는 폴더는 덮어쓰지 않습니다.
 
 ```bash
-uv run python ../../examples/ch08_quantity_exercise.py prepare --workspace ~/ontology-ch08-work
-uv run python ../../examples/ch08_quantity_exercise.py check --workspace ~/ontology-ch08-work
+uv run python ../../examples/part02/ch08/ch08_quantity_exercise.py prepare --workspace ~/ontology-ch08-work
+uv run python ../../examples/part02/ch08/ch08_quantity_exercise.py check --workspace ~/ontology-ch08-work
 ```
 
 macOS/Linux/WSL/PowerShell에서 같은 인자를 사용합니다. `~`는 본인의 홈 폴더입니다. 원본 프로젝트의 HTTP MCP 서버를 별도 터미널에서 실행해 두세요. 다른 포트이면 `check`에 `--mcp-url http://localhost:변경포트/mcp`를 지정합니다.
@@ -86,7 +86,7 @@ AI 요청 예: “실습 복사본의 두 TODO만 수정해 주세요. 총소요
 ## 5. 수정 후 새 실행과 관련 문항 회귀 — 본 실습
 
 ```bash
-uv run python ../../examples/ch08_quantity_exercise.py check --workspace ~/ontology-ch08-work
+uv run python ../../examples/part02/ch08/ch08_quantity_exercise.py check --workspace ~/ontology-ch08-work
 ```
 
 복사본의 실제 워크플로가 실행됩니다. `fixed_llm`으로 모델 응답을 고정하고 기존 로컬 MCP 도구를 호출하므로 이 과제는 모델 API를 호출하지 않습니다. 단순 fixture 채점이나 저장 응답 재채점이 아닙니다.
