@@ -5,7 +5,7 @@
 ## 처음 시작한다면
 
 1. [Docker → Neo4j → Langfuse 상세 설치](docs/setup/README.md)
-2. [Neo4j 초보자를 위한 기본 Cypher 문법 가이드](docs/neo4j-cypher-basics.md) — 그래프 기초·조회·경로·집계·생성·수정·삭제·연습 문제
+2. [Neo4j 초보자를 위한 기본 Cypher 문법 가이드](docs/neo4j-cypher-basics.md) — 데이터베이스 선택·확인·그래프 기초·조회·경로·집계·생성·수정·삭제·연습 문제
 3. [Ch3 전체 실행 순서](docs/ch03-run-guide.md)
 4. [그래프 사용처 조회 예제](examples/part01/ch03/ch03_where_used.cypher)
 5. [MCP 직접 호출·문서 검색 예제](examples/part01/ch03/ch03_call.py)
