@@ -2,6 +2,17 @@
 
 Ch3에서 사용하는 제조 실습 환경의 설치·실행 안내입니다. Mac 화면을 기준으로 설명하며, Windows·Linux는 2절에서 해당 OS 설치 문서를 선택합니다.
 
+## 먼저 실습 범위를 선택하세요
+
+| 목표 | 진행 범위 | 외부 API 키 |
+|---|---|---|
+| Neo4j 접속과 기본 Cypher 연습 | 2~4절에서 도구·프로젝트·로컬 설정 준비 → 5절의 Neo4j 이미지만 다운로드 → 6절 → 기본 Cypher 가이드 | 불필요 |
+| 제조 그래프·문서 검색·에이전트 전체 실습 | 2~9절을 순서대로 진행 | 실제 LLM 호출용 Anthropic 키, 의미 검색용 Voyage 키 |
+
+기본 Cypher만 연습할 때는 Langfuse 서버·MCP·앱을 실행하거나 8절의 전체 데이터 초기화를 할 필요가 없습니다. 프로젝트 Compose는 Langfuse 설정도 함께 읽으므로 `.env.example`의 로컬 서비스 설정은 유지하되, 외부 API 키는 입력하지 않아도 됩니다. `uv sync`는 Python 실습 코드를 실행할 때 필요하며 Browser에서 Cypher만 실행할 때는 건너뛸 수 있습니다.
+
+이 문서의 실행 경로와 포트는 **제조 프로젝트** 기준입니다. 바이오 실습은 해당 프로젝트의 설치·챕터 안내를 따르며, 제조 DB를 대상으로 바이오 초기화 명령을 실행하지 않습니다. 전체 자료의 출발점은 [가이드 지도](../../SITEMAP.md)입니다.
+
 ## 1. 무엇을 설치하나요?
 
 |소프트웨어|강의에서 하는 일|준비 방법|
@@ -97,6 +108,8 @@ compose.yaml, compose.langfuse.yaml, pyproject.toml, src 폴더가 보여야 합
 cp .env.example .env
 ```
 
+이미 `.env`가 있다면 복사 명령을 건너뛰고 기존 파일을 편집합니다. 기존 비밀번호·API 키를 예시값으로 덮어쓰지 않습니다.
+
 편집기로 .env를 열어 다음 항목을 설정합니다.
 
 |설정|입력할 내용|
@@ -108,6 +121,16 @@ cp .env.example .env
 |ANTHROPIC_API_KEY|실제 모델 호출에 사용할 본인 API 키|
 |EMBEDDING_API_KEY|문서·질문 벡터화에 사용할 별도 API 키|
 |EMBEDDING_PROVIDER / MODEL / DIMENSION|배포된 예시 설정값 유지|
+
+### 외부 API 키 준비 — 전체 앱 실습을 할 때
+
+**기본 Cypher 연습에는 이 단계를 건너뜁니다.** 실제 에이전트 호출과 의미 검색을 진행할 때 준비하세요.
+
+1. Anthropic: [공식 API 키 안내](https://platform.claude.com/docs/en/get-api-key)를 따라 Claude Console에 로그인하고 API keys에서 키를 생성합니다. [키 관리 화면](https://platform.claude.com/settings/keys)에서 만든 값을 `.env`의 `ANTHROPIC_API_KEY`에 입력합니다.
+2. Voyage: [공식 키 발급 안내](https://docs.voyageai.com/docs/api-key-and-installation)에 따라 [Voyage 대시보드](https://dashboard.voyageai.com)에 로그인하고 API keys에서 새 키를 생성합니다. 이 프로젝트에서는 `.env`의 `EMBEDDING_API_KEY`에 입력합니다. 모델·차원은 배포 예시 설정을 유지합니다.
+3. 발급·사용 한도·임베딩 확인은 [프로젝트 Voyage 안내](../../labs/mfg-bom-agent/docs/VOYAGE.md)를 참고합니다. 안내의 가격·한도는 작성 시점 기준이므로 현재 제공 조건은 공급자 화면에서 확인합니다.
+
+두 키는 용도가 다릅니다. Anthropic 키는 답변 생성, Voyage 키는 문서·질문 임베딩에 사용합니다. 실제 API 호출에는 공급자별 이용 조건과 과금이 적용됩니다. 키는 `.env`에만 저장하고 화면·Git에 노출하지 않습니다.
 
 추가로 다음을 설정합니다.
 
@@ -136,7 +159,13 @@ docker compose config --services
 
 ## 5. 이미지 다운로드
 
-처음 실행할 때는 서버 이미지를 내려받습니다. 다운로드 대기 시간을 별도로 보여주려면 다음 명령을 먼저 실행합니다.
+처음 실행할 때는 서버 이미지를 내려받습니다. **기본 Cypher만 연습한다면** 다음만 실행하고 6절로 이동합니다.
+
+```bash
+docker compose pull neo4j
+```
+
+전체 제조 실습을 준비한다면 다운로드 대기 시간을 분리하기 위해 다음 명령을 먼저 실행합니다.
 
 ```bash
 docker compose pull neo4j langfuse-web langfuse-worker postgres clickhouse redis minio
@@ -161,7 +190,32 @@ Docker Desktop의 Containers에서도 제조 프로젝트를 펼쳐 neo4j 상태
 3. 사용자 이름은 neo4j입니다.
 4. 비밀번호는 .env의 NEO4J_PASSWORD 값입니다.
 5. Connect를 눌러 연결합니다.
-6. 쿼리 입력란에서 아래를 실행합니다.
+6. 연결한 뒤 아래 순서로 사용할 데이터베이스를 선택·확인하고 첫 질의를 실행합니다.
+
+### 데이터베이스와 사용자 구분·선택
+
+기본 사용자 이름과 일반 데이터베이스 이름은 모두 `neo4j`지만 서로 다른 항목입니다. 사용자는 로그인 계정이고, 데이터베이스는 노드·관계가 저장되는 대상입니다.
+
+이 프로젝트는 **Neo4j 5.26 Community**를 사용합니다. 서버 하나에 일반 DB 하나와 관리용 `system` DB가 있습니다. 기본 `neo4j` DB와 기존 사용자로 실습하며 새 DB·사용자는 만들지 않습니다. 이는 Docker의 제한이 아니라 에디션의 제한입니다.
+
+입력창에서 아래 블록을 **각각 따로** 실행합니다.
+
+```cypher
+SHOW DATABASES;
+```
+
+```text
+:use neo4j
+```
+
+`:use`는 Browser 명령으로, 다른 Cypher 질의와 합쳐 실행하지 않습니다. 관리용 `system`을 선택한 상태에서 기초 데이터를 넣지 않습니다.
+
+```cypher
+CALL db.info() YIELD name
+RETURN name AS currentDatabase;
+```
+
+결과가 `neo4j`인지 확인한 뒤 첫 질의를 실행합니다.
 
 ```cypher
 RETURN 1 AS connection_ok;
@@ -170,6 +224,35 @@ RETURN 1 AS connection_ok;
 확인할 결과: connection_ok가 1로 표시됩니다. 이것은 DB 접속과 질의 실행 확인이며, 실습 데이터 적재 완료를 뜻하지는 않습니다. 아직 초기화 전이라 그래프에 업무 데이터가 없어도 됩니다.
 
 이미 생성된 DB 볼륨의 비밀번호는 .env만 바꾼다고 자동 변경되지 않습니다. 로그인이 안 되면 기존 비밀번호와 연결 주소부터 확인합니다.
+
+### 터미널에서 접속하기: Cypher Shell
+
+MySQL의 `mysql` 클라이언트에 해당하는 도구가 **Cypher Shell**입니다. Browser에 로그인하지 않아도 CLI에서 사용자·비밀번호로 직접 인증해 접속할 수 있습니다. 이 프로젝트 폴더의 운영체제 터미널에서 실행하고, 안내가 나오면 `.env`에 설정한 비밀번호를 입력합니다.
+
+```bash
+docker compose exec neo4j cypher-shell -u neo4j -d neo4j
+```
+
+접속 후에는 위의 `RETURN 1 AS connection_ok;`를 실행할 수 있습니다. 종료할 때는 다음을 단독 실행합니다.
+
+```text
+:exit
+```
+
+| 포트 | 역할 |
+|---|---|
+| `7474` | Browser 웹 화면을 여는 HTTP 포트 |
+| `7687` | CLI·Browser·프로그램 드라이버가 질의에 사용하는 Bolt 포트. 셸 전용 포트가 아님 |
+
+같은 서버·DB를 선택하면 Browser와 CLI가 보는 데이터는 같습니다. CLI 결과는 표·텍스트이며 그래프 그림은 표시하지 않습니다.
+
+### 기본 Cypher만 연습한다면 여기서 시작
+
+이제 [Neo4j 기본 Cypher 가이드](../neo4j-cypher-basics.md)의 2절부터 진행합니다. 같은 `neo4j` DB에 예제 전용 `CypherGuide` 라벨로 데이터를 추가하고, 실습을 마치면 가이드의 12절에서 **대상 확인 → 예제만 삭제 → 남은 예제 0개 확인**을 진행합니다.
+
+이 라벨은 별도 DB나 접근 권한 경계를 만드는 기능은 아닙니다. 기존 강의 노드에 붙이거나 예제를 업무 노드와 연결하지 않습니다. 예제만 정리하려고 8절의 전체 초기화 명령이나 Docker 볼륨 삭제를 실행하지 않습니다.
+
+기초 연습만 한다면 아래 7~9절은 나중에 전체 앱 실습을 준비할 때 진행합니다. Neo4j만 실행했다면 종료·재시작도 `docker compose stop neo4j`, `docker compose start neo4j`로 할 수 있으며 데이터는 보존됩니다.
 
 ## 7. Langfuse 설치·실행 확인
 
@@ -194,6 +277,15 @@ docker compose logs --tail=50 langfuse-web langfuse-worker
 처음 Tracing 목록이 비어 있는 것은 아직 실행 기록을 보내지 않았기 때문일 수 있습니다. 화면이 열린 것과 기록이 수집된 것을 구분합니다. 기존 볼륨이 있으면 .env의 초기 사용자 값을 바꿔도 기존 계정이 새로 만들어지는 것은 아닙니다.
 
 ## 8. 실습 데이터와 검색 색인 준비
+
+**아래 초기화는 기존 데이터를 삭제하고 제조 데이터를 다시 적재합니다.** `init_data.py`가 호출하는 적재 코드는 현재 연결한 DB에서 `LabMeta` 라벨을 제외한 모든 노드를 관계와 함께 삭제합니다. 같은 DB에 만든 `CypherGuide` 기초 예제나 개인 노드도 삭제 대상입니다. 새 사용자 생성이나 비밀번호 변경 작업은 아닙니다.
+
+- 기본 Cypher만 연습한다면 이 단계를 실행하지 않습니다.
+- 전체 제조 실습을 준비한다면 `.env`의 `NEO4J_URI`가 제조 전용 로컬 서버를 가리키는지 확인합니다. 기본값은 `bolt://localhost:7687`입니다.
+- 보존할 개인 데이터가 있다면 먼저 백업하고 초기화를 진행하지 않습니다. 제조 실습 DB에 업무 데이터를 함께 보관하지 않습니다.
+- 이미 적재를 마친 환경은 매번 초기화하지 않습니다. 임베딩 설정만 고쳤다면 아래의 `build_index.py` 안내를 따릅니다.
+
+초기화 대상과 삭제 범위를 확인한 뒤, 전체 제조 실습에 필요한 경우에만 실행합니다.
 
 ```bash
 uv run python scripts/init_data.py
