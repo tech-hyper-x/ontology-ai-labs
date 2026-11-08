@@ -5,7 +5,7 @@
 ## 처음 시작한다면
 
 1. [Docker → Neo4j → Langfuse 상세 설치](docs/setup/README.md)
-2. [Neo4j 초보자를 위한 기본 Cypher 문법 가이드](docs/neo4j-cypher-basics.md) — 데이터베이스 선택·확인·그래프 기초·조회·경로·집계·생성·수정·삭제·연습 문제
+2. [Neo4j 초보자를 위한 기본 Cypher 문법 가이드](docs/neo4j-cypher-basics.md) — 기본 neo4j DB 선택·CLI·예제 적재·조회·변경·예제만 삭제
 3. [Ch3 전체 실행 순서](docs/ch03-run-guide.md)
 4. [그래프 사용처 조회 예제](examples/part01/ch03/ch03_where_used.cypher)
 5. [MCP 직접 호출·문서 검색 예제](examples/part01/ch03/ch03_call.py)
@@ -44,7 +44,6 @@ OS별 도구 설치를 마치면 [공통 상세 설치 가이드](docs/setup/REA
 |Docker · Compose|[실행·로그·재시작·설정 반영·데이터 보존](labs/mfg-bom-agent/docs/DOCKER.md)|
 |Neo4j Browser|[접속·Cypher 실행·그래프와 표 읽기](labs/mfg-bom-agent/docs/NEO4J_BROWSER.md)|
 |Neo4j · Cypher 기본 문법|[초보자 가이드 · 실습 데이터·조회·경로·집계·데이터 변경·연습 문제](docs/neo4j-cypher-basics.md)|
-|Neo4j 독립 설치·CLI|[별도 practice DB 설치·초기 사용자·Browser·Cypher Shell 접속](docs/setup/neo4j-standalone.md)|
 |Langfuse|[트레이스·도구 호출·실패 기록 확인](labs/mfg-bom-agent/docs/LANGFUSE.md)|
 |임베딩 · Voyage|[계정·키 설정·색인·문제 해결](labs/mfg-bom-agent/docs/VOYAGE.md)|
 |소프트웨어 구성|[역할·버전·라이선스·자원 사용량](labs/mfg-bom-agent/docs/SOFTWARE.md)|

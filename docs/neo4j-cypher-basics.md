@@ -5,7 +5,6 @@ Cypher(사이퍼)는 Neo4j에서 그래프 데이터를 찾고, 만들고, 수�
 - 대상: Neo4j와 Cypher를 처음 사용하는 학습자
 - 기준 환경: 이 저장소의 **Neo4j 5.26 Community / Cypher 5**, APOC 등 추가 플러그인 불필요
 - 실행 위치: Neo4j Browser의 질의 입력창. 코드 블록을 한 개씩 실행합니다.
-- 독립 설치부터 시작하려면: [별도 practice DB로 설치·로그인·CLI 접속](setup/neo4j-standalone.md)
 - 준비: [공통 설치 가이드](setup/README.md) · [Browser 사용법](../labs/mfg-bom-agent/docs/NEO4J_BROWSER.md)
 
 > 먼저 1~3절을 순서대로 실행하세요. 4~10절은 조회, 11~12절은 데이터 변경입니다. 예상 결과는 3절의 초기 데이터만 있는 상태를 기준으로 합니다. 예제 전용 `CypherGuide` 라벨로 강의 데이터와 구분하며, 데이터 변경은 개인 실습 DB에서 진행합니다.
@@ -83,7 +82,7 @@ RETURN name AS currentDatabase;
 
 `currentDatabase`가 **`neo4j`**이면 이 실습의 대상이 선택된 것입니다. `system`에서 실행해 오류가 나면 앞의 `:use neo4j`를 먼저 실행하세요.
 
-이 데이터베이스에는 이미 제조 강의 데이터가 있을 수 있습니다. 3절에서 만드는 예제는 `CypherGuide` 라벨로 구분합니다. **이 라벨은 별도의 데이터베이스나 격리 공간을 만드는 기능이 아닙니다.** 같은 DB 안에 예제 데이터가 추가됩니다. 완전히 분리해 연습하려면 별도의 개인 실습용 Neo4j 인스턴스를 사용하세요.
+이 데이터베이스에는 이미 제조 강의 데이터가 있을 수 있습니다. 3절에서 만드는 예제는 `CypherGuide` 라벨로 구분합니다. **이 라벨은 별도의 데이터베이스나 격리 공간을 만드는 기능이 아닙니다.** 같은 DB 안에 예제 데이터가 추가됩니다. 이 가이드는 기본 `neo4j` DB 안에서 예제 라벨로 구분해 연습하고, 끝나면 그 라벨의 데이터만 삭제하는 흐름입니다. 새 DB나 새 사용자 생성은 필요하지 않습니다.
 
 공식 설명: [Neo4j 5 데이터베이스 관리](https://neo4j.com/docs/operations-manual/5/database-administration/) · [Browser 명령](https://neo4j.com/docs/browser/legacy/reference-commands/)
 
@@ -133,7 +132,7 @@ Browser와 CLI는 같은 서버·데이터베이스를 지정하면 같은 데�
 Docker는 Neo4j를 실행하는 환경입니다. **빈 데이터 저장소로 Neo4j를 처음 시작할 때** Neo4j가 초기 일반 데이터베이스, 관리용 `system` 데이터베이스, 기본 사용자 `neo4j`를 준비합니다.
 
 - `NEO4J_AUTH=neo4j/직접_정한_비밀번호`: 기본 사용자의 초기 비밀번호 설정입니다. 임의의 새 사용자 계정을 만드는 옵션은 아닙니다.
-- `NEO4J_initial_dbms_default__database=practice`: 최초 생성할 일반 데이터베이스의 이름을 정합니다. 생략하면 기본 이름은 `neo4j`입니다.
+- 일반 데이터베이스는 기본 이름인 `neo4j`를 사용합니다. 초기 DB 이름을 바꾸는 설정은 추가하지 않습니다.
 - 데이터 볼륨을 재사용하면 기존 데이터와 계정이 유지됩니다. 환경 변수 변경만으로 기존 비밀번호나 DB 이름이 바뀌지는 않습니다.
 
 즉 **최초 환경 준비**와 **실행 중 관리 명령으로 사용자·DB를 추가하는 작업**은 구분합니다. 사용자 추가는 Browser나 Cypher Shell 어느 쪽에서도 가능합니다.
@@ -164,9 +163,20 @@ SHOW USERS;
 :use neo4j
 ```
 
-강의 DB와 완전히 분리하고 이름도 다르게 시작하려면 **[독립 Neo4j 설치·초기화 가이드](setup/neo4j-standalone.md)**를 따르세요. 이 경우 Browser와 CLI에서 선택할 DB 이름은 `practice`입니다.
+기본 실습에서는 현재 사용자와 `neo4j` DB를 계속 사용합니다. 위의 사용자 생성은 관리 기능을 이해하기 위한 선택 예시이며, 3절 실습을 위해 실행할 필요는 없습니다.
 
 공식 설명: [Cypher Shell](https://neo4j.com/docs/operations-manual/current/cypher-shell/) · [사용자 관리](https://neo4j.com/docs/operations-manual/current/authentication-authorization/manage-users/) · [초기 DB 이름 설정](https://neo4j.com/docs/operations-manual/current/configuration/configuration-settings/#config_initial.dbms.default_database)
+
+### 1.8 이 가이드의 실행 순서: 같은 DB에서 연습하고 정리하기
+
+1. 설치가 안 되어 있다면 [공통 설치 가이드](setup/README.md)를 따라 Neo4j를 실행합니다. 이미 실행 중이면 재설치하지 않습니다.
+2. Browser 또는 CLI에서 로그인하고 `neo4j` 데이터베이스를 선택·확인합니다.
+3. 3절의 네 블록으로 `CypherGuide` 라벨이 붙은 예제 노드·관계를 만듭니다.
+4. 4~11절의 조회·변경 예제를 실행합니다.
+5. 실습을 마친 뒤 [12절의 정리 절차](#123-이-가이드-데이터-전체-정리--실습을-마친-뒤에만-실행)에서 대상을 먼저 확인하고 **예제 라벨의 데이터만** 삭제합니다.
+6. 삭제 후 예제 노드가 0개인지 확인합니다. 13절의 제약 조건·인덱스를 만들었다면 그 절의 정리 명령도 선택적으로 실행합니다.
+
+`CypherGuide`는 이 문서의 예제 전용 라벨로 사용하세요. 기존 강의 노드에 붙이거나, 예제 노드를 업무 데이터와 연결하지 않습니다. 전체 DB 초기화나 Docker 볼륨 삭제는 이 실습의 정리 절차에 포함하지 않습니다.
 
 ## 2. 그래프와 패턴 읽기
 
@@ -582,6 +592,15 @@ RETURN n;
 MATCH (n:CypherGuide)
 DETACH DELETE n;
 ```
+
+삭제 결과를 확인합니다.
+
+```cypher
+MATCH (n:CypherGuide)
+RETURN count(n) AS remainingExampleNodes;
+```
+
+예상 결과는 **0**입니다. `CypherGuide` 라벨이 없는 기존 노드는 삭제 대상이 아닙니다. 다만 `DETACH DELETE`는 예제 노드에 연결된 관계도 함께 삭제하므로 앞서 안내한 대로 예제를 기존 데이터와 연결하지 않습니다.
 
 다시 연습하려면 3절의 네 블록을 실행합니다. 라벨 조건을 빼고 전체 DB를 삭제하지 마세요.
 
