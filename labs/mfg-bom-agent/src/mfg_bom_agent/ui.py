@@ -347,6 +347,7 @@ STEP_KO = {
     "revision_change": "유형: 판 변경(ECN)",
     "supply_disruption": "유형: 공급 중단",
     "symptom": "유형: 고장 증상",
+    "required_quantity": "유형: BOM 총소요량",
     "part_info": "유형: 부품 정보",
     "other": "유형: 기타",
     "bom-calculation": "절차: 수량/원가 계산",

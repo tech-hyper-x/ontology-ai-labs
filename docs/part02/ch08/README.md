@@ -59,46 +59,55 @@ uv run pytest -q tests/test_evaluation.py
 
 `missing_item`이나 `no_evidence`는 판정 코드입니다. 근본 원인은 데이터/매핑·온톨로지/관계·도구/계획·연결/검색·답변/검사 중 근거를 보고 고릅니다. 아직 원인을 확정할 수 없으면 확인할 자료를 적으세요.
 
-## 4. 작업본의 한 응답 수정 후 재채점
+## 4. 실제 런타임의 분류·계산 경로 수정
+
+이전 고정 모드의 G01은 `part_info`로 분류되어 50대 총소요량 대신 제품 1대의 사용량과 단가를 답했습니다. 기대 답 200 ea는 그대로 유지하고, 질문 분류와 계산 경로를 고칩니다. 현재 배포 런타임에는 해결 코드가 반영돼 있습니다.
+
+연습용 명령은 **별도의 실제 런타임 복사본**을 만들고 두 수정 지점을 미완성으로 둡니다. 원본 프로젝트·DB·Golden Set은 변경하지 않으며 `.env`·API 키·가상환경은 복사하지 않습니다. 이미 있는 폴더는 덮어쓰지 않습니다.
 
 ```bash
-cp ../../docs/part02/ch08/worksheets/score-cases.json /tmp/ch08-work.json
+uv run python ../../examples/ch08_quantity_exercise.py prepare --workspace ~/ontology-ch08-work
+uv run python ../../examples/ch08_quantity_exercise.py check --workspace ~/ontology-ch08-work
 ```
 
-WSL/Linux/macOS 터미널 기준입니다. 작업본의 `case="path_omitted"`에서 `response.conclusion`만 `영향 어셈블리는 drive wheel입니다.`로 수정합니다. 기대 답인 Golden Set과 채점 코드는 그대로 둡니다.
+macOS/Linux/WSL/PowerShell에서 같은 인자를 사용합니다. `~`는 본인의 홈 폴더입니다. 원본 프로젝트의 HTTP MCP 서버를 별도 터미널에서 실행해 두세요. 다른 포트이면 `check`에 `--mcp-url http://localhost:변경포트/mcp`를 지정합니다.
+
+첫 검사는 미수정 상태의 실패를 보여줍니다. G01~G06이 `wrong_value`인 것이 출발점입니다. 그다음 **복사본**의 다음 두 실제 모듈만 편집합니다.
+
+1. `src/mfg_bom_agent/workflows/plan.py`: TODO 분류에서 `required_quantity`와 질문의 `units`를 보존합니다. 구매 팩·단종·단가 변경 유형의 우선순위는 유지합니다.
+2. `src/mfg_bom_agent/workflows/skills.py`: TODO 경로에서 `where_used` → `bom_explode(part, units, revision, scope="all")`를 호출하고 모든 투입 내역의 `required_each`를 합칩니다. 값·단위 ea·인자·판·산식을 `CalcResult`에 담습니다. 해당 판에 내역이 없으면 0으로 확정하지 않습니다.
+
+유형 선언·필수 입력·스킬 대응·부품 식별 등록은 복사본에 준비돼 있습니다. 생산 대수가 없으면 되묻도록 유지합니다. 새 유형의 배포 구현 전체는 [plan.py](../../../labs/mfg-bom-agent/src/mfg_bom_agent/workflows/plan.py), [skills.py](../../../labs/mfg-bom-agent/src/mfg_bom_agent/workflows/skills.py), [bom_agent.py](../../../labs/mfg-bom-agent/src/mfg_bom_agent/workflows/bom_agent.py)에서 대조합니다.
+
+AI 요청 예: “실습 복사본의 두 TODO만 수정해 주세요. 총소요량과 구매 팩을 구분하고 생산 대수·판을 도구에 그대로 전달합니다. 같은 부품의 모든 투입 내역을 합치고, 내역이 없을 때 0개로 답하지 않습니다. Golden Set과 채점기·다른 질문 경로는 바꾸지 마세요.”
+
+강의 시간은 강사의 수정·확인 시연 기준입니다. 수강생의 코드 작성은 일시정지 후 완료합니다. [해결 코드의 회귀 테스트](../../../labs/mfg-bom-agent/tests/test_quantity_route.py)는 대수 누락 되묻기, 다중 라인 합산, 내역 없음, 구매·단종·단가 변경·사용처 경로 유지를 확인합니다.
+
+## 5. 수정 후 새 실행과 관련 문항 회귀 — 본 실습
 
 ```bash
-uv run python ../../examples/ch08_score.py --cases /tmp/ch08-work.json
+uv run python ../../examples/ch08_quantity_exercise.py check --workspace ~/ontology-ch08-work
 ```
 
-G30의 `tool_correct=true`, `answer_correct=true`, `recall=1`을 확인합니다. 작업본에는 수정 전의 `expected_auto`가 남아 있으므로 이 명령에는 `--check`를 붙이지 않습니다. 수정 전후 응답과 이유를 저장합니다. 이 연습은 한 응답을 고친 것이며 에이전트 코드가 개선됐다는 증거는 아닙니다. 실제 코드를 고쳤다면 새 실행과 관련 문항 회귀 확인이 추가로 필요합니다.
+복사본의 실제 워크플로가 실행됩니다. `fixed_llm`으로 모델 응답을 고정하고 기존 로컬 MCP 도구를 호출하므로 이 과제는 모델 API를 호출하지 않습니다. 단순 fixture 채점이나 저장 응답 재채점이 아닙니다.
 
-## 5. 대표 세 문항 실제 실행과 재채점 — 본 실습
+검사 문항은 수량 G01~G10과 원가 G16·관계 G30입니다. `tool_correct`와 `answer_correct`가 모두 맞아야 명령이 통과합니다. 2026-11-08 검수에서는 동일 실습 복사본이 **미수정 6/12 → 해결 코드 적용 후 12/12**, G01은 `part_info`/대수 누락에서 `required_quantity`/50대·200 ea로 바뀌었습니다. 고정 모드의 이 12문항 결과이며 실제 모델 전체 성능이나 45문항 전체 정답률은 아닙니다.
 
-준비된 Neo4j·MCP 환경에서 수량 G01, 원가 G16, 관계 G30을 실제 실행합니다. 기본 연습은 `fixed_llm`으로 모델 응답을 고정하고 실제 도구를 호출합니다. 현재 터미널에서만 환경변수를 지정하세요.
+각 새 실행은 복사본의 `outputs/eval/<실행ID>/`에 `results.csv`, `responses.jsonl`, `report.md`, `meta.json`을 남깁니다. [실행 기록표](worksheets/run-record.csv)에 수정 전후 폴더·코드 변경·입력·판·도구/답변 판정을 기록하고, G01을 고친 뒤 구매·원가·관계 질문도 유지되는지 확인합니다. 원본 서버를 변경한 것이 아니라 복사본의 에이전트 경로를 수정한 실습입니다.
 
-```bash
-# macOS / Linux / WSL
-DEMO_MODE=fixed_llm uv run python scripts/run_eval.py --ids G01,G16,G30 --modes kg_tools
+### 저장 응답 재채점 — 별도 확인
 
-# Windows PowerShell
-$env:DEMO_MODE="fixed_llm"
-uv run python scripts/run_eval.py --ids G01,G16,G30 --modes kg_tools
-```
-
-실행 결과는 새 `outputs/eval/<실행ID>/` 아래 `results.csv`, `responses.jsonl`, `report.md`, `meta.json`으로 저장됩니다. 자신의 실제 결과 폴더를 사용해 다음과 같이 재채점할 수 있습니다.
+`--rescore`는 저장된 답변을 다시 채점하며 모델·도구를 새로 실행하지 않습니다. 복사본에서 생성한 본인 결과를 재채점하려면 복사본 프로젝트에서 아래 명령을 실행합니다. 새 실행·재채점 폴더는 따로 보관합니다.
 
 ```bash
 uv run python scripts/run_eval.py --rescore outputs/eval/본인의실행ID --ids G01,G16,G30 --modes kg_tools
 ```
 
-경로는 실제 생성된 폴더명으로 바꿔야 합니다. 재채점은 모델·도구를 다시 부르지 않습니다. 현재 배포본에는 과거 전체 응답 원본이 없습니다. 기존 기록의 폴더명을 복사해 실행하지 마세요. 교육용 사례는 이 실제 실행 폴더와 별도로 관리합니다.
+## 6. 새로운 질문 한 개를 직접 설계하기
 
-세 문항의 `tool_correct`, `answer_correct`, `verification`을 나누어 기록합니다. G01은 50대 총소요량 200 ea, G16은 3869.10 USD 증가, G30은 `drive wheel`을 기대합니다. 틀린 문항은 `responses.jsonl`의 intent·계산값·경로와 원 질문을 대조하세요.
+[작성 표](worksheets/transfer-question.md)에 부품·생산 대수·판 중 한 조건을 바꾼 질문을 적습니다. 필요한 자료·개체/관계·도구/인자·기대 결과를 먼저 정하고 Neo4j 조회와 도구 반환값을 같은 조건으로 대조합니다. “표 조회로 충분한지, 관계와 이력을 추적해야 하는지”를 설명하세요. 지원하지 않는 질문이면 필요한 설계와 검증 계획을 남깁니다. 수강생 작성·추가 실행은 일시정지 후 진행합니다.
 
-2026-11-08 검수에서는 고정 모드 실제 도구 실행에서 G01이 `part_info`로 분류되어 1대 사용량 4 ea와 단가를 답하고, 50대 총량 200 ea를 답하지 못했습니다. 출력 검사는 passed였지만 Golden 평가는 wrong_value였습니다. G16·G30은 통과했습니다. **이는 기록된 특정 실행이며 수강생의 현재 결과나 실제 모델 품질을 보장하지 않습니다.** G01의 `rule_plan` → `part_info` 분기와 수량 계산 호출의 부재를 확인하고 같은 문항을 새 실행해 재현 여부를 기록하세요. 코드 수정 없는 재실행은 재현 확인이며 개선 증거가 아닙니다. 코드 수정 후에는 G01과 관련 수량 문항을 같은 조건으로 새로 실행해야 합니다.
-
-고정 모드는 도구·경로 점검입니다. 실제 모델의 질문 해석과 답변 품질은 API 준비 후 `DEMO_MODE=none`으로 별도 실행합니다. PowerShell에서는 `$env:DEMO_MODE="none"`으로 바꿉니다. 모델명 필드가 있어도 고정 모드 결과를 실제 모델 평가로 발표하지 않습니다.
+응답 작업본의 `path_omitted` 문장을 편집하는 기존 연습은 선택 보충으로 활용할 수 있습니다. 한 응답의 편집을 실제 런타임 개선으로 설명하지 않습니다.
 
 ### 전체 평가 — 선택 실습
 
@@ -110,4 +119,4 @@ uv run python scripts/run_eval.py --rescore outputs/eval/본인의실행ID --ids
 
 ## 산출물
 
-예상·실제 판정 비교, 오류 2~3건의 근거와 수정 계획, 한 응답의 수정 전후 결과, 관련 회귀 문항을 저장합니다. Part 3에서는 이 절차를 주장·근거·출처 연결에 적용합니다. 실제 권한·계보·감사 설계는 Part 4에서 다룹니다.
+예상·실제 판정 비교, 오류 원인, 실제 런타임 수정본과 회귀 결과, 새로운 질문 설계 표를 저장합니다. Part 3에서는 이 절차를 주장·근거·출처 연결에 적용합니다. 실제 권한·계보·감사 설계는 Part 4에서 다룹니다.

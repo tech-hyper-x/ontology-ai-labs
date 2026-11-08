@@ -98,4 +98,4 @@ OS별 도구 설치를 마치면 [공통 상세 설치 가이드](docs/setup/REA
 
 ## Part 2 · Ch8 — 기준 문항 평가와 오류 분석
 
-[대표 3문항 실제 실행·오류 분석·응답 수정·재채점](docs/part02/ch08/README.md)
+[실제 오류 수정·12문항 회귀·새 질문 설계](docs/part02/ch08/README.md)

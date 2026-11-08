@@ -17,6 +17,7 @@ from pydantic import BaseModel, Field
 from mfg_bom_agent.workflows.llm import chat_model, skill_text
 
 Intent = Literal[
+    "required_quantity",
     "purchase_quantity",
     "cost",
     "price_change",
@@ -62,6 +63,7 @@ PLAN_SYSTEM = """너는 제조 BOM 변경 영향 분석 에이전트의 질문 �
 {skill}
 
 유형 정의:
+- required_quantity: 생산 대수에 필요한 부품 총소요 낱개 수 (구매 팩·금액과 구분)
 - purchase_quantity: 몇 개 · 몇 팩을 사야 하는지 (구매 수량)
 - cost: 원가 · 어셈블리별 원가 (단가 변경 없음)
 - price_change: 단가가 몇 % 오르거나 내릴 때 원가 차이
@@ -73,6 +75,7 @@ PLAN_SYSTEM = """너는 제조 BOM 변경 영향 분석 에이전트의 질문 �
 - other: 위에 없는 질문
 
 판단 규칙
+- 생산에 필요한 낱개 수는 required_quantity, 구매 팩 수는 purchase_quantity다. 단종·단가 변경·ECN 조건이 있으면 해당 업무 유형을 우선한다.
 - 질문에 ECN · 판 · 리비전 · 커밋 · "전후" · 날짜(2024-06)가 있으면 revision_change 다 (원가 차이를 물어도). change_ref 에 날짜 · ID 를 넣는다.
 - "어떤 문서/이슈" 를 찾는 질문은 단종 · 고장 단어가 있어도 symptom 이다. search_query_en 에 품번과 영어 키워드를 넣는다.
 - "로버" · "기계 BOM" 은 부품이 아니다. part_terms 에는 실제 부품 이름 · 품번만 넣는다."""
@@ -136,6 +139,13 @@ def rule_plan(question: str) -> QuestionPlan:
             units=units,
             pack_filter=pack,
             reasoning="구매 수량",
+        )
+    if re.search(r"몇\s*개(?!입|들이)|총\s*소요량|소요\s*수량|소요량|필요.*수량", q):
+        return QuestionPlan(
+            intent="required_quantity",
+            part_terms=parts,
+            units=units,
+            reasoning="생산 대수 기준 총소요 낱개 수",
         )
     if re.search(r"원가|비용|금액", q):
         return QuestionPlan(intent="cost", units=units, reasoning="원가")

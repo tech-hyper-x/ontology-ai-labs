@@ -21,6 +21,7 @@ from mfg_bom_agent.workflows.gateway import ToolCallError, ToolGateway
 from mfg_bom_agent.workflows.plan import QuestionPlan
 
 SKILL_OF_INTENT = {
+    "required_quantity": "bom-calculation",
     "purchase_quantity": "bom-calculation",
     "cost": "bom-calculation",
     "price_change": "change-and-supply-risk",
@@ -34,6 +35,7 @@ SKILL_OF_INTENT = {
 
 # 유형별로 꼭 필요한 값과, 없을 때 쓰는 기본값. 기본값이 None 이면 사용자에게 되묻는다.
 REQUIRED = {
+    "required_quantity": {"part": None, "units": None},
     "purchase_quantity": {"units": None},
     "cost": {"units": 1},
     "price_change": {"part": None, "percent": None, "units": 1},
@@ -221,6 +223,30 @@ def run_skill(
             "by_assembly": r["by_assembly"],
             "warnings": r["warnings"],
         }
+
+    elif plan.intent == "required_quantity":
+        wu = gw.call("where_used", part=part["sku"], revision=rev)
+        _paths(out, wu)
+        ex = gw.call("bom_explode", units=units, part=part["sku"], revision=rev, scope="all")
+        _collect(out, ex)
+        if ex["items"]:
+            required = sum((Decimal(i["required_each"]) for i in ex["items"]), Decimal(0))
+            out.calculations.append(
+                CalcResult(
+                    label=f"필요 {_noun(plan, part)} 수량 ({units}대)",
+                    kind="quantity",
+                    value=required,
+                    unit="ea",
+                    tool="bom_explode",
+                    formula=" + ".join(i["formula"] for i in ex["items"]),
+                    inputs={"units": units, "part": part["sku"]},
+                    revision=ex["revision"],
+                    source="parts_list.csv",
+                )
+            )
+        else:
+            out.assumptions.append("선택한 판에 투입 내역이 없어 총소요량을 산정하지 않음")
+        out.facts = {"lines": ex["items"], "warnings": ex.get("warnings", [])}
 
     elif plan.intent == "purchase_quantity":
         targets: list[dict] = []

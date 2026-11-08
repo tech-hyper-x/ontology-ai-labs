@@ -61,7 +61,7 @@ from mfg_bom_agent.workflows.skills import (
 )
 
 # 부품을 특정해야 하는 질문 유형. 원가(제품 전체) · 증상(문서로 부품을 찾음) · 공급 중단 · ECN 은 부품 식별을 하지 않는다.
-PART_INTENTS = {"purchase_quantity", "price_change", "discontinue", "part_info"}
+PART_INTENTS = {"required_quantity", "purchase_quantity", "price_change", "discontinue", "part_info"}
 _SKU_TERM = re.compile(r"\d{4}-\d{4}-\d{4}|[A-Z]?-?\d{3,5}[A-Z]")
 CANNED_DIR = Path(__file__).resolve().parents[3] / "data" / "golden" / "canned"
 KG_TOOLS = [
@@ -368,7 +368,7 @@ def _response(req: AnswerRequest, state: dict, gw: ToolGateway) -> AnswerRespons
     d = state["draft"]
     exclusions = (
         ["재고 · 공임 · 운송비 제외"]
-        if plan["intent"] in ("discontinue", "symptom", "purchase_quantity")
+        if plan["intent"] in ("required_quantity", "discontinue", "symptom", "purchase_quantity")
         else []
     )
     return AnswerResponse(
