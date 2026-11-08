@@ -5,6 +5,7 @@ Cypher(사이퍼)는 Neo4j에서 그래프 데이터를 찾고, 만들고, 수�
 - 대상: Neo4j와 Cypher를 처음 사용하는 학습자
 - 기준 환경: 이 저장소의 **Neo4j 5.26 Community / Cypher 5**, APOC 등 추가 플러그인 불필요
 - 실행 위치: Neo4j Browser의 질의 입력창. 코드 블록을 한 개씩 실행합니다.
+- 독립 설치부터 시작하려면: [별도 practice DB로 설치·로그인·CLI 접속](setup/neo4j-standalone.md)
 - 준비: [공통 설치 가이드](setup/README.md) · [Browser 사용법](../labs/mfg-bom-agent/docs/NEO4J_BROWSER.md)
 
 > 먼저 1~3절을 순서대로 실행하세요. 4~10절은 조회, 11~12절은 데이터 변경입니다. 예상 결과는 3절의 초기 데이터만 있는 상태를 기준으로 합니다. 예제 전용 `CypherGuide` 라벨로 강의 데이터와 구분하며, 데이터 변경은 개인 실습 DB에서 진행합니다.
@@ -95,6 +96,77 @@ RETURN '안녕하세요, Cypher!' AS message;
 `message` 열에 문자열이 보이면 질의를 실행할 준비가 된 것입니다. `AS`는 결과 열에 별명을 붙입니다. Browser에서는 실행 버튼이나 `Ctrl+Enter`로 실행합니다.
 
 Cypher 키워드는 보통 대문자로 쓰고, 각 절은 줄을 나눕니다. 변수·라벨·관계 타입·속성 이름은 대소문자를 구분합니다. `//` 뒤는 한 줄 주석입니다.
+
+### 1.6 CLI로 접속하기: Cypher Shell
+
+Neo4j에는 MySQL의 `mysql` 클라이언트에 해당하는 **Cypher Shell**이 있습니다. Browser를 열지 않아도 터미널에서 로그인할 수 있습니다. CLI에서도 사용자명·비밀번호로 인증해야 합니다.
+
+| 구분 | 역할 | 기본 포트 |
+|---|---|---|
+| Browser 웹 접속 | 브라우저에 Neo4j 화면 제공 | HTTP `7474` |
+| Bolt 연결 | Cypher Shell·드라이버·Browser가 질의를 서버로 전달 | `7687` |
+
+**7687은 셸 전용 포트가 아닙니다.** Browser도 웹 화면은 7474로 열지만, 질의 실행에는 Bolt 연결을 사용합니다.
+
+이 저장소의 제조 실습 컨테이너를 사용한다면 **운영체제 터미널**에서 실행합니다.
+
+```bash
+docker exec -it mfg-neo4j cypher-shell -u neo4j -d neo4j
+```
+
+비밀번호는 안내가 나오면 입력합니다. 컨테이너에 도구가 포함되어 있어 호스트에 Cypher Shell을 별도 설치하지 않아도 됩니다. 접속 후에는 다음처럼 Cypher를 실행합니다.
+
+```cypher
+RETURN 'CLI 접속 성공' AS message;
+```
+
+종료하려면 아래 명령을 단독 실행합니다.
+
+```text
+:exit
+```
+
+Browser와 CLI는 같은 서버·데이터베이스를 지정하면 같은 데이터를 봅니다. CLI에서는 결과를 표·텍스트로 확인하며 그래프 그림은 표시하지 않습니다.
+
+### 1.7 Docker 최초 실행과 관리 명령의 차이
+
+Docker는 Neo4j를 실행하는 환경입니다. **빈 데이터 저장소로 Neo4j를 처음 시작할 때** Neo4j가 초기 일반 데이터베이스, 관리용 `system` 데이터베이스, 기본 사용자 `neo4j`를 준비합니다.
+
+- `NEO4J_AUTH=neo4j/직접_정한_비밀번호`: 기본 사용자의 초기 비밀번호 설정입니다. 임의의 새 사용자 계정을 만드는 옵션은 아닙니다.
+- `NEO4J_initial_dbms_default__database=practice`: 최초 생성할 일반 데이터베이스의 이름을 정합니다. 생략하면 기본 이름은 `neo4j`입니다.
+- 데이터 볼륨을 재사용하면 기존 데이터와 계정이 유지됩니다. 환경 변수 변경만으로 기존 비밀번호나 DB 이름이 바뀌지는 않습니다.
+
+즉 **최초 환경 준비**와 **실행 중 관리 명령으로 사용자·DB를 추가하는 작업**은 구분합니다. 사용자 추가는 Browser나 Cypher Shell 어느 쪽에서도 가능합니다.
+
+다음은 **선택적인 사용자 생성 예시**입니다. 기본 실습에는 새 사용자가 필요하지 않습니다. 각 블록을 따로 실행하고, 비밀번호는 본인이 정한 값으로 바꿉니다.
+
+```text
+:use system
+```
+
+```cypher
+CREATE USER learner
+SET PASSWORD '직접_정한_새_비밀번호'
+CHANGE REQUIRED;
+```
+
+```cypher
+SHOW USERS;
+```
+
+새 사용자는 첫 로그인에서 비밀번호를 변경해야 합니다. Community Edition에서는 모든 사용자가 관리자 수준 권한을 가지므로, 사용자 생성이 읽기 전용 권한 분리를 의미하지 않습니다.
+
+반면 현재 Community 환경에서는 `CREATE DATABASE`로 일반 데이터베이스를 추가할 수 없습니다. Enterprise에서는 권한이 있는 사용자가 관리 명령으로 추가할 수 있습니다. 학습을 위해 Enterprise로 바꿀 필요는 없습니다.
+
+관리 예제를 마쳤다면 실습 DB로 돌아옵니다.
+
+```text
+:use neo4j
+```
+
+강의 DB와 완전히 분리하고 이름도 다르게 시작하려면 **[독립 Neo4j 설치·초기화 가이드](setup/neo4j-standalone.md)**를 따르세요. 이 경우 Browser와 CLI에서 선택할 DB 이름은 `practice`입니다.
+
+공식 설명: [Cypher Shell](https://neo4j.com/docs/operations-manual/current/cypher-shell/) · [사용자 관리](https://neo4j.com/docs/operations-manual/current/authentication-authorization/manage-users/) · [초기 DB 이름 설정](https://neo4j.com/docs/operations-manual/current/configuration/configuration-settings/#config_initial.dbms.default_database)
 
 ## 2. 그래프와 패턴 읽기
 
