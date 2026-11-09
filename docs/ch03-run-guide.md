@@ -1,6 +1,6 @@
 # Part 01 · Ch3 — 개발 환경 구성과 공통 흐름 실행
 
-처음 설치한다면 [Docker → Neo4j → Langfuse 상세 가이드](setup/README.md)를 먼저 진행합니다. 강사의 화면 시연 순서는 [체크리스트](setup/RECORDING.md)에 있습니다.
+처음 설치한다면 [Docker → Neo4j → Langfuse 상세 가이드](setup/README.md)를 먼저 진행합니다.
 
 강의 기준: 제조 프로젝트 `labs/mfg-bom-agent`의 현재 코드. 20분은 설명과 준비된 환경의 시연 배분이며 최초 다운로드·설치 대기 시간은 별도입니다.
 

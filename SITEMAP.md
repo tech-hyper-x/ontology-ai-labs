@@ -26,7 +26,6 @@
 |MCP·앱 실행과 기록 확인|[설치 가이드 · 9절](docs/setup/README.md#9-mcp와-앱-실행)|
 |종료하고 다음에 다시 실행|[설치 가이드 · 10절](docs/setup/README.md#10-종료와-다음-실행)|
 |설치나 접속에서 막힘|[설치 가이드 · 11절](docs/setup/README.md#11-자주-막히는-곳)|
-|설치 과정을 촬영·시연|[촬영 체크리스트](docs/setup/RECORDING.md)|
 
 ## 운영체제별 설치
 

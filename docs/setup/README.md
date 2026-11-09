@@ -365,10 +365,6 @@ docker compose up -d neo4j langfuse-web
 |검색 방식이 예상과 다름|임베딩 키·공급자·모델·차원과 effective_mode|
 |MCP 도구 호출 실패|MCP 서버 터미널, MCP_TRANSPORT=http, 입력 ID·개정판|
 
-## 12. 촬영할 화면 순서
-
-[설치 시연 체크리스트](RECORDING.md)를 따라 Docker 다운로드·실행, 프로젝트 폴더, 예시 설정, Compose 상태, Neo4j 첫 질의, Langfuse 첫 로그인과 실행 기록을 순서대로 보여줍니다.
-
 ## 공식 참고 자료
 
 - [Docker Desktop Mac 설치](https://docs.docker.com/desktop/setup/install/mac-install/)
