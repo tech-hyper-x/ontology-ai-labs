@@ -1,7 +1,9 @@
 # Part 1 Ch3 · 공통 환경 확인
 
 - [32장 상세 안내 · 입력부터 그래프 확인까지](../../../docs/part01/ch03/slide-032.md)
-- [32장 단계별 코드 파일](slide-032/)
+- [S032_01_params.cypher · 입력 조건](S032_01_params.cypher)
+- [S032_02_table.cypher · 표 조회](S032_02_table.cypher)
+- [S032_03_graph.cypher · 그래프 조회](S032_03_graph.cypher)
 - [전체 장표별 실습 목차](../../../docs/hands-on/README.md)
 
 - `ch03_where_used.cypher`: Neo4j Browser 사용처 조회

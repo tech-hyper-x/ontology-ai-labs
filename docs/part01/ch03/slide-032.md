@@ -16,7 +16,7 @@ Part 1 / Ch3 · [장표별 실습 목차](../../hands-on/README.md) · [Ch3 전�
 
 ## 1. 부품번호와 조회 기준 입력
 
-[입력 조건 파일](../../../examples/part01/ch03/slide-032/00-params.cypher)
+[입력 조건 파일](../../../examples/part01/ch03/S032_01_params.cypher)
 
 아래 코드 블록만 복사해서 입력창에 붙여 넣고 **단독 실행**합니다.
 
@@ -34,7 +34,7 @@ Part 1 / Ch3 · [장표별 실습 목차](../../hands-on/README.md) · [Ch3 전�
 
 ## 2. 사용처를 표로 조회
 
-[표 조회 파일](../../../examples/part01/ch03/slide-032/01-table.cypher)
+[표 조회 파일](../../../examples/part01/ch03/S032_02_table.cypher)
 
 입력 조건 실행이 끝나면 입력창을 아래 코드로 바꾸고 실행합니다. 앞에서 저장한 입력 조건은 유지됩니다.
 
@@ -102,7 +102,7 @@ ORDER BY assembly;
 
 ### 수정 후 전체 코드
 
-[그래프 조회 파일](../../../examples/part01/ch03/slide-032/02-graph.cypher)
+[그래프 조회 파일](../../../examples/part01/ch03/S032_03_graph.cypher)
 
 직접 수정하다 막히면 아래 완성본을 복사해서 이어갈 수 있습니다. 새 연결에서 실행한다면 1단계 입력 조건부터 다시 실행합니다.
 
