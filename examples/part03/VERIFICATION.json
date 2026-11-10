@@ -1,0 +1,705 @@
+{
+  "verified_on": "2026-11-10",
+  "scope": "Public examples/part03 at current main plus this verification record",
+  "environment": "Provided bio-target-agent runtime with existing local Neo4j 5.26; not public repository alone",
+  "database_reset": false,
+  "index_rebuild": false,
+  "paid_model_calls": false,
+  "complete_runtime_published": false,
+  "files": [
+    {
+      "path": "examples/part03/README.md",
+      "status": "not_executable_document",
+      "scope": "reference or worksheet",
+      "normalized_sha256": "066fa01fdbc251bc60e1a436f0d7045f026aa67b844d9d44999c5e1f786773a6"
+    },
+    {
+      "path": "examples/part03/ch01/01_candidates.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "1 statements; 1 parameter commands",
+      "normalized_sha256": "e2bd3623997426bc397cee18ae10466f9decf9f8240748d483dfc99ca1a190ba"
+    },
+    {
+      "path": "examples/part03/ch01/02_alias.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "1 statements; 1 parameter commands",
+      "normalized_sha256": "52ae04c9480d18adf266188fdfcf539e8c4d6304308cbe5c5d5c9cebeed57cdf"
+    },
+    {
+      "path": "examples/part03/ch01/03_evidence_path.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "2 statements; 1 parameter commands",
+      "normalized_sha256": "408edf512142537c2a5cb30d7451c4140d3be53b445ffaa7591e342c6b3577d6"
+    },
+    {
+      "path": "examples/part03/ch01/04_search_modes.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "4 statements; 1 parameter commands",
+      "normalized_sha256": "4e7a5ef8bc0e268bdd8c6795be78d544b776ef6226f8b2d38e3839444e47ea7e"
+    },
+    {
+      "path": "examples/part03/ch01/README.md",
+      "status": "not_executable_document",
+      "scope": "reference or worksheet",
+      "normalized_sha256": "c220dcd2f9139839185ca5b9b27055fc1762748d83c01adc00a298ad8dbe51bd"
+    },
+    {
+      "path": "examples/part03/ch02/01_identity.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "1 statements; 1 parameter commands",
+      "normalized_sha256": "3776fcc2a43304ffd272062d77a1d5b3f5dbdb08d549578a05d336cd5db244bc"
+    },
+    {
+      "path": "examples/part03/ch02/02_projects.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "1 statements; 0 parameter commands",
+      "normalized_sha256": "755520242fb4a99124c0dcbd0df9bdbcfb7cc34c3fb2af35773601634fb499f8"
+    },
+    {
+      "path": "examples/part03/ch02/03_unresolved.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "1 statements; 0 parameter commands",
+      "normalized_sha256": "a23302feb5504f09bf1eac5124681fb0b2f80dd507f98b0193a00fb44411659b"
+    },
+    {
+      "path": "examples/part03/ch02/04_search_alias.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "3 statements; 0 parameter commands",
+      "normalized_sha256": "3fc48930076bb510b968526ba0716925d81d223fe2b1fa668abcd762d13bbc87"
+    },
+    {
+      "path": "examples/part03/ch02/05_disease.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "1 statements; 0 parameter commands",
+      "normalized_sha256": "9d4902c9eea8439d4d302fb3fd08a502ba439a43da1531b07f10bc2021256745"
+    },
+    {
+      "path": "examples/part03/ch02/README.md",
+      "status": "not_executable_document",
+      "scope": "reference or worksheet",
+      "normalized_sha256": "2dfd6820dd27e4bf43f26f342f119558a4e41520433bb178261cc49ff6ce6f41"
+    },
+    {
+      "path": "examples/part03/ch02/S200_01_official_mcp.py",
+      "status": "executed",
+      "scope": "list; query",
+      "normalized_sha256": "cb70a2c644a1db3acac9f59a8213ab95b77b111ff059ae7fa3de357a49c93240"
+    },
+    {
+      "path": "examples/part03/ch02/identifier_mapping.csv",
+      "status": "csv_parsed",
+      "scope": "worksheet schema only; blank exercise fields are intentional",
+      "normalized_sha256": "0f873ab8de773ef8cac73398e1db6fc6bc7047a75d5334c6986068f65092c951"
+    },
+    {
+      "path": "examples/part03/ch02/inspect_snapshot.py",
+      "status": "executed",
+      "scope": "default",
+      "normalized_sha256": "3209dc48927996c1df97f35661ea6f8e323f06a04ade6c0bbc262cc6d62131cf"
+    },
+    {
+      "path": "examples/part03/ch02/snapshot_manifest.csv",
+      "status": "csv_parsed",
+      "scope": "worksheet schema only; blank exercise fields are intentional",
+      "normalized_sha256": "e95bf3db4ae57adb5392f8ff5204a80eab3974c036cad027d46390632d63f96b"
+    },
+    {
+      "path": "examples/part03/ch03/01_evidence_path.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "1 statements; 0 parameter commands",
+      "normalized_sha256": "648b1818dff9c182b75d816d302575fad9c973d92fcec61e4b2c7273116f5025"
+    },
+    {
+      "path": "examples/part03/ch03/02_evidence_papers.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "1 statements; 1 parameter commands",
+      "normalized_sha256": "f10f4abdd948e37a3b18ea8e7a761143537cc1778f4fac3b9d98b2c3d6029697"
+    },
+    {
+      "path": "examples/part03/ch03/03_integrity.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "3 statements; 0 parameter commands",
+      "normalized_sha256": "b1b1080dac3eaa7f3225aaf1d0356fbb5b8c7865c3e0c188459f43035fd31080"
+    },
+    {
+      "path": "examples/part03/ch03/04_claim_paths.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "2 statements; 0 parameter commands",
+      "normalized_sha256": "f45abad44ac9bef2f6ff61bed0c01903f64913fd2181bfec6d332297b5fdd593"
+    },
+    {
+      "path": "examples/part03/ch03/05_type_scores.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "1 statements; 1 parameter commands",
+      "normalized_sha256": "b6b7af6ac31a6b68f38130d44d65a25181917e8cfc18bfb51f4265d0eb90372a"
+    },
+    {
+      "path": "examples/part03/ch03/06_evidence_groups.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "1 statements; 1 parameter commands",
+      "normalized_sha256": "5e79aebb9d2c3c4f849d5d3b9e5df436927fbcce007d85b20e4eab2cf95cc845"
+    },
+    {
+      "path": "examples/part03/ch03/07_search_bm25.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "1 statements; 1 parameter commands",
+      "normalized_sha256": "c626b391c7d5e3f7d6d1c414dc250befb148e5ebc9f9be1a39b174b3b1def066"
+    },
+    {
+      "path": "examples/part03/ch03/08_search_vector.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "1 statements; 1 parameter commands",
+      "normalized_sha256": "cd34a58c337e447ad5e95274e0d5753391f981404d5705f4feadc109b4ca5b1c"
+    },
+    {
+      "path": "examples/part03/ch03/09_search_hybrid.cypher",
+      "status": "read_only_execution_passed",
+      "scope": "1 statements; 1 parameter commands",
+      "normalized_sha256": "70f758f3571e1869de7c6e168baea92402cabfc8473054a6e145e30137fc49ae"
+    },
+    {
+      "path": "examples/part03/ch03/README.md",
+      "status": "not_executable_document",
+      "scope": "reference or worksheet",
+      "normalized_sha256": "259d1a240f6cce6b80d5917aafd332eef321725371b5e44169b682d31f1843e3"
+    },
+    {
+      "path": "examples/part03/ch03/interpretation_worksheet.csv",
+      "status": "csv_parsed",
+      "scope": "worksheet schema only; blank exercise fields are intentional",
+      "normalized_sha256": "c0a8f9511cba6ef1cc5ea296a63b21daf2b01348a5aa52cfefce96ffca0ce7a4"
+    },
+    {
+      "path": "examples/part03/ch03/relation_answers.csv",
+      "status": "csv_parsed",
+      "scope": "worksheet schema only; blank exercise fields are intentional",
+      "normalized_sha256": "93d7fd482be3b8ab8a229b3847f511976baeb2cb54fab9c266a2cb2de2965ac2"
+    },
+    {
+      "path": "examples/part03/ch03/relation_worksheet.csv",
+      "status": "csv_parsed",
+      "scope": "worksheet schema only; blank exercise fields are intentional",
+      "normalized_sha256": "fed602aef73e7fcb7278cfc5428f1f91f21d6bbfc6e7d815bef3b8d028e34f6f"
+    },
+    {
+      "path": "examples/part03/ch03/search_observation.csv",
+      "status": "csv_parsed",
+      "scope": "worksheet schema only; blank exercise fields are intentional",
+      "normalized_sha256": "5ed544adf9f469b568e6fbf6b4441ed49f704d35111f26b741f086131107b19e"
+    },
+    {
+      "path": "examples/part03/reference/README.md",
+      "status": "not_executable_document",
+      "scope": "reference or worksheet",
+      "normalized_sha256": "a1b73f2c17b522ea7744bf6d07a4b276cec8a3a0d21fc1bb28b605a506d78cf1"
+    },
+    {
+      "path": "examples/part03/reference/labs/bio-target-agent/data/exercises/alias_her1/start.yaml",
+      "status": "yaml_parsed",
+      "scope": "reference fixture or ontology; not a standalone runtime",
+      "normalized_sha256": "c52ce2e7509431b39cd8c4edb6a02a9ad06ca449b74aeb0f9f087b47d908197f",
+      "matches_provided_runtime": true
+    },
+    {
+      "path": "examples/part03/reference/labs/bio-target-agent/data/golden/claims.yaml",
+      "status": "yaml_parsed",
+      "scope": "reference fixture or ontology; not a standalone runtime",
+      "normalized_sha256": "47843273f00d8de46d0c5eafc0fad2bd4c5aa8f3cd5a0ccf2770534447bd39ac",
+      "matches_provided_runtime": false
+    },
+    {
+      "path": "examples/part03/reference/labs/bio-target-agent/ontology/schema.yaml",
+      "status": "yaml_parsed",
+      "scope": "reference fixture or ontology; not a standalone runtime",
+      "normalized_sha256": "490604db6e1ac4e2be83a705d018fff98881a6272379a7ef3faf8feb8f0ed3d2",
+      "matches_provided_runtime": true
+    },
+    {
+      "path": "examples/part03/reference/labs/bio-target-agent/scripts/build_dataset.py",
+      "status": "syntax_checked_not_executed",
+      "scope": "reference script; dataset rebuild or DB reset intentionally not run",
+      "normalized_sha256": "67465700adc03b94ec1dc815cc71002d245d69f30be309dcdf6c94ff6e484a4e",
+      "matches_provided_runtime": true
+    },
+    {
+      "path": "examples/part03/reference/labs/bio-target-agent/scripts/check_exercise.py",
+      "status": "executed",
+      "scope": "alias --start",
+      "normalized_sha256": "6aeb93777808eb995490645fda1f43fee30e17efe8597f8d09e2d2dbcc86935f",
+      "matches_provided_runtime": true
+    },
+    {
+      "path": "examples/part03/reference/labs/bio-target-agent/scripts/load_graph.py",
+      "status": "syntax_checked_not_executed",
+      "scope": "reference script; dataset rebuild or DB reset intentionally not run",
+      "normalized_sha256": "30433f8bc6b53ee918c7b330cea7cfed048c34ab061d8e1047020e75635550cb",
+      "matches_provided_runtime": true
+    }
+  ],
+  "query_executions": [
+    {
+      "path": "examples/part03/ch01/01_candidates.cypher",
+      "block": 1,
+      "status": "parameters"
+    },
+    {
+      "path": "examples/part03/ch01/01_candidates.cypher",
+      "block": 2,
+      "status": "passed",
+      "rows": 3,
+      "fields": [
+        "symbol",
+        "target_id",
+        "association_score",
+        "overall_rank",
+        "release",
+        "evidence_types"
+      ]
+    },
+    {
+      "path": "examples/part03/ch01/02_alias.cypher",
+      "block": 1,
+      "status": "parameters"
+    },
+    {
+      "path": "examples/part03/ch01/02_alias.cypher",
+      "block": 2,
+      "status": "passed",
+      "rows": 1,
+      "fields": [
+        "original_name",
+        "canonical_symbol",
+        "gene_id",
+        "target_id"
+      ]
+    },
+    {
+      "path": "examples/part03/ch01/03_evidence_path.cypher",
+      "block": 1,
+      "status": "parameters"
+    },
+    {
+      "path": "examples/part03/ch01/03_evidence_path.cypher",
+      "block": 2,
+      "status": "passed",
+      "rows": 12,
+      "fields": [
+        "p",
+        "d",
+        "datasource",
+        "evidence_id",
+        "release"
+      ]
+    },
+    {
+      "path": "examples/part03/ch01/03_evidence_path.cypher",
+      "block": 3,
+      "status": "passed",
+      "rows": 10,
+      "fields": [
+        "symbol",
+        "source_total",
+        "evidence_type",
+        "source",
+        "loaded_evidence"
+      ]
+    },
+    {
+      "path": "examples/part03/ch01/04_search_modes.cypher",
+      "block": 1,
+      "status": "passed",
+      "rows": 2,
+      "fields": [
+        "name",
+        "state"
+      ]
+    },
+    {
+      "path": "examples/part03/ch01/04_search_modes.cypher",
+      "block": 2,
+      "status": "passed",
+      "rows": 1,
+      "fields": [
+        "provider",
+        "dimension"
+      ]
+    },
+    {
+      "path": "examples/part03/ch01/04_search_modes.cypher",
+      "block": 3,
+      "status": "parameters"
+    },
+    {
+      "path": "examples/part03/ch01/04_search_modes.cypher",
+      "block": 4,
+      "status": "passed",
+      "rows": 5,
+      "fields": [
+        "chunk_id",
+        "pmid",
+        "title",
+        "year",
+        "source",
+        "text",
+        "score",
+        "bm25_rank",
+        "vector_rank",
+        "bm25_score",
+        "vector_score",
+        "evidence",
+        "mentions"
+      ]
+    },
+    {
+      "path": "examples/part03/ch01/04_search_modes.cypher",
+      "block": 5,
+      "status": "passed",
+      "rows": 1,
+      "fields": [
+        "pmid",
+        "title",
+        "abstract",
+        "mentions",
+        "linked_evidence"
+      ]
+    },
+    {
+      "path": "examples/part03/ch02/01_identity.cypher",
+      "block": 1,
+      "status": "parameters"
+    },
+    {
+      "path": "examples/part03/ch02/01_identity.cypher",
+      "block": 2,
+      "status": "passed",
+      "rows": 1,
+      "fields": [
+        "original",
+        "symbol",
+        "gene_id",
+        "protein_id",
+        "target_id"
+      ]
+    },
+    {
+      "path": "examples/part03/ch02/02_projects.cypher",
+      "block": 1,
+      "status": "passed",
+      "rows": 2,
+      "fields": [
+        "path",
+        "project",
+        "original",
+        "alias",
+        "method",
+        "target_id"
+      ]
+    },
+    {
+      "path": "examples/part03/ch02/03_unresolved.cypher",
+      "block": 1,
+      "status": "passed",
+      "rows": 1,
+      "fields": [
+        "project",
+        "original",
+        "indication",
+        "resolved"
+      ]
+    },
+    {
+      "path": "examples/part03/ch02/04_search_alias.cypher",
+      "block": 1,
+      "status": "passed",
+      "rows": 2,
+      "fields": [
+        "name",
+        "state"
+      ]
+    },
+    {
+      "path": "examples/part03/ch02/04_search_alias.cypher",
+      "block": 2,
+      "status": "passed",
+      "rows": 2,
+      "fields": [
+        "input",
+        "chunks",
+        "sources"
+      ]
+    },
+    {
+      "path": "examples/part03/ch02/04_search_alias.cypher",
+      "block": 3,
+      "status": "passed",
+      "rows": 3,
+      "fields": [
+        "input",
+        "source",
+        "chunks"
+      ]
+    },
+    {
+      "path": "examples/part03/ch02/05_disease.cypher",
+      "block": 1,
+      "status": "passed",
+      "rows": 1,
+      "fields": [
+        "disease_id",
+        "name",
+        "cross_references"
+      ]
+    },
+    {
+      "path": "examples/part03/ch03/01_evidence_path.cypher",
+      "block": 1,
+      "status": "passed",
+      "rows": 1,
+      "fields": [
+        "target",
+        "disease",
+        "release",
+        "evidence",
+        "score",
+        "type",
+        "source",
+        "retrieved_at"
+      ]
+    },
+    {
+      "path": "examples/part03/ch03/02_evidence_papers.cypher",
+      "block": 1,
+      "status": "parameters"
+    },
+    {
+      "path": "examples/part03/ch03/02_evidence_papers.cypher",
+      "block": 2,
+      "status": "passed",
+      "rows": 1,
+      "fields": [
+        "evidence_id",
+        "type",
+        "datasource",
+        "score",
+        "papers"
+      ]
+    },
+    {
+      "path": "examples/part03/ch03/03_integrity.cypher",
+      "block": 1,
+      "status": "passed",
+      "rows": 1,
+      "fields": [
+        "missing_candidate_evidence"
+      ]
+    },
+    {
+      "path": "examples/part03/ch03/03_integrity.cypher",
+      "block": 2,
+      "status": "passed",
+      "rows": 0,
+      "fields": []
+    },
+    {
+      "path": "examples/part03/ch03/03_integrity.cypher",
+      "block": 3,
+      "status": "passed",
+      "rows": 0,
+      "fields": []
+    },
+    {
+      "path": "examples/part03/ch03/04_claim_paths.cypher",
+      "block": 1,
+      "status": "passed",
+      "rows": 5,
+      "fields": [
+        "claim",
+        "expected",
+        "text",
+        "example_label",
+        "links"
+      ]
+    },
+    {
+      "path": "examples/part03/ch03/04_claim_paths.cypher",
+      "block": 2,
+      "status": "passed",
+      "rows": 1,
+      "fields": [
+        "evidence_exists"
+      ]
+    },
+    {
+      "path": "examples/part03/ch03/05_type_scores.cypher",
+      "block": 1,
+      "status": "parameters"
+    },
+    {
+      "path": "examples/part03/ch03/05_type_scores.cypher",
+      "block": 2,
+      "status": "passed",
+      "rows": 1,
+      "fields": [
+        "symbol",
+        "assoc_id",
+        "score",
+        "release",
+        "type_scores"
+      ]
+    },
+    {
+      "path": "examples/part03/ch03/06_evidence_groups.cypher",
+      "block": 1,
+      "status": "parameters"
+    },
+    {
+      "path": "examples/part03/ch03/06_evidence_groups.cypher",
+      "block": 2,
+      "status": "passed",
+      "rows": 1,
+      "fields": [
+        "symbol",
+        "evidence_total",
+        "evidence_counts",
+        "groups"
+      ]
+    },
+    {
+      "path": "examples/part03/ch03/07_search_bm25.cypher",
+      "block": 1,
+      "status": "parameters"
+    },
+    {
+      "path": "examples/part03/ch03/07_search_bm25.cypher",
+      "block": 2,
+      "status": "passed",
+      "rows": 3,
+      "fields": [
+        "chunk_id",
+        "pmid",
+        "title",
+        "year",
+        "source",
+        "text",
+        "score",
+        "bm25_rank",
+        "vector_rank",
+        "bm25_score",
+        "vector_score",
+        "evidence",
+        "mentions"
+      ]
+    },
+    {
+      "path": "examples/part03/ch03/08_search_vector.cypher",
+      "block": 1,
+      "status": "parameters"
+    },
+    {
+      "path": "examples/part03/ch03/08_search_vector.cypher",
+      "block": 2,
+      "status": "passed",
+      "rows": 3,
+      "fields": [
+        "chunk_id",
+        "pmid",
+        "title",
+        "year",
+        "source",
+        "text",
+        "score",
+        "bm25_rank",
+        "vector_rank",
+        "bm25_score",
+        "vector_score",
+        "evidence",
+        "mentions"
+      ]
+    },
+    {
+      "path": "examples/part03/ch03/09_search_hybrid.cypher",
+      "block": 1,
+      "status": "parameters"
+    },
+    {
+      "path": "examples/part03/ch03/09_search_hybrid.cypher",
+      "block": 2,
+      "status": "passed",
+      "rows": 3,
+      "fields": [
+        "chunk_id",
+        "pmid",
+        "title",
+        "year",
+        "source",
+        "text",
+        "score",
+        "bm25_rank",
+        "vector_rank",
+        "bm25_score",
+        "vector_score",
+        "evidence",
+        "mentions"
+      ]
+    }
+  ],
+  "python_examples": [
+    {
+      "path": "examples/part03/ch02/inspect_snapshot.py",
+      "args": [],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true
+    },
+    {
+      "path": "examples/part03/ch02/S200_01_official_mcp.py",
+      "args": [
+        "list"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true
+    },
+    {
+      "path": "examples/part03/ch02/S200_01_official_mcp.py",
+      "args": [
+        "query"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true
+    },
+    {
+      "path": "examples/part03/reference/labs/bio-target-agent/scripts/check_exercise.py",
+      "args": [
+        "alias",
+        "--start"
+      ],
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "passed": true
+    }
+  ],
+  "structure_checks": {
+    "checks": 41,
+    "violations": 0
+  },
+  "notes": [
+    "Syntax checks do not certify successful execution.",
+    "The semantic exercise checks record completeness, not correctness of human interpretation.",
+    "The official MCP response is live data and does not replace the fixed teaching snapshot."
+  ],
+  "provided_runtime_regression_tests": {
+    "passed": 62,
+    "tests": [
+      "test_exercises.py",
+      "test_tools.py",
+      "test_report.py",
+      "test_retrieval.py",
+      "test_evaluation.py",
+      "test_w0_repro.py"
+    ],
+    "database_reset": false,
+    "external_model_calls": false
+  }
+}

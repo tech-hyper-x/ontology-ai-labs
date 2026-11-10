@@ -18,3 +18,5 @@
 - [식별자 지도](identifier_map.csv)
 
 원본 스냅샷과 가공 자료는 제공 프로젝트의 `data/raw`, `data/processed`에서 확인합니다.
+
+[공개 실습 파일별 검증 범위](../../../examples/part03/VERIFICATION.json)

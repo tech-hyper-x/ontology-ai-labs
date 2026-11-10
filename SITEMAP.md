@@ -107,4 +107,4 @@ OS별 도구 설치를 마치면 [공통 상세 설치 가이드](docs/setup/REA
 
 ## Part 1~3 실행 예제 찾기
 
-[examples 전체 목차](examples/README.md)에서 Part와 Chapter별 파일·실행 위치를 확인합니다. [Part 1](examples/part01/) · [Part 2](examples/part02/) · [Part 3](examples/part03/)
+[examples 전체 목차](examples/README.md)에서 Part와 Chapter별 파일·실행 위치를 확인합니다. [Part 1](examples/part01/) · [Part 2](examples/part02/) · [Part 3](examples/part03/) · [Part 3 파일별 검증 기록](examples/part03/VERIFICATION.json)
