@@ -1,0 +1,6 @@
+비교 항목,원천,원본 위치,식별자,릴리스·조회일,공개·가상,원천 전체·적재·검색 범위,확인할 공백
+질환 연관성,Open Targets,data/raw/opentargets/snapshot.json,Ensembl/MONDO,26.09 / 2026-10-26,공개,data_inventory.json과 원천 집계 대조,
+문헌,PubMed,data/raw/pubmed,PMID,2026-10-26,공개,초록 있는 논문과 전체 Paper 구분,
+활성 자료,ChEMBL,data/raw/chembl,ChEMBL ID,2026-10-26,공개,IC50 단위와 수집 범위 확인,
+화합물 식별,PubChem,data/raw/pubchem,CID/InChIKey,2026-10-26,공개,식별 정보,
+사내 현황,가상 사내 파일,data/processed/internal,사내 ID/원래 표기,파일별 기준,가상,공개 근거와 별도,

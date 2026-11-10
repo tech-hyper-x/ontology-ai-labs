@@ -1,0 +1,7 @@
+대상,원래 표기,표준 체계,기본 키·값,교차 참조,파일 위치,확인 메모
+유전자,HER1,Ensembl,ENSG00000146648,EGFR,data/processed/crosswalk.csv,원래 표기 보존
+표적,EGFR,실습 Target ID,TGT:ENSG00000146648,Gene.ensembl_id,data/processed/graph/nodes_Target.json,유전자와 표적 역할 구분
+질환,비소세포폐암,MONDO,MONDO_0005233,EFO_0003060,data/processed/graph/nodes_Disease.json,EFO는 교차 참조
+단백질,,UniProt,,,data/processed/graph/nodes_Protein.json,직접 확인
+논문,,PMID,,,data/raw/pubmed,직접 확인
+화합물,,ChEMBL/PubChem,,,data/processed/graph/nodes_Compound.json,직접 확인

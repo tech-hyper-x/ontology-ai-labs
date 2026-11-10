@@ -1,5 +1,9 @@
 # Part 3 Ch3 · 실습 안내
 
+이 챕터의 조회문은 강의에서 제공한 바이오 프로젝트·DB·저장 벡터가 준비된 상태에서 실행합니다. 공개 저장소에는 바이오 전체 실행 환경이 포함되어 있지 않습니다.
+
+실행 위치는 제공 프로젝트의 `labs/bio-target-agent`, Neo4j Browser는 `http://localhost:7475`, Bolt는 `localhost:7688`입니다. `:params`와 조회문은 따로 실행합니다.
+
 ## 장표 번호별 실습
 
 - [212장 · 표적 주장과 근거의 관계 설계](slide-212.md)
@@ -16,3 +20,12 @@
 - [230장 · 벡터 검색의 순위와 원문 확인](slide-230.md)
 - [231장 · 하이브리드 순위와 근거 연결의 구분](slide-231.md)
 - [233장 · 설계 기준에서 근거 적재와 검색 구현으로](slide-233.md)
+
+## 관계·근거·검색 자료
+
+- [관계 작성표](../../../examples/part03/ch03/relation_worksheet.csv) · [비교 예시](../../../examples/part03/ch03/relation_answers.csv)
+- [근거 해석표](../../../examples/part03/ch03/interpretation_worksheet.csv)
+- [검색 관찰표](../../../examples/part03/ch03/search_observation.csv)
+- [입력 조건을 포함한 완성 조회문](../../../examples/part03/ch03/)
+
+구조 검사, 대상·질환 일치, 원문의 의미 검토는 각각 기록합니다. 저장 질문 벡터를 쓰는 조회는 새 임베딩 API를 호출하지 않습니다.

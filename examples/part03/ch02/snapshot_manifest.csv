@@ -1,0 +1,4 @@
+원천,대상,릴리스,수집일,범위,원본 위치,변환 코드·버전,별도 기준·메모
+Open Targets,NSCLC / EGFR·KRAS·MET,26.09,2026-10-26,연관 상위 50 / 후보 3,data/raw/opentargets/snapshot.json,foundation/build.py / git rev-parse HEAD,원천 전체와 선택한 근거 범위 구분
+PubMed,후보 관련 초록,,2026-10-26,실제 파일에서 확인,data/raw/pubmed/abstracts.json,foundation/build.py,조회 연도 범위 SOURCES.md 확인
+가상 사내 과제,internal_pipeline,,,직접 작성,data/processed/internal/internal_pipeline.csv,foundation/build.py,as_of 직접 작성

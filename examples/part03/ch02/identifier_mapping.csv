@@ -1,0 +1,4 @@
+원천 행,원래 값,공통 심볼,공통 유전자 ID,표적 ID,대응 출처·규칙,자료 기준,확인 상태·이유
+PRJ-ONC-045,HER1,EGFR,ENSG00000146648,TGT:ENSG00000146648,crosswalk source=internal / alias_dictionary,2026-09-30,실제 대응표·그래프에서 확인
+PRJ-ONC-012,EGFR,,,,,,직접 작성
+PRJ-CNS-007,LRRK2,,,,,,범위 밖인지 확인 후 보류 이유 작성
