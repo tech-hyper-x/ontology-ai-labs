@@ -1,0 +1,14 @@
+# P3 Ch2-2 별칭 정리 과제 — 사내 과제 표기(target_symbol)를 표준 심볼로 확정하는 별칭 사전.
+# 원본 규칙: src/bio_target_agent/foundation/build.py 의 EXTRA_ALIASES 와 alias_to_symbol (6) 사내 가상 데이터 절).
+# 시작 상태: HER1 이 사전에 없다 → PRJ-ONC-045 가 EGFR 에 연결되지 않고 '검토 목록'으로 빠진다.
+aliases:
+  EGFR: EGFR
+  ERBB1: EGFR
+  c-Met: MET
+  MET: MET
+projects:  # data/processed/internal/internal_pipeline.csv 의 두 행 (발췌)
+  - {project_id: PRJ-ONC-012, target_symbol: EGFR}
+  - {project_id: PRJ-ONC-045, target_symbol: HER1}
+expected:  # 정답: 두 과제 모두 같은 Ensembl(EGFR, ENSG00000146648) 표적 하나에 연결
+  PRJ-ONC-012: EGFR
+  PRJ-ONC-045: EGFR

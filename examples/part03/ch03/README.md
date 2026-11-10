@@ -11,3 +11,6 @@
 7. `07_search_bm25.cypher`, `08_search_vector.cypher`, `09_search_hybrid.cypher`: 같은 Q-RESIST·EGFR·paper·k3 조건으로 비교하고 `search_observation.csv`에 기록합니다.
 
 `:params`와 조회문은 별도로 실행합니다. 조회문은 `_target.cypher` 공통 조각을 포함한 완성문입니다. 검색 색인과 저장 SearchExample 임베딩이 준비되어 있어야 하며, 방식별 상위20개 후 필터 조건입니다. 문헌 하나에 여러 표적의 근거가 연결될 수 있습니다. 순위와 문장의 사실 지지는 별도 검토합니다.
+
+
+[장표 번호별 실습 안내](../../../docs/part03/ch03/README.md#장표-번호별-실습)

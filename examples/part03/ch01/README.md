@@ -6,3 +6,6 @@
 - [02_alias.cypher](02_alias.cypher)
 - [03_evidence_path.cypher](03_evidence_path.cypher)
 - [04_search_modes.cypher](04_search_modes.cypher)
+
+
+[장표 번호별 실습 안내](../../../docs/part03/ch01/README.md#장표-번호별-실습)

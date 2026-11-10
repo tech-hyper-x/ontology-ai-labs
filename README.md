@@ -6,6 +6,8 @@
 
 현재 학습 안내는 **Part 1 Ch3 공통 환경과 Part 2 Ch1~Ch8 제조 설계 실습**까지 포함합니다. 제조 실습 프로젝트를 이용해 개발 환경 구성, 그래프 사용처 조회, 문서 검색, MCP 직접 호출, 에이전트 답변 대조를 진행합니다.
 
+**장표 번호로 실습 찾기:** [장표별 Hands-on 목차](docs/hands-on/README.md) · [32장 처음부터 따라 하기](docs/part01/ch03/slide-032.md)
+
 ## 시작하기
 
 **Docker 설치부터 Neo4j·Langfuse 첫 접속까지:** [상세 설치 가이드](docs/setup/README.md)

@@ -8,3 +8,6 @@
 - [04_search_alias.cypher](04_search_alias.cypher)
 - [05_disease.cypher](05_disease.cypher)
 - [inspect_snapshot.py](inspect_snapshot.py)
+
+
+[장표 번호별 실습 안내](../../../docs/part03/ch02/README.md#장표-번호별-실습)

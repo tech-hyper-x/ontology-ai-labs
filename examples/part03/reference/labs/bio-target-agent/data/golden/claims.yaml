@@ -1,0 +1,36 @@
+# 인용 검토(CQ-14 · 시나리오 7)용 주장 예시. graph/load.py 가 (:Claim)-[:CITES]->(:Evidence) 로 적재한다.
+# label: 정답 판정 (사람이 미리 정한 값) — correct · wrong_target · missing_id · path_ok_meaning_mismatch
+#   path_ok_meaning_mismatch 는 경로는 맞지만 근거가 문장을 뒷받침하지 않는 경우다.
+#   자동 검사(경로 확인)로는 통과하므로, 의미 판정은 사람 판정 · 별도 평가가 필요하다는 것을 보여 준다.
+# evidence: 실제 근거 ID (Open Targets 26.09 evidence id). missing_id 는 일부러 없는 ID 를 넣었다.
+claims:
+  - claim_id: CLM-001
+    target: EGFR
+    text: EGFR 체세포 변이는 비소세포폐암의 원인 유전자 근거로 기록되어 있다.
+    label: correct
+    evidence: [37b86673a413c94274aaf887dd0d9bdc5ef92d4b]
+  - claim_id: CLM-002
+    target: MET
+    text: capmatinib 은 MET 엑손 14 결손 비소세포폐암에서 임상 근거가 있다.
+    label: correct
+    evidence: [969fddf8c40153638616c05333c53d83d97b6c6e]
+  - claim_id: CLM-003
+    target: KRAS
+    text: KRAS 를 표적으로 하는 3세대 억제제 osimertinib 의 임상 근거가 있다.
+    label: wrong_target
+    evidence: [6b359d8538db62b5c253765c417d5b326f04fc5d]
+  - claim_id: CLM-004
+    target: EGFR
+    text: EGFR 억제제 내성은 사내 실험으로 확인되었다.
+    label: missing_id
+    evidence: [ev_does_not_exist_0001]
+  - claim_id: CLM-005
+    target: KRAS
+    text: sotorasib 은 KRAS 표적 승인 약물로 임상 선례가 있다.
+    label: correct
+    evidence: [86937af87a522c41973f4d4e46e84ec424098c9f, 398fce35be364d8fef7d2cd9a1c2f28e92bbd9b8]
+  - claim_id: CLM-006
+    target: MET
+    text: MET 표적 억제제는 안전성 이슈가 보고되지 않았다.
+    label: path_ok_meaning_mismatch
+    evidence: [523ed75134e674554acea8f63d0c1032a12f0a1f]

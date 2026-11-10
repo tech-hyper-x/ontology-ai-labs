@@ -80,6 +80,9 @@ uv run streamlit run src/mfg_bom_agent/ui.py
 
 ## 5. 그래프에서 사용처 직접 조회
 
+처음 Cypher를 사용한다면 **[32장 단계별 따라 하기](part01/ch03/slide-032.md)**를 열어 입력 조건 → 표 조회 → 코드 수정 → 그래프 조회 순서로 진행합니다. 입력 위치와 코드별 설명, 수정 후 전체 코드, 오류 점검을 함께 제공합니다.
+
+
 Neo4j Browser에서 아래 파라미터를 먼저 실행합니다. 부품번호는 현재 제조 예제의 휠 SKU입니다. `revision: null`은 최신 판을 선택합니다.
 
 ```cypher

@@ -2,6 +2,10 @@
 
 설치·실행·도구 사용 중 필요한 문서를 찾는 안내입니다. 현재 공개본은 **Part 1 Ch3 공통 환경, Part 2 Ch1~Ch8 학습 안내와 제조 실습 프로젝트**를 포함합니다.
 
+## 장표 번호로 찾기
+
+[Part 1~3 장표별 Hands-on 목차](docs/hands-on/README.md)에서 장표 번호와 코드 실행 순서를 확인합니다. 처음 Cypher를 접한다면 [32장 상세 안내](docs/part01/ch03/slide-032.md)부터 시작하세요.
+
 ## 처음 시작한다면
 
 1. [Docker → Neo4j → Langfuse 상세 설치](docs/setup/README.md)
