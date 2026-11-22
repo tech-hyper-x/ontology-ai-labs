@@ -1,6 +1,6 @@
 # Part 1 Ch3 · 공통 환경 확인
 
-- [32장 상세 안내 · 입력부터 그래프 확인까지](../../../docs/part01/ch03/slide-032.md)
+- [36장 상세 안내 · 입력부터 그래프 확인까지](../../../docs/part01/ch03/slide-032.md)
 - [S032_01_params.cypher · 입력 조건](S032_01_params.cypher)
 - [S032_02_table.cypher · 표 조회](S032_02_table.cypher)
 - [S032_03_graph.cypher · 그래프 조회](S032_03_graph.cypher)

@@ -1,15 +1,16 @@
-# Docker부터 Neo4j·Langfuse 첫 접속까지
+# 제조 실습 환경 준비와 에이전트 실행
 
-Ch3에서 사용하는 제조 실습 환경의 설치·실행 안내입니다. Mac 화면을 기준으로 설명하며, Windows·Linux는 2절에서 해당 OS 설치 문서를 선택합니다.
+## 제조 실습 진행 순서
 
-## 먼저 실습 범위를 선택하세요
+이번 실습에서는 **“이 휠은 어느 조립품에 쓰일까요?”**라는 질문을 따라갑니다. 제조 부품표에서 휠의 사용처를 조회하고 정비 문서를 검색한 뒤, 같은 자료로 에이전트가 작성한 답을 확인합니다.
 
-| 목표 | 진행 범위 | 외부 API 키 |
+| 단계 | 할 일 | 확인할 결과 |
 |---|---|---|
-| Neo4j 접속과 기본 Cypher 연습 | 2~4절에서 도구·프로젝트·로컬 설정 준비 → 5절의 Neo4j 이미지만 다운로드 → 6절 → 기본 Cypher 가이드 | 불필요 |
-| 제조 그래프·문서 검색·에이전트 전체 실습 | 2~9절을 순서대로 진행 | 실제 LLM 호출용 Anthropic 키, 의미 검색용 Voyage 키 |
+| 환경 준비 | Docker와 uv 준비 → GitHub 프로젝트 다운로드 → 제조 폴더에서 접속 정보·API 키·패키지 설정 | Docker 테스트가 성공하고 Compose 서비스 목록이 보입니다. |
+| 서비스와 데이터 준비 | 이미지 다운로드 → Neo4j와 Langfuse 접속 → 제조 부품표 적재와 정비 문서 검색 색인 확인 | Neo4j 첫 조회가 성공하고, 제조 데이터와 문서 검색 색인이 준비됩니다. |
+| 휠 사용처와 정비 문서 확인 | MCP 서버와 앱 실행 → 휠의 사용처 조회 → 정비 문서 검색 → 에이전트 답변 대조 | 답변에 나온 조립품과 출처를 직접 조회한 결과에서 찾을 수 있습니다. |
 
-기본 Cypher만 연습할 때는 Langfuse 서버·MCP·앱을 실행하거나 8절의 전체 데이터 초기화를 할 필요가 없습니다. 프로젝트 Compose는 Langfuse 설정도 함께 읽으므로 `.env.example`의 로컬 서비스 설정은 유지하되, 외부 API 키는 입력하지 않아도 됩니다. `uv sync`는 Python 실습 코드를 실행할 때 필요하며 Browser에서 Cypher만 실행할 때는 건너뛸 수 있습니다.
+아래 순서대로 진행하세요. Mac 기준 화면을 사용하며, Windows와 Linux의 도구 설치 방법은 **Docker와 기본 도구 설치**에서 안내합니다.
 
 이 문서의 실행 경로와 포트는 **제조 프로젝트** 기준입니다. 바이오 실습은 해당 프로젝트의 설치·챕터 안내를 따르며, 제조 DB를 대상으로 바이오 초기화 명령을 실행하지 않습니다. 전체 자료의 출발점은 [가이드 지도](../../SITEMAP.md)입니다.
 
@@ -71,7 +72,7 @@ Mac에서 Git이 없다는 설치 창이 뜨면 Command Line Tools 설치를 완
 - [Linux 설치](../../labs/mfg-bom-agent/docs/install/linux.md): Docker Engine·Compose 플러그인·uv·Git을 준비합니다.
 - [기존 Mac 상세 문서](../../labs/mfg-bom-agent/docs/install/macos.md): 도구 설치와 OS 문제 해결 참고.
 
-OS 설치를 마치면 이 문서의 3절부터 공통 순서로 진행합니다. 초기화·임베딩·서버 연결에 관한 설명은 이 가이드를 기준으로 합니다.
+도구 설치를 마치면 아래의 **GitHub 프로젝트 다운로드**로 이어갑니다. 초기화·임베딩·서버 연결에 관한 설명은 이 가이드를 기준으로 합니다.
 
 ## 3. GitHub 프로젝트 다운로드
 
@@ -122,9 +123,9 @@ cp .env.example .env
 |EMBEDDING_API_KEY|문서·질문 벡터화에 사용할 별도 API 키|
 |EMBEDDING_PROVIDER / MODEL / DIMENSION|배포된 예시 설정값 유지|
 
-### 외부 API 키 준비 — 전체 앱 실습을 할 때
+### 답변 생성과 문서 검색에 쓸 API 키 준비
 
-**기본 Cypher 연습에는 이 단계를 건너뜁니다.** 실제 에이전트 호출과 의미 검색을 진행할 때 준비하세요.
+에이전트가 답변을 작성할 때는 Anthropic 키를, 정비 문서와 검색 질문을 벡터로 바꿀 때는 Voyage 키를 사용합니다.
 
 1. Anthropic: [공식 API 키 안내](https://platform.claude.com/docs/en/get-api-key)를 따라 Claude Console에 로그인하고 API keys에서 키를 생성합니다. [키 관리 화면](https://platform.claude.com/settings/keys)에서 만든 값을 `.env`의 `ANTHROPIC_API_KEY`에 입력합니다.
 2. Voyage: [공식 키 발급 안내](https://docs.voyageai.com/docs/api-key-and-installation)에 따라 [Voyage 대시보드](https://dashboard.voyageai.com)에 로그인하고 API keys에서 새 키를 생성합니다. 이 프로젝트에서는 `.env`의 `EMBEDDING_API_KEY`에 입력합니다. 모델·차원은 배포 예시 설정을 유지합니다.
@@ -155,17 +156,11 @@ docker compose config --quiet
 docker compose config --services
 ```
 
-확인할 결과: 누락 변수·YAML 오류 없이 끝나고 neo4j, langfuse-web, langfuse-worker 등의 서비스 이름이 표시됩니다. Neo4j만 실행하더라도 전체 Compose의 필수 Langfuse 설정이 먼저 필요합니다.
+확인할 결과: 누락 변수·YAML 오류 없이 끝나고 neo4j, langfuse-web, langfuse-worker 등의 서비스 이름이 표시됩니다. 이 단계에서 Neo4j와 Langfuse 설정을 함께 확인합니다.
 
 ## 5. 이미지 다운로드
 
-처음 실행할 때는 서버 이미지를 내려받습니다. **기본 Cypher만 연습한다면** 다음만 실행하고 6절로 이동합니다.
-
-```bash
-docker compose pull neo4j
-```
-
-전체 제조 실습을 준비한다면 다운로드 대기 시간을 분리하기 위해 다음 명령을 먼저 실행합니다.
+처음 실행할 때는 제조 실습에 쓸 서비스 이미지를 함께 내려받습니다.
 
 ```bash
 docker compose pull neo4j langfuse-web langfuse-worker postgres clickhouse redis minio
@@ -246,13 +241,7 @@ docker compose exec neo4j cypher-shell -u neo4j -d neo4j
 
 같은 서버·DB를 선택하면 Browser와 CLI가 보는 데이터는 같습니다. CLI 결과는 표·텍스트이며 그래프 그림은 표시하지 않습니다.
 
-### 기본 Cypher만 연습한다면 여기서 시작
-
-이제 [Neo4j 기본 Cypher 가이드](../neo4j-cypher-basics.md)의 2절부터 진행합니다. 같은 `neo4j` DB에 예제 전용 `CypherGuide` 라벨로 데이터를 추가하고, 실습을 마치면 가이드의 12절에서 **대상 확인 → 예제만 삭제 → 남은 예제 0개 확인**을 진행합니다.
-
-이 라벨은 별도 DB나 접근 권한 경계를 만드는 기능은 아닙니다. 기존 강의 노드에 붙이거나 예제를 업무 노드와 연결하지 않습니다. 예제만 정리하려고 8절의 전체 초기화 명령이나 Docker 볼륨 삭제를 실행하지 않습니다.
-
-기초 연습만 한다면 아래 7~9절은 나중에 전체 앱 실습을 준비할 때 진행합니다. Neo4j만 실행했다면 종료·재시작도 `docker compose stop neo4j`, `docker compose start neo4j`로 할 수 있으며 데이터는 보존됩니다.
+첫 질의에서 `connection_ok`가 1이면 다음 단계인 **Langfuse 설치·실행 확인**으로 이동합니다. 잠시 뒤 제조 데이터를 준비한 후 이 Browser에서 휠의 사용처를 조회합니다. 조회문을 읽을 때 필요한 문법은 [Cypher 문법 참고](../neo4j-cypher-basics.md)에서 찾아볼 수 있습니다.
 
 ## 7. Langfuse 설치·실행 확인
 
@@ -280,12 +269,11 @@ docker compose logs --tail=50 langfuse-web langfuse-worker
 
 **아래 초기화는 기존 데이터를 삭제하고 제조 데이터를 다시 적재합니다.** `init_data.py`가 호출하는 적재 코드는 현재 연결한 DB에서 `LabMeta` 라벨을 제외한 모든 노드를 관계와 함께 삭제합니다. 같은 DB에 만든 `CypherGuide` 기초 예제나 개인 노드도 삭제 대상입니다. 새 사용자 생성이나 비밀번호 변경 작업은 아닙니다.
 
-- 기본 Cypher만 연습한다면 이 단계를 실행하지 않습니다.
-- 전체 제조 실습을 준비한다면 `.env`의 `NEO4J_URI`가 제조 전용 로컬 서버를 가리키는지 확인합니다. 기본값은 `bolt://localhost:7687`입니다.
+- 초기화하기 전에 `.env`의 `NEO4J_URI`가 제조 전용 로컬 서버를 가리키는지 확인합니다. 기본값은 `bolt://localhost:7687`입니다.
 - 보존할 개인 데이터가 있다면 먼저 백업하고 초기화를 진행하지 않습니다. 제조 실습 DB에 업무 데이터를 함께 보관하지 않습니다.
 - 이미 적재를 마친 환경은 매번 초기화하지 않습니다. 임베딩 설정만 고쳤다면 아래의 `build_index.py` 안내를 따릅니다.
 
-초기화 대상과 삭제 범위를 확인한 뒤, 전체 제조 실습에 필요한 경우에만 실행합니다.
+처음 준비하는 제조 실습 전용 DB에서만 아래 초기화를 실행합니다. 이미 적재한 환경에서는 첫 명령을 건너뛰고 환경 점검부터 진행합니다.
 
 ```bash
 uv run python scripts/init_data.py
@@ -320,13 +308,12 @@ uv run python -m mfg_bom_agent.mcp_server
 uv run streamlit run src/mfg_bom_agent/ui.py
 ```
 
-1. http://localhost:8501 을 엽니다.
-2. 그래프·도구를 활용하는 실행 방식과 현재 실행 모드를 확인합니다.
-3. 부품의 사용처 질문을 한 번 실행합니다.
-4. 앱에서 실제 호출한 도구와 반환 결과를 확인합니다.
-5. Langfuse의 Tracing을 새로고침하고 해당 실행 기록이 들어왔는지 확인합니다.
+1. http://localhost:8501 에서 앱이 열리는지 확인하고, 서버 터미널 두 개를 계속 실행해 둡니다.
+2. [그래프에서 사용처 직접 조회](../ch03-run-guide.md#5-그래프에서-사용처-직접-조회)로 이동해 Neo4j Browser에서 휠이 들어가는 조립품과 개정판을 기록합니다.
+3. 이어지는 **MCP 직접 호출과 검색**에서 같은 부품을 조회하고 휠 정비 문서의 근거 구간을 확인합니다.
+4. **에이전트에서 같은 조건 비교**에서 앱의 답변에 나온 조립품과 문서 출처를 두 도구의 결과와 대조합니다.
 
-이 문서의 Tracing 확인은 독학용 전체 절차입니다. Part 1 Ch3 강의에서는 Langfuse 로그인과 프로젝트 접속까지만 확인하고, 기록의 상세 해석은 Part 2에서 진행합니다.
+Part 1 Ch3의 완료 기준은 직접 찾은 사용처와 문서 근거를 앱의 답변에서 확인하는 것입니다. Langfuse는 이 장에서 프로젝트 접속을 확인하고, 실행 기록의 상세 해석은 Part 2에서 이어갑니다.
 
 Langfuse 확인용 별도 예제가 필요하면 데이터 준비 후 다음을 활용할 수 있습니다.
 

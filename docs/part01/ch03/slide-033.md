@@ -1,4 +1,4 @@
-# 33장 · where_used 도구의 입력과 반환값
+# 37장 · where_used 도구의 입력과 반환값
 
 Part 1 / Ch3 · [전체 실습 목차](../../hands-on/README.md)
 

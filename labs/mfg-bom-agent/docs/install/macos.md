@@ -316,7 +316,7 @@ mfg-redis             redis:7                      Up (healthy)
 
 (출력 형식은 Docker 버전에 따라 조금 다르다. 이름과 STATUS 만 보면 된다.)
 
-> 메모리가 부족한 PC 는 Langfuse 없이 `docker compose up -d neo4j` 만 띄우고, `.env` 의 `LANGFUSE_PUBLIC_KEY` 와 `LANGFUSE_SECRET_KEY` 를 빈 값으로 바꾼다. 실습은 트레이싱 화면만 빼고 그대로 진행된다.
+> 컨테이너가 메모리 부족으로 재시작되면 다른 프로그램을 닫고 Docker에 할당된 메모리를 확인한다. Neo4j와 Langfuse가 모두 준비되면 [제조 실습 가이드](../../../../docs/setup/README.md)에서 계속한다.
 
 ---
 

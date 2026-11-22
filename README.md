@@ -1,31 +1,22 @@
 # Ontology AI Labs
 
-온톨로지 기반 기업 AI 강의의 실습 코드와 실행 안내입니다.
+강의 화면에 나온 파일을 열고 명령을 실행한 뒤, 자신의 결과를 강사의 화면과 비교할 수 있는 보조 자료입니다.
 
 필요한 문서를 빠르게 찾으려면 **[가이드 전체 지도 · SITEMAP](SITEMAP.md)**을 열어 주세요.
 
-현재 학습 안내는 **Part 1 Ch3 공통 환경과 Part 2 Ch1~Ch8 제조 설계 실습**까지 포함합니다. 제조 실습 프로젝트를 이용해 개발 환경 구성, 그래프 사용처 조회, 문서 검색, MCP 직접 호출, 에이전트 답변 대조를 진행합니다.
+Part 1 Ch3은 제조 환경 준비와 휠 사용처 확인, Part 2는 제조 설계 실습, Part 3은 바이오 예제를 다룹니다. 강의에서 안내하는 Part와 챕터의 자료를 여세요.
 
-**장표 번호로 실습 찾기:** [장표별 Hands-on 목차](docs/hands-on/README.md) · [32장 처음부터 따라 하기](docs/part01/ch03/slide-032.md)
+**지금 보는 장표로 이동:** [Part 1 Ch3 · 31–41장 촬영 순서](docs/part01/ch03/README.md) · [Part별 실습 장표 목차](docs/hands-on/README.md)
 
 ## 시작하기
 
-**Docker 설치부터 Neo4j·Langfuse 첫 접속까지:** [상세 설치 가이드](docs/setup/README.md)
+[제조 실습 진행 순서](docs/setup/README.md)를 열고 **“이 휠은 어느 조립품에 쓰일까요?”**라는 질문을 따라가세요.
 
-**Cypher가 처음이라면:** [Neo4j 초보자를 위한 기본 Cypher 문법 가이드](docs/neo4j-cypher-basics.md)에서 예제 데이터로 조회·경로·집계·생성·수정·삭제를 연습합니다.
+1. **환경 준비** — 운영체제에 맞는 도구를 설치하고, 내려받은 저장소의 `labs/mfg-bom-agent`에서 접속 정보와 패키지를 준비합니다.
+2. **서비스와 데이터 준비** — Neo4j와 Langfuse를 실행하고 제조 부품표와 정비 문서 검색 색인을 준비합니다.
+3. **휠 사용처와 정비 문서 확인** — MCP와 앱을 띄운 뒤 [그래프에서 사용처 직접 조회](docs/ch03-run-guide.md#5-그래프에서-사용처-직접-조회)부터 진행합니다. 휠의 사용처와 정비 문서 검색 결과를 에이전트의 답변과 대조합니다.
 
-```bash
-git clone https://github.com/tech-hyper-x/ontology-ai-labs.git
-cd ontology-ai-labs/labs/mfg-bom-agent
-```
-
-1. [OS별 설치 안내](labs/mfg-bom-agent/INSTALL.md)에서 본인 환경을 선택합니다.
-2. [Ch3 실행 안내](docs/ch03-run-guide.md)에 따라 개인 설정·서비스·데이터·앱을 준비합니다.
-3. [사용처 조회문](examples/part01/ch03/ch03_where_used.cypher)을 Neo4j Browser에서 실행합니다.
-4. [MCP 호출 예제](examples/part01/ch03/ch03_call.py)로 같은 부품과 개정판을 조회합니다.
-5. 실습 앱의 처리 과정과 최종 답변을 도구 반환 결과와 비교합니다.
-
-Windows 명령은 WSL Ubuntu 터미널에서 실행합니다. Mac은 터미널을 사용합니다. 최초 도구 설치와 다운로드 시간은 강의의 설명·시연 배분과 별도입니다.
+Windows에서는 WSL Ubuntu 터미널을, Mac에서는 기본 터미널을 사용합니다. 조회문 문법은 [Cypher 문법 참고](docs/neo4j-cypher-basics.md)에서 확인할 수 있습니다.
 
 ## 폴더
 
@@ -44,7 +35,7 @@ DISTRIBUTION.json              배포본의 원본 코드 커밋
 아래 명령은 `labs/mfg-bom-agent` 폴더에서 실행합니다. Docker는 서버 프로그램을, uv는 로컬 Python과 패키지를 준비합니다.
 
 ```bash
-cp .env.example .env
+cp -n .env.example .env
 uv sync --all-extras
 ```
 
@@ -56,11 +47,12 @@ MCP_URL=http://localhost:8000/mcp
 DEMO_MODE=none
 ```
 
-서비스 실행과 초기화:
+서비스를 실행합니다. 이미 제조 데이터를 적재한 환경에서는 데이터 초기화 명령을 건너뜁니다.
 
 ```bash
 docker compose up -d neo4j langfuse-web
 docker compose ps
+# 처음 준비하는 제조 실습 전용 DB에서만 실행
 uv run python scripts/init_data.py
 uv run python scripts/check_env.py
 ```

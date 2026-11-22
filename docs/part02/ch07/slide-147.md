@@ -1,4 +1,4 @@
-# 147장 · 도구 실행과 Langfuse 기록의 대조
+# 151장 · 도구 실행과 Langfuse 기록의 대조
 
 Part 2 / Ch7 · [전체 실습 목차](../../hands-on/README.md)
 

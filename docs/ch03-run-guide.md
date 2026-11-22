@@ -1,6 +1,6 @@
 # Part 01 · Ch3 — 개발 환경 구성과 공통 흐름 실행
 
-처음 설치한다면 [Docker → Neo4j → Langfuse 상세 가이드](setup/README.md)를 먼저 진행합니다.
+처음에는 [제조 실습 진행 순서](setup/README.md)에 따라 앱까지 실행합니다. 이미 앱이 열려 있다면 아래 **그래프에서 사용처 직접 조회**에서 이어서 휠의 사용처와 정비 문서를 확인합니다.
 
 강의 기준: 제조 프로젝트 `labs/mfg-bom-agent`의 현재 코드. 20분은 설명과 준비된 환경의 시연 배분이며 최초 다운로드·설치 대기 시간은 별도입니다.
 
@@ -33,7 +33,7 @@ uv sync --all-extras
 | `LANGFUSE_INIT_USER_PASSWORD` | Langfuse 초기 로그인 비밀번호 |
 | `DEMO_MODE=none` | 실제 LLM 호출. 필요하면 아래 모드 구분 참고 |
 
-실제 키를 화면에 공개하거나 자료에 저장하지 않습니다. 설정을 바꾼 뒤에는 실행 중인 앱·MCP 서버를 재시작합니다. Langfuse를 생략할 경우 README 안내에 따라 Neo4j만 실행하고 `LANGFUSE_PUBLIC_KEY`와 `LANGFUSE_SECRET_KEY`를 비웁니다.
+실제 키를 화면에 공개하거나 자료에 저장하지 않습니다. 설정을 바꾼 뒤에는 실행 중인 앱·MCP 서버를 재시작합니다. 강의에서는 Neo4j와 Langfuse를 함께 실행하고 설정한 프로젝트 키를 유지합니다.
 
 Part 1 Ch3의 검색 비교에는 임베딩 설정과 데이터·색인 적재가 필요합니다. OS별 도구 설치 후 공통 설치 가이드의 설정·초기화 순서로 진행합니다.
 
@@ -42,6 +42,7 @@ Part 1 Ch3의 검색 비교에는 임베딩 설정과 데이터·색인 적재�
 ```bash
 docker compose up -d neo4j langfuse-web
 docker compose ps
+# 처음 준비하는 제조 실습 전용 DB에서만 실행
 uv run python scripts/init_data.py
 uv run python scripts/check_env.py
 ```
@@ -80,7 +81,7 @@ uv run streamlit run src/mfg_bom_agent/ui.py
 
 ## 5. 그래프에서 사용처 직접 조회
 
-처음 Cypher를 사용한다면 **[32장 단계별 따라 하기](part01/ch03/slide-032.md)**를 열어 입력 조건 → 표 조회 → 코드 수정 → 그래프 조회 순서로 진행합니다. 입력 위치와 코드별 설명, 수정 후 전체 코드, 오류 점검을 함께 제공합니다.
+처음 Cypher를 사용한다면 **[36장 단계별 따라 하기](part01/ch03/slide-032.md)**를 열어 입력 조건 → 표 조회 → 코드 수정 → 그래프 조회 순서로 진행합니다. 입력 위치와 코드별 설명, 수정 후 전체 코드, 오류 점검을 함께 제공합니다.
 
 
 Neo4j Browser에서 아래 파라미터를 먼저 실행합니다. 부품번호는 현재 제조 예제의 휠 SKU입니다. `revision: null`은 최신 판을 선택합니다.

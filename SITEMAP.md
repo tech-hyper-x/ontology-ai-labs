@@ -1,35 +1,33 @@
 # 가이드 바로 찾기
 
-설치·실행·도구 사용 중 필요한 문서를 찾는 안내입니다. 현재 공개본은 **Part 1 Ch3 공통 환경, Part 2 Ch1~Ch8 학습 안내와 제조 실습 프로젝트**를 포함합니다.
+강의에서 지금 보는 장표를 기준으로 설치 안내, 예제 파일, 결과 확인 방법을 찾는 목차입니다.
 
 ## 장표 번호로 찾기
 
-[Part 1~3 장표별 Hands-on 목차](docs/hands-on/README.md)에서 장표 번호와 코드 실행 순서를 확인합니다. 처음 Cypher를 접한다면 [32장 상세 안내](docs/part01/ch03/slide-032.md)부터 시작하세요.
+[Part 1~3 장표별 Hands-on 목차](docs/hands-on/README.md)에서 장표 번호와 코드 실행 순서를 확인합니다. 휠을 직접 조회하는 단계에서는 [조회문 입력과 결과 읽기](docs/part01/ch03/slide-032.md)를 함께 볼 수 있습니다.
 
 ## 처음 시작한다면
 
-1. [Docker → Neo4j → Langfuse 상세 설치](docs/setup/README.md)
-2. [Neo4j 초보자를 위한 기본 Cypher 문법 가이드](docs/neo4j-cypher-basics.md) — 기본 neo4j DB 선택·CLI·예제 적재·조회·변경·예제만 삭제
-3. [Ch3 전체 실행 순서](docs/ch03-run-guide.md)
-4. [그래프 사용처 조회 예제](examples/part01/ch03/ch03_where_used.cypher)
-5. [MCP 직접 호출·문서 검색 예제](examples/part01/ch03/ch03_call.py)
+1. [제조 실습 진행 순서](docs/setup/README.md)에서 환경을 준비하고 Neo4j·Langfuse, 제조 데이터와 검색 색인, MCP·앱을 차례로 확인합니다.
+2. [그래프에서 사용처 직접 조회](docs/ch03-run-guide.md#5-그래프에서-사용처-직접-조회)에서 휠이 들어가는 조립품을 찾습니다.
+3. [MCP 직접 호출과 검색](docs/ch03-run-guide.md#6-mcp-직접-호출과-검색)을 거쳐 [에이전트에서 같은 조건 비교](docs/ch03-run-guide.md#7-에이전트에서-같은-조건-비교)로 마무리합니다.
 
 ## 하고 싶은 일로 찾기
 
 |하고 싶은 일|열 문서|
 |---|---|
 |전체 구성과 다운로드 방법 확인|[README](README.md)|
-|각 소프트웨어의 역할·준비 방법 확인|[설치 가이드 · 1절](docs/setup/README.md#1-무엇을-설치하나요)|
-|Docker 설치와 실행 확인|[설치 가이드 · 2절](docs/setup/README.md#2-docker와-기본-도구-설치)|
-|GitHub에서 코드를 내려받기|[설치 가이드 · 3절](docs/setup/README.md#3-github-프로젝트-다운로드)|
-|.env·API 키·패키지 준비|[설치 가이드 · 4절](docs/setup/README.md#4-env와-python-패키지-준비)|
-|서버 이미지 다운로드|[설치 가이드 · 5절](docs/setup/README.md#5-이미지-다운로드)|
-|Neo4j 실행·로그인·첫 질의|[설치 가이드 · 6절](docs/setup/README.md#6-neo4j-설치실행-확인)|
-|Langfuse 실행·로그인·프로젝트 확인|[설치 가이드 · 7절](docs/setup/README.md#7-langfuse-설치실행-확인)|
-|데이터 적재와 검색 색인 준비|[설치 가이드 · 8절](docs/setup/README.md#8-실습-데이터와-검색-색인-준비)|
-|MCP·앱 실행과 기록 확인|[설치 가이드 · 9절](docs/setup/README.md#9-mcp와-앱-실행)|
-|종료하고 다음에 다시 실행|[설치 가이드 · 10절](docs/setup/README.md#10-종료와-다음-실행)|
-|설치나 접속에서 막힘|[설치 가이드 · 11절](docs/setup/README.md#11-자주-막히는-곳)|
+|각 소프트웨어의 역할·준비 방법 확인|[무엇을 설치하나요?](docs/setup/README.md#1-무엇을-설치하나요)|
+|Docker 설치와 실행 확인|[Docker와 기본 도구 설치](docs/setup/README.md#2-docker와-기본-도구-설치)|
+|GitHub에서 코드를 내려받기|[GitHub 프로젝트 다운로드](docs/setup/README.md#3-github-프로젝트-다운로드)|
+|.env·API 키·패키지 준비|[.env와 Python 패키지 준비](docs/setup/README.md#4-env와-python-패키지-준비)|
+|서버 이미지 다운로드|[이미지 다운로드](docs/setup/README.md#5-이미지-다운로드)|
+|Neo4j 실행·로그인·첫 질의|[Neo4j 설치·실행 확인](docs/setup/README.md#6-neo4j-설치실행-확인)|
+|Langfuse 실행·로그인·프로젝트 확인|[Langfuse 설치·실행 확인](docs/setup/README.md#7-langfuse-설치실행-확인)|
+|데이터 적재와 검색 색인 준비|[실습 데이터와 검색 색인 준비](docs/setup/README.md#8-실습-데이터와-검색-색인-준비)|
+|MCP·앱 실행과 기록 확인|[MCP와 앱 실행](docs/setup/README.md#9-mcp와-앱-실행)|
+|종료하고 다음에 다시 실행|[종료와 다음 실행](docs/setup/README.md#10-종료와-다음-실행)|
+|설치나 접속에서 막힘|[자주 막히는 곳](docs/setup/README.md#11-자주-막히는-곳)|
 
 ## 운영체제별 설치
 

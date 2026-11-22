@@ -43,7 +43,7 @@ docker compose up -d neo4j langfuse-web
 
 `langfuse-web`을 지정하면 의존하는 postgres·clickhouse·redis·minio·langfuse-worker가 함께 뜬다. 첫 기동은 이미지 다운로드와 DB 마이그레이션으로 2~3분 걸린다.
 
-Langfuse 없이 가볍게 돌리려면 `docker compose up -d neo4j`만 올리고 `.env`의 `LANGFUSE_PUBLIC_KEY`, `LANGFUSE_SECRET_KEY`를 비운다.
+강의에서는 두 서비스를 함께 사용한다. [제조 실습 진행 순서](../../docs/setup/README.md)에 따라 Neo4j에서 첫 조회를 실행하고 Langfuse에서 제조 프로젝트를 확인한다.
 
 그래프 적재 · 온톨로지 검증 · 문서 연결 · 검색 색인을 한 번에 실행한다 (`data/processed` 는 저장소에 들어 있다).
 
