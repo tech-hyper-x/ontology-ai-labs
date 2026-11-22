@@ -14,6 +14,10 @@
 
 이 문서의 실행 경로와 포트는 **제조 프로젝트** 기준입니다. 바이오 실습은 해당 프로젝트의 설치·챕터 안내를 따르며, 제조 DB를 대상으로 바이오 초기화 명령을 실행하지 않습니다. 전체 자료의 출발점은 [가이드 지도](../../SITEMAP.md)입니다.
 
+아래 **바이브 코딩** 상자는 실습할 컴퓨터의 Claude Code나 Codex 대화창에 붙여넣는 질문입니다. 필요한 단계에서 상자 오른쪽 위의 복사 버튼을 누르세요.
+
+[도구와 버전](#ai-tool-check) · [개인 설정](#ai-env) · [서비스 상태](#ai-services) · [검색 색인](#ai-index) · [사용처 비교](#ai-where-used)
+
 ## 1. 무엇을 설치하나요?
 
 |소프트웨어|강의에서 하는 일|준비 방법|
@@ -28,8 +32,6 @@ Neo4j Desktop이나 Langfuse Cloud 계정을 별도로 만드는 방식은 사�
 
 ## 2. Docker와 기본 도구 설치
 
-바이브 코딩 도구를 사용하면 내 컴퓨터에서 버전을 확인하고 빠진 도구를 준비할 수 있습니다. [33장 · Claude Code 또는 Codex용 설치 확인 프롬프트](tool-check-prompt.md)를 복사해 로컬 AI 대화창에 붙여넣으세요.
-
 | 도구 | 이 실습에서 확인할 기준 |
 |---|---|
 | Docker와 Compose | Docker 엔진이 실행 중이어야 합니다. 프로젝트가 두 설정 파일을 합치는 `include`를 사용하므로 **Compose 2.20.0 이상**이 필요합니다. 33장에서 `docker compose version`으로 확인합니다. |
@@ -38,6 +40,29 @@ Neo4j Desktop이나 Langfuse Cloud 계정을 별도로 만드는 방식은 사�
 | Neo4j와 Langfuse | 35장에서 Compose가 지정한 이미지 태그 **Neo4j 5.26-community**, **Langfuse 웹·워커 4**를 사용합니다. |
 
 기준 파일은 [Python 프로젝트 설정](../../labs/mfg-bom-agent/pyproject.toml), [잠금 파일](../../labs/mfg-bom-agent/uv.lock), [제조 서비스 설정](../../labs/mfg-bom-agent/compose.yaml), [Langfuse 서비스 설정](../../labs/mfg-bom-agent/compose.langfuse.yaml)입니다. [Docker의 include 버전 기준](https://docs.docker.com/reference/compose-file/include/)도 확인할 수 있습니다.
+
+<a name="ai-tool-check"></a>
+
+### 바이브 코딩 · 도구 설치와 버전 확인
+
+```text
+내 컴퓨터에서 제조 실습에 쓸 도구를 확인하고, 빠졌거나 호환되지 않는 도구는 공식 방법으로 설치를 도와주세요.
+아직 강의 저장소를 내려받기 전이어도 됩니다.
+
+1. 운영체제와 터미널을 확인해 주세요. Windows는 WSL2 Ubuntu와 Docker Desktop 연동을 확인해 주세요.
+   원격 환경이면 내 PC에서 직접 확인할 명령을 알려주세요.
+2. docker --version, docker compose version, uv --version을 각각 실행해 주세요.
+   Compose는 설정 파일의 include를 사용하므로 2.20.0 이상이어야 합니다.
+   Git으로 복제할 때만 git --version을 확인하고, ZIP으로 받을 때는 생략해 주세요.
+3. docker info로 엔진 연결을 확인한 뒤 docker run --rm hello-world를 실행해 주세요.
+   실패하면 설치 누락, 엔진 중지, 이미지 다운로드 오류 중 어디서 막혔는지 짚어 주세요.
+4. 제조 앱의 Python은 3.12.x입니다. 아직 프로젝트를 받지 않았다면 ‘34장에서 확인’으로 표시해 주세요.
+   패키지를 준비했다면 제조 폴더에서 uv run --no-sync python --version으로 확인해 주세요.
+   시스템 Python은 그대로 사용합니다. uv와 Git은 고정 버전이 없고, uv는 제공된 uv.lock을 읽을 수 있어야 합니다.
+   Neo4j 5.26-community와 Langfuse 4는 35장에서 Compose가 준비합니다.
+5. 설치나 업데이트가 필요하면 내 운영체제에 맞게 진행하고, 내가 직접 승인하거나 실행할 단계는 알려주세요.
+   설치한 도구를 다시 확인한 뒤 ‘도구 | 실습 기준 | 내 버전 | 다음 행동’ 표로 정리해 주세요.
+```
 
 ### macOS: Docker Desktop 설치
 
@@ -134,6 +159,17 @@ cp .env.example .env
 |EMBEDDING_API_KEY|문서·질문 벡터화에 사용할 별도 API 키|
 |EMBEDDING_PROVIDER / MODEL / DIMENSION|배포된 예시 설정값 유지|
 
+<a name="ai-env"></a>
+
+### 바이브 코딩 · 개인 설정 항목 확인
+
+```text
+제조 폴더의 .env.example과 강의 가이드의 설정표를 보고, 내가 입력할 항목을 정리해 주세요.
+개인 .env는 열지 말고 예시 파일의 항목명만 사용해 주세요.
+그래프 접속, 답변 생성, 문서 임베딩으로 나눠서 내가 발급받을 키와 예시값을 유지할 항목을 알려주세요.
+패키지 준비 후 프로젝트 Python이 3.12.x인지 확인할 명령도 알려주세요.
+```
+
 ### 답변 생성과 문서 검색에 쓸 API 키 준비
 
 에이전트가 답변을 작성할 때는 Anthropic 키를, 정비 문서와 검색 질문을 벡터로 바꿀 때는 Voyage 키를 사용합니다.
@@ -161,7 +197,7 @@ uv sync --all-extras
 uv run python --version
 ```
 
-마지막 줄이 `Python 3.12.x`인지 확인하세요. 설정 항목이나 결과를 해석하기 어렵다면 [34장의 바이브 코딩 질문](../part01/ch03/slide-030.md#바이브-코딩으로-설정-항목-확인하기)을 사용하세요.
+마지막 줄이 `Python 3.12.x`인지 확인하세요.
 
 Compose 설정을 검사합니다. 아래 명령은 실제 비밀값을 출력하지 않습니다.
 
@@ -267,6 +303,17 @@ docker compose logs --tail=50 langfuse-web langfuse-worker
 
 프로젝트 Compose는 Langfuse 화면뿐 아니라 worker·PostgreSQL·ClickHouse·Redis·MinIO도 함께 실행합니다. 각 저장소를 PC에 직접 설치하지 않습니다. 초기 DB 준비와 마이그레이션이 끝날 때까지 기다립니다.
 
+<a name="ai-services"></a>
+
+### 바이브 코딩 · 서비스 실행 상태 확인
+
+```text
+Neo4j와 Langfuse를 실행했는데 접속 화면이 열리지 않습니다.
+제조 폴더에서 docker compose ps -a를 실행해 neo4j와 langfuse-web의 상태와 실제 호스트 포트를 확인해 주세요.
+아직 시작 중인지, 종료됐는지, 실행 중이면 어느 주소를 열어야 하는지 알려주세요.
+지금은 서비스 재시작이나 데이터 초기화 없이 다음에 확인할 항목 하나만 짚어 주세요.
+```
+
 ### 첫 로그인과 프로젝트 확인
 
 1. http://localhost:3000 을 엽니다.
@@ -308,6 +355,19 @@ init_data.py는 실습 데이터를 다시 적재하고 온톨로지 검사·문
 
 현재 check_env.py의 MCP 항목은 HTTP 응답 확인입니다. Langfuse 항목도 설정 상태 표시이므로, 이 표만으로 도구 호출·실행 기록 수집 성공을 판단하지 않습니다.
 
+<a name="ai-index"></a>
+
+### 바이브 코딩 · 데이터와 검색 색인 점검
+
+```text
+아래는 내 실습에서 이미 실행한 결과입니다. 데이터 재적재나 API 호출 없이 이 출력만 읽어 주세요.
+부품 데이터 적재, 정비 문서 색인 생성, 실제 임베딩 사용 중 어디까지 확인됐나요?
+index_provider나 query_provider에 hash:local이 보이면 어떤 검색을 확인할 수 있는지도 알려주세요.
+출력에서 판단할 수 없는 항목은 미확인으로 남겨 주세요.
+
+내 실행 결과(키와 비밀번호 제외): [여기에 붙여넣기]
+```
+
 ## 9. MCP와 앱 실행
 
 터미널 2에서 실행하고 유지합니다.
@@ -328,6 +388,19 @@ uv run streamlit run src/mfg_bom_agent/ui.py
 4. **에이전트에서 같은 조건 비교**에서 앱의 답변에 나온 조립품과 문서 출처를 두 도구의 결과와 대조합니다.
 
 Part 1 Ch3의 완료 기준은 직접 찾은 사용처와 문서 근거를 앱의 답변에서 확인하는 것입니다. Langfuse는 이 장에서 프로젝트 접속을 확인하고, 실행 기록의 상세 해석은 Part 2에서 이어갑니다.
+
+<a name="ai-where-used"></a>
+
+### 바이브 코딩 · 휠 사용처 결과 비교
+
+```text
+36장에서 조회한 표와 37장의 where_used 응답을 붙이겠습니다.
+먼저 부품번호와 개정판이 같은지 확인해 주세요. 일치하면 조립품별로 두 결과의 수량을 나란히 보여주세요.
+값이 다르거나 한쪽에만 있는 행을 짚고, 비교에 필요한 값이 빠졌다면 해당 필드명을 알려주세요.
+
+36장 조회 표: [내 표 붙여넣기]
+37장 도구 응답: [내 응답 붙여넣기]
+```
 
 Langfuse 확인용 별도 예제가 필요하면 데이터 준비 후 다음을 활용할 수 있습니다.
 
