@@ -32,6 +32,15 @@ test -f .env || cp .env.example .env
 
 ```bash
 uv sync --all-extras
+uv run python --version
+```
+
+## 바이브 코딩으로 설정 항목 확인하기
+
+`.env.example`에서 어떤 항목에 값을 넣을지 헷갈릴 때, 제조 폴더를 연 Claude Code나 Codex에 아래처럼 요청하세요.
+
+```text
+공개된 .env.example과 docs/setup/README.md를 기준으로 그래프 접속, 모델 호출, 문서 임베딩에 쓰는 항목명을 나눠 주세요. 개인 .env를 열거나 변경하지 말고, 내가 직접 입력할 항목과 가이드 값을 사용하는 항목을 짚어 주세요. 패키지 준비 후 프로젝트 Python이 3.12.x인지 확인할 명령도 알려 주세요.
 ```
 
 ## 결과 확인과 문제 해결

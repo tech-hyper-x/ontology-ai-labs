@@ -28,6 +28,17 @@ Neo4j Desktop이나 Langfuse Cloud 계정을 별도로 만드는 방식은 사�
 
 ## 2. Docker와 기본 도구 설치
 
+바이브 코딩 도구를 사용하면 내 컴퓨터에서 버전을 확인하고 빠진 도구를 준비할 수 있습니다. [33장 · Claude Code 또는 Codex용 설치 확인 프롬프트](tool-check-prompt.md)를 복사해 로컬 AI 대화창에 붙여넣으세요.
+
+| 도구 | 이 실습에서 확인할 기준 |
+|---|---|
+| Docker와 Compose | Docker 엔진이 실행 중이어야 합니다. 프로젝트가 두 설정 파일을 합치는 `include`를 사용하므로 **Compose 2.20.0 이상**이 필요합니다. 33장에서 `docker compose version`으로 확인합니다. |
+| Python | 제조 앱의 실행 범위는 **3.12.x**입니다. 34장에서 패키지를 준비하고 프로젝트 폴더에서 `uv run python --version`으로 확인합니다. PC의 기본 Python 버전은 달라도 됩니다. |
+| uv와 Git | 저장소가 두 도구의 버전을 지정하지 않습니다. uv는 제공된 잠금 파일을 읽고 패키지를 설치할 수 있어야 합니다. Git은 저장소를 복제할 때 사용하며 ZIP으로 받으면 생략합니다. |
+| Neo4j와 Langfuse | 35장에서 Compose가 지정한 이미지 태그 **Neo4j 5.26-community**, **Langfuse 웹·워커 4**를 사용합니다. |
+
+기준 파일은 [Python 프로젝트 설정](../../labs/mfg-bom-agent/pyproject.toml), [잠금 파일](../../labs/mfg-bom-agent/uv.lock), [제조 서비스 설정](../../labs/mfg-bom-agent/compose.yaml), [Langfuse 서비스 설정](../../labs/mfg-bom-agent/compose.langfuse.yaml)입니다. [Docker의 include 버전 기준](https://docs.docker.com/reference/compose-file/include/)도 확인할 수 있습니다.
+
 ### macOS: Docker Desktop 설치
 
 1. Apple 메뉴 → 이 Mac에 관하여에서 칩을 확인합니다.
@@ -147,7 +158,10 @@ DEMO_MODE=none
 
 ```bash
 uv sync --all-extras
+uv run python --version
 ```
+
+마지막 줄이 `Python 3.12.x`인지 확인하세요. 설정 항목이나 결과를 해석하기 어렵다면 [34장의 바이브 코딩 질문](../part01/ch03/slide-030.md#바이브-코딩으로-설정-항목-확인하기)을 사용하세요.
 
 Compose 설정을 검사합니다. 아래 명령은 실제 비밀값을 출력하지 않습니다.
 
