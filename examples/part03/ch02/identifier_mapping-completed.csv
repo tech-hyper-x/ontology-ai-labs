@@ -1,0 +1,4 @@
+원천 행,원래 값,공통 심볼,공통 유전자 ID,표적 ID,대응 출처·규칙,자료 기준,확인 상태·이유
+PRJ-ONC-045,HER1,EGFR,ENSG00000146648,TGT:ENSG00000146648,crosswalk source=internal / alias_dictionary,2026-09-30,실제 대응표·그래프에서 확인
+PRJ-ONC-012,EGFR,EGFR,ENSG00000146648,TGT:ENSG00000146648,가상 사내 입력의 EGFR과 표준 Target 대조,2026-09-30,같은 표적에 연결
+PRJ-CNS-007,LRRK2,LRRK2,미연결,미연결,NSCLC 고정 스냅샷 Target 목록과 대조,26.09 / 2026-10-26,현재 적재 범위 밖으로 보류

@@ -2,6 +2,15 @@
 
 Ch5에서 찾은 서보 `2000-0025-0002`·rocker bogie 사용처와 문서 출처를 계산 입력으로 이어갑니다. 14강·15강 각20분 계획입니다. 설치·추가 연습 시간은 별도이며 실제 낭독 시간은 리허설로 확인합니다.
 
+## 실습 작성표와 완성 예시
+
+빈 양식을 복사해 작성하고, 같은 조건에서 나온 결과를 완성 예시와 대조합니다.
+
+|작성표|빈 양식|완성 예시|
+|---|---|---|
+|수량·원가 계산 기록|[작성표](worksheets/calculation-record.csv)|[작성 예시](worksheets/calculation-record-completed.csv)|
+|MCP 도구 계약|[작성표](worksheets/tool-contract.csv)|[작성 예시](worksheets/tool-contract-completed.csv)|
+
 ## 시작 위치와 준비
 
 모든 Python 명령은 저장소의 `labs/mfg-bom-agent`에서 실행합니다. [설치](../../setup/README.md)와 Ch4 그래프 적재를 마친 상태를 전제로 합니다. Ch6에서는 DB를 재적재하거나 색인을 다시 만들지 않습니다.

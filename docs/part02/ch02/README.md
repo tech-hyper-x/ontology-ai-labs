@@ -4,6 +4,15 @@
 
 실행 위치는 내려받은 저장소의 `labs/mfg-bom-agent`입니다. Part 1 Ch3에서 준비한 패키지·Neo4j·데이터를 사용합니다. 이번 장에서는 DB 초기화나 전체 데이터 재생성을 실행하지 않습니다.
 
+## 실습 작성표와 완성 예시
+
+빈 양식을 복사해 작성하고, 같은 조건에서 나온 결과를 완성 예시와 대조합니다.
+
+|작성표|빈 양식|완성 예시|
+|---|---|---|
+|필드 매핑 명세|[작성표](worksheets/mapping-spec.csv)|[작성 예시](worksheets/mapping-spec-completed.csv)|
+|수량·단위 규칙|[작성표](worksheets/unit-contract.csv)|[작성 예시](worksheets/unit-contract-completed.csv)|
+
 ## 1강 · 부품·구매 데이터 매핑
 
 |순서|화면|수강생이 할 일|완료 기준|

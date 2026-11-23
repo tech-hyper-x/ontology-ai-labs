@@ -2,6 +2,16 @@
 
 1강 15분 + 2강 20분. Ch2의 매핑·식별자·단위 규칙을 받아, 방법론의 개념 모델링과 관계·규칙 설계로 이어갑니다. Part 1 Ch3에서 초기화한 DB와 패키지를 그대로 사용합니다. 실행 위치는 `labs/mfg-bom-agent`입니다.
 
+## 실습 작성표와 완성 예시
+
+빈 양식을 복사해 작성하고, 같은 조건에서 나온 결과를 완성 예시와 대조합니다.
+
+|작성표|빈 양식|완성 예시|
+|---|---|---|
+|변경 기록|[작성표](worksheets/change-record.csv)|[작성 예시](worksheets/change-record-completed.csv)|
+|관계 명세|[작성표](worksheets/relation-contract.csv)|[작성 예시](worksheets/relation-contract-completed.csv)|
+|검증 명세|[작성표](worksheets/validation-contract.csv)|[작성 예시](worksheets/validation-contract-completed.csv)|
+
 ## 1강 · BOM 변경 사례 모델링
 
 1. [원본 두 판과 diff](reference/)를 열어 모터 5202→5203 변경을 찾습니다. 원본은 고정된 두 커밋의 내용을 변경 없이 보관했습니다. 전체 NASA 저장소를 새로 받을 필요가 없습니다.

@@ -1,0 +1,4 @@
+question,intent,part,units,percent,revision,expected_tools,actual_tools,missing_input,result
+모터15%인상100대,price_change,5203-2402-0027,100,15,6b2c5a9,find_part→where_used→change_impact,find_part→where_used→change_impact,없음,가이드의 모델 모드 검수 예시 · 3869.10 USD 증가
+로봇차량1대원가,cost,제품 전체,1,해당 없음,6b2c5a9,cost_rollup,실행 후 cost_rollup 호출 이벤트 확인,없음,제공 데이터 기준 기계부품 소요원가 1330.38 USD
+서보단종시대체후보,discontinue,2000-0025-0002,미입력 → 50,해당 없음,6b2c5a9,find_part→되묻기,동일 run_id에서 재개한 뒤 호출 기록 확인,units,needs_input에서 units를 확인하고 50을 넣어 재개

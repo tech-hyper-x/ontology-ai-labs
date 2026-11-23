@@ -1,0 +1,5 @@
+source_file,source_field,target_table,target_field,transform,unit,missing_rule,origin,check
+parts_list.csv,part #,plm_item_master,sku,원천 값 보존,식별자,누락·열 오류 확인,source,휠 SKU 3616-0014-0144와 내부 ID 대응
+parts_list.csv,cost pp ,erp_supplier_item,unit_price,unit_price_raw에 원문 보존 후 Decimal 변환,USD/팩,빈 가격은 미상,source,휠 $24.99와 pack_size 1을 대조
+parts_list.csv,# req in assy,plm_ebom_line,raw_qty,원천 수량을 Decimal로 읽고 그대로 보존,원천 상품/팩,빈 수량과 열 오류는 원본 확인,source,휠 1과 스페이서 0.5 확인
+parts_list.csv,assembly multiplier,plm_ebom_line,multiplier,조립품 배수를 별도 열에 보존,조립품/로버,빈 배수는 원본 확인,source,휠 6과 스페이서 2 확인

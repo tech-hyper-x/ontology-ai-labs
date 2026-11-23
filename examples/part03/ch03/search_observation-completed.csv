@@ -1,0 +1,4 @@
+﻿mode,rank,pmid,bm25_rank,vector_rank,evidence_targets,source_span,interpretation
+bm25,1,37060646,1,해당 없음,EGFR,PubMed PMID 37060646의 초록,Q-RESIST · EGFR · paper · k=3의 기록. 순위와 문장의 근거 여부를 구분
+vector,1,39747003,해당 없음,1,EGFR,PubMed PMID 39747003의 초록,Q-RESIST · EGFR · paper · k=3의 기록. 순위와 문장의 근거 여부를 구분
+hybrid,1,40505315,4,4,EGFR,PubMed PMID 40505315의 초록,Q-RESIST · EGFR · paper · k=3의 기록. 순위와 문장의 근거 여부를 구분

@@ -1,0 +1,4 @@
+relation,definition,domain,range,cardinality,required_fields,cq
+HAS_BOM_LINE,상위 품목의 구성 내역,Product/Assembly,BOMLine,1:N,별도 필수 관계 속성 없음,CQ-01·CQ-02
+REFERS_TO,구성 라인이 가리키는 하위 품목,BOMLine,Assembly/Part,N:1 · 라인마다 정확히 1,별도 필수 관계 속성 없음,CQ-01·CQ-03
+IN_REVISION,라인이 속한 BOM 개정판,BOMLine,Revision,N:1 · 라인마다 정확히 1,별도 필수 관계 속성 없음,CQ-14

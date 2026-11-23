@@ -4,6 +4,16 @@
 
 실행 위치는 제공 프로젝트의 `labs/bio-target-agent`, Neo4j Browser는 `http://localhost:7475`, Bolt는 `localhost:7688`입니다. `:params`와 조회문은 따로 실행합니다.
 
+## 실습 작성표와 완성 예시
+
+빈 양식을 복사해 작성하고, 같은 조건에서 나온 결과를 완성 예시와 대조합니다.
+
+|작성표|빈 양식|완성 예시|
+|---|---|---|
+|관계 방향과 필수 연결|[작성표](../../../examples/part03/ch03/relation_worksheet.csv)|[작성 예시](../../../examples/part03/ch03/relation_answers.csv)|
+|근거 해석표|[작성표](../../../examples/part03/ch03/interpretation_worksheet.csv)|[작성 예시](../../../examples/part03/ch03/interpretation_worksheet-completed.csv)|
+|검색 모드 관찰표|[작성표](../../../examples/part03/ch03/search_observation.csv)|[작성 예시](../../../examples/part03/ch03/search_observation-completed.csv)|
+
 ## 장표 번호별 실습
 
 - [216장 · 표적 주장과 근거의 관계 설계](slide-212.md)
@@ -21,11 +31,8 @@
 - [235장 · 하이브리드 순위와 근거 연결의 구분](slide-231.md)
 - [237장 · 설계 기준에서 근거 적재와 검색 구현으로](slide-233.md)
 
-## 관계·근거·검색 자료
+## 조회문
 
-- [관계 작성표](../../../examples/part03/ch03/relation_worksheet.csv) · [비교 예시](../../../examples/part03/ch03/relation_answers.csv)
-- [근거 해석표](../../../examples/part03/ch03/interpretation_worksheet.csv)
-- [검색 관찰표](../../../examples/part03/ch03/search_observation.csv)
 - [입력 조건을 포함한 완성 조회문](../../../examples/part03/ch03/)
 
 구조 검사, 대상·질환 일치, 원문의 의미 검토는 각각 기록합니다. 저장 질문 벡터를 쓰는 조회는 새 임베딩 API를 호출하지 않습니다.

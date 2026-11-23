@@ -1,0 +1,6 @@
+비교 항목,원천,원본 위치,식별자,릴리스·조회일,공개·가상,원천 전체·적재·검색 범위,확인할 공백
+질환 연관성,Open Targets,data/raw/opentargets/snapshot.json,Ensembl/MONDO,26.09 / 2026-10-26,공개,질환 연관 상위 50개와 지정 후보 3개 · 적재 Evidence 2921건,원천 근거 전체와 선택 적재 범위를 대조
+문헌,PubMed,data/raw/pubmed,PMID,2026-10-26,공개,적재 Paper 2204건 중 초록 보유 146건,PMID가 있어도 초록과 검색 벡터가 있는지 확인
+활성 자료,ChEMBL,data/raw/chembl,ChEMBL ID,2026-10-26,공개,후보별 ChEMBL 표적과 활동 자료의 단위 확인,다른 시험 조건의 IC50 직접 비교는 보류
+화합물 식별,PubChem,data/raw/pubchem,CID/InChIKey,2026-10-26,공개,CID·InChIKey로 화합물 식별,대체 표기와 누락된 교차 참조 확인
+사내 현황,가상 사내 파일,data/processed/internal,사내 ID/원래 표기,파일별 기준,가상,가상 과제 8건 · 공개 근거와 분리,미해결 별칭은 보류하고 파일의 as_of와 연결 키 확인

@@ -1,0 +1,4 @@
+파일·시스템,용도,확인할 필드,식별자,원천·파생·가정,수집·관측 시점,업무 기준일,원천 위치,누락·단절·함정,다음에 할 일
+parts_list.csv,휠 사용처·수량 확인,assembly=drive wheel · 조립품당 1개 · 로버당 배수 6,3616-0014-0144 / P-3616-0014-0144,원본 부품표; 내부 ID는 가공,—,개정판 6b2c5a9,parts_list/parts_list.csv@6b2c5a9#row1,07a4405의 42행은 열 개수 불일치로 제외,품질 이슈 표에서 제외 사유를 확인하고 원본 행 대조
+erp_supplier_item.csv,휠 가격·구매 조건 확인,unit_price=24.99 USD · moq_packs=1 · lead_time_days=7 · price_date 미상,P-3616-0014-0144 / goBILDA,$24.99=공개 자료; 최소 1팩·납기 7일=실습 가정,2026-10-22,미상,erp_supplier_item.csv → goBILDA의 휠 행,Maker Depot 공급사 품번은 MD-WW144,crosswalk.csv에서 내부 ID와 공급사 품번 대응 확인
+서보 기어 정비 안내,코너 바퀴 증상과 첫 점검,증상: 코너 바퀴 회전 불가 / 첫 점검: 전기 연결,코너 서보,NASA JPL 공개 정비 문서,—,—,mechanical/servo_gear_replacement/README.md → Diagnosing an issue,—,진단 절의 전기 연결 확인 문장을 근거로 남김

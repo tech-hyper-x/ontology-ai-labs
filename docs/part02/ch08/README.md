@@ -4,6 +4,16 @@ Ch7에서 남긴 도구 결과와 답변 검사 기록을 기대 답과 대조�
 
 아래 명령은 모두 `ontology-ai-labs/labs/mfg-bom-agent`에서 실행합니다. 기존 데이터·그래프를 재적재하거나 기준 답을 덮어쓰지 않습니다.
 
+## 실습 작성표와 완성 예시
+
+빈 양식을 복사해 작성하고, 같은 조건에서 나온 결과를 완성 예시와 대조합니다.
+
+|작성표|빈 양식|완성 예시|
+|---|---|---|
+|평가 오류 기록|[작성표](worksheets/error-record.csv)|[작성 예시](worksheets/error-record-completed.csv)|
+|평가 실행 기록|[작성표](worksheets/run-record.csv)|[작성 예시](worksheets/run-record-completed.csv)|
+|새 업무 질문 설계|[작성표](worksheets/transfer-question.md)|[작성 예시](worksheets/transfer-question-completed.md)|
+
 ## 1. 조건과 기대 답 읽기
 
 ```bash

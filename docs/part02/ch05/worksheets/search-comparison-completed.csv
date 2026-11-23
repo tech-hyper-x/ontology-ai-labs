@@ -1,0 +1,4 @@
+example,query,source,mode,index_provider,dimensions,doc_id,rank,bm25_rank,vector_rank,bm25_score,vector_score,rrf,linked_sku,assembly,source_checked,interpretation
+CQ-11,corner wheels will not turn,readme,bm25,Voyage,1024,mechanical/servo_gear_replacement/README.md#2,5,5,해당 없음,원점수는 실행 결과에서 기록,해당 없음,0.0154,2000-0025-0002,rocker bogie,Diagnosing an issue,같은 진단 청크가 키워드 검색에서 5위
+CQ-11,corner wheels will not turn,readme,vector,Voyage,1024,mechanical/servo_gear_replacement/README.md#2,3,해당 없음,3,해당 없음,원점수는 실행 결과에서 기록,0.0159,2000-0025-0002,rocker bogie,Diagnosing an issue,저장된 동일 질문 벡터의 3위 결과
+CQ-11,corner wheels will not turn,readme,hybrid,Voyage,1024,mechanical/servo_gear_replacement/README.md#2,1,5,3,원점수는 실행 결과에서 기록,원점수는 실행 결과에서 기록,0.0313,2000-0025-0002,rocker bogie,Diagnosing an issue,기록된 결합 결과 1위. 전기 연결과 기어 양쪽을 점검한다.

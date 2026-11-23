@@ -1,0 +1,5 @@
+source_file,target_label,merge_key,parent_relationship,child_relationship,revision_relationship,checked
+plm_item_master.csv,Part,part_id,해당 없음,해당 없음,해당 없음,제공 Part의 P-3616-0014-0144 확인
+plm_assembly.csv,Assembly,assembly_id,해당 없음,해당 없음,해당 없음,OSR/drive wheel 확인
+plm_revision.csv,Revision,revision_id,해당 없음,해당 없음,해당 없음,6b2c5a9의 is_latest 확인
+plm_ebom_line.csv,BOMLine,bomline_id,HAS_BOM_LINE,REFERS_TO,IN_REVISION,휠의 부모·하위 부품·개정판 연결을 대조

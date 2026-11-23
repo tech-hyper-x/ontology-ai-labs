@@ -4,6 +4,15 @@ Ch6에서 직접 호출한 계산 도구를 질문별 실행으로 연결합니�
 
 모든 명령은 `ontology-ai-labs/labs/mfg-bom-agent`에서 실행합니다. [환경 안내](../../setup/README.md)와 [Ch6](../ch06/README.md)를 먼저 확인하세요. Ch7에서는 DB를 재적재하거나 색인을 다시 만들지 않습니다.
 
+## 실습 작성표와 완성 예시
+
+빈 양식을 복사해 작성하고, 같은 조건에서 나온 결과를 완성 예시와 대조합니다.
+
+|작성표|빈 양식|완성 예시|
+|---|---|---|
+|질문·도구 경로 기록|[작성표](worksheets/route-record.csv)|[작성 예시](worksheets/route-record-completed.csv)|
+|답변 검증 기록|[작성표](worksheets/verification-record.csv)|[작성 예시](worksheets/verification-record-completed.csv)|
+
 ## 16강 · 질문에서 도구 실행까지
 
 ### 1. 질문을 계산 조건으로 바꾸기

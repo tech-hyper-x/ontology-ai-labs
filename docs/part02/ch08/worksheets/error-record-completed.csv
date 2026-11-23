@@ -1,0 +1,4 @@
+case_or_id,question_condition,expected,actual,tool_evidence,auto_reason,root_layer,evidence_for_cause,proposed_fix,regression_ids,manual_review
+G24,corner 조립품 구성 품번,1109-0024-0144와 1121-0004-0120,부품 품번 요청으로 되묻기,조립품 이름을 부품 검색에 전달,not_answered,도구·계획,EVAL_RESULTS.md의 G24 기록,CQ-03 조립품 조회 도구와 계획 분기 추가,G24·G23,집합 누락·추가 확인
+G30,모터 5203-2402-0027의 영향 조립품,drive wheel 포함,최종 답변에서 drive wheel 누락,도구 경로에 drive wheel 존재,missing_item,답변·검사,EVAL_RESULTS.md에서 도구와 결론 비교,집합 항목의 인용 검사 추가,G30·G24,도구 반환과 최종 답변을 따로 대조
+G43,휠 대체품 가공 조건의 문서,parts_list/extra_parts.md,문서 미검색,검색 결과에 해당 문서 없음,no_evidence,연결·검색,EVAL_RESULTS.md의 실제 실행 기록,대체 부품과 문서 DESCRIBED_IN 연결 검토,G43·G44,검색 실패와 찾은 문서의 인용 누락 분리

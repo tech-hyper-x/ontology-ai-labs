@@ -1,0 +1,3 @@
+﻿evidence_id,type,source_release,retrieved_at,observed_fact,additional_checks
+048e2957de9143f53700a8f7197d8bf28f0dc098,Clinical,clinical_precedence@26.09,2026-10-26,EGFR·NSCLC의 Clinical 근거 한 건. 연결된 PMID 35343187의 초록은 미적재.,같은 표적·질환인지 확인하고 논문 내용과 임상 맥락을 원문에서 대조
+3392aa1d2d686d77dab579c785629b80a9f370b1,Literature,europepmc@26.09,2026-10-26,KRAS G12C의 활동과 내성을 다룬 문헌 PMID 34471232의 식별자가 연결됨.,PMID·대상·질환이 주장 내용과 일치하는지 원문으로 확인

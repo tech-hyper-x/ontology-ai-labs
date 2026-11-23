@@ -7,6 +7,16 @@ Ch3에서 정한 개체·관계·판별 투입 내역을 Neo4j에 구현하고, 
 |10 부품 그래프 적재|가공 CSV → 적재 코드 → 전용 DB 재적재 → 건수·규칙 대조|적재 대응표·확인 기록|
 |11 영향 경로 Cypher 작성|품번·판 선택 → 직접 사용처 → 제품 경로 → 수량 재료 → 직접 작성|조회문·결과 기록|
 
+## 실습 작성표와 완성 예시
+
+빈 양식을 복사해 작성하고, 같은 조건에서 나온 결과를 완성 예시와 대조합니다.
+
+|작성표|빈 양식|완성 예시|
+|---|---|---|
+|적재 파일 대응표|[작성표](worksheets/load-map.csv)|[작성 예시](worksheets/load-map-completed.csv)|
+|조회 결과 기록|[작성표](worksheets/query-record.csv)|[작성 예시](worksheets/query-record-completed.csv)|
+|적재 확인 기록|[작성표](worksheets/load-checklist.md)|[작성 예시](worksheets/load-checklist-completed.md)|
+
 ## 시작 위치와 사전 조건
 
 Part 1 Ch3에서 Docker·uv·Neo4j 환경을 준비하고 Part 2 Ch2~Ch3에서 매핑·정규화·변경 모델을 확인합니다. 새로 받는 경우 루트의 [설치 가이드](../../setup/README.md)를 먼저 따릅니다.

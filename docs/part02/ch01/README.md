@@ -2,6 +2,15 @@
 
 2개 강의, 각 15분. Part 1 Ch3에서 제공 데이터를 초기화한 상태를 사용합니다. 이번 챕터는 원본 관찰과 CQ 작성 Hands-on이며, 정규화·모델링·적재 코드의 구현은 Ch2~4에서 진행합니다.
 
+## 실습 작성표와 완성 예시
+
+빈 양식을 복사해 작성하고, 같은 조건에서 나온 결과를 완성 예시와 대조합니다.
+
+|작성표|빈 양식|완성 예시|
+|---|---|---|
+|CQ 작성표|[작성표](worksheets/cq-catalog.csv)|[작성 예시](worksheets/cq-catalog-completed.csv)|
+|데이터 목록|[작성표](worksheets/data-inventory.csv)|[작성 예시](worksheets/data-inventory-completed.csv)|
+
 ## 먼저 이해할 개념
 
 |용어|뜻|휠 사용처 예시|

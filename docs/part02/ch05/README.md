@@ -2,6 +2,16 @@
 
 Ch4의 사용처 그래프에 문서 근거를 연결합니다. 12강은 문서 연결·오류 수정·색인 준비, 13강은 BM25·벡터·RRF 비교와 그래프 경로 확인입니다. 각 목표 15분이며 최초 설치·임베딩 대기와 추가 연습은 별도입니다.
 
+## 실습 작성표와 완성 예시
+
+빈 양식을 복사해 작성하고, 같은 조건에서 나온 결과를 완성 예시와 대조합니다.
+
+|작성표|빈 양식|완성 예시|
+|---|---|---|
+|문서·부품 연결 검수|[작성표](worksheets/link-review.csv)|[작성 예시](worksheets/link-review-completed.csv)|
+|검색 결과 비교|[작성표](worksheets/search-comparison.csv)|[작성 예시](worksheets/search-comparison-completed.csv)|
+|검색 준비 확인표|[작성표](worksheets/index-checklist.md)|[작성 예시](worksheets/index-checklist-completed.md)|
+
 ## 12강 · 원문에서 검색 준비까지
 
 1. [정비 원문 스냅샷](source/servo_gear_replacement.md)의 Diagnosing an issue 절과 [출처](source/SOURCES.md)를 읽습니다.

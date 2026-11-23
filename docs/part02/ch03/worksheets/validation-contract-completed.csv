@@ -1,0 +1,6 @@
+rule,violation_condition,implementation,expected,actual,scope
+필수 값 누락,null인 필수 속성,ontology.py required 검사,제공 DB 위반 0건,가이드의 제공 DB 검토 기록 0건,빈 문자열은 별도
+연결 개수,BOMLine의 REFERS_TO 또는 IN_REVISION 개수가 1이 아님,ontology.py 연결 개수 검사 및 05-validation-checks.cypher,제공 DB 위반 0건,가이드의 제공 DB 검토 기록 0건,관계 개수
+중복,같은 개정판·조립품·하위 부품의 중복 BOM 라인,ontology.py 중복 검사,제공 DB 위반 0건,가이드의 제공 DB 검토 기록 0건,구현된 조합 키 범위
+판 일치,라인의 revision_id와 연결된 판이 다름,06-revision-consistency.cypher,일치하지 않는 라인만 반환,작은 오류 입력 wrong_revision으로 조건 확인,기존 31검사와 별도
+작은 오류 입력,부품 연결 0개·2개 또는 판 속성 불일치,07-error-cases.cypher의 UNWIND 입력과 직접 작성한 WHERE,3행,missing_part·two_parts·wrong_revision,교육용 입력과 기대 출력

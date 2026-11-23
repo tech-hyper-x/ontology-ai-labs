@@ -1,0 +1,6 @@
+field,source_meaning,stored_meaning,rule,basis,check,open_issue
+raw_qty,원천 상품/팩 수,원천 수량,Decimal로 보존,원본 CSV,스페이서 0.5 보존,개수 열과 따로 기록
+qty_each,조립품당 낱개 수,조립품당 낱개 수,raw_qty × pack_size,원천 수량과 포장 단위,0.5 × 4 = 2,배수는 차량당 수량에서 적용
+multiplier,조립품 배수,로버 한 대당 조립품 수,qty_each × multiplier로 차량당 수량 계산,assembly multiplier,2 × 2 = 4개,원천 배수 확인
+unit_price,상품/팩당 가격,통화가 붙은 팩당 단가,가격 원문을 Decimal로 변환,cost pp 및 통화,스페이서 3.49 USD/팩,빈 가격은 미상
+pack_basis,포장 수량의 근거,팩크기를 정한 근거 표시,품명에서 4-pack을 읽으면 name,품명과 원천 행,pack_size 4이며 pack_basis=name,none은 확인되지 않은 포장 표기

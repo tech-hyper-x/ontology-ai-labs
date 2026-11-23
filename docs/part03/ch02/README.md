@@ -4,16 +4,23 @@
 
 실행 위치는 제공 프로젝트의 `labs/bio-target-agent`, Neo4j Browser는 `http://localhost:7475`, Bolt는 `localhost:7688`입니다. `:params`와 조회문은 따로 실행합니다.
 
+## 실습 작성표와 완성 예시
+
+빈 양식을 복사해 작성하고, 같은 조건에서 나온 결과를 완성 예시와 대조합니다.
+
+|작성표|빈 양식|완성 예시|
+|---|---|---|
+|가상 과제의 식별자 매핑|[작성표](../../../examples/part03/ch02/identifier_mapping.csv)|[작성 예시](../../../examples/part03/ch02/identifier_mapping-completed.csv)|
+|수집 스냅샷 기준표|[작성표](../../../examples/part03/ch02/snapshot_manifest.csv)|[작성 예시](../../../examples/part03/ch02/snapshot_manifest-completed.csv)|
+
 ## 장표 번호별 실습
 
 - [196장 · 스냅샷과 식별자 정리](slide-192.md)
 - [210장 · HER1 누락의 실패 재현](slide-206.md)
 - [211장 · 작업본 수정과 심볼 대응 재검사](slide-207.md)
 
-## 작성표와 조회문
+## 조회문
 
-- [스냅샷 기준표](../../../examples/part03/ch02/snapshot_manifest.csv)
-- [식별자 매핑 작성표](../../../examples/part03/ch02/identifier_mapping.csv)
 - [동일성·과제·미연결·별칭 검색·질환 조회](../../../examples/part03/ch02/)
 
 과제의 FAIL은 시작본의 의도된 실패입니다. 작업본 검사 통과와 기존 DB 연결 확인을 나누어 기록합니다.

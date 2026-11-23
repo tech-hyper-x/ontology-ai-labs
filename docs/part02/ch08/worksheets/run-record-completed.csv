@@ -1,0 +1,2 @@
+run_id,data_snapshot,revision,golden_version,scoring_version,mode,demo_mode,model,embedding,code_commit,source_response_run,execution_or_rescore,notes
+20261031-155317-rescore-20261025-225054,a78f9eb,6b2c5a9 · 과거 판은 문항별 값,1.1,2,kg_tools·rag·llm_only,원본 답변 실행 조건,Claude Haiku 5.5,voyage:voyage-4 · 1024차원,EVAL_RESULTS.md에 코드 커밋 미기재,20261025-225054,재채점,45문항 × 3방식의 저장 응답을 채점 규칙 v2로 다시 평가

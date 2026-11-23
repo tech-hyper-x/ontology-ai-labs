@@ -1,0 +1,8 @@
+case,expected,actual,issue,calculation_label,value,unit,units,revision,meaning_review
+correct,passed,passed,없음,서보 소요량 (50대),200,ea,50,교육용 검증 입력,본문의 50대·200개 및 대당 4개를 참조값과 대조
+wrong_value,failed,failed,wrong_value · 도구의 1대당 수량은 4,서보 소요량 (50대),200,ea,50,교육용 검증 입력,대당 2개가 기준 4개와 불일치
+wrong_unit,failed,failed,wrong_unit · 구매 팩 수 · 원천 팩 수량과 다름,서보 소요량 (50대),200,ea,50,교육용 검증 입력,본문이 200개를 200팩으로 표기
+wrong_condition,failed,failed,본문 생산 대수가 계산 기준과 불일치,서보 소요량 (50대),200,ea,50,교육용 검증 입력,본문 생산 대수가 계산 기준과 불일치
+wrong_direction,failed,failed,wrong_direction · 검사용 모터 부품비 차이: 도구 값 -13.98 USD (감소),변경 비용 방향,-13.98,USD,해당 없음,교육용 검증 입력,감소액을 증가로 표기
+unknown_to_zero,failed,failed,미검증 숫자 0.00,서보 소요량 (50대),200,ea,50,교육용 검증 입력,미확인 추가 비용을 0.00으로 임의 표시
+missing_reference,failed,failed,missing_reference · 계산 결과가 있는데 답변이 인용한 값이 없음,서보 소요량 (50대),200,ea,50,교육용 검증 입력,본문에 계산 참조가 없음

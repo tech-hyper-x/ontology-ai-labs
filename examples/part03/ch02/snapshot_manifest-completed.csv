@@ -1,0 +1,4 @@
+원천,대상,릴리스,수집일,범위,원본 위치,변환 코드·버전,별도 기준·메모
+Open Targets,NSCLC / EGFR·KRAS·MET,26.09,2026-10-26,연관 상위 50 / 후보 3,data/raw/opentargets/snapshot.json,foundation/build.py · 배포 프로젝트의 커밋 기록,원천 전체와 선택한 근거 범위 구분
+PubMed,후보 관련 초록,PubMed 조회 스냅샷,2026-10-26,그래프 Paper 2204건 · 초록 보유 146건,data/raw/pubmed/abstracts.json,foundation/build.py,조회 기간과 후보별 범위는 동봉 원천 메모 확인
+가상 사내 과제,internal_pipeline,가상 파일 기준,파일 기준일 기록,가상 과제 8건,data/processed/internal/internal_pipeline.csv,foundation/build.py,예시 PRJ-ONC-045의 as_of 2026-09-30 · 공개 자료 조회일과 분리
