@@ -1,0 +1,4 @@
+﻿파일·시스템,용도,확인할 필드,식별자,원천·파생·가정,수집·관측 시점,업무 기준일,원천 위치,누락·단절·함정,다음에 할 일
+parts_list.csv,휠 사용처·수량 확인,assembly=drive wheel · 조립품당 1개 · 로버당 배수 6,3616-0014-0144 / P-3616-0014-0144,원본 부품표; 내부 ID는 가공,—,개정판 6b2c5a9,parts_list/parts_list.csv@6b2c5a9#row1,07a4405의 42행은 열 개수 불일치로 제외,품질 이슈 표에서 제외 사유를 확인하고 원본 행 대조
+erp_supplier_item.csv,휠 가격·구매 조건 확인,unit_price · moq_packs · lead_time_days · observed_at · price_date,P-3616-0014-0144 / goBILDA,,,,,,
+,,,,,,,,,

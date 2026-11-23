@@ -11,6 +11,8 @@
 |CQ 작성표|[작성표](worksheets/cq-catalog.csv)|[작성 예시](worksheets/cq-catalog-completed.csv)|
 |데이터 목록|[작성표](worksheets/data-inventory.csv)|[작성 예시](worksheets/data-inventory-completed.csv)|
 
+55장 구매 정보 기록에는 [55장 실습용 CSV](worksheets/data-inventory-slide55-recording.csv)를 사용합니다. 첫 데이터 행은 작성되어 있으며, 구매 정보 행에는 A3~D3만 들어 있습니다. Neo4j 결과표를 확인한 뒤 E3~H3을 채웁니다.
+
 ## 먼저 이해할 개념
 
 |용어|뜻|휠 사용처 예시|
