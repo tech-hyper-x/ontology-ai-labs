@@ -17,14 +17,14 @@
 1. [원본 두 판과 diff](reference/)를 열어 모터 5202→5203 변경을 찾습니다. 원본은 고정된 두 커밋의 내용을 변경 없이 보관했습니다. 전체 NASA 저장소를 새로 받을 필요가 없습니다.
 2. [개정판 조회](queries/03-revision-interval.cypher)로 시작 포함·종료 제외 구간과 경계일을 확인합니다. 날짜는 저장소 반영일이며 실제 생산 적용일이 아닙니다. 같은 날짜 여러 판은 커밋 ID로 구분합니다.
 3. [변경 전후 표 조회](queries/01-before-after.cypher), [그래프와 교체 이력](queries/02-change-graph.cypher)을 Neo4j Browser에서 각각 실행합니다. 파일에 여러 문장이 있으면 한 문장씩 선택해 실행합니다.
-4. [ecn.py](../../../labs/mfg-bom-agent/src/mfg_bom_agent/foundation/ecn.py)의 revision_intervals → diff_revisions → pair_supersedes를 읽습니다. ECN은 파생된 교육용 변경 기록입니다. SUPERSEDES는 새 부품→이전 부품 방향의 이력이고, 조건부 대체 관계 ALTERNATE_OF와 구분합니다.
+4. [ecn.py](../../../labs/mfg-bom-agent/src/mfg_bom_agent/foundation/ecn.py#L43-L126)의 revision_intervals → diff_revisions → pair_supersedes를 읽습니다. ECN은 파생된 교육용 변경 기록입니다. SUPERSEDES는 새 부품→이전 부품 방향의 이력이고, 조건부 대체 관계 ALTERNATE_OF와 구분합니다.
 5. [변경 기록 표](worksheets/change-record.csv)를 작성하고 아래 예제로 모터 한 쌍을 대조합니다.
 
 ```bash
 uv run python ../../examples/part02/ch03/ch03_change.py
 ```
 
-예제는 현재 작업본의 기존 함수에 실제 두 원본 행을 전달합니다. DB·파일을 변경하지 않습니다. 전체 diff의 6개 변경 행과 모터 한 쌍의 2개 행은 범위가 다릅니다. 예제의 판 구간 입력은 3개만 발췌했으므로 마지막 판을 실제 최신 판이라고 해석하지 않습니다. 실제 기간은 plm_revision.csv·Neo4j와 대조합니다.
+예제는 원본의 모터 두 행을 읽어 추가·삭제와 교체 관계를 출력합니다. 결과를 [85장 작성표](slide-077.md)와 대조합니다. 예제의 `is_latest`는 입력한 세 개정판 중 마지막 판을 표시합니다. 실제 기간은 [81장 Neo4j 조회](slide-073.md)에서 확인합니다. 제공 데이터에서 모터가 바뀐 판 `d092d83`의 종료일은 2023-07-26이고, 다음 판 `886bb13`의 종료일은 2023-10-04입니다.
 
 ## 2강 · 제조 온톨로지와 검증 규칙
 
@@ -50,13 +50,13 @@ Neo4j Browser: http://localhost:7474 · 본인 .env의 접속 설정 사용. 이
 
 ## 장표 번호별 실습
 
-- [77장 · 개정판별 부품 구성과 적용 구간](slide-073.md)
-- [78장 · 부품과 판별 투입 내역의 구분](slide-074.md)
-- [80장 · 변경 내역의 분류와 교체 연결 기준](slide-076.md)
-- [81장 · 모터 교체 이력의 작성과 대조](slide-077.md)
-- [84장 · CQ 기반 개념 정의와 표준 재사용](slide-080.md)
-- [85장 · 완제품·투입 내역·부품의 연결 경로](slide-081.md)
-- [87장 · 설계 조건별 검사 코드 대응](slide-083.md)
-- [88장 · Neo4j의 모델 위반 조회와 해석](slide-084.md)
-- [89장 · 오류 예제의 검증 조건 작성과 재검사](slide-085.md)
-- [90장 · 검증·추론·업무 판단의 구분](slide-086.md)
+- [81장 · 개정판별 부품 구성과 적용 구간](slide-073.md)
+- [82장 · 부품과 판별 투입 내역의 구분](slide-074.md)
+- [84장 · 변경 내역의 분류와 교체 연결 기준](slide-076.md)
+- [85장 · 모터 교체 이력의 작성과 대조](slide-077.md)
+- [89장 · CQ 기반 개념 정의와 표준 재사용](slide-080.md)
+- [90장 · 완제품·투입 내역·부품의 연결 경로](slide-081.md)
+- [92장 · 설계 조건별 검사 코드 대응](slide-083.md)
+- [93장 · Neo4j의 모델 위반 조회와 해석](slide-084.md)
+- [94장 · 오류 예제의 검증 조건 작성과 재검사](slide-085.md)
+- [95장 · 검증·추론·업무 판단의 구분](slide-086.md)

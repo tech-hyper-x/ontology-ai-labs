@@ -31,16 +31,16 @@
 | Part 2 Ch2 | 71장 | [포장 표기 규칙 수정과 회귀 검사](../part02/ch02/slide-067.md) | 4개 |
 | Part 2 Ch2 | 72장 | [Neo4j 저장값과 정규화 결과 대조](../part02/ch02/slide-068.md) | 1개 |
 | Part 2 Ch2 | 73장 | [검사 통과의 범위와 확인 근거](../part02/ch02/slide-069.md) | 1개 |
-| Part 2 Ch3 | 77장 | [개정판별 부품 구성과 적용 구간](../part02/ch03/slide-073.md) | 1개 |
-| Part 2 Ch3 | 78장 | [부품과 판별 투입 내역의 구분](../part02/ch03/slide-074.md) | 1개 |
-| Part 2 Ch3 | 80장 | [변경 내역의 분류와 교체 연결 기준](../part02/ch03/slide-076.md) | 2개 |
-| Part 2 Ch3 | 81장 | [모터 교체 이력의 작성과 대조](../part02/ch03/slide-077.md) | 2개 |
-| Part 2 Ch3 | 84장 | [CQ 기반 개념 정의와 표준 재사용](../part02/ch03/slide-080.md) | 1개 |
-| Part 2 Ch3 | 85장 | [완제품·투입 내역·부품의 연결 경로](../part02/ch03/slide-081.md) | 1개 |
-| Part 2 Ch3 | 87장 | [설계 조건별 검사 코드 대응](../part02/ch03/slide-083.md) | 1개 |
-| Part 2 Ch3 | 88장 | [Neo4j의 모델 위반 조회와 해석](../part02/ch03/slide-084.md) | 1개 |
-| Part 2 Ch3 | 89장 | [오류 예제의 검증 조건 작성과 재검사](../part02/ch03/slide-085.md) | 1개 |
-| Part 2 Ch3 | 90장 | [검증·추론·업무 판단의 구분](../part02/ch03/slide-086.md) | 1개 |
+| Part 2 Ch3 | 81장 | [개정판별 부품 구성과 적용 구간](../part02/ch03/slide-073.md) | 1개 |
+| Part 2 Ch3 | 82장 | [부품과 판별 투입 내역의 구분](../part02/ch03/slide-074.md) | 1개 |
+| Part 2 Ch3 | 84장 | [변경 내역의 분류와 교체 연결 기준](../part02/ch03/slide-076.md) | 2개 |
+| Part 2 Ch3 | 85장 | [모터 교체 이력의 작성과 대조](../part02/ch03/slide-077.md) | 2개 |
+| Part 2 Ch3 | 89장 | [CQ 기반 개념 정의와 표준 재사용](../part02/ch03/slide-080.md) | 1개 |
+| Part 2 Ch3 | 90장 | [완제품·투입 내역·부품의 연결 경로](../part02/ch03/slide-081.md) | 1개 |
+| Part 2 Ch3 | 92장 | [설계 조건별 검사 코드 대응](../part02/ch03/slide-083.md) | 1개 |
+| Part 2 Ch3 | 93장 | [Neo4j의 모델 위반 조회와 해석](../part02/ch03/slide-084.md) | 1개 |
+| Part 2 Ch3 | 94장 | [오류 예제의 검증 조건 작성과 재검사](../part02/ch03/slide-085.md) | 1개 |
+| Part 2 Ch3 | 95장 | [검증·추론·업무 판단의 구분](../part02/ch03/slide-086.md) | 1개 |
 | Part 2 Ch4 | 94장 | [CSV 행의 파라미터 기반 적재](../part02/ch04/slide-090.md) | 1개 |
 | Part 2 Ch4 | 95장 | [판별 투입 내역과 관계의 적재](../part02/ch04/slide-091.md) | 1개 |
 | Part 2 Ch4 | 96장 | [전용 실습 DB의 데이터 재적재](../part02/ch04/slide-092.md) | 2개 |

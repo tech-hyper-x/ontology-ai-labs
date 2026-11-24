@@ -1,4 +1,4 @@
-# 80장 · 변경 내역의 분류와 교체 연결 기준
+# 84장 · 변경 내역의 분류와 교체 연결 기준
 
 Part 2 / Ch3 · [전체 실습 목차](../../hands-on/README.md)
 
@@ -16,7 +16,7 @@ Part 2 / Ch3 · [전체 실습 목차](../../hands-on/README.md)
 
 ## 1. ecn.py
 
-[파일 원문 열기 · `labs/mfg-bom-agent/src/mfg_bom_agent/foundation/ecn.py`](../../../labs/mfg-bom-agent/src/mfg_bom_agent/foundation/ecn.py)
+[파일 원문 열기 · `labs/mfg-bom-agent/src/mfg_bom_agent/foundation/ecn.py`](../../../labs/mfg-bom-agent/src/mfg_bom_agent/foundation/ecn.py#L43-L126)
 
 파일에서 장표에 나온 입력·조건·반환값을 확인합니다. 소스 파일 전체를 Neo4j나 터미널에 붙여 넣지 않습니다.
 
