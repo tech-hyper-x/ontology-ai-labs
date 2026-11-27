@@ -1,3 +1,4 @@
 doc_id,path,line,part_id,method,mention,confidence,review_decision,reason,db_applied
+mechanical/servo_gear_replacement/README.md#2,mechanical/servo_gear_replacement/README.md,16,P-2000-0025-0002,curated,,1.0,keep,FM-SERVO-CONNECTION을 거쳐 진단 절 확인,기존 경로 조회 확인
 exercise/wheel_wiring.md#1,exercise/wheel_wiring.md,1,P-2000-0025-0002,제거 규칙,servo,원래 자동 점수는 예제 출력에서 확인,remove,문서의 대상은 휠 배선이다. servo 언급은 불필요한 연결.,미적용 · 교육용 fixture
 exercise/wheel_wiring.md#1,exercise/wheel_wiring.md,1,P-3616-0014-0144,품번 연결,3616-0014-0144,원래 자동 점수는 예제 출력에서 확인,keep,문서에서 휠 번호를 직접 확인.,미적용 · 교육용 fixture

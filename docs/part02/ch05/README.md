@@ -12,6 +12,10 @@ Ch4의 사용처 그래프에 문서 근거를 연결합니다. 12강은 문서 
 |검색 결과 비교|[작성표](worksheets/search-comparison.csv)|[작성 예시](worksheets/search-comparison-completed.csv)|
 |검색 준비 확인표|[작성표](worksheets/index-checklist.md)|[작성 예시](worksheets/index-checklist-completed.md)|
 
+연결 검수표의 2행은 121~122장에서 직접 작성하는 서보 진단 절입니다. 121장에서는 A2:D2에 [진단 청크의 위치](queries/01-document-source.cypher)와 [서보 부품 식별자](../../../labs/mfg-bom-agent/data/processed/plm_item_master.csv#L11)를 적습니다. C2의 `16`은 원문에서 절 제목이 시작하는 행입니다.
+
+122장에서는 [연결 조회문의 두 번째 결과표](queries/02-document-links.cypher#L7-L10)에서 문서 번호가 `#2`인 행을 찾아 E2:J2를 마무리합니다. 이 경로는 `FM-SERVO-CONNECTION`을 거칩니다. 결과에 `mention` 열이 없어 F2는 비워 둡니다. 이 조회에서 보이는 `line=18`은 연결 근거가 있는 행입니다. 완성표의 3~4행은 123장 바퀴 배선 예제에서 서보 연결은 빼고 휠 연결은 유지한 기록입니다.
+
 ## 12강 · 원문에서 검색 준비까지
 
 1. [정비 원문 스냅샷](source/servo_gear_replacement.md)의 Diagnosing an issue 절과 [출처](source/SOURCES.md)를 읽습니다.
