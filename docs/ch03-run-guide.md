@@ -147,10 +147,10 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-그래프에서 기록한 개정판 ID로 `확인한_ID`를 바꾼 뒤 실행합니다.
+제공된 부품표 기준으로 휠 `3616-0014-0144`의 사용처를 조회합니다. 앞 단계 결과표에 나온 판이 다르면 아래 명령의 `6b2c5a9`를 해당 ID로 바꿉니다.
 
 ```bash
-uv run python ../../examples/part01/ch03/ch03_call.py where_used --revision "확인한_ID"
+uv run python ../../examples/part01/ch03/ch03_call.py where_used --part 3616-0014-0144 --revision 6b2c5a9
 uv run python ../../examples/part01/ch03/ch03_call.py search_docs --mode bm25
 uv run python ../../examples/part01/ch03/ch03_call.py search_docs --mode vector
 ```

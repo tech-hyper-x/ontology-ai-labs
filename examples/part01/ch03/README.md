@@ -12,7 +12,7 @@
 `labs/mfg-bom-agent`에서 실행합니다.
 
 ```bash
-uv run python ../../examples/part01/ch03/ch03_call.py where_used --revision "확인한_ID"
+uv run python ../../examples/part01/ch03/ch03_call.py where_used --part 3616-0014-0144 --revision 6b2c5a9
 uv run python ../../examples/part01/ch03/ch03_call.py search_docs --mode bm25
 uv run python ../../examples/part01/ch03/ch03_call.py search_docs --mode vector
 uv run python ../../examples/part01/ch03/ch03_call.py search_docs --mode hybrid

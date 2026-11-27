@@ -78,10 +78,10 @@ uv run streamlit run src/mfg_bom_agent/ui.py
 
 ## 예제 실행
 
-그래프에서 확인한 개정판 ID로 `확인한_ID`를 바꿉니다.
+제공된 부품표에서 휠 `3616-0014-0144`의 사용처를 개정판 `6b2c5a9`로 조회합니다. 다른 판을 조회했다면 결과표의 개정판 ID를 사용하세요.
 
 ```bash
-uv run python ../../examples/part01/ch03/ch03_call.py where_used --revision "확인한_ID"
+uv run python ../../examples/part01/ch03/ch03_call.py where_used --part 3616-0014-0144 --revision 6b2c5a9
 uv run python ../../examples/part01/ch03/ch03_call.py search_docs --mode hybrid
 ```
 
